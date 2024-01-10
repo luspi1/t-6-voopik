@@ -1,0 +1,30 @@
+@import "src/assets/styles/vars";
+
+.menuList {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 15px;
+  @media (max-width: 1280px) {
+    max-width: 50%;
+  }
+}
+
+.menuItem {
+  a {
+    @include ptsans-bold;
+    color: #015DB9;
+    text-transform: uppercase;
+  }
+
+  &._accent {
+    a {
+      color: #ffffff;
+      padding: 6px 10px;
+      background-color: #ED1C24;
+      border-radius: 8px;
+    }
+  }
+
+}

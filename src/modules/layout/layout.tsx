@@ -1,12 +1,12 @@
 import { type FC } from 'react'
 import { Outlet } from 'react-router-dom'
-
-import styles from './index.module.scss'
+import { MainNavigation } from 'src/modules/main-navigation/main-navigation'
 
 export const Layout: FC = () => {
 	return (
 		<>
-			<main className={styles.Container}>
+			<MainNavigation />
+			<main>
 				<Outlet />
 			</main>
 		</>

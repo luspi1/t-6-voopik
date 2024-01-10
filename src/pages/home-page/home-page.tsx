@@ -10,7 +10,6 @@ export const HomePage: FC = () => {
 			<Helmet>
 				<title>Домашняя страница</title>
 			</Helmet>
-			<h1>Home page</h1>
 		</Container>
 	)
 }
