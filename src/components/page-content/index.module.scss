@@ -1,0 +1,25 @@
+@import "src/assets/styles/vars";
+
+.pageContent {
+  background-color: #fff;
+  padding: 30px 70px 45px 30px;
+  flex-grow: 1;
+
+  h2 {
+    color: #000;
+    @include ptsans-bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #015DB9;
+    @include ptsans-regular;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  p {
+    line-height: 22px;
+  }
+}

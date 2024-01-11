@@ -6,10 +6,12 @@ import styles from './index.module.scss'
 
 export const HomePage: FC = () => {
 	return (
-		<Container className={styles.homePage}>
+		<div className={styles.homePage}>
 			<Helmet>
-				<title>Домашняя страница</title>
+				<title>Главная</title>
 			</Helmet>
-		</Container>
+			<div className={styles.headerImgWrapper}></div>
+			<Container></Container>
+		</div>
 	)
 }

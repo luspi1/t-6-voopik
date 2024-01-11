@@ -1,9 +1,11 @@
 import { type FC, type PropsWithChildren } from 'react'
+
 import { createPortal } from 'react-dom'
 import cn from 'classnames'
 
-import styles from './index.module.scss'
 import { CloseSvg } from 'src/UI/icons/closeSVG'
+
+import styles from './index.module.scss'
 
 type ModalProps = PropsWithChildren<{
 	active: boolean

@@ -1,6 +1,11 @@
 export enum AppRoute {
 	Home = '/',
 	About = 'about',
+	AboutHistory = 'about-history',
+	AboutDirection = 'about-direction',
+	AboutContacts = 'about-contacts',
+	AboutDocuments = 'about-documents',
+	AboutMediakit = 'about-mediakit',
 	Departments = 'departments',
 	Objects = 'objects',
 	Projects = 'projects',

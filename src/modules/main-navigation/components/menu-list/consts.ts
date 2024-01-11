@@ -1,6 +1,6 @@
-import { type MenuItemType } from 'src/modules/main-navigation/components/menu-list/types'
+import { type NavigationItem } from 'src/types/navigation'
 
-export const MenuItems: MenuItemType[] = [
+export const MenuItems: NavigationItem[] = [
 	{
 		title: 'воопик',
 		link: 'about',
