@@ -1,4 +1,5 @@
 import { type NavigationItem } from 'src/types/navigation'
+import { type Document } from 'src/types/document'
 
 export const AboutMenuItems: NavigationItem[] = [
 	{
@@ -20,5 +21,38 @@ export const AboutMenuItems: NavigationItem[] = [
 	{
 		title: 'Медиакит',
 		link: 'about-mediakit',
+	},
+]
+
+export const aboutPageDocuments: Document[] = [
+	{
+		id: '0',
+		title:
+			'Пенза. Памятник деревянной архитектуры, в котором располагается областное отделение ВООПИиК',
+		type: 'doc',
+		size: '68.5',
+	},
+
+	{
+		id: '1',
+		title: 'Архангельский музей деревянного зодчества «Малые Корелы»',
+		type: 'doc',
+		size: '68.5',
+	},
+
+	{
+		id: '2',
+		title:
+			'Государственный Бородинский военно-исторический музей-заповедник. Спасо-Бородинский монастырь',
+		type: 'doc',
+		size: '68.5',
+	},
+
+	{
+		id: '3',
+		title:
+			'Ансамбль Крутицкого подворья XY-XYII веков. Реставрационные работы проводились под руководством П.Д.Барановского. В Успенском Соборе находились реставрационные мастерские ВООПИиК',
+		type: 'doc',
+		size: '68.5',
 	},
 ]

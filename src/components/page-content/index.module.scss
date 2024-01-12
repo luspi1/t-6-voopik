@@ -12,14 +12,26 @@
     margin-bottom: 20px;
   }
 
+  h4 {
+    color: #000;
+    @include ptsans-bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
   a {
     color: #015DB9;
     @include ptsans-regular;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 1.28;
   }
 
   p {
-    line-height: 22px;
+    line-height: 1.37;
+    margin-bottom: 22px;
+  }
+
+  figure, blockquote {
+    margin: 0;
   }
 }
