@@ -1,13 +1,13 @@
-.controlledInput{
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 9px 10px;
+@import 'src/assets/styles/vars';
+
+.controlledInput {
+  @include opensans-medium;
+  font-size: 20px;
+  padding: 20.5px 22px;
   border: none;
   width: 100%;
   background-color: #fff;
-  border-radius: 3px;
-  outline: 1px solid #C2CAC9;
+  outline: none;
 
 
   &[type="checkbox"], &[type="radio"] {
@@ -20,22 +20,24 @@
 
 
   &::placeholder {
-    color: #000000;
+    color: #ACACAC;
   }
 
   &:focus {
-    outline-color: #000000;
+    outline-color: #025DB9;
   }
 }
 
 .inputWrapper {
   display: flex;
   align-items: center;
+  position: relative;
 
   p {
     min-width: 145px;
     margin-right: 6px;
   }
+
   span {
     margin-left: 10px;
     width: 20px;
@@ -45,7 +47,8 @@
 }
 
 .inputEl {
-  margin-bottom: 20px;
+  position: relative;
+
   .warningMessage {
     color: #F00000;
     font-size: 14px;

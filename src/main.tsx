@@ -8,6 +8,9 @@ import { Provider } from 'react-redux'
 import { HelmetProvider } from 'react-helmet-async'
 import { ToastContainer } from 'react-toastify'
 
+import 'pure-react-carousel/dist/react-carousel.es.css'
+import 'react-toastify/dist/ReactToastify.min.css'
+
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

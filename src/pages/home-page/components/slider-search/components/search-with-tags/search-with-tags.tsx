@@ -5,6 +5,7 @@ import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 
 import styles from './index.module.scss'
+import { MainButton } from 'src/UI/MainButton/MainButton'
 export const SearchWithTags: FC = () => {
 	const methods = useForm<SearchWithTagInputs>({
 		mode: 'onBlur',
@@ -17,9 +18,11 @@ export const SearchWithTags: FC = () => {
 	return (
 		<div className={styles.searchWrapper}>
 			<FormProvider {...methods}>
-				<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
-					<ControlledInput name='searh' />
-					<button type='submit'>найти</button>
+				<form onSubmit={methods.handleSubmit(onSubmit)}>
+					<ControlledInput name='search' placeholder='Я хочу найти...' required />
+					<MainButton className={styles.searchBtn} as='button' type='submit'>
+						найти
+					</MainButton>
 				</form>
 			</FormProvider>
 		</div>
