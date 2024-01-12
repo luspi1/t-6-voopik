@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 
 import styles from './index.module.scss'
-import foundersImage from 'src/assets/img/history-founders.png'
+import foundersImage from 'src/assets/img/history-founders.jpg'
 
 export const AboutHistory: FC = () => {
 	return (

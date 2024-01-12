@@ -1,8 +1,8 @@
-import korelyImage from 'src/assets/img/history-korely.png'
-import monasteryImage from 'src/assets/img/history-monastery.png'
-import teremImage from 'src/assets/img/history-terem.png'
-import penzaDepartmentImage from 'src/assets/img/history-penza-department.png'
-import groupImage from 'src/assets/img/history-group.png'
+import korelyImage from 'src/assets/img/history-korely.jpg'
+import monasteryImage from 'src/assets/img/history-monastery.jpg'
+import teremImage from 'src/assets/img/history-terem.jpg'
+import penzaDepartmentImage from 'src/assets/img/history-penza-department.jpg'
+import groupImage from 'src/assets/img/history-group.jpg'
 
 export const renovatedObject = [
 	{
@@ -57,39 +57,5 @@ export const galleryContent = [
 	{
 		id: '4',
 		imgTitle: groupImage,
-		imgDescription: 'Наша группа',
-	},
-]
-
-export const aboutPageDocuments = [
-	{
-		id: '0',
-		title:
-			'Пенза. Памятник деревянной архитектуры, в котором располагается областное отделение ВООПИиК',
-		type: 'doc',
-		size: '68.5',
-	},
-
-	{
-		id: '1',
-		title: 'Архангельский музей деревянного зодчества «Малые Корелы»',
-		type: 'doc',
-		size: '68.5',
-	},
-
-	{
-		id: '2',
-		title:
-			'Государственный Бородинский военно-исторический музей-заповедник. Спасо-Бородинский монастырь',
-		type: 'doc',
-		size: '68.5',
-	},
-
-	{
-		id: '3',
-		title:
-			'Ансамбль Крутицкого подворья XY-XYII веков. Реставрационные работы проводились под руководством П.Д.Барановского. В Успенском Соборе находились реставрационные мастерские ВООПИиК',
-		type: 'doc',
-		size: '68.5',
 	},
 ]

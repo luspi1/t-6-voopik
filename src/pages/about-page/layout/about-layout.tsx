@@ -10,7 +10,7 @@ import { SideMenu } from 'src/components/side-menu/side-menu'
 import { DocumentsList } from 'src/components/documents-list/documents-list'
 
 import styles from './index.module.scss'
-import { aboutPageDocuments } from '../layout/about-general/consts'
+import { aboutPageDocuments } from './consts'
 
 export const AboutLayout: FC = () => {
 	const { pathname } = useLocation()

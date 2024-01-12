@@ -1,8 +1,8 @@
 import { type FC } from 'react'
 
-import { Section } from 'src/components/section/section'
+import { AboutGeneralSection } from './components/about-general-section/about-general-section'
 import { renovatedObject, galleryContent } from './consts'
-import authorImage from 'src/assets/img/history-author.png'
+import authorImage from 'src/assets/img/history-author.jpg'
 import styles from './index.module.scss'
 
 export const AboutGeneral: FC = () => {
@@ -29,7 +29,7 @@ export const AboutGeneral: FC = () => {
 				</blockquote>
 			</section>
 
-			<Section title='Объекты культурного наследия, которые отреставрированы за счет средств общества'>
+			<AboutGeneralSection title='Объекты культурного наследия, которые отреставрированы за счет средств общества'>
 				<ul className={styles.linkList}>
 					{' '}
 					{renovatedObject.map((item) => (
@@ -38,9 +38,9 @@ export const AboutGeneral: FC = () => {
 						</li>
 					))}
 				</ul>
-			</Section>
+			</AboutGeneralSection>
 
-			<Section title='Фотогалерея'>
+			<AboutGeneralSection title='Фотогалерея'>
 				<ul className={styles.gallery}>
 					{' '}
 					{galleryContent.map((item) => (
@@ -52,7 +52,7 @@ export const AboutGeneral: FC = () => {
 						</li>
 					))}
 				</ul>
-			</Section>
+			</AboutGeneralSection>
 
 			<section>
 				<h4>Что такое ВООПИиК?</h4>
