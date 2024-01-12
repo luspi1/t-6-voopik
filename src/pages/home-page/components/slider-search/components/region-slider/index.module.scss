@@ -4,13 +4,10 @@
 
 .slideItem {
 
-  :global {
-    .carousel__inner-slide {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 
   img {
     margin-bottom: 10px;

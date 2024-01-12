@@ -1,0 +1,60 @@
+.controlledInput{
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 9px 10px;
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  outline: 1px solid #C2CAC9;
+
+
+  &[type="checkbox"], &[type="radio"] {
+    padding: 0;
+    width: auto;
+    outline: none;
+    order: -1;
+    margin-right: 5px;
+  }
+
+
+  &::placeholder {
+    color: #000000;
+  }
+
+  &:focus {
+    outline-color: #000000;
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+
+  p {
+    min-width: 145px;
+    margin-right: 6px;
+  }
+  span {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+.inputEl {
+  margin-bottom: 20px;
+  .warningMessage {
+    color: #F00000;
+    font-size: 14px;
+    line-height: 1;
+    padding-top: 5px;
+  }
+
+}
+
+.noValid {
+  outline: 1px solid #F00000;
+}

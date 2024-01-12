@@ -36,7 +36,7 @@ export const RegionSlider: FC = () => {
 		>
 			<Slider>
 				{RegionSliderItems?.map((slideItem, idx) => (
-					<Slide className={styles.slideItem} key={idx} index={idx}>
+					<Slide innerClassName={styles.slideItem} key={idx} index={idx}>
 						<img src={slideItem.img} alt={slideItem.title} />
 						<span>{slideItem.title}</span>
 					</Slide>
