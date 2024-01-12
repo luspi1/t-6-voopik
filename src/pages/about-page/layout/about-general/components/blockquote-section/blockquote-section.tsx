@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import styles from './index.module.scss'
-import authorImage from 'src/assets/img/history-author.jpg'
+import authorImage from 'src/assets/img/chairmans-malanicheva.jpg'
 
 export const BlockquoteSection: FC = () => {
 	return (
