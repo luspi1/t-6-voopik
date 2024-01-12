@@ -1,12 +1,9 @@
 import { type FC } from 'react'
 
-import styles from './index.module.scss'
+import { Section } from 'src/components/section/section'
+import { renovatedObject, galleryContent } from './consts'
 import authorImage from 'src/assets/img/history-author.png'
-import korelyImage from 'src/assets/img/history-korely.png'
-import monasteryImage from 'src/assets/img/history-monastery.png'
-import teremImage from 'src/assets/img/history-terem.png'
-import penzaDepartmentImage from 'src/assets/img/history-penza-department.png'
-import groupImage from 'src/assets/img/history-group.png'
+import styles from './index.module.scss'
 
 export const AboutGeneral: FC = () => {
 	return (
@@ -32,74 +29,30 @@ export const AboutGeneral: FC = () => {
 				</blockquote>
 			</section>
 
-			<section>
-				<h4>Объекты культурного наследия, которые отреставрированы за счет средст общества</h4>
-
+			<Section title='Объекты культурного наследия, которые отреставрированы за счет средств общества'>
 				<ul className={styles.linkList}>
-					<li>
-						<a href='#'>
-							Пенза. Памятник деревянной архитектуры, в котором располагается областное отделение
-							ВООПИиК
-						</a>
-					</li>
-					<li>
-						<a href='#'>Архангельский музей деревянного зодчества «Малые Корелы»</a>
-					</li>
-					<li>
-						<a href='#'>
-							Государственный Бородинский военно-исторический музей-заповедник. Спасо-Бородинский
-							монастырь
-						</a>
-					</li>
-					<li>
-						<a href='#'>
-							Ансамбль Крутицкого подворья XY-XYII веков. Реставрационные работы проводились под
-							руководством П.Д.Барановского. В Успенском Соборе находились реставрационные
-							мастерские ВООПИиК
-						</a>
-					</li>
+					{' '}
+					{renovatedObject.map((item) => (
+						<li key={item.id}>
+							<a href='#'>{item.title}</a>
+						</li>
+					))}
 				</ul>
-			</section>
+			</Section>
 
-			<section>
-				<h4>Фотогалерея</h4>
-
+			<Section title='Фотогалерея'>
 				<ul className={styles.gallery}>
-					<li>
-						<figure className={styles.image}>
-							<img src={korelyImage} alt='Малые Корелы' />
-							<figcaption>Малые Корелы</figcaption>
-						</figure>
-					</li>
-
-					<li>
-						<figure className={styles.image}>
-							<img src={monasteryImage} alt='Спасо-Бородинский монастырь' />
-							<figcaption>Спасо-Бородинский монастырь</figcaption>
-						</figure>
-					</li>
-
-					<li>
-						<figure className={styles.image}>
-							<img src={teremImage} alt='Крутицкий теремок' />
-							<figcaption>Крутицкий теремок</figcaption>
-						</figure>
-					</li>
-
-					<li>
-						<figure className={styles.image}>
-							<img src={penzaDepartmentImage} alt='Пензенское отделение ВООПИиК' />
-							<figcaption>Пензенское отделение ВООПИиК</figcaption>
-						</figure>
-					</li>
-
-					<li>
-						<figure className={styles.image}>
-							<img src={groupImage} alt='Наша группа' />
-						</figure>
-					</li>
+					{' '}
+					{galleryContent.map((item) => (
+						<li key={item.id}>
+							<figure className={styles.image}>
+								<img src={item.imgTitle} alt={item.imgDescription} />
+								<figcaption>{item.imgDescription}</figcaption>
+							</figure>
+						</li>
+					))}
 				</ul>
-			</section>
+			</Section>
 
 			<section>
 				<h4>Что такое ВООПИиК?</h4>
