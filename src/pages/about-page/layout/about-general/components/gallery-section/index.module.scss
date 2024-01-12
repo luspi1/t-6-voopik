@@ -1,0 +1,26 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding-top: 10px;
+  margin-bottom: 32px;
+
+  li {
+    max-width: 160px;
+  }
+
+
+  img {
+    width: 100%;
+    min-width: 100px;
+    height: 113px;
+    margin-bottom: 8px;
+  }
+
+  figcaption {
+    color: #9D9D9D;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
