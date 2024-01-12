@@ -1,0 +1,9 @@
+.slideBtnPrev, .slideBtnNext {
+  position: absolute;
+  transform: translateY(-50%);
+  &:hover {
+    svg circle {
+      fill: #ffffff;
+    }
+  }
+}

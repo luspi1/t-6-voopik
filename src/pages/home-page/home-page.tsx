@@ -1,9 +1,11 @@
 import { type FC } from 'react'
-import { Container } from 'src/UI/Container/Container'
+
 import { Helmet } from 'react-helmet-async'
 
-import styles from './index.module.scss'
 import { SliderSearch } from 'src/pages/home-page/components/slider-search/slider-search'
+
+import styles from './index.module.scss'
+import { ObjectsSection } from 'src/pages/home-page/components/objects-section/objects-section'
 
 export const HomePage: FC = () => {
 	return (
@@ -13,7 +15,7 @@ export const HomePage: FC = () => {
 			</Helmet>
 			<div className={styles.headerImgWrapper}></div>
 			<SliderSearch />
-			<Container></Container>
+			<ObjectsSection />
 		</div>
 	)
 }
