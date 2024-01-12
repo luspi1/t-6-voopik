@@ -17,4 +17,13 @@ export enum AppRoute {
 export enum NameSpace {
 	Tasks = 'TASKS',
 }
+
+export enum DisplayBreakpoints {
+	Sm = 576,
+	Md = 768,
+	Lg = 1024,
+	Xl = 1280,
+	Xxl = 1440,
+}
+
 export const BASE_URL = 'http://localhost:4001/api/v1'
