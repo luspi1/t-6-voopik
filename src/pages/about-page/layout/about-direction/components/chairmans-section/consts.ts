@@ -7,6 +7,7 @@ export const chairmans = [
 		name: 'Маланичева Галина Ивановна',
 		position: 'Почетный Председатель ВООПИиК',
 		image: malanichevaImage,
+		isMainChairman: true,
 	},
 
 	{
@@ -14,5 +15,6 @@ export const chairmans = [
 		name: 'Демидов Артём Геннадьевич',
 		position: 'Председатель ВООПИиК',
 		image: demidovImage,
+		isMainChairman: true,
 	},
 ]
