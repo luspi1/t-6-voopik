@@ -1,0 +1,17 @@
+.contactMap {
+    margin-bottom: 30px;
+    width: 755;
+    height: 318px;
+
+    background-image: url('src/assets/img/contact-map.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.contactsBlock {
+    margin-bottom: 28px;
+
+    a[href^="tel:"] {
+        color: inherit;
+    }
+}
