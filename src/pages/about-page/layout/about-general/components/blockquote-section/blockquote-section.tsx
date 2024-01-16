@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import styles from './index.module.scss'
-import authorImage from 'src/assets/img/history-author.jpg'
+import authorImage from 'src/assets/img/chairmans-malanicheva.jpg'
 
 export const BlockquoteSection: FC = () => {
 	return (
@@ -8,7 +8,7 @@ export const BlockquoteSection: FC = () => {
 			<img src={authorImage} alt='Г. И.Маланичева, Почетный Председатель ВООПИиК' />
 
 			<blockquote>
-				<p>
+				<p className={styles.blockquoteText}>
 					«Одно из незабываемых воспоминаний моей жизни. Представьте: русская глубинка семидесятых
 					годов, в центре села — старая деревянная церковь, а в воздухе разливается фольклорная
 					песня. Ощущение непередаваемое — ощущение праздника, я тогда поняла, что вот оно, родное,

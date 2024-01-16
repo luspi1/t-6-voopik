@@ -1,0 +1,19 @@
+.viceDirectionList {
+    margin-bottom: 18px;
+    padding: 30px 10px 35px 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    li {
+        flex: 1;
+        width: 180px;
+
+       // border: 3px solid red;
+    }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
