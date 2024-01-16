@@ -11,6 +11,7 @@ import { TelegramSocialSvg } from 'src/UI/icons/telegramSocialSVG'
 import { AppRoute } from 'src/helpers/consts'
 
 import styles from './index.module.scss'
+import { SocialLinks } from 'src/components/social-links/social-links'
 export const Footer: FC = () => {
 	const { pathname } = useLocation()
 
@@ -25,23 +26,7 @@ export const Footer: FC = () => {
 					2009 г. Выдано Федеральной службой по надзору в сфере связи, информационных технологий и
 					массовых коммуникаций (Роскомнадзор).
 				</p>
-				<ul className={styles.footerSocials}>
-					<li>
-						<a href='#'>
-							<VkSocialSvg />
-						</a>
-					</li>
-					<li>
-						<a href='#'>
-							<OkSocialSvg />
-						</a>
-					</li>
-					<li>
-						<a href='#'>
-							<TelegramSocialSvg />
-						</a>
-					</li>
-				</ul>
+				<SocialLinks />
 			</Container>
 		</footer>
 	)

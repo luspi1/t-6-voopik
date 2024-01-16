@@ -7,15 +7,14 @@ import { MenuList } from 'src/modules/main-navigation/components/menu-list/menu-
 import { AuthSvg } from 'src/UI/icons/authSVG'
 import { AppRoute } from 'src/helpers/consts'
 
-import logoImage from 'src/assets/img/logo.png'
-
 import styles from './index.module.scss'
+import { MainLogoSvg } from 'src/UI/icons/mainLogoSVG'
 export const MainNavigation: FC = () => {
 	return (
 		<nav className={styles.mainNav}>
 			<Container className={styles.navContainer}>
 				<Link to={AppRoute.Home} className={styles.logoWrapper}>
-					<img src={logoImage} alt='Логотип' />
+					<MainLogoSvg />
 				</Link>
 				<MenuList />
 				<button className={styles.authBtn} type='button'>
