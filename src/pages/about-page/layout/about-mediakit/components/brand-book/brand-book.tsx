@@ -1,8 +1,8 @@
 import { type FC } from 'react'
 
-import { MediakitItem } from '../mediakit-item/mediakit-item'
+import { DocumentsItem } from 'src/components/documents-item/documents-item'
 import { brandbookData } from './consts'
 
 export const Brandbook: FC = () => {
-	return <MediakitItem data={brandbookData} />
+	return <DocumentsItem {...brandbookData} />
 }

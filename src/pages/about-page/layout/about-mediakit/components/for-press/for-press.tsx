@@ -1,8 +1,8 @@
 import { type FC } from 'react'
 
-import { MediakitList } from '../mediakit-list/mediakit-list'
+import { DocumentsList } from 'src/components/documents-list/documents-list'
 import { forPressData } from './consts'
 
 export const ForPress: FC = () => {
-	return <MediakitList listTitle='Для прессы' data={forPressData} />
+	return <DocumentsList listTitle='Для прессы' data={forPressData} />
 }

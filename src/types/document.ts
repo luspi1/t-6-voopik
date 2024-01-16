@@ -1,13 +1,19 @@
+export type FileLinksItem = {
+	id: string
+	type: string
+	size: string
+}
+
 export type Document = {
 	id?: string
+	type?: string
 	title: string
-	// type: 'mainDocument' | 'document'
-	type: string
+	isMain?: boolean
 	size?: string
 
 	description?: string
 	version?: string
-	date?: string
-	author?: string
-	documents?: Array<{ id: string; type: string; size: string }>
+	date: string
+	author: string
+	fileLinks: FileLinksItem[]
 }

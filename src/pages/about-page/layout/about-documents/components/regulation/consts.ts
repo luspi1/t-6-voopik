@@ -1,9 +1,9 @@
 export const regulationData = {
-	type: 'mainDocument',
+	isMain: true,
 	title: 'Устав Общества',
 	description:
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-	documents: [
+	fileLinks: [
 		{
 			id: '0',
 			type: 'PDF',

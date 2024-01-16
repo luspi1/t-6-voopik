@@ -2,12 +2,12 @@ export const rulesData = [
 	{
 		id: '0',
 		title: 'Какой-то важный регламент с названием длинным, но понятным всем и каждому',
-		type: 'document',
+		isMain: false,
 
 		version: '1.056',
 		date: '30.02.2024',
 		author: 'Общество',
-		documents: [
+		fileLinks: [
 			{
 				id: '0',
 				type: 'PDF',
@@ -25,12 +25,12 @@ export const rulesData = [
 	{
 		id: '1',
 		title: 'Какой-то важный регламент с названием длинным, но понятным всем и каждому',
-		type: 'document',
+		isMain: false,
 
 		version: '1.056',
 		date: '30.02.2024',
 		author: 'Общество',
-		documents: [
+		fileLinks: [
 			{
 				id: '0',
 				type: 'PDF',
