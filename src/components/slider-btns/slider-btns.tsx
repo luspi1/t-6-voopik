@@ -1,43 +1,34 @@
-import { type FC } from 'react'
-
-import { ButtonBack, ButtonNext } from 'pure-react-carousel'
+import React, { type FC, type RefObject } from 'react'
 
 import { SlidePrevSvg } from 'src/UI/icons/slidePrevSVG'
 import { SlideNextSvg } from 'src/UI/icons/slideNextSVG'
 
 import styles from './index.module.scss'
+import { type SwiperRef } from 'swiper/react'
 
 type SliderBtnsProps = {
 	topPosition?: string
 	leftBtnPosition?: string
 	rightBtnPosition?: string
+	swiperRef: RefObject<SwiperRef>
 }
 
-export const SliderBtns: FC<SliderBtnsProps> = ({
-	topPosition,
-	leftBtnPosition,
-	rightBtnPosition,
-}) => {
+export const SliderBtns: FC<SliderBtnsProps> = ({ topPosition, swiperRef }) => {
+	const handlePrev = () => {
+		swiperRef.current?.swiper.slidePrev()
+	}
+
+	const handleNext = () => {
+		swiperRef.current?.swiper.slideNext()
+	}
 	return (
-		<>
-			<ButtonBack
-				className={styles.slideBtnPrev}
-				style={{
-					top: topPosition ?? '0',
-					left: leftBtnPosition ?? '0',
-				}}
-			>
+		<div className={styles.sliderBtns} style={{ top: topPosition ?? 0 }}>
+			<button className={styles.slideBtnPrev} type='button' onClick={handlePrev}>
 				<SlidePrevSvg />
-			</ButtonBack>
-			<ButtonNext
-				className={styles.slideBtnNext}
-				style={{
-					top: topPosition ?? '0',
-					right: rightBtnPosition ?? '0',
-				}}
-			>
+			</button>
+			<button className={styles.slideBtnNext} type='button' onClick={handleNext}>
 				<SlideNextSvg />
-			</ButtonNext>
-		</>
+			</button>
+		</div>
 	)
 }

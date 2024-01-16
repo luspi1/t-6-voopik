@@ -1,7 +1,30 @@
+import { type SwiperProps } from 'swiper/react'
+
+import { DisplayBreakpoints } from 'src/helpers/consts'
+
 import slide1 from 'src/assets/img/obj-slide-1.jpg'
 import slide2 from 'src/assets/img/obj-slide-2.jpg'
 import slide3 from 'src/assets/img/obj-slide-3.jpg'
 import slide4 from 'src/assets/img/obj-slide-4.jpg'
+
+export const objectsSliderOptions: SwiperProps = {
+	slidesPerView: 1,
+	spaceBetween: 12,
+	grabCursor: true,
+	loop: true,
+	breakpoints: {
+		[DisplayBreakpoints.Sm]: {
+			slidesPerView: 2,
+			spaceBetween: 8,
+		},
+		[DisplayBreakpoints.Lg]: {
+			slidesPerView: 3,
+		},
+		[DisplayBreakpoints.Xxl]: {
+			slidesPerView: 4,
+		},
+	},
+}
 
 export const ObjectsSliderItems = [
 	{

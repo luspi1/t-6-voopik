@@ -7,6 +7,7 @@ import { ControlledInput } from 'src/components/controlled-input/controlled-inpu
 import styles from './index.module.scss'
 import { MainButton } from 'src/UI/MainButton/MainButton'
 import { TagsList } from 'src/pages/home-page/components/slider-search/components/search-with-tags/consts'
+import { Container } from 'src/UI/Container/Container'
 export const SearchWithTags: FC = () => {
 	const methods = useForm<SearchWithTagInputs>({
 		mode: 'onBlur',
@@ -21,7 +22,7 @@ export const SearchWithTags: FC = () => {
 	}
 
 	return (
-		<>
+		<Container>
 			<div className={styles.searchWrapper}>
 				<FormProvider {...methods}>
 					<form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -39,6 +40,6 @@ export const SearchWithTags: FC = () => {
 					</li>
 				))}
 			</ul>
-		</>
+		</Container>
 	)
 }

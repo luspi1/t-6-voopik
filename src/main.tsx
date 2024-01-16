@@ -8,8 +8,8 @@ import { Provider } from 'react-redux'
 import { HelmetProvider } from 'react-helmet-async'
 import { ToastContainer } from 'react-toastify'
 
-import 'pure-react-carousel/dist/react-carousel.es.css'
 import 'react-toastify/dist/ReactToastify.min.css'
+import 'swiper/swiper-bundle.css'
 
 import './index.scss'
 

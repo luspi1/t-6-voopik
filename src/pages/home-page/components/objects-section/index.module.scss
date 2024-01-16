@@ -5,30 +5,22 @@
 }
 
 .objectSlider {
-  position: relative;
-  margin-bottom: 20px;
+  max-width: 1220px;
 }
 
 .slideItem {
+  padding: 23px 23px 15px 23px;
   background-color: #fff;
+  border: 2px solid #E1E0E8;
   display: flex;
   flex-direction: column;
-  padding: 23px;
-  border: 2px solid #E1E0E8;
-  max-width: 296px;
-  max-height: 296px;
-
-  a {
-    color: #015DB9;
-    font-size: 18px;
-    @include ptsans-bold;
-  }
+  height: 100%;
 }
 
+
 .slideImgWrapper {
-  width: 250px;
   height: 160px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   img {
     height: 100%;
@@ -40,6 +32,11 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
+  a {
+    color: #015DB9;
+    font-size: 18px;
+    @include ptsans-bold;
+  }
 }
 
 .allObjLink {
