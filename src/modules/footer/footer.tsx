@@ -4,14 +4,11 @@ import cnBind from 'classnames/bind'
 import { useLocation } from 'react-router-dom'
 
 import { Container } from 'src/UI/Container/Container'
-import { VkSocialSvg } from 'src/UI/icons/vkSocialSVG'
-import { OkSocialSvg } from 'src/UI/icons/okSocialSVG'
-import { TelegramSocialSvg } from 'src/UI/icons/telegramSocialSVG'
+import { SocialLinks } from 'src/components/social-links/social-links'
 
 import { AppRoute } from 'src/helpers/consts'
 
 import styles from './index.module.scss'
-import { SocialLinks } from 'src/components/social-links/social-links'
 export const Footer: FC = () => {
 	const { pathname } = useLocation()
 
