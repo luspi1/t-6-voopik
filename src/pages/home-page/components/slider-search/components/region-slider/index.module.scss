@@ -1,12 +1,7 @@
 @import 'src/assets/styles/vars';
 
 .regionSlider {
-  position: relative;
-  margin-bottom: 70px;
-  @media (max-width: 1280px) {
-    margin-bottom: 60px;
-    max-height: 180px;
-  }
+  max-width: 1220px;
 }
 
 .slideItem {
@@ -14,13 +9,21 @@
   flex-direction: column;
   align-items: center;
 
-  img {
-    margin-bottom: 10px;
-  }
   span {
-    max-width: 100px;
     text-align: center;
+    max-width: 100px;
     color: #ffffff;
     @include opensans-bold;
+  }
+}
+
+.slideImgWrapper {
+  margin-bottom: 10px;
+  width: 90px;
+  height: 90px;
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 }

@@ -1,34 +1,33 @@
-import { type FC } from 'react'
-import { CarouselProvider, Slide, Slider } from 'pure-react-carousel'
+import { type FC, type RefObject, useRef } from 'react'
+import { type SwiperRef } from 'swiper/react/swiper-react'
 
-import { RegionSliderItems } from 'src/pages/home-page/components/slider-search/components/region-slider/consts'
-import { useDefineDisplay } from 'src/hooks/define-display/define-display'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import { SliderBtns } from 'src/components/slider-btns/slider-btns'
+import { Container } from 'src/UI/Container/Container'
+
+import { RegionSliderItems, regionSliderOptions } from './consts'
 
 import styles from './index.module.scss'
-import { setAdaptiveSliderParams } from 'src/helpers/utils'
-import { SliderBtns } from 'src/components/slider-btns/slider-btns'
 
 export const RegionSlider: FC = () => {
-	const currentDisplayWidth = useDefineDisplay()
+	const swiperRef: RefObject<SwiperRef> = useRef<SwiperRef>(null)
 
 	return (
-		<CarouselProvider
-			className={styles.regionSlider}
-			naturalSlideWidth={95}
-			naturalSlideHeight={140}
-			totalSlides={RegionSliderItems.length}
-			visibleSlides={setAdaptiveSliderParams(currentDisplayWidth, [9, 6, 4, 2])}
-			infinite={true}
-		>
-			<Slider>
+		<Container $margin='0 auto 70px auto' width='1300px'>
+			<Swiper className={styles.regionSlider} {...regionSliderOptions} ref={swiperRef}>
 				{RegionSliderItems?.map((slideItem, idx) => (
-					<Slide innerClassName={styles.slideItem} key={idx} index={idx}>
-						<img src={slideItem.img} alt={slideItem.title} />
-						<span>{slideItem.title}</span>
-					</Slide>
+					<SwiperSlide key={idx}>
+						<div className={styles.slideItem}>
+							<div className={styles.slideImgWrapper}>
+								<img src={slideItem.img} alt={slideItem.title} />
+							</div>
+							<span>{slideItem.title}</span>
+						</div>
+					</SwiperSlide>
 				))}
-			</Slider>
-			<SliderBtns topPosition='48px' leftBtnPosition='-15px' rightBtnPosition='-15px' />
-		</CarouselProvider>
+			</Swiper>
+			<SliderBtns topPosition='30%' swiperRef={swiperRef} />
+		</Container>
 	)
 }
