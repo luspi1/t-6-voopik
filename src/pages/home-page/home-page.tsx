@@ -6,6 +6,7 @@ import { SliderSearch } from 'src/pages/home-page/components/slider-search/slide
 
 import styles from './index.module.scss'
 import { ObjectsSection } from 'src/pages/home-page/components/objects-section/objects-section'
+import { NewsSection } from 'src/pages/home-page/components/news-section/news-section'
 
 export const HomePage: FC = () => {
 	return (
@@ -16,6 +17,7 @@ export const HomePage: FC = () => {
 			<div className={styles.headerImgWrapper}></div>
 			<SliderSearch />
 			<ObjectsSection />
+			<NewsSection />
 		</div>
 	)
 }

@@ -3,10 +3,10 @@ import { type FC, type RefObject, useRef } from 'react'
 import { Swiper, type SwiperRef, SwiperSlide } from 'swiper/react'
 import { Link } from 'react-router-dom'
 
-import { Container } from 'src/UI/Container/Container'
 import { SliderBtns } from 'src/components/slider-btns/slider-btns'
-
 import { AppRoute } from 'src/helpers/consts'
+import { Container } from 'src/UI/Container/Container'
+
 import { ObjectsSliderItems, objectsSliderOptions } from './consts'
 
 import styles from './index.module.scss'
