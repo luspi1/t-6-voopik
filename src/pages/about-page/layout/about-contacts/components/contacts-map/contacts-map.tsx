@@ -1,5 +1,5 @@
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
-import styles from '../../index.module.scss'
+import styles from './index.module.scss'
 
 export const ContactMap = () => (
 	<div className={styles.contactMap}>

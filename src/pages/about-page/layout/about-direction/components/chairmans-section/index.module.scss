@@ -1,0 +1,19 @@
+.directionList {
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+
+    @media (max-width: 640px) {
+        gap: 20px;
+    }
+}
+
+.chairmanSection {
+    padding: 20px 0;
+
+    img {
+        width: 132px;
+        height: 164px;
+    }
+}

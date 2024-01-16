@@ -1,22 +1,17 @@
 import { type FC } from 'react'
-import styles from '../../index.module.scss'
+
+import styles from './index.module.scss'
+import { directionLinks } from './consts'
 
 export const DirectionLinksSection: FC = () => {
 	return (
 		<div className={styles.directionLinks}>
-			<div>
-				<h3>Президиум</h3>
-				<a href='#'>Состав Президиума Центрального совета ВООПИиК</a>
-			</div>
-
-			<div>
-				<h3>Центральный совет</h3>
-				<a href='#'>Состав Центрального совета ВООПИиК</a>
-			</div>
-			<div>
-				<h3>Центральная ревизионная комиссия</h3>
-				<a href='#'>Состав Центральной ревизионной комиссии ВООПИиК</a>
-			</div>
+			{directionLinks.map((item) => (
+				<div key={item.id}>
+					<h3>{item.title}</h3>
+					<a href={item.linkSource}>{item.linkTitle}</a>
+				</div>
+			))}
 		</div>
 	)
 }

@@ -1,5 +1,4 @@
 import { type FC } from 'react'
-import cn from 'classnames'
 import styles from './index.module.scss'
 
 export type DirectionPersonProps = {
@@ -18,8 +17,8 @@ export const DirectionPerson: FC<DirectionPersonProps> = ({
 	return (
 		<figure className={styles.personContainer}>
 			<img src={image} alt={name} />
-			<figcaption>
-				<p className={cn(styles.personName, isMainChairman ? styles.isMainChairman : '')}>{name}</p>
+			<figcaption className={isMainChairman ? styles.isMainChairman : ''}>
+				<p className={styles.personName}>{name}</p>
 				<p className={styles.personPosition}>{position}</p>
 			</figcaption>
 		</figure>

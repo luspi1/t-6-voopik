@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import { DirectionPerson } from '../direction-person/direction-person'
 import { chairmans } from './consts'
-import styles from '../../index.module.scss'
+import styles from './index.module.scss'
 
 export const ChairmansSection: FC = () => {
 	return (
