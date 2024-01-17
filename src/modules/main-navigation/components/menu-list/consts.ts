@@ -7,7 +7,7 @@ export const MenuItems: NavigationItem[] = [
 	},
 	{
 		title: 'отделения',
-		link: 'departments',
+		link: 'departments-list',
 	},
 	{
 		title: 'объекты',

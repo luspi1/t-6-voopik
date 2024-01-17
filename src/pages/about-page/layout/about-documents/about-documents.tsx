@@ -10,11 +10,7 @@ import {
 import { DocumentsList } from 'src/components/documents-list/documents-list'
 
 import styles from './index.module.scss'
-
-type AboutDocumentsProps = {
-	regulationData: Document
-}
-export const AboutDocuments: FC<AboutDocumentsProps> = () => {
+export const AboutDocuments: FC = () => {
 	return (
 		<div className={styles.documentsPage}>
 			<Helmet>

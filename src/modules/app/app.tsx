@@ -8,7 +8,6 @@ import { Layout } from 'src/modules/layout/layout'
 import { HomePage } from 'src/pages/home-page/home-page'
 import { NotFound } from 'src/pages/not-found/not-found'
 
-import { DepartmentsPage } from 'src/pages/departments-page/departments-page'
 import { ObjectsPage } from 'src/pages/objects-page/objects-page'
 import { ProjectsPage } from 'src/pages/projects-page/projects-page'
 import { ParticipationPage } from 'src/pages/participation-page/participation-page'
@@ -16,13 +15,17 @@ import { LibraryPage } from 'src/pages/library-page/library-page'
 import { EventsPage } from 'src/pages/events-page/events-page'
 import { ShopPage } from 'src/pages/shop-page/shop-page'
 
-import { AboutGeneral } from 'src/pages/about-page/layout/about-general/about-general'
 import { AboutLayout } from 'src/pages/about-page/layout/about-layout'
+import { AboutGeneral } from 'src/pages/about-page/layout/about-general/about-general'
 import { AboutHistory } from 'src/pages/about-page/layout/about-history/about-history'
 import { AboutDirection } from 'src/pages/about-page/layout/about-direction/about-direction'
 import { AboutContacts } from 'src/pages/about-page/layout/about-contacts/about-contacts'
 import { AboutDocuments } from 'src/pages/about-page/layout/about-documents/about-documents'
 import { AboutMediakit } from 'src/pages/about-page/layout/about-mediakit/about-mediakit'
+
+import { DepartmentsLayout } from 'src/pages/departments-page/layout/departments-layout'
+import { DepartmentsList } from 'src/pages/departments-page/layout/departments-list/departments-list'
+import { DepartmentsAbout } from 'src/pages/departments-page/layout/departments-about/departments-about'
 
 export const App: FC = () => {
 	return (
@@ -38,7 +41,10 @@ export const App: FC = () => {
 					<Route path={AppRoute.AboutMediakit} element={<AboutMediakit />} />
 				</Route>
 
-				<Route path={AppRoute.Departments} element={<DepartmentsPage />} />
+				<Route path={AppRoute.Departments} element={<DepartmentsLayout />}>
+					<Route index element={<DepartmentsList />} />
+					<Route path={AppRoute.DepartmentsAbout} element={<DepartmentsAbout />} />
+				</Route>
 				<Route path={AppRoute.Objects} element={<ObjectsPage />} />
 				<Route path={AppRoute.Projects} element={<ProjectsPage />} />
 				<Route path={AppRoute.Participation} element={<ParticipationPage />} />

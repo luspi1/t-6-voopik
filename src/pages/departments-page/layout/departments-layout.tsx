@@ -3,38 +3,39 @@ import { type FC } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { Container } from 'src/UI/Container/Container'
-import { AboutMenuItems } from 'src/pages/about-page/layout/consts'
 import { BreadCrumbs } from 'src/components/bread-crumbs/bread-crumbs'
 import { PageContent } from 'src/components/page-content/page-content'
 import { SideMenu } from 'src/components/side-menu/side-menu'
-import { AsideDocuments } from 'src/components/aside-documents/aside-documents'
+
+import { DepartmentsMenuItems } from 'src/pages/departments-page/layout/consts'
 
 import styles from './index.module.scss'
-import { aboutPageDocuments } from './consts'
 
-export const AboutLayout: FC = () => {
+export const DepartmentsLayout: FC = () => {
 	const { pathname } = useLocation()
 
 	return (
-		<div className={styles.aboutLayout}>
+		<div className={styles.departmentsLayout}>
 			<Container>
 				<BreadCrumbs
 					crumbsLinks={[
-						...AboutMenuItems,
 						{
-							title: 'Об Обществе',
-							link: 'about',
+							title: 'Региональные отделения',
+							link: 'departments-list',
+						},
+						{
+							title: 'О региональных отделениях ВООПИК',
+							link: 'departments-about',
 						},
 					]}
 					crumbsPathname={pathname}
 				/>
-				<div className={styles.aboutContentWrapper}>
+				<div className={styles.departmentsContentWrapper}>
 					<PageContent>
 						<Outlet />
 					</PageContent>
 					<div>
-						<SideMenu className={styles.aboutSideMenu} sideItems={AboutMenuItems} />
-						{pathname === '/about' && <AsideDocuments documents={aboutPageDocuments} />}
+						<SideMenu className={styles.departmentsSideMenu} sideItems={DepartmentsMenuItems} />
 					</div>
 				</div>
 			</Container>
