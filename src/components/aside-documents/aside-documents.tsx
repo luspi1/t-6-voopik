@@ -1,16 +1,16 @@
 import { type FC } from 'react'
+import { type AsideDocument } from 'src/types/document'
 
-import { type Document } from 'src/types/document'
 import styles from './index.module.scss'
 
-type DocumentsListProps = {
-	documents: Document[]
+type AsideDocumentsProps = {
+	documents: AsideDocument[]
 }
 
-export const DocumentsList: FC<DocumentsListProps> = ({ documents }) => {
+export const AsideDocuments: FC<AsideDocumentsProps> = ({ documents }) => {
 	return (
 		<ul className={styles.documents}>
-			{documents.map((item: Document) => (
+			{documents?.map((item) => (
 				<li key={item.id}>
 					<a className={styles.documentLink} href='#' download>
 						{item.title}

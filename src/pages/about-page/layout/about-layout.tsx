@@ -7,10 +7,11 @@ import { AboutMenuItems } from 'src/pages/about-page/layout/consts'
 import { BreadCrumbs } from 'src/components/bread-crumbs/bread-crumbs'
 import { PageContent } from 'src/components/page-content/page-content'
 import { SideMenu } from 'src/components/side-menu/side-menu'
-import { DocumentsList } from 'src/pages/about-page/components/documents-list/documents-list'
+import { AsideDocuments } from 'src/components/aside-documents/aside-documents'
+
+import { aboutPageDocuments } from './consts'
 
 import styles from './index.module.scss'
-import { aboutPageDocuments } from './consts'
 
 export const AboutLayout: FC = () => {
 	const { pathname } = useLocation()
@@ -34,7 +35,7 @@ export const AboutLayout: FC = () => {
 					</PageContent>
 					<div>
 						<SideMenu className={styles.aboutSideMenu} sideItems={AboutMenuItems} />
-						{pathname === '/about' && <DocumentsList documents={aboutPageDocuments} />}
+						{pathname === '/about' && <AsideDocuments documents={aboutPageDocuments} />}
 					</div>
 				</div>
 			</Container>

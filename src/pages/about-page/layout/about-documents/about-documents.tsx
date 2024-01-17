@@ -1,13 +1,20 @@
 import { type FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import { Regulation } from './components/regulation/regulation'
-import { Rules } from './components/rules/rules'
-import { Laws } from './components/laws/laws'
+import { DocumentsItem } from 'src/components/documents-item/documents-item'
+import {
+	lawsData,
+	regulationData,
+	rulesData,
+} from 'src/pages/about-page/layout/about-documents/consts'
+import { DocumentsList } from 'src/components/documents-list/documents-list'
 
 import styles from './index.module.scss'
 
-export const AboutDocuments: FC = () => {
+type AboutDocumentsProps = {
+	regulationData: Document
+}
+export const AboutDocuments: FC<AboutDocumentsProps> = () => {
 	return (
 		<div className={styles.documentsPage}>
 			<Helmet>
@@ -22,9 +29,9 @@ export const AboutDocuments: FC = () => {
 				mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus
 				pronin sapien nunc accuan eget.
 			</p>
-			<Regulation />
-			<Rules />
-			<Laws />
+			<DocumentsItem {...regulationData} />
+			<DocumentsList className={styles.rules} listTitle='Регламенты и правила' data={rulesData} />
+			<DocumentsList listTitle='Законы и нормы' data={lawsData} />
 		</div>
 	)
 }

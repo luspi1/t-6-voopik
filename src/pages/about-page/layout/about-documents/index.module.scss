@@ -1,11 +1,15 @@
 .documentsPage {
-    padding-right: 20px;
+  padding-right: 20px;
 
-    @media (max-width: 1000px) {
-        padding-right: 0px;
-    }
+  @media (max-width: 1000px) {
+    padding-right: 0;
+  }
 
-    h2 {
-        margin-bottom: 19px;
-    }
+  h2 {
+    margin-bottom: 19px;
+  }
+}
+
+.rules {
+  margin-bottom: 35px;
 }

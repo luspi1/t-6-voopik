@@ -1,5 +1,5 @@
 import { type NavigationItem } from 'src/types/navigation'
-import { type Document } from 'src/types/document'
+import { type AsideDocument } from 'src/types/document'
 
 export const AboutMenuItems: NavigationItem[] = [
 	{
@@ -24,7 +24,7 @@ export const AboutMenuItems: NavigationItem[] = [
 	},
 ]
 
-export const aboutPageDocuments: Document[] = [
+export const aboutPageDocuments: AsideDocument[] = [
 	{
 		id: '0',
 		title:

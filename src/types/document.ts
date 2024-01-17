@@ -5,15 +5,20 @@ export type FileLinksItem = {
 }
 
 export type Document = {
-	id?: string
-	type?: string
+	id: string
 	title: string
 	isMain?: boolean
-	size?: string
 
 	description?: string
 	version?: string
 	date: string
 	author: string
 	fileLinks: FileLinksItem[]
+}
+
+export type AsideDocument = {
+	id: string
+	title: string
+	type: string
+	size: string
 }

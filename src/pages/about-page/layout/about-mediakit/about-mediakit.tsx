@@ -1,8 +1,11 @@
 import { type FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import { Brandbook } from './components/brand-book/brand-book'
-import { ForPress } from './components/for-press/for-press'
+import { DocumentsItem } from 'src/components/documents-item/documents-item'
+import { DocumentsList } from 'src/components/documents-list/documents-list'
+
+import { brandbookData, forPressData } from 'src/pages/about-page/layout/about-mediakit/consts'
+
 import styles from './index.module.scss'
 
 export const AboutMediakit: FC = () => {
@@ -21,8 +24,8 @@ export const AboutMediakit: FC = () => {
 				pronin sapien nunc accuan eget.
 			</p>
 
-			<Brandbook />
-			<ForPress />
+			<DocumentsItem {...brandbookData} />
+			<DocumentsList listTitle='Для прессы' data={forPressData} />
 		</div>
 	)
 }
