@@ -7,7 +7,7 @@ import { AboutMenuItems } from 'src/pages/about-page/layout/consts'
 import { BreadCrumbs } from 'src/components/bread-crumbs/bread-crumbs'
 import { PageContent } from 'src/components/page-content/page-content'
 import { SideMenu } from 'src/components/side-menu/side-menu'
-import { DocumentsList } from 'src/components/documents-list/documents-list'
+import { DocumentsList } from 'src/pages/about-page/components/documents-list/documents-list'
 
 import styles from './index.module.scss'
 import { aboutPageDocuments } from './consts'

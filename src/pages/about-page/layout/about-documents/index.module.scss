@@ -1,0 +1,11 @@
+.documentsPage {
+    padding-right: 20px;
+
+    @media (max-width: 1000px) {
+        padding-right: 0px;
+    }
+
+    h2 {
+        margin-bottom: 19px;
+    }
+}

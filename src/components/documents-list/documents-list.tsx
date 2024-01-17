@@ -1,26 +1,25 @@
 import { type FC } from 'react'
 
+import { DocumentsItem } from '../documents-item/documents-item'
 import { type Document } from 'src/types/document'
 import styles from './index.module.scss'
 
-type DocumentsListProps = {
-	documents: Document[]
+export type DocumentsListProps = {
+	listTitle: string
+	data: Document[]
+	className?: string
 }
 
-export const DocumentsList: FC<DocumentsListProps> = ({ documents }) => {
+export const DocumentsList: FC<DocumentsListProps> = ({ listTitle, data, className }) => {
 	return (
-		<ul className={styles.documents}>
-			{documents.map((item: Document) => (
-				<li key={item.id}>
-					<a className={styles.documentLink} href='#' download>
-						{item.title}
-					</a>
+		<div className={className}>
+			<h3 className={styles.listTitle}>{listTitle}</h3>
 
-					<p className={styles.documentInfo}>
-						{item.type}-файл, {item.size} Кбайт
-					</p>
-				</li>
-			))}
-		</ul>
+			<ul className={styles.list}>
+				{data.map((item) => (
+					<DocumentsItem key={item.id} {...item} />
+				))}
+			</ul>
+		</div>
 	)
 }
