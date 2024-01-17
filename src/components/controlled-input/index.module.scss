@@ -9,16 +9,6 @@
   background-color: #fff;
   outline: none;
 
-
-  &[type="checkbox"], &[type="radio"] {
-    padding: 0;
-    width: auto;
-    outline: none;
-    order: -1;
-    margin-right: 5px;
-  }
-
-
   &::placeholder {
     color: #ACACAC;
   }
@@ -34,8 +24,7 @@
   position: relative;
 
   p {
-    min-width: 145px;
-    margin-right: 6px;
+    color: #9D9D9D;
   }
 
   span {

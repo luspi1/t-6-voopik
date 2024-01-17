@@ -1,9 +1,9 @@
 .feedbackSection {
   background-color: #fff;
-  padding: 55px 0 35px;
+  padding: 47px 0 35px;
 }
 
-.feedbackTitle {
+h4.feedbackTitle {
   font-size: 40px;
   text-align: center;
   margin-bottom: 15px;
@@ -17,8 +17,11 @@
 }
 .feedbackContent {
   display: flex;
-  flex-wrap: wrap;
-  gap: 55px;
+  gap: 15px;
   justify-content: space-between;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 

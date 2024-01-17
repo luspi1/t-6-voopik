@@ -1,7 +1,12 @@
 @import "src/assets/styles/vars";
 
 .feedbackAddress {
-  flex-grow: 1;
+  min-width: 580px;
+  width: 580px;
+  @media (max-width: 1024px) {
+    min-width: 100%;
+    width: 100%;
+  }
 }
 
 .feedbackSocials {
@@ -17,8 +22,7 @@
 }
 
 .contactsList {
-  margin-bottom: 30px;
-
+  margin: 30px 0;
   li {
     display: flex;
     align-items: center;

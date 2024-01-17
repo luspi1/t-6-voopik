@@ -1,0 +1,13 @@
+.aboutMap {
+  margin-bottom: 30px;
+  width: 755px;
+  height: 318px;
+
+  @media (max-width: 1024px) {
+    width: 500px;
+  }
+  @media (max-width: 576px) {
+    width: 270px;
+    height: 200px;
+  }
+}

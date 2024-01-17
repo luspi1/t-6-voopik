@@ -6,10 +6,12 @@ import styles from './index.module.scss'
 import { AddressIconSvg } from 'src/UI/icons/addressIconSVG'
 import { PhoneIconSvg } from 'src/UI/icons/phoneIconSVG'
 import { MailIconSvg } from 'src/UI/icons/mailIconSVG'
+import { ContactsMap } from 'src/components/contacts-map/contacts-map'
 
 export const FeedbackAddress: FC = () => {
 	return (
 		<div className={styles.feedbackAddress}>
+			<ContactsMap points={[55.745032, 37.599139]} zoom={17} />
 			<ul className={styles.contactsList}>
 				<li>
 					<AddressIconSvg />
