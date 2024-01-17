@@ -26,7 +26,12 @@ export const SearchWithTags: FC = () => {
 			<div className={styles.searchWrapper}>
 				<FormProvider {...methods}>
 					<form onSubmit={methods.handleSubmit(onSubmit)}>
-						<ControlledInput name='search' placeholder='Я хочу найти...' required />
+						<ControlledInput
+							className={styles.searchInput}
+							name='search'
+							placeholder='Я хочу найти...'
+							required
+						/>
 						<MainButton className={styles.searchBtn} as='button' type='submit'>
 							найти
 						</MainButton>

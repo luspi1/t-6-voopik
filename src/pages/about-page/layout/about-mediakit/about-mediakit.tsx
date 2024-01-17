@@ -7,6 +7,7 @@ import { DocumentsList } from 'src/components/documents-list/documents-list'
 import { brandbookData, forPressData } from 'src/pages/about-page/layout/about-mediakit/consts'
 
 import styles from './index.module.scss'
+import { FeedbackForm } from 'src/modules/feedback-form/feedback-form'
 
 export const AboutMediakit: FC = () => {
 	return (
@@ -26,6 +27,7 @@ export const AboutMediakit: FC = () => {
 
 			<DocumentsItem {...brandbookData} />
 			<DocumentsList listTitle='Для прессы' data={forPressData} />
+			<FeedbackForm />
 		</div>
 	)
 }

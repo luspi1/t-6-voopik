@@ -1,21 +1,19 @@
 @import 'src/assets/styles/vars';
 
 .controlledInput {
-  @include opensans-medium;
-  font-size: 20px;
-  padding: 20.5px 22px;
+  @include ptsans-bold;
+  font-size: 16px;
+  padding: 13.5px 10px;
   border: none;
   width: 100%;
   background-color: #fff;
+  color: #000000;
   outline: none;
 
   &::placeholder {
-    color: #ACACAC;
+    color: #CBCAD0;
   }
 
-  &:focus {
-    outline-color: #025DB9;
-  }
 }
 
 .inputWrapper {
@@ -45,6 +43,17 @@
     padding-top: 5px;
   }
 
+}
+
+.textareaEl {
+  width: 100%;
+  textarea {
+    height: 105px;
+  }
+}
+.textareaWrapper {
+  width: 100%;
+  display: block;
 }
 
 .noValid {

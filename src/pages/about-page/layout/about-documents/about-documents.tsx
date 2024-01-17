@@ -10,6 +10,7 @@ import {
 import { DocumentsList } from 'src/components/documents-list/documents-list'
 
 import styles from './index.module.scss'
+import { FeedbackForm } from 'src/modules/feedback-form/feedback-form'
 export const AboutDocuments: FC = () => {
 	return (
 		<div className={styles.documentsPage}>
@@ -28,6 +29,7 @@ export const AboutDocuments: FC = () => {
 			<DocumentsItem {...regulationData} />
 			<DocumentsList className={styles.rules} listTitle='Регламенты и правила' data={rulesData} />
 			<DocumentsList listTitle='Законы и нормы' data={lawsData} />
+			<FeedbackForm />
 		</div>
 	)
 }

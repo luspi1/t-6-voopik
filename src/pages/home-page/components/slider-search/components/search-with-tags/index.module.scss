@@ -28,8 +28,26 @@
     @media (max-width: 768px) {
       padding: 7px 10px;
     }
+
     &:hover {
       border-color: #ffffff;
     }
   }
+}
+
+.searchInput {
+  input {
+    @include opensans-medium;
+    font-size: 20px;
+    padding: 20.5px 22px;
+
+    &::placeholder {
+      color: #ACACAC;
+    }
+
+    &:focus {
+      outline-color: #025DB9;
+    }
+  }
+
 }
