@@ -1,8 +1,10 @@
 import { type FC } from 'react'
+
 import { Helmet } from 'react-helmet-async'
 
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { Pagination } from 'src/components/pagination/pagination'
+import { PageContent } from 'src/components/page-content/page-content'
 
 import {
 	departmentTableData,
@@ -11,11 +13,12 @@ import {
 	SaintPetersburg,
 	MoscowRegion,
 } from './consts'
+
 import styles from './index.module.scss'
 
 export const DepartmentsList: FC = () => {
 	return (
-		<div className={styles.departmentListPage}>
+		<PageContent className={styles.departmentListPage} $padding='30px 50px 250px 30px'>
 			<Helmet>
 				<title>Региональные отделения</title>
 			</Helmet>
@@ -63,6 +66,6 @@ export const DepartmentsList: FC = () => {
 			/>
 
 			<Pagination pagesCount={7} activePage={2} />
-		</div>
+		</PageContent>
 	)
 }

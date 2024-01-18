@@ -1,5 +1,4 @@
 .departmentListPage {
-    padding-right: 20px;
 
     .departmentListText {
         margin-bottom: 11px;
@@ -19,9 +18,7 @@
     border-collapse: collapse;
 
     th {
-        padding-top: 20px;
         background-color: #F2F5F8;
-        padding: 0;
         border: 2px solid #fff;
         font-weight: 700;
         font-size: 14px;
@@ -33,7 +30,7 @@
         justify-content: center;
         align-items: center;
         border: 2px solid #fff;
-        font-family: 'PT Sans';
+        font-family: 'PT Sans', sans-serif;
         font-size: 14px;
         padding: 12px 0;
 

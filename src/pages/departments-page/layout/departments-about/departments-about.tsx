@@ -1,12 +1,16 @@
 import { type FC } from 'react'
+
 import { Helmet } from 'react-helmet-async'
 
+import { PageContent } from 'src/components/page-content/page-content'
+
 import foundersImage from 'src/assets/img/history-founders.jpg'
+
 import styles from './index.module.scss'
 
 export const DepartmentsAbout: FC = () => {
 	return (
-		<div className={styles.aboutDepartmentContainer}>
+		<PageContent className={styles.aboutDepartmentContainer} $padding='30px 55px 25px 30px'>
 			<Helmet>
 				<title>О региональных отделениях ВООПИК</title>
 			</Helmet>
@@ -72,6 +76,6 @@ export const DepartmentsAbout: FC = () => {
 			</p>
 
 			<a href='#'>На страницу списка отделений</a>
-		</div>
+		</PageContent>
 	)
 }

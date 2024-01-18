@@ -7,7 +7,7 @@ export type TableCells = Array<string | ReactNode>
 
 type AddEl = {
 	col: number
-	el: ReactNode
+	el: ReactNode | ReactNode[]
 }
 
 type CustomTableProps = {
@@ -28,12 +28,12 @@ export const CustomTable: FC<CustomTableProps & React.HTMLAttributes<HTMLTableEl
 	const copyCellsData = structuredClone(cellsData)
 
 	if (additionalElements && copyCellsData[0]?.length !== colTitles?.length) {
-		additionalElements?.forEach((addEl) => {
-			if (Array.isArray(addEl.el)) {
-				copyCellsData.forEach((cells, index) =>
-					cells.splice(addEl.col, 0, addEl.el?.[index as keyof ReactNode]),
-				)
-			} else copyCellsData.forEach((cells) => cells.splice(addEl.col, 0, addEl.el))
+		additionalElements.forEach((addEl) => {
+			copyCellsData.forEach((cells, index) => {
+				if (Array.isArray(addEl.el)) {
+					return cells.splice(addEl.col, 0, addEl.el?.[index])
+				} else return cells.splice(addEl.col, 0, addEl.el)
+			})
 		})
 	}
 
