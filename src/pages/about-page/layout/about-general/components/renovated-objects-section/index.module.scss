@@ -1,6 +1,9 @@
-.linkList {
+ul.linkList {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-bottom: 20px;
+  a {
+    line-height: 1.12;
+  }
 }

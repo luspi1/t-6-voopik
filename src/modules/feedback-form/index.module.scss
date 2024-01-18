@@ -1,6 +1,7 @@
 .feedbackWrapper {
   padding: 45px 55px;
   background-color: #015DB9;
+  contain: style;
 
   @media (max-width: 768px) {
     padding: 20px;
