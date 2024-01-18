@@ -1,5 +1,11 @@
-import { tracks } from '../mockData/tracks.mjs'
+import { regions } from '../mockData/regions.mjs'
 
-export const getAllTracks = (req, res) => {
-	res.status(200).json(tracks)
+export const getAllRegions = (req, res) => {
+	res.status(200).json(regions)
+}
+
+export const getRegionByCode = (req, res) => {
+	const regionCode = req.params.code
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	res.status(200).json(foundRegion)
 }

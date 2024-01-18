@@ -7,6 +7,8 @@ import { PageContent } from 'src/components/page-content/page-content'
 import foundersImage from 'src/assets/img/history-founders.jpg'
 
 import styles from './index.module.scss'
+import { Link } from 'react-router-dom'
+import { AppRoute } from 'src/helpers/consts'
 
 export const DepartmentsAbout: FC = () => {
 	return (
@@ -16,7 +18,7 @@ export const DepartmentsAbout: FC = () => {
 			</Helmet>
 
 			<h2>О региональных отделениях ВООПИК</h2>
-			<a href='#'>На страницу списка отделений</a>
+			<Link to={`/${AppRoute.Departments}`}>На страницу списка отделений</Link>
 
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
@@ -75,7 +77,7 @@ export const DepartmentsAbout: FC = () => {
 				accuan eget.
 			</p>
 
-			<a href='#'>На страницу списка отделений</a>
+			<Link to={`/${AppRoute.Departments}`}>На страницу списка отделений</Link>
 		</PageContent>
 	)
 }

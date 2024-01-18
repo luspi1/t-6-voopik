@@ -8,6 +8,7 @@ export enum AppRoute {
 	AboutMediakit = 'about-mediakit',
 	Departments = 'departments-list',
 	DepartmentsAbout = 'departments-about',
+	DepartmentsDetailsInfo = ':id/departments-details-info',
 	Objects = 'objects',
 	Projects = 'projects',
 	Participation = 'participation',
@@ -15,8 +16,8 @@ export enum AppRoute {
 	Events = 'events',
 	Shop = 'shop',
 }
-export enum NameSpace {
-	Tasks = 'TASKS',
+export enum ReducerPath {
+	Regions = 'regions/api',
 }
 
 export enum DisplayBreakpoints {

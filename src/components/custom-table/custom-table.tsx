@@ -11,7 +11,7 @@ type AddEl = {
 }
 
 type CustomTableProps = {
-	colTitles?: string[]
+	colTitles?: ReactNode[]
 	cellsData: TableCells[]
 	additionalElements?: AddEl[]
 	additionalElementsData?: TableCells

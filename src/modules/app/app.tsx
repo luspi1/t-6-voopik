@@ -26,6 +26,7 @@ import { AboutMediakit } from 'src/pages/about-page/layout/about-mediakit/about-
 import { DepartmentsLayout } from 'src/pages/departments-page/layout/departments-layout'
 import { DepartmentsList } from 'src/pages/departments-page/layout/departments-list/departments-list'
 import { DepartmentsAbout } from 'src/pages/departments-page/layout/departments-about/departments-about'
+import { DepartmentsDetailsInfo } from 'src/pages/departments-page/layout/departments-details-info/departments-details-info'
 
 export const App: FC = () => {
 	return (
@@ -44,6 +45,7 @@ export const App: FC = () => {
 				<Route path={AppRoute.Departments} element={<DepartmentsLayout />}>
 					<Route index element={<DepartmentsList />} />
 					<Route path={AppRoute.DepartmentsAbout} element={<DepartmentsAbout />} />
+					<Route path={AppRoute.DepartmentsDetailsInfo} element={<DepartmentsDetailsInfo />} />
 				</Route>
 				<Route path={AppRoute.Objects} element={<ObjectsPage />} />
 				<Route path={AppRoute.Projects} element={<ProjectsPage />} />
