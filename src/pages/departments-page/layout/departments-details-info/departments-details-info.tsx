@@ -11,8 +11,6 @@ export const DepartmentsDetailsInfo: FC = () => {
 
 	const { data: regionData } = useGetRegionByCodeQuery(id ?? '0')
 
-	console.log(id)
-
 	if (!regionData) {
 		return (
 			<PageContent $padding='30px 35px 30px 30px'>

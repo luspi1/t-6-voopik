@@ -1,4 +1,4 @@
-import React, { type FC, type ReactNode } from 'react'
+import React, { type FC, type ReactNode, useState } from 'react'
 
 import styles from './index.module.scss'
 import cn from 'classnames'
@@ -25,11 +25,11 @@ export const CustomTable: FC<CustomTableProps & React.HTMLAttributes<HTMLTableEl
 	additionalElementsData,
 	...props
 }) => {
-	const copyCellsData = structuredClone(cellsData)
+	const [tableCells] = useState<TableCells[]>([...cellsData])
 
-	if (additionalElements && copyCellsData[0]?.length !== colTitles?.length) {
+	if (additionalElements && tableCells[0]?.length !== colTitles?.length) {
 		additionalElements.forEach((addEl) => {
-			copyCellsData.forEach((cells, index) => {
+			tableCells.forEach((cells, index) => {
 				if (Array.isArray(addEl.el)) {
 					return cells.splice(addEl.col, 0, addEl.el?.[index])
 				} else return cells.splice(addEl.col, 0, addEl.el)
@@ -50,7 +50,7 @@ export const CustomTable: FC<CustomTableProps & React.HTMLAttributes<HTMLTableEl
 			)}
 
 			<tbody>
-				{copyCellsData?.map((row, rowIdx) => (
+				{tableCells?.map((row, rowIdx) => (
 					<tr key={rowIdx} data-idx={rowIdx + 1}>
 						{row.map((cell, cellIdx) => (
 							<td key={cellIdx}>{cell}</td>

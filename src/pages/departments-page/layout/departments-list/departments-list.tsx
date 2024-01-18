@@ -10,7 +10,6 @@ import { DepartmentsTable } from 'src/pages/departments-page/layout/departments-
 import { AppRoute } from 'src/helpers/consts'
 
 import styles from './index.module.scss'
-
 export const DepartmentsList: FC = () => {
 	return (
 		<PageContent className={styles.departmentListPage} $padding='30px 50px 250px 30px'>

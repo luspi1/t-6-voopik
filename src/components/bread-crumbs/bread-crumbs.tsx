@@ -17,7 +17,10 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({ crumbsLinks, crumbsPathname 
 
 	const defineLinkTitle = (link: string) => {
 		const searchEl = crumbsLinks.find((el) => el.link === link)
-		return searchEl?.title ?? ''
+		console.log(crumbsLinks)
+		if (searchEl?.title) {
+			return searchEl?.title
+		}
 	}
 
 	useEffect(() => {
