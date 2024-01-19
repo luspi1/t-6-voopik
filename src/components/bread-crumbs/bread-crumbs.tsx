@@ -1,7 +1,7 @@
 import { type FC, useEffect, useState } from 'react'
 import { type NavigationItem } from 'src/types/navigation'
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 import { AppRoute } from 'src/helpers/consts'
 
@@ -15,9 +15,10 @@ type BreadCrumbsProps = {
 export const BreadCrumbs: FC<BreadCrumbsProps> = ({ crumbsLinks, crumbsPathname }) => {
 	const [pathNames, setPathNames] = useState<string[]>([''])
 
+	const { state } = useLocation()
+
 	const defineLinkTitle = (link: string) => {
 		const searchEl = crumbsLinks.find((el) => el.link === link)
-		console.log(crumbsLinks)
 		if (searchEl?.title) {
 			return searchEl?.title
 		}
@@ -37,7 +38,7 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({ crumbsLinks, crumbsPathname 
 				if (pathNames.length === idx + 1) {
 					return (
 						<li key={pathEl}>
-							<span>{defineLinkTitle(pathEl)}</span>
+							<span>{state?.additionalCrumbs ?? defineLinkTitle(pathEl)}</span>
 						</li>
 					)
 				}

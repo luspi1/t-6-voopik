@@ -1,11 +1,10 @@
 import {
-	getAllRegions,
-	getRegionByCode
+	getRegionByCode, getRegions
 } from '../controllers/main-controller.mjs'
 import { Router } from 'express'
 
 export const router = new Router()
 
-router.get('/regions', getAllRegions)
+router.get('/regions', getRegions)
 router.get('/regions/:code', getRegionByCode)
 

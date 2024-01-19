@@ -1,42 +1,22 @@
-import React, { type FC, type ReactNode, useState } from 'react'
+import React, { type FC, type ReactNode } from 'react'
 
-import styles from './index.module.scss'
 import cn from 'classnames'
 
-export type TableCells = Array<string | ReactNode>
+import styles from './index.module.scss'
 
-type AddEl = {
-	col: number
-	el: ReactNode | ReactNode[]
-}
+export type TableCells = Array<string | ReactNode>
 
 type CustomTableProps = {
 	colTitles?: ReactNode[]
 	cellsData: TableCells[]
-	additionalElements?: AddEl[]
-	additionalElementsData?: TableCells
 }
 
 export const CustomTable: FC<CustomTableProps & React.HTMLAttributes<HTMLTableElement>> = ({
 	colTitles,
 	cellsData,
 	className,
-	additionalElements,
-	additionalElementsData,
 	...props
 }) => {
-	const [tableCells] = useState<TableCells[]>([...cellsData])
-
-	if (additionalElements && tableCells[0]?.length !== colTitles?.length) {
-		additionalElements.forEach((addEl) => {
-			tableCells.forEach((cells, index) => {
-				if (Array.isArray(addEl.el)) {
-					return cells.splice(addEl.col, 0, addEl.el?.[index])
-				} else return cells.splice(addEl.col, 0, addEl.el)
-			})
-		})
-	}
-
 	return (
 		<table {...props} className={cn(styles.customTable, className)}>
 			{!!colTitles && (
@@ -50,7 +30,7 @@ export const CustomTable: FC<CustomTableProps & React.HTMLAttributes<HTMLTableEl
 			)}
 
 			<tbody>
-				{tableCells?.map((row, rowIdx) => (
+				{cellsData?.map((row, rowIdx) => (
 					<tr key={rowIdx} data-idx={rowIdx + 1}>
 						{row.map((cell, cellIdx) => (
 							<td key={cellIdx}>{cell}</td>

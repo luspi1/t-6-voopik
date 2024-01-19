@@ -11,9 +11,12 @@ export const regionsApi = createApi({
 		baseUrl: BASE_URL,
 	}),
 	endpoints: (build) => ({
-		getAllRegions: build.query<RegionItem[], null>({
-			query: () => ({
+		getAllRegions: build.query<RegionItem[], string>({
+			query: (search) => ({
 				url: `regions`,
+				params: {
+					q: search,
+				},
 			}),
 		}),
 		getRegionByCode: build.query<RegionItem, string>({
