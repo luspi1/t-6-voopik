@@ -3,3 +3,7 @@ export type NavigationItem = {
 	link: string
 	accent?: boolean
 }
+
+export type ContentNav = {
+	linkIdx: number
+}

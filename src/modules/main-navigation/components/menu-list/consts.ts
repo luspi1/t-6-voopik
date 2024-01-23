@@ -19,7 +19,7 @@ export const MenuItems: NavigationItem[] = [
 	},
 	{
 		title: 'участие',
-		link: 'participation',
+		link: 'users-list',
 	},
 	{
 		title: 'библиотека',
