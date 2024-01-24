@@ -1,0 +1,24 @@
+.userInfoNav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  li {
+    a {
+      border-radius: 8px;
+      background: #EBEEF2;
+      padding: 3px 10px 5px;
+      line-height: 1;
+      display: inline-block;
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  .activeLink {
+    background: #ED1C24;
+    color: #ffffff;
+  }
+}
+

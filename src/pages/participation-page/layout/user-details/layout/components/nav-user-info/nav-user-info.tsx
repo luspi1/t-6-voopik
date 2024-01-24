@@ -4,13 +4,19 @@ import { NavLink } from 'react-router-dom'
 
 import { UserInfoNavItems } from 'src/pages/participation-page/layout/user-details/layout/components/nav-user-info/consts'
 
+import styles from './index.module.scss'
 export const NavUserInfo: FC = () => {
+	const setActive = ({ isActive }: { isActive: boolean }) =>
+		isActive ? `${styles.activeLink}` : ''
+
 	return (
 		<nav>
-			<ul>
+			<ul className={styles.userInfoNav}>
 				{UserInfoNavItems?.map((navItem) => (
 					<li key={navItem.title}>
-						<NavLink to={navItem.link}>{navItem.title}</NavLink>
+						<NavLink className={setActive} to={navItem.link}>
+							{navItem.title}
+						</NavLink>
 					</li>
 				))}
 			</ul>

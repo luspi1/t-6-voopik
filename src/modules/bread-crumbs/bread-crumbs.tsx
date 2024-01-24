@@ -35,7 +35,7 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({ crumbsLinksMap }) => {
 		if (additionalCrumbs) {
 			setPathNames([...pathNames, additionalCrumbs])
 		}
-	}, [pathname, additionalCrumbs])
+	}, [additionalCrumbs])
 
 	return (
 		<ul className={styles.breadCrumbsList}>

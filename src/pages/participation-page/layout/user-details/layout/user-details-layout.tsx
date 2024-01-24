@@ -9,18 +9,17 @@ import { NavUserInfo } from 'src/pages/participation-page/layout/user-details/la
 import { useLocationMatch } from 'src/hooks/location-match'
 import { AppRoute } from 'src/helpers/consts'
 
+import styles from './index.module.scss'
 export const UserDetailsLayout: FC = () => {
 	const [matchesLocation] = useLocationMatch<ContentNav>([`${AppRoute.Users}/:id`])
 
-	if (matchesLocation) return <Navigate to={AppRoute.UserInfo} />
+	if (matchesLocation) return <Navigate to={AppRoute.UserInfo} replace />
 	return (
-		<>
-			<PageContent>
-				<UserInfo />
-				<h3>Информация</h3>
-				<NavUserInfo />
-				<Outlet />
-			</PageContent>
-		</>
+		<PageContent className={styles.userDetailsContent}>
+			<UserInfo />
+			<h3>Информация</h3>
+			<NavUserInfo />
+			<Outlet />
+		</PageContent>
 	)
 }
