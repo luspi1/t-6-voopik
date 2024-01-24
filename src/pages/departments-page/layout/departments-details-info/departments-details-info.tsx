@@ -1,15 +1,27 @@
-import { type FC } from 'react'
+import { type FC, useEffect } from 'react'
 
 import { Helmet } from 'react-helmet-async'
 
 import { PageContent } from 'src/components/page-content/page-content'
 import { useGetRegionByCodeQuery } from 'src/store/regions/regions.api'
 import { useParams } from 'react-router-dom'
+import { useActions } from 'src/hooks/actions/actions'
 
 export const DepartmentsDetailsInfo: FC = () => {
 	const { id } = useParams()
 
-	const { data: regionData } = useGetRegionByCodeQuery(id ?? '0')
+	const { data: regionData } = useGetRegionByCodeQuery(id ?? '')
+
+	const { setAdditionalCrumbs } = useActions()
+
+	useEffect(() => {
+		if (regionData?.fullTitle) {
+			setAdditionalCrumbs(regionData.fullTitle)
+		}
+		return () => {
+			setAdditionalCrumbs(null)
+		}
+	}, [regionData])
 
 	if (!regionData) {
 		return (

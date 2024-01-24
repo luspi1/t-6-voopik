@@ -1,32 +1,6 @@
 .departmentTable {
   grid-template-columns: minmax(40px, 0.5fr) minmax(96px, 1.5fr) minmax(96px, 1.5fr) minmax(390px, 5fr) minmax(130px, 2fr) minmax(130px, 2fr);
   margin-bottom: 20px;
-  background: #F2F5F8;
-  border: none;
-  border-collapse: collapse;
-
-  th {
-    background-color: #F2F5F8;
-    border: 2px solid #fff;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.28;
-  }
-
-  td {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #fff;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 14px;
-    padding: 12px 0;
-
-    a {
-      margin: 0;
-    }
-  }
-
   td:nth-child(2) {
     font-weight: 700;
   }

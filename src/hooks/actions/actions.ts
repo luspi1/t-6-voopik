@@ -1,9 +1,9 @@
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-// import { tasksActions } from 'src/store/tasks/tasks.slice'
+import { breadCrumbsActions } from 'src/modules/bread-crumbs/store/bread-crumbs.slice'
 
 const actions = {
-	// ...tasksActions,
+	...breadCrumbsActions,
 }
 export const useActions = () => {
 	const dispatch = useDispatch()

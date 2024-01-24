@@ -1,18 +1,18 @@
 import { type RegionItem } from 'src/types/regions'
 
+import { useState } from 'react'
 import { generatePath, Link } from 'react-router-dom'
 
 import { useGetAllRegionsQuery } from 'src/store/regions/regions.api'
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { TableSearch } from 'src/modules/table-search/table-search'
 import { Loader } from 'src/components/loader/loader'
+import { formatDate2 } from 'src/helpers/utils'
+import { useDebounce } from 'src/hooks/debounce/debounce'
 
 import { AppRoute } from 'src/helpers/consts'
 
 import styles from './index.module.scss'
-import { formatDate1 } from 'src/helpers/utils'
-import { useState } from 'react'
-import { useDebounce } from 'src/hooks/debounce/debounce'
 
 export const DepartmentsTable = () => {
 	const [searchRegion, setSearchRegion] = useState<string>('')
@@ -44,12 +44,11 @@ export const DepartmentsTable = () => {
 				<img src={regionEl.logo} alt={regionEl.title} key={idx} />,
 				<Link
 					to={generatePath(AppRoute.DepartmentsDetailsInfo, { id: regionEl.regionCode })}
-					state={{ additionalCrumbs: regionEl.fullTitle }}
 					key={regionEl.regionCode}
 				>
 					{regionEl.title}
 				</Link>,
-				formatDate1(regionEl.openDate),
+				formatDate2(regionEl.openDate),
 				regionEl.status,
 			]
 		})

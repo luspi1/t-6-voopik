@@ -24,6 +24,11 @@ export enum AppRoute {
 }
 export enum ReducerPath {
 	Regions = 'regions/api',
+	Users = 'users/api',
+}
+
+export enum NameSpace {
+	BreadCrumbs = 'BREAD_CRUMBS',
 }
 
 export enum DisplayBreakpoints {

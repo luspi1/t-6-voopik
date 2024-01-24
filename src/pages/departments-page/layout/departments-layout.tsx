@@ -1,24 +1,21 @@
 import { type FC } from 'react'
 
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import { Container } from 'src/UI/Container/Container'
-import { BreadCrumbs } from 'src/components/bread-crumbs/bread-crumbs'
+import { BreadCrumbs } from 'src/modules/bread-crumbs/bread-crumbs'
 import { SideMenu } from 'src/components/side-menu/side-menu'
 
-import { filterNumbersWithPathname } from 'src/helpers/utils'
 import { DepartmentsMenuItems } from 'src/pages/departments-page/layout/consts'
 
 import styles from './index.module.scss'
 
 export const DepartmentsLayout: FC = () => {
-	const { pathname } = useLocation()
-
 	return (
 		<div className={styles.departmentsLayout}>
 			<Container>
 				<BreadCrumbs
-					crumbsLinks={[
+					crumbsLinksMap={[
 						{
 							title: 'Региональные отделения',
 							link: 'departments-list',
@@ -28,7 +25,6 @@ export const DepartmentsLayout: FC = () => {
 							link: 'departments-about',
 						},
 					]}
-					crumbsPathname={filterNumbersWithPathname(pathname)}
 				/>
 				<div className={styles.departmentsContentWrapper}>
 					<Outlet />

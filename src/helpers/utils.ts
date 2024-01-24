@@ -1,5 +1,14 @@
+// форматирует дату к формату - 24.03.1999
+export const formatDate1 = (date?: string) => {
+	if (!date) return
+
+	const formatDate = new Date(date)
+	return new Intl.DateTimeFormat('ru-RU', {
+		dateStyle: 'short',
+	}).format(formatDate)
+}
 // форматирует дату к формату - 24 марта 1999 г.
-export const formatDate1 = (date: string) => {
+export const formatDate2 = (date: string) => {
 	const formatDate = new Date(date)
 	return new Intl.DateTimeFormat('ru-RU', {
 		year: 'numeric',
