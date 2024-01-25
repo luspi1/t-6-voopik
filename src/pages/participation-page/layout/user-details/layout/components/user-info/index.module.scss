@@ -1,0 +1,15 @@
+@import "src/assets/styles/vars";
+
+.userInfoWrapper {
+
+}
+
+.userInfoStatuses {
+  margin-bottom: 25px;
+
+  span {
+    @include ptsans-italic;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
