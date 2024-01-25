@@ -9,10 +9,10 @@ import { AppRoute } from 'src/helpers/consts'
 import styles from './index.module.scss'
 
 import { DepartmentMainInfo } from './components/department-main-info/department-main-info'
-import { DepartmentDescription } from './components/department-description/department-description'
 import { DepartmentStatus } from './components/department-status/department-status'
-import { DepartmentDocuments } from './components/department-documents/department-documents'
-import { DepartmentLinks } from './components/department-links/department-links'
+import { DepartmentDescription } from 'src/pages/departments-page/layout/departments-details-info/components/department-description/department-description'
+import { DepartmentDocuments } from 'src/pages/departments-page/layout/departments-details-info/components/department-documents/department-documents'
+import { DepartmentLinks } from 'src/pages/departments-page/layout/departments-details-info/components/department-links/department-links'
 
 export const DepartmentsDetailsInfo: FC = () => {
 	const { id } = useParams()

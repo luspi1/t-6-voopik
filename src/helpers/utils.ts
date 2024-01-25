@@ -31,18 +31,10 @@ export const formatDate3 = (date?: string) => {
 	}).format(formatDate)
 }
 
-// функция отфильтровывает числа из пути
-export const filterNumbersWithPathname = (pathname: string) => {
-	return pathname
-		.split('/')
-		.filter((el) => !(parseInt(el) >= 0 || parseInt(el) <= 0))
-		.join('/')
-}
-
 // форматирование номера телефона
 export const formatPhoneNumber = (number: string) => {
 	return number.replace(/[-()\s]/g, '')
-
+}
 export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 	if (value == null) {
 		return true
@@ -57,5 +49,4 @@ export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 	}
 
 	return false
-
 }
