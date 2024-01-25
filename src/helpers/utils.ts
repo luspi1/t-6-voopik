@@ -24,3 +24,8 @@ export const filterNumbersWithPathname = (pathname: string) => {
 		.filter((el) => !(parseInt(el) >= 0 || parseInt(el) <= 0))
 		.join('/')
 }
+
+// форматирование номера телефона
+export const formatPhoneNumber = (number: string) => {
+	return number.replace(/[-()\s]/g, '')
+}

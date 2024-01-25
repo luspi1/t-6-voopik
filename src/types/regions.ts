@@ -1,3 +1,12 @@
+import { type ShortDocument } from './document'
+
+export type RegionLink = {
+	id: string
+	title: string
+	date: string
+	source: string
+}
+
 export type RegionItem = {
 	title: string
 	fullTitle: string
@@ -14,4 +23,10 @@ export type RegionItem = {
 	descList: string[]
 	openDate: string
 	logo: string
+	mainInfoLogo: string
+	site: string
+	relatedObjects: string[]
+	relatedProjects: string[]
+	relatedLinks: RegionLink[]
+	documents: ShortDocument[]
 }

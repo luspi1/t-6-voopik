@@ -1,0 +1,29 @@
+.container {
+    padding-top: 32px;
+    padding-bottom: 30px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.documentsList {
+    padding-top: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    li {
+        display: flex;
+        gap: 6px;
+    }
+
+    .documentInfo {
+        padding-top: 2px;
+        color: #9D9D9D;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 18px;
+    }
+}

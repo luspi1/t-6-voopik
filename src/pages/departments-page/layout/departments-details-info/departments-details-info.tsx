@@ -1,11 +1,18 @@
 import { type FC, useEffect } from 'react'
-
 import { Helmet } from 'react-helmet-async'
+import { useParams, Link } from 'react-router-dom'
 
 import { PageContent } from 'src/components/page-content/page-content'
 import { useGetRegionByCodeQuery } from 'src/store/regions/regions.api'
-import { useParams } from 'react-router-dom'
 import { useActions } from 'src/hooks/actions/actions'
+import { AppRoute } from 'src/helpers/consts'
+import styles from './index.module.scss'
+
+import { DepartmentMainInfo } from './components/department-main-info/department-main-info'
+import { DepartmentDescription } from './components/department-description/department-description'
+import { DepartmentStatus } from './components/department-status/department-status'
+import { DepartmentDocuments } from './components/department-documents/department-documents'
+import { DepartmentLinks } from './components/department-links/department-links'
 
 export const DepartmentsDetailsInfo: FC = () => {
 	const { id } = useParams()
@@ -40,9 +47,15 @@ export const DepartmentsDetailsInfo: FC = () => {
 				<title>Информация о регионе</title>
 			</Helmet>
 
-			<h2>{regionData.fullTitle}</h2>
+			<DepartmentMainInfo className={styles.departmentInfoBlock} data={regionData} />
+			<DepartmentDescription className={styles.departmentInfoBlock} data={regionData} />
+			<DepartmentStatus className={styles.departmentInfoBlock} data={regionData} />
+			<DepartmentDocuments className={styles.departmentInfoBlock} data={regionData} />
+			<DepartmentLinks className={styles.departmentInfoBlock} data={regionData} />
 
-			<p>{regionData.type}</p>
+			<p className={styles.pageMainLink}>
+				<Link to={`/${AppRoute.Departments}`}>На страницу списка отделений</Link>
+			</p>
 		</PageContent>
 	)
 }

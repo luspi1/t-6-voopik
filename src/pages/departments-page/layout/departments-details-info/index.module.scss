@@ -1,7 +1,11 @@
 .departmentInfoBlock {
     border-bottom: 7px solid #F2F5F8;
+}
 
-    &:not(:first-child) {        
-        padding-top: 25px;
+.pageMainLink {
+    padding: 30px 0 5px 0;
+
+    a {
+        font-weight: 700;
     }
 }
