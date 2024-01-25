@@ -31,11 +31,13 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({ crumbsLinksMap }) => {
 
 	useEffect(() => {
 		const filteredPathnames = pathname.split('/').filter((el) => crumbsLinksArr.includes(el))
-		setPathNames([...filteredPathnames])
-		if (additionalCrumbs) {
-			setPathNames([...pathNames, additionalCrumbs])
-		}
-	}, [additionalCrumbs])
+		setPathNames(() => {
+			if (additionalCrumbs) {
+				return [...filteredPathnames, additionalCrumbs]
+			}
+			return [...filteredPathnames]
+		})
+	}, [pathname, additionalCrumbs])
 
 	return (
 		<ul className={styles.breadCrumbsList}>

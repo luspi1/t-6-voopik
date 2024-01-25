@@ -1,5 +1,6 @@
 export type UserItem = {
 	id: string
+	avatar: string
 	fullname: string
 	statuses: string[]
 	mainStatus: string

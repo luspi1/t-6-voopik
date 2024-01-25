@@ -1,6 +1,7 @@
 export let users = [
 	{
 		id: '1',
+		avatar: 'https://opmosreg.ru/upload/iblock/707/707b3d25dad112e9474ed24a41258eca.jpg',
 		fullname: 'Ахмадиев Фаризулла Мухаммадиевич',
 		statuses: ['Руководитель отделения', 'Член правления ВООПИК'],
 		mainStatus: 'Первый статус',
@@ -17,6 +18,7 @@ export let users = [
 	},
 	{
 		id: '2',
+		avatar: 'https://opmosreg.ru/upload/iblock/b49/b49cb844ff7b12fcba676470aa47864c.jpeg',
 		fullname: 'Кленовичичевский Богдан Архедупсович',
 		statuses: ['Руководитель отделения', 'Член правления ВООПИК'],
 		mainStatus: 'Второй статус',
@@ -33,6 +35,7 @@ export let users = [
 	},
 	{
 		id: '3',
+		avatar: 'https://opmosreg.ru/upload/iblock/3d6/3d666e096b6b5c70911df0b8a6b6e558.jpg',
 		fullname: 'Нифаригуллина Мавлюда Талгатовна',
 		statuses: ['Руководитель отделения', 'Член правления ВООПИК'],
 		mainStatus: 'Третий статус',
