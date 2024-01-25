@@ -1,4 +1,7 @@
+import { type ReactNode } from 'react'
+
 // форматирует дату к формату - 24.03.1999
+
 export const formatDate1 = (date?: string) => {
 	if (!date) return
 
@@ -34,4 +37,20 @@ export const filterNumbersWithPathname = (pathname: string) => {
 		.split('/')
 		.filter((el) => !(parseInt(el) >= 0 || parseInt(el) <= 0))
 		.join('/')
+}
+
+export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
+	if (value == null) {
+		return true
+	}
+
+	if (typeof value === 'string' && value.trim() === '') {
+		return true
+	}
+
+	if (Array.isArray(value) && value.length === 0) {
+		return true
+	}
+
+	return false
 }
