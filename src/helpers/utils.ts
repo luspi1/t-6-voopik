@@ -39,6 +39,10 @@ export const filterNumbersWithPathname = (pathname: string) => {
 		.join('/')
 }
 
+// форматирование номера телефона
+export const formatPhoneNumber = (number: string) => {
+	return number.replace(/[-()\s]/g, '')
+
 export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 	if (value == null) {
 		return true
@@ -53,4 +57,5 @@ export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 	}
 
 	return false
+
 }

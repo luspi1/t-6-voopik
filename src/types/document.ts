@@ -16,7 +16,7 @@ export type Document = {
 	fileLinks: FileLinksItem[]
 }
 
-export type AsideDocument = {
+export type ShortDocument = {
 	id: string
 	title: string
 	type: string

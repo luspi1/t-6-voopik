@@ -1,10 +1,10 @@
 import { type FC } from 'react'
-import { type AsideDocument } from 'src/types/document'
+import { type ShortDocument } from 'src/types/document'
 
 import styles from './index.module.scss'
 
 type AsideDocumentsProps = {
-	documents: AsideDocument[]
+	documents: ShortDocument[]
 }
 
 export const AsideDocuments: FC<AsideDocumentsProps> = ({ documents }) => {
