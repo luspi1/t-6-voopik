@@ -1,0 +1,7 @@
+.departmentInfoBlock {
+    border-bottom: 7px solid #F2F5F8;
+
+    &:not(:first-child) {        
+        padding-top: 25px;
+    }
+}

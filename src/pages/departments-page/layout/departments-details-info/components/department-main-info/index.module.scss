@@ -1,0 +1,80 @@
+.mainInfoContainer {
+    padding-right: 40px;
+
+    h2 {
+        margin-bottom: 6px;
+    }
+}
+
+.mainDescContainer {
+    margin-bottom: 13px;
+    display: flex;
+    gap: 20px;
+    white-space: pre-wrap;
+
+    p {
+        padding-top: 5px;
+        font-size: 16px;
+
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .logoContainer {
+        min-width: 130px;
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 35px;
+
+    p {
+        margin: 0;
+    }
+
+    .tableRow {
+        display: flex;
+        align-items: center;
+    }
+
+    .tableTitle {
+        font-weight: 700;
+        min-width: 202px;
+    }
+}
+
+.phoneList {
+    display: flex;
+    gap: 6px;
+
+    li:not(:last-child) {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: (',');
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+.mainInfoLogo {
+    padding-top: 10px;
+
+    img {
+        width: 220px;
+        height: 55px;
+        background: #F2F5F8;
+        padding-top: 50px;
+    }
+}

@@ -1,0 +1,23 @@
+.departmentStatusTable {
+    padding-top: 6px;
+    padding-bottom: 18px;
+
+    ul {
+        display: flex;
+        gap: 25px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.tableRow {
+    display: flex;
+    margin-bottom: 10px;
+
+    .tableTitle {
+        min-width: 205px;
+        font-weight: 700;
+    }
+}
