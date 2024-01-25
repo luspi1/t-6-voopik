@@ -51,9 +51,9 @@ export const DepartmentsDetailsInfo: FC = () => {
 			<DepartmentStatus {...regionData} />
 			<DepartmentDocuments {...regionData} />
 			<DepartmentLinks {...regionData} />
-			<Link className={styles.pageMainLink} to={`/${AppRoute.Departments}`}>
-				На страницу списка отделений
-			</Link>
+			<p className={styles.pageMainLink}>
+				<Link to={`/${AppRoute.Departments}`}>На страницу списка отделений</Link>
+			</p>
 		</PageContent>
 	)
 }

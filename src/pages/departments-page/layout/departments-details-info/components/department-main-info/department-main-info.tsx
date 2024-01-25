@@ -39,52 +39,58 @@ export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({
 			{type && <p className={styles.italic}>{type}</p>}
 
 			<div className={styles.mainDescContainer}>
-				<p className={styles.logoContainer}>{logo && <img src={logo} alt={fullTitle} />}</p>
+				{logo && (
+					<p className={styles.logoContainer}>
+						<img src={logo} alt={fullTitle} />
+					</p>
+				)}
 				{mainDesc && <p className={styles.italic}>{mainDesc}</p>}
 			</div>
 
 			<div className={styles.table}>
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Руководитель Отделения:</p>
-					<a href='#'>{director ?? ''}</a>
+					<a href='#'>{director}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Первый заместитель:</p>
-					<p>{vice ?? ''}</p>
+					<p>{vice}</p>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Главный бухгалтер:</p>
-					<p>{accountant ?? ''}</p>
+					<p>{accountant}</p>
 				</div>
 			</div>
 
 			<div className={styles.table}>
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Телефоны:</p>
-					<ul className={styles.phoneList}>
-						{phones?.map((item: string) => (
-							<li key={item}>
-								<a href={'tel:' + formatPhoneNumber(item)}>{item}</a>
-							</li>
-						))}
-					</ul>
+					{!!phones?.length && (
+						<ul className={styles.phoneList}>
+							{phones.map((item: string) => (
+								<li key={item}>
+									<a href={'tel:' + formatPhoneNumber(item)}>{item}</a>
+								</li>
+							))}
+						</ul>
+					)}
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Электронная почта:</p>
-					<a href={'mailto:' + email}>{email ?? ''}</a>
+					<a href={'mailto:' + email}>{email}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Сайт:</p>
-					<a href={site}>{site ?? ''}</a>
+					<a href={site}>{site}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Адрес отделения:</p>
-					<p>{address ?? ''}</p>
+					<p>{address}</p>
 				</div>
 
 				{mainInfoLogo && (

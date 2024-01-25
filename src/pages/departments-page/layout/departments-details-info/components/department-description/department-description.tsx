@@ -7,7 +7,7 @@ export type DepartmentDescriptionProps = {
 
 export const DepartmentDescription: FC<DepartmentDescriptionProps> = ({ descList }) => {
 	return (
-		descList && (
+		!!descList?.length && (
 			<div className={styles.container}>
 				{descList.map((item, index) => (
 					<p className={styles.paragraph} key={index}>

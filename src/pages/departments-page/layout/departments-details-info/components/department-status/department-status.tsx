@@ -11,39 +11,37 @@ export const DepartmentStatus: FC<DepartmentStatusProps> = ({
 	relatedObjects,
 	relatedProjects,
 }) => {
+	if (!relatedObjects && !relatedProjects) return null
+
 	return (
-		relatedObjects &&
-		relatedProjects && (
-			<div className={styles.container}>
-				<div className={styles.departmentStatusTable}>
-					{relatedObjects && (
-						<div className={styles.tableRow}>
-							<p className={styles.tableTitle}>Связь с Объектами:</p>
+		<div className={styles.container}>
+			<div className={styles.departmentStatusTable}>
+				{!!relatedObjects?.length && (
+					<div className={styles.tableRow}>
+						<p className={styles.tableTitle}>Связь с Объектами:</p>
+						<ul>
+							{relatedObjects.map((item, index) => (
+								<li key={index}>
+									<a href='#'>{item}</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 
-							<ul>
-								{relatedObjects.map((item, index) => (
-									<li key={index}>
-										<a href='#'>{item}</a>
-									</li>
-								))}
-							</ul>
-						</div>
-					)}
-
-					{relatedProjects && (
-						<div className={styles.tableRow}>
-							<p className={styles.tableTitle}>Связь с Проектами:</p>
-							<ul>
-								{relatedProjects.map((item, index) => (
-									<li key={index}>
-										<a href='#'>{item}</a>
-									</li>
-								))}
-							</ul>
-						</div>
-					)}
-				</div>
+				{!!relatedProjects?.length && (
+					<div className={styles.tableRow}>
+						<p className={styles.tableTitle}>Связь с Проектами:</p>
+						<ul>
+							{relatedProjects.map((item, index) => (
+								<li key={index}>
+									<a href='#'>{item}</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 			</div>
-		)
+		</div>
 	)
 }

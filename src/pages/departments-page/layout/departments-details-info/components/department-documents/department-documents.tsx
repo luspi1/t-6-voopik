@@ -13,7 +13,8 @@ export const DepartmentDocuments: FC<DepartmentDocumentsProps> = ({ documents })
 	return (
 		<div className={styles.container}>
 			<h4>Документы Отделения ({documents?.length ?? 0})</h4>
-			{documents && (
+
+			{!!documents?.length && (
 				<ul className={styles.documentsList}>
 					{documents.map((item) => (
 						<li key={item.id}>

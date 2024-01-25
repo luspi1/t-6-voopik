@@ -11,7 +11,8 @@ export const DepartmentLinks: FC<DepartmentLinksProps> = ({ relatedLinks }) => {
 	return (
 		<div className={styles.container}>
 			<h4>Массив ссылок ({relatedLinks?.length ?? 0})</h4>
-			{relatedLinks && (
+
+			{!!relatedLinks?.length && (
 				<ul>
 					{relatedLinks.map((item) => (
 						<li key={item.id}>
