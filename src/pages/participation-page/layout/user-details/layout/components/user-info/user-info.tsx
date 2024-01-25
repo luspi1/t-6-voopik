@@ -29,9 +29,15 @@ export const UserInfo = () => {
 					{userData.statuses?.map((status) => <span key={status}>{status}</span>)}
 				</div>
 			)}
-			<div></div>
+			<div className={styles.mainInfo}>
+				<div className={styles.avatarWrapper}>
+					<img src={userData?.avatar} alt={userData?.fullname} />
+				</div>
+				<div className={styles.infoBlock}>
+					<p>{userData?.mainDesc}</p>
+				</div>
+			</div>
 
-			<p>{userData?.mainDesc}</p>
 			<p>Дата рождения и возраст:</p>
 			<p>{formatDate1(userData?.birthday)}</p>
 		</div>
