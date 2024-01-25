@@ -1,3 +1,12 @@
+import { type ShortDocument } from 'src/types/document'
+
+export type UserLink = {
+	id: string
+	title: string
+	date: string
+	source: string
+}
+
 export type UserItem = {
 	id: string
 	avatar: string
@@ -14,4 +23,8 @@ export type UserItem = {
 	phones: string[]
 	email: string
 	website: string
+	relatedObjects: string[]
+	relatedProjects: string[]
+	relatedLinks: UserLink[]
+	documents: ShortDocument[]
 }

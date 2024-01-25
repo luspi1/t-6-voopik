@@ -44,9 +44,5 @@ export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 		return true
 	}
 
-	if (Array.isArray(value) && value.length === 0) {
-		return true
-	}
-
-	return false
+	return Array.isArray(value) && value.length === 0
 }

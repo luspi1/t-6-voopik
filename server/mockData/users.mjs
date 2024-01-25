@@ -14,7 +14,67 @@ export let users = [
 		gender: 'Мужской',
 		phones: ['+7 (432) 900-00-00', '+7 (917) 310-09-08'],
 		email: 'tatartstan@voopik.ru',
-		website: 'www.example.com/konstantinopolskiy'
+		website: 'www.example.com/konstantinopolskiy',
+		relatedObjects: [
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+		],
+		relatedProjects: [
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+		],
+		relatedLinks: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'журнал «Прораб Перестройки», стр. 21-24',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+		],
+		documents: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'doc',
+				size: '68.5 Кбайт',
+			},
+		],
 	},
 	{
 		id: '2',
@@ -31,7 +91,67 @@ export let users = [
 		gender: 'Мужской',
 		phones: ['+7 (432) 923-11-18', '+7 (917) 410-05-08'],
 		email: 'bogdan@voopik.ru',
-		website: 'www.example.com/arch'
+		website: 'www.example.com/arch',
+		relatedObjects: [
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+		],
+		relatedProjects: [
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+		],
+		relatedLinks: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'журнал «Прораб Перестройки», стр. 21-24',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+		],
+		documents: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'doc',
+				size: '68.5 Кбайт',
+			},
+		],
 	},
 	{
 		id: '3',
@@ -48,7 +168,67 @@ export let users = [
 		gender: 'Женский',
 		phones: ['+7 (432) 900-01-01', '+7 (917) 210-03-08'],
 		email: 'mavluda@voopik.ru',
-		website: 'www.example.com/mavluda'
+		website: 'www.example.com/mavluda',
+		relatedObjects: [
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+			'Один какой-то Объект...',
+		],
+		relatedProjects: [
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+			'Один какой-то Проект...',
+		],
+		relatedLinks: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'журнал «Прораб Перестройки», стр. 21-24',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				date: '26 марта 2023 года',
+				source: 'Интернет-портал «Наш Край Тамбов»',
+			},
+		],
+		documents: [
+			{
+				id: '0',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '1',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'pdf',
+				size: '68.5 Кбайт',
+			},
+
+			{
+				id: '2',
+				title:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				type: 'doc',
+				size: '68.5 Кбайт',
+			},
+		],
 	},
 
 ]
