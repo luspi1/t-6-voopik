@@ -3,41 +3,60 @@ import cn from 'classnames'
 
 import { formatPhoneNumber } from 'src/helpers/utils'
 import styles from './index.module.scss'
-import { type RegionItem } from 'src/types/regions'
 
 export type DepartmentMainInfoProps = {
-	data: RegionItem
-	className?: string
+	fullTitle?: string
+	type?: string
+	logo?: string
+	mainDesc?: string
+	director?: string
+	vice?: string
+	accountant?: string
+	phones?: string[]
+	email?: string
+	site?: string
+	address?: string
+	mainInfoLogo?: string
 }
 
-export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({ data, className }) => {
+export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({
+	fullTitle,
+	type,
+	logo,
+	mainDesc,
+	director,
+	vice,
+	accountant,
+	phones,
+	email,
+	site,
+	address,
+	mainInfoLogo,
+}) => {
 	return (
-		<div className={cn(className, styles.mainInfoContainer)}>
-			<h2>{data.fullTitle}</h2>
-			<p className={styles.italic}>{data.type}</p>
+		<div className={styles.container}>
+			{fullTitle && <h2>{fullTitle}</h2>}
+			{type && <p className={styles.italic}>{type}</p>}
 
 			<div className={styles.mainDescContainer}>
-				<p className={styles.logoContainer}>
-					<img src={data.logo} alt={data.fullTitle} />
-				</p>
-
-				<p className={styles.italic}>{data.mainDesc}</p>
+				<p className={styles.logoContainer}>{logo && <img src={logo} alt={fullTitle} />}</p>
+				{mainDesc && <p className={styles.italic}>{mainDesc}</p>}
 			</div>
 
 			<div className={styles.table}>
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Руководитель Отделения:</p>
-					<a href='#'>{data.director}</a>
+					<a href='#'>{director ?? ''}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Первый заместитель:</p>
-					<p>{data.vice}</p>
+					<p>{vice ?? ''}</p>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Главный бухгалтер:</p>
-					<p>{data.accountant}</p>
+					<p>{accountant ?? ''}</p>
 				</div>
 			</div>
 
@@ -45,7 +64,7 @@ export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({ data, classNam
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Телефоны:</p>
 					<ul className={styles.phoneList}>
-						{data.phones.map((item: string) => (
+						{phones?.map((item: string) => (
 							<li key={item}>
 								<a href={'tel:' + formatPhoneNumber(item)}>{item}</a>
 							</li>
@@ -55,23 +74,23 @@ export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({ data, classNam
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Электронная почта:</p>
-					<a href={'mailto:' + data.email}>{data.email}</a>
+					<a href={'mailto:' + email}>{email ?? ''}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Сайт:</p>
-					<a href={data.site}>{data.site}</a>
+					<a href={site}>{site ?? ''}</a>
 				</div>
 
 				<div className={styles.tableRow}>
 					<p className={styles.tableTitle}>Адрес отделения:</p>
-					<p>{data.address}</p>
+					<p>{address ?? ''}</p>
 				</div>
 
-				{data.mainInfoLogo && (
+				{mainInfoLogo && (
 					<div className={cn(styles.tableRow, styles.mainInfoLogo)}>
 						<p className={styles.tableTitle}>Логотип отделения:</p>
-						<img src={data.mainInfoLogo} alt={data.fullTitle} />
+						<img src={mainInfoLogo} alt={fullTitle} />
 					</div>
 				)}
 			</div>

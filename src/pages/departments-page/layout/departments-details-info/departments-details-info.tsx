@@ -46,16 +46,14 @@ export const DepartmentsDetailsInfo: FC = () => {
 			<Helmet>
 				<title>Информация о регионе</title>
 			</Helmet>
-
-			<DepartmentMainInfo className={styles.departmentInfoBlock} data={regionData} />
-			<DepartmentDescription className={styles.departmentInfoBlock} data={regionData} />
-			<DepartmentStatus className={styles.departmentInfoBlock} data={regionData} />
-			<DepartmentDocuments className={styles.departmentInfoBlock} data={regionData} />
-			<DepartmentLinks className={styles.departmentInfoBlock} data={regionData} />
-
-			<p className={styles.pageMainLink}>
-				<Link to={`/${AppRoute.Departments}`}>На страницу списка отделений</Link>
-			</p>
+			<DepartmentMainInfo {...regionData} />
+			<DepartmentDescription {...regionData} />
+			<DepartmentStatus {...regionData} />
+			<DepartmentDocuments {...regionData} />
+			<DepartmentLinks {...regionData} />
+			<Link className={styles.pageMainLink} to={`/${AppRoute.Departments}`}>
+				На страницу списка отделений
+			</Link>
 		</PageContent>
 	)
 }
