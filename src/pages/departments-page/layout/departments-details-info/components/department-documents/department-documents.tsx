@@ -1,8 +1,9 @@
 import { type FC } from 'react'
-
-import { PDFIconSvg } from 'src/UI/icons/pdfIconSVG'
-import { DOCIconSvg } from 'src/UI/icons/docIconSVG'
 import { type ShortDocument } from 'src/types/document'
+import { type LinkItem } from 'src/types/global'
+
+import { LinksList } from 'src/components/links-list/links-list'
+
 import styles from './index.module.scss'
 
 export type DepartmentDocumentsProps = {
@@ -10,27 +11,20 @@ export type DepartmentDocumentsProps = {
 }
 
 export const DepartmentDocuments: FC<DepartmentDocumentsProps> = ({ documents }) => {
+	const formatDocumentLinks = (data: ShortDocument[] | undefined): LinkItem[] | undefined => {
+		if (!data) return undefined
+		return data.map((docItem) => ({
+			id: docItem.id,
+			link: docItem.link,
+			titleLink: docItem.title,
+			type: docItem.type,
+			label: [`${docItem.type}-файл`, docItem.size],
+		}))
+	}
+
 	return (
 		<div className={styles.container}>
-			<h4>Документы Отделения ({documents?.length ?? 0})</h4>
-
-			{!!documents?.length && (
-				<ul className={styles.documentsList}>
-					{documents.map((item) => (
-						<li key={item.id}>
-							<p>{item.type === 'doc' ? <DOCIconSvg /> : <PDFIconSvg />}</p>
-							<div>
-								<a href='#' download>
-									{item.title}
-								</a>
-								<p className={styles.documentInfo}>
-									{item.type}-файл, {item.size}
-								</p>
-							</div>
-						</li>
-					))}
-				</ul>
-			)}
+			<LinksList dataList={formatDocumentLinks(documents)} title='Документы Отделения' />
 		</div>
 	)
 }

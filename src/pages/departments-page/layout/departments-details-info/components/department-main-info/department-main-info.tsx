@@ -46,28 +46,19 @@ export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({
 				{mainDesc && <p className={styles.italic}>{mainDesc}</p>}
 			</div>
 
-			<div className={styles.table}>
-				<InfoRow title='Руководитель Отделения:' label={<a href='#'>{director}</a>} margin='0' />
-				<InfoRow title='Первый заместитель:' label={vice} margin='0' />
-				<InfoRow title='Главный бухгалтер:' label={accountant} margin='0' />
-			</div>
+			<InfoRow title='Руководитель Отделения:' label={<a href='#'>{director}</a>} />
+			<InfoRow title='Первый заместитель:' label={vice} />
+			<InfoRow title='Главный бухгалтер:' label={accountant} margin='0 0 35px 0' />
 
-			<div className={styles.table}>
-				<InfoRow title='Телефоны:' label={phones} wrapperClassname={styles.phoneList} margin='0' />
-				<InfoRow
-					title='Электронная почта:'
-					label={<a href={'mailto:' + email}>{email}</a>}
-					margin='0'
-				/>
-				<InfoRow title='Сайт:' label={<a href={site}>{site}</a>} margin='0' />
-				<InfoRow title='Адрес отделения:' label={address} margin='0' />
-				<InfoRow
-					title='Логотип отделения:'
-					label={<img src={mainInfoLogo} alt={fullTitle} />}
-					wrapperClassname={styles.mainInfoLogo}
-					margin='0'
-				/>
-			</div>
+			<InfoRow title='Телефоны:' label={phones} wrapperClassname={styles.phoneList} />
+			<InfoRow title='Электронная почта:' label={<a href={'mailto:' + email}>{email}</a>} />
+			<InfoRow title='Сайт:' label={<a href={site}>{site}</a>} />
+			<InfoRow title='Адрес отделения:' label={address} />
+			<InfoRow
+				title='Логотип отделения:'
+				label={<img src={mainInfoLogo} alt={fullTitle} />}
+				wrapperClassname={styles.mainInfoLogo}
+			/>
 		</div>
 	)
 }

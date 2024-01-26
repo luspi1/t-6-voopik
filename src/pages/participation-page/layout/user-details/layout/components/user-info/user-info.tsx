@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 import { useGetUserByIdQuery } from 'src/store/users/users.api'
 import { formatDate3 } from 'src/helpers/utils'
-import { useParams } from 'react-router-dom'
-import { useActions } from 'src/hooks/actions/actions'
 import { InfoRow } from 'src/UI/InfoRow/InfoRow'
+import { useAdditionalCrumbs } from 'src/hooks/additional-crumbs/additional-crumbs'
 
 import styles from './index.module.scss'
 
@@ -12,16 +11,7 @@ export const UserInfo = () => {
 	const { id } = useParams()
 	const { data: userData } = useGetUserByIdQuery(id ?? '')
 
-	const { setAdditionalCrumbs } = useActions()
-
-	useEffect(() => {
-		if (userData?.fullname) {
-			setAdditionalCrumbs(userData.fullname)
-		}
-		return () => {
-			setAdditionalCrumbs(null)
-		}
-	}, [userData])
+	useAdditionalCrumbs(userData?.fullname)
 
 	return (
 		<div className={styles.userInfoWrapper}>

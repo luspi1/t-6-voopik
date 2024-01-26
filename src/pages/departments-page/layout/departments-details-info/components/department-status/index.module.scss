@@ -1,17 +1,28 @@
 .container {
-    padding-top: 25px;
-    border-bottom: 7px solid #F2F5F8;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 7px solid #F2F5F8;
 }
 
-.departmentStatusTable {
-    padding-top: 6px;
-    padding-bottom: 30px;
+.relatedRow {
+  ul {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    ul {
-        display: flex;
-        gap: 30px;
+    gap: 25px;
+    flex-wrap: wrap;
+    @media (max-width: 1024px) {
+      gap: 10px;
     }
+
+    li {
+      color: #015DB9;
+      max-width: 170px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media (max-width: 768px) {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+  }
 }

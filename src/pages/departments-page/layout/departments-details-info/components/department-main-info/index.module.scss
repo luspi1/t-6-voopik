@@ -1,5 +1,5 @@
 .container {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     padding-right: 40px;
     border-bottom: 7px solid #F2F5F8;
 
@@ -35,20 +35,6 @@
     font-style: italic;
 }
 
-.table {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-    
-    &:not(:last-child) {
-        margin-bottom: 35px;
-    }
-
-    p {
-        margin: 0;
-    }
-}
 
 .phoneList {
     ul {

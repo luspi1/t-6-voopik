@@ -2,28 +2,26 @@ import { type FC } from 'react'
 
 import { type RegionLink } from 'src/types/regions'
 import styles from './index.module.scss'
+import { LinksList } from 'src/components/links-list/links-list'
+import { type LinkItem } from 'src/types/global'
 
 export type DepartmentLinksProps = {
 	relatedLinks?: RegionLink[]
 }
 
 export const DepartmentLinks: FC<DepartmentLinksProps> = ({ relatedLinks }) => {
+	const formatRegionLinks = (data: RegionLink[] | undefined): LinkItem[] | undefined => {
+		if (!data) return undefined
+		return data.map((regItem) => ({
+			id: regItem.id,
+			link: regItem.link,
+			titleLink: regItem.title,
+			label: [regItem.date, regItem.source],
+		}))
+	}
 	return (
 		<div className={styles.container}>
-			<h4>Массив ссылок ({relatedLinks?.length ?? 0})</h4>
-
-			{!!relatedLinks?.length && (
-				<ul>
-					{relatedLinks.map((item) => (
-						<li key={item.id}>
-							<a href='#'>{item.title}</a>
-							<p className={styles.linkInfo}>
-								{item.date}, {item.source}
-							</p>
-						</li>
-					))}
-				</ul>
-			)}
+			<LinksList dataList={formatRegionLinks(relatedLinks)} title='Массив ссылок' />
 		</div>
 	)
 }

@@ -1,10 +1,12 @@
 import { type ShortDocument } from './document'
+import { type RelatedLink } from 'src/types/global'
 
 export type RegionLink = {
 	id: string
 	title: string
-	date: string
-	source: string
+	link: string
+	date?: string
+	source?: string
 }
 
 export type RegionItem = {
@@ -25,8 +27,8 @@ export type RegionItem = {
 	logo: string
 	mainInfoLogo: string
 	site: string
-	relatedObjects: string[]
-	relatedProjects: string[]
+	relatedObjects: RelatedLink[]
+	relatedProjects: RelatedLink[]
 	relatedLinks: RegionLink[]
 	documents: ShortDocument[]
 }

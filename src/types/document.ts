@@ -19,6 +19,7 @@ export type Document = {
 export type ShortDocument = {
 	id: string
 	title: string
-	type: string
-	size: string
+	link: string
+	type?: 'doc' | 'pdf'
+	size?: string
 }
