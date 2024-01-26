@@ -1,17 +1,17 @@
 import { type FC } from 'react'
 
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 
 import { Container } from 'src/UI/Container/Container'
 import { BreadCrumbs } from 'src/modules/bread-crumbs/bread-crumbs'
 import { SideMenu } from 'src/components/side-menu/side-menu'
 
-import { DepartmentsMenuItems, OneDepartmentMenu } from 'src/pages/departments-page/layout/consts'
+import { DepartmentsMenuItems } from 'src/pages/departments-page/layout/consts'
 
 import styles from './index.module.scss'
 
 export const DepartmentsLayout: FC = () => {
-	const location = useLocation()
+	const { id } = useParams()
 	return (
 		<div className={styles.departmentsLayout}>
 			<Container>
@@ -29,13 +29,10 @@ export const DepartmentsLayout: FC = () => {
 				/>
 				<div className={styles.departmentsContentWrapper}>
 					<Outlet />
-					<div>
-						{location.pathname.includes('departments-details-info') ? (
-							<SideMenu className={styles.departmentsSideMenu} sideItems={OneDepartmentMenu} />
-						) : (
-							<SideMenu className={styles.departmentsSideMenu} sideItems={DepartmentsMenuItems} />
-						)}
-					</div>
+
+					{!id && (
+						<SideMenu className={styles.departmentsSideMenu} sideItems={DepartmentsMenuItems} />
+					)}
 				</div>
 			</Container>
 		</div>

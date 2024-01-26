@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import { UserInfoNavItems } from 'src/pages/participation-page/layout/user-details/layout/components/nav-user-info/consts'
+import { UserInfoNavItems } from 'src/pages/participation-page/layout/user-details/components/nav-user-info/consts'
 
 import styles from './index.module.scss'
 export const NavUserInfo: FC = () => {

@@ -34,8 +34,16 @@ import { UserGallery } from 'src/pages/participation-page/layout/user-details/la
 import { DepartmentsLayout } from 'src/pages/departments-page/layout/departments-layout'
 import { DepartmentsList } from 'src/pages/departments-page/layout/departments-list/departments-list'
 import { DepartmentsAbout } from 'src/pages/departments-page/layout/departments-about/departments-about'
-import { DepartmentsDetailsInfo } from 'src/pages/departments-page/layout/departments-details-info/departments-details-info'
+
 import { UsersList } from 'src/pages/participation-page/layout/users-list/users-list'
+import { DepartmentDetailsLayout } from 'src/pages/departments-page/layout/department-details/layout/department-details-layout'
+import { RegDetailsInfo } from 'src/pages/departments-page/layout/department-details/layout/reg-details-info/reg-details-info'
+import { RegDetailsGroups } from 'src/pages/departments-page/layout/department-details/layout/reg-details-groups/reg-details-groups'
+import { RegDetailsParticipants } from 'src/pages/departments-page/layout/department-details/layout/reg-details-participants/reg-details-participants'
+import { RegDetailsEvents } from 'src/pages/departments-page/layout/department-details/layout/reg-details-events/reg-details-events'
+import { RegDetailsObjects } from 'src/pages/departments-page/layout/department-details/layout/reg-details-objects/reg-details-objects'
+import { RegDetailsProjects } from 'src/pages/departments-page/layout/department-details/layout/reg-details-projects/reg-details-projects'
+import { RegDetailsGallery } from 'src/pages/departments-page/layout/department-details/layout/reg-details-gallery/reg-details-gallery'
 
 export const App: FC = () => {
 	return (
@@ -54,7 +62,18 @@ export const App: FC = () => {
 				<Route path={AppRoute.Departments} element={<DepartmentsLayout />}>
 					<Route index element={<DepartmentsList />} />
 					<Route path={AppRoute.DepartmentsAbout} element={<DepartmentsAbout />} />
-					<Route path={AppRoute.DepartmentsDetailsInfo} element={<DepartmentsDetailsInfo />} />
+					<Route path=':id' element={<DepartmentDetailsLayout />}>
+						<Route path={AppRoute.DepartmentsDetailsInfo} element={<RegDetailsInfo />} />
+						<Route path={AppRoute.DepartmentsDetailsGroups} element={<RegDetailsGroups />} />
+						<Route
+							path={AppRoute.DepartmentsDetailsParticipant}
+							element={<RegDetailsParticipants />}
+						/>
+						<Route path={AppRoute.DepartmentsDetailsEvents} element={<RegDetailsEvents />} />
+						<Route path={AppRoute.DepartmentsDetailsObjects} element={<RegDetailsObjects />} />
+						<Route path={AppRoute.DepartmentsDetailsProjects} element={<RegDetailsProjects />} />
+						<Route path={AppRoute.DepartmentsDetailsGallery} element={<RegDetailsGallery />} />
+					</Route>
 				</Route>
 
 				<Route path={AppRoute.Users} element={<ParticipationLayout />}>

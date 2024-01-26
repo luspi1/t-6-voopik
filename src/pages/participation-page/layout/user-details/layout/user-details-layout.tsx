@@ -4,8 +4,8 @@ import { type ContentNav } from 'src/types/navigation'
 import { Outlet, Navigate, Link } from 'react-router-dom'
 
 import { PageContent } from 'src/components/page-content/page-content'
-import { UserInfo } from 'src/pages/participation-page/layout/user-details/layout/components/user-info/user-info'
-import { NavUserInfo } from 'src/pages/participation-page/layout/user-details/layout/components/nav-user-info/nav-user-info'
+import { UserInfo } from 'src/pages/participation-page/layout/user-details/components/user-info/user-info'
+import { NavUserInfo } from 'src/pages/participation-page/layout/user-details/components/nav-user-info/nav-user-info'
 import { useLocationMatch } from 'src/hooks/location-match'
 import { AppRoute } from 'src/helpers/consts'
 

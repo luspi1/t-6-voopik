@@ -1,0 +1,41 @@
+.container {
+  padding-bottom: 15px;
+  border-bottom: 7px solid #F2F5F8;
+
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+.phoneList {
+  ul {
+    display: flex;
+    gap: 6px;
+
+    li:not(:last-child) {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: (',');
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.mainInfoLogo {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+
+  img {
+    width: 50px;
+    height: 55px;
+  }
+}
