@@ -7,11 +7,6 @@ export const OneDepartmentMenu: NavigationItem[] = [
 	},
 
 	{
-		title: 'Группы',
-		link: 'departments-details-groups',
-	},
-
-	{
 		title: 'Участники',
 		link: 'departments-details-participants',
 	},
