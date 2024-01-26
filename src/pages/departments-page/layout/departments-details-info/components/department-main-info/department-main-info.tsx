@@ -1,7 +1,6 @@
 import { type FC } from 'react'
-import cn from 'classnames'
 
-import { formatPhoneNumber } from 'src/helpers/utils'
+import { InfoRow } from 'src/UI/InfoRow/InfoRow'
 import styles from './index.module.scss'
 
 export type DepartmentMainInfoProps = {
@@ -48,57 +47,26 @@ export const DepartmentMainInfo: FC<DepartmentMainInfoProps> = ({
 			</div>
 
 			<div className={styles.table}>
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Руководитель Отделения:</p>
-					<a href='#'>{director}</a>
-				</div>
-
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Первый заместитель:</p>
-					<p>{vice}</p>
-				</div>
-
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Главный бухгалтер:</p>
-					<p>{accountant}</p>
-				</div>
+				<InfoRow title='Руководитель Отделения:' label={<a href='#'>{director}</a>} margin='0' />
+				<InfoRow title='Первый заместитель:' label={vice} margin='0' />
+				<InfoRow title='Главный бухгалтер:' label={accountant} margin='0' />
 			</div>
 
 			<div className={styles.table}>
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Телефоны:</p>
-					{!!phones?.length && (
-						<ul className={styles.phoneList}>
-							{phones.map((item: string) => (
-								<li key={item}>
-									<a href={'tel:' + formatPhoneNumber(item)}>{item}</a>
-								</li>
-							))}
-						</ul>
-					)}
-				</div>
-
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Электронная почта:</p>
-					<a href={'mailto:' + email}>{email}</a>
-				</div>
-
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Сайт:</p>
-					<a href={site}>{site}</a>
-				</div>
-
-				<div className={styles.tableRow}>
-					<p className={styles.tableTitle}>Адрес отделения:</p>
-					<p>{address}</p>
-				</div>
-
-				{mainInfoLogo && (
-					<div className={cn(styles.tableRow, styles.mainInfoLogo)}>
-						<p className={styles.tableTitle}>Логотип отделения:</p>
-						<img src={mainInfoLogo} alt={fullTitle} />
-					</div>
-				)}
+				<InfoRow title='Телефоны:' label={phones} wrapperClassname={styles.phoneList} margin='0' />
+				<InfoRow
+					title='Электронная почта:'
+					label={<a href={'mailto:' + email}>{email}</a>}
+					margin='0'
+				/>
+				<InfoRow title='Сайт:' label={<a href={site}>{site}</a>} margin='0' />
+				<InfoRow title='Адрес отделения:' label={address} margin='0' />
+				<InfoRow
+					title='Логотип отделения:'
+					label={<img src={mainInfoLogo} alt={fullTitle} />}
+					wrapperClassname={styles.mainInfoLogo}
+					margin='0'
+				/>
 			</div>
 		</div>
 	)

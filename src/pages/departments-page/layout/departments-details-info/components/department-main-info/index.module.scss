@@ -1,4 +1,5 @@
-.container{
+.container {
+    padding-bottom: 25px;
     padding-right: 40px;
     border-bottom: 7px solid #F2F5F8;
 
@@ -38,53 +39,44 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 35px;
+    
+    
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
 
     p {
         margin: 0;
     }
-
-    .tableRow {
-        display: flex;
-        align-items: center;
-
-        @media (max-width: 650px) {
-            flex-direction: column;
-            align-items: start;
-        }
-    }
-
-    .tableTitle {
-        font-weight: 700;
-        min-width: 202px;
-    }
 }
 
 .phoneList {
-    display: flex;
-    gap: 6px;
+    ul {
+        display: flex;
+        gap: 6px;
 
-    li:not(:last-child) {
-        position: relative;
+        li:not(:last-child) {
+            position: relative;
 
-        &::after {
-            position: absolute;
-            content: (',');
+            &::after {
+                position: absolute;
+                content: (',');
+            }
         }
-    }
 
-    a {
-        color: inherit;
+        a {
+            color: inherit;
+        }
     }
 }
 
 .mainInfoLogo {
+    display: flex;
+    align-items: center;
     padding-top: 10px;
 
     img {
-        width: 220px;
+        width: 50px;
         height: 55px;
-        background: #F2F5F8;
-        padding-top: 50px;
     }
 }

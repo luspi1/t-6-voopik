@@ -1,5 +1,6 @@
 import { type FC } from 'react'
 
+import { InfoRow } from 'src/UI/InfoRow/InfoRow'
 import styles from './index.module.scss'
 
 export type DepartmentStatusProps = {
@@ -16,31 +17,8 @@ export const DepartmentStatus: FC<DepartmentStatusProps> = ({
 	return (
 		<div className={styles.container}>
 			<div className={styles.departmentStatusTable}>
-				{!!relatedObjects?.length && (
-					<div className={styles.tableRow}>
-						<p className={styles.tableTitle}>Связь с Объектами:</p>
-						<ul>
-							{relatedObjects.map((item, index) => (
-								<li key={index}>
-									<a href='#'>{item}</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				)}
-
-				{!!relatedProjects?.length && (
-					<div className={styles.tableRow}>
-						<p className={styles.tableTitle}>Связь с Проектами:</p>
-						<ul>
-							{relatedProjects.map((item, index) => (
-								<li key={index}>
-									<a href='#'>{item}</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				)}
+				<InfoRow title='Связь с Объектами:' label={relatedObjects} margin='0' />
+				<InfoRow title='Связь с Проектами:' label={relatedProjects} margin='0' />
 			</div>
 		</div>
 	)
