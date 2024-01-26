@@ -1,0 +1,21 @@
+.statusesRow {
+  ul {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+
+.relatedRow {
+  ul {
+    display: flex;
+    gap: 25px;
+    li {
+      color: #015DB9;
+      max-width: 170px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { type ShortDocument } from 'src/types/document'
+import { type RelatedLink } from 'src/types/global'
 
 export type UserLink = {
 	id: string
@@ -23,8 +24,8 @@ export type UserItem = {
 	phones: string[]
 	email: string
 	website: string
-	relatedObjects: string[]
-	relatedProjects: string[]
+	relatedObjects: RelatedLink[]
+	relatedProjects: RelatedLink[]
 	relatedLinks: UserLink[]
 	documents: ShortDocument[]
 }

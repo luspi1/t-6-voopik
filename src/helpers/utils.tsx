@@ -1,4 +1,7 @@
 import { type ReactNode } from 'react'
+import { type RelatedLink } from 'src/types/global'
+
+import { Link } from 'react-router-dom'
 
 // форматирует дату к формату - 24.03.1999
 
@@ -45,4 +48,14 @@ export const isNullOrEmpty = (value: ReactNode | ReactNode[]): boolean => {
 	}
 
 	return Array.isArray(value) && value.length === 0
+}
+
+// Форматирование ссылок-связей
+export const formatRelatedLinks = (data: RelatedLink[] | undefined, link: string) => {
+	if (!data) return
+	return data.map((linkEl) => (
+		<Link to={`/${link}/${linkEl.id}`} key={linkEl.id}>
+			{linkEl.title}
+		</Link>
+	))
 }

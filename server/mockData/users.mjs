@@ -16,14 +16,32 @@ export let users = [
 		email: 'tatartstan@voopik.ru',
 		website: 'www.example.com/konstantinopolskiy',
 		relatedObjects: [
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
+			{
+				id: '1',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Объект Inventore, repellat.',
+			},
 		],
 		relatedProjects: [
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
+			{
+				id: '1',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Проект Inventore, repellat.',
+			},
 		],
 		relatedLinks: [
 			{
@@ -93,14 +111,32 @@ export let users = [
 		email: 'bogdan@voopik.ru',
 		website: 'www.example.com/arch',
 		relatedObjects: [
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
+			{
+				id: '1',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Объект Inventore, repellat.',
+			},
 		],
 		relatedProjects: [
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
+			{
+				id: '1',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Проект Inventore, repellat.',
+			},
 		],
 		relatedLinks: [
 			{
@@ -170,14 +206,32 @@ export let users = [
 		email: 'mavluda@voopik.ru',
 		website: 'www.example.com/mavluda',
 		relatedObjects: [
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
-			'Один какой-то Объект...',
+			{
+				id: '1',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Объект Inventore, repellat.',
+			},
 		],
 		relatedProjects: [
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
-			'Один какой-то Проект...',
+			{
+				id: '1',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Проект Inventore, repellat.',
+			},
 		],
 		relatedLinks: [
 			{
