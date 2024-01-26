@@ -30,12 +30,11 @@ import { UserEvents } from 'src/pages/participation-page/layout/user-details/lay
 import { UserProjects } from 'src/pages/participation-page/layout/user-details/layout/user-projects/user-projects'
 import { UserObjects } from 'src/pages/participation-page/layout/user-details/layout/user-objects/user-objects'
 import { UserGallery } from 'src/pages/participation-page/layout/user-details/layout/user-gallery/user-gallery'
+import { UsersList } from 'src/pages/participation-page/layout/users-list/users-list'
 
 import { DepartmentsLayout } from 'src/pages/departments-page/layout/departments-layout'
 import { DepartmentsList } from 'src/pages/departments-page/layout/departments-list/departments-list'
 import { DepartmentsAbout } from 'src/pages/departments-page/layout/departments-about/departments-about'
-
-import { UsersList } from 'src/pages/participation-page/layout/users-list/users-list'
 import { DepartmentDetailsLayout } from 'src/pages/departments-page/layout/department-details/layout/department-details-layout'
 import { RegDetailsInfo } from 'src/pages/departments-page/layout/department-details/layout/reg-details-info/reg-details-info'
 import { RegDetailsGroups } from 'src/pages/departments-page/layout/department-details/layout/reg-details-groups/reg-details-groups'

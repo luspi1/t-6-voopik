@@ -1,0 +1,33 @@
+.usersGroupsTable {
+  grid-template-columns: minmax(40px, 0.2fr) minmax(60px, 0.5fr) minmax(100px, 0.8fr) minmax(340px, 2fr) minmax(90px, 1.1fr) minmax(100px, 1.3fr) minmax(130px, 1.1fr);
+  margin-bottom: 10px;
+
+  td {
+    min-height: 100px;
+    &:nth-child(3) {
+      font-weight: 700;
+    }
+  }
+
+}
+
+.usersGroupsSearchWrapper {
+  svg {
+    left: 78px;
+  }
+
+  input {
+    padding: 6px 20px 6px 83px;
+  }
+}
+
+.userGroupsSection {
+  border-bottom: 7px solid #F2F5F8;
+  .groupLengthInfo {
+    margin-bottom: 10px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+

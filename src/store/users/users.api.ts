@@ -1,4 +1,5 @@
 import { type UserItem } from 'src/types/users'
+import { type GroupItem } from 'src/types/groups'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -24,7 +25,15 @@ export const usersApi = createApi({
 				url: `users/${userId}`,
 			}),
 		}),
+		getUserGroup: build.query<GroupItem[], [string, string]>({
+			query: ([search, userId]) => ({
+				url: `users/${userId}/group`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
 	}),
 })
 
-export const { useGetAllUsersQuery, useGetUserByIdQuery } = usersApi
+export const { useGetAllUsersQuery, useGetUserByIdQuery, useGetUserGroupQuery } = usersApi

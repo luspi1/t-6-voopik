@@ -4,6 +4,7 @@ import { type RelatedLink } from 'src/types/global'
 export type UserLink = {
 	id: string
 	title: string
+	link: string
 	date: string
 	source: string
 }

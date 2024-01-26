@@ -15,7 +15,7 @@ export const UserDetailsLayout: FC = () => {
 
 	if (matchesLocation) return <Navigate to={AppRoute.UserInfo} replace />
 	return (
-		<PageContent className={styles.userDetailsContent} $padding='30px 30px 300px 30px'>
+		<PageContent className={styles.userDetailsContent} $padding='30px 30px 40px 30px'>
 			<UserInfo />
 			<h3>Информация</h3>
 			<NavUserInfo />

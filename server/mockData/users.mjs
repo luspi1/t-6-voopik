@@ -48,6 +48,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'журнал «Прораб Перестройки», стр. 21-24',
 			},
@@ -56,6 +57,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -64,6 +66,7 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -73,6 +76,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -81,6 +85,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -89,10 +94,40 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'doc',
 				size: '68.5 Кбайт',
 			},
 		],
+		groups: [
+			{
+				id: '1',
+				regionCode: '16',
+				level: '3',
+				title: 'Клуб национальной культуры «Татар Батыр»',
+				role: 'Руководитель',
+				entryDate: '1999.03.24',
+				status: 'Первый статус'
+			},
+			{
+				id: '2',
+				regionCode: '78',
+				level: '2',
+				title: 'Санкт-Петербург',
+				role: 'Участник',
+				entryDate: '2005.02.25',
+				status: 'Второй статус'
+			},
+			{
+				id: '3',
+				regionCode: '90',
+				level: '1',
+				title: 'Московская область',
+				role: 'Участник',
+				entryDate: '2019.08.28',
+				status: 'Третий статус'
+			},
+		]
 	},
 	{
 		id: '2',
@@ -143,6 +178,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'журнал «Прораб Перестройки», стр. 21-24',
 			},
@@ -151,6 +187,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -159,6 +196,7 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -168,6 +206,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -176,6 +215,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -184,10 +224,31 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'doc',
 				size: '68.5 Кбайт',
 			},
 		],
+		groups: [
+			{
+				id: '2',
+				regionCode: '78',
+				level: '2',
+				title: 'Санкт-Петербург',
+				role: 'Участник',
+				entryDate: '2005.02.25',
+				status: 'Второй статус'
+			},
+			{
+				id: '3',
+				regionCode: '90',
+				level: '1',
+				title: 'Московская область',
+				role: 'Участник',
+				entryDate: '2019.08.28',
+				status: 'Третий статус'
+			},
+		]
 	},
 	{
 		id: '3',
@@ -238,6 +299,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'журнал «Прораб Перестройки», стр. 21-24',
 			},
@@ -246,6 +308,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -254,6 +317,7 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				date: '26 марта 2023 года',
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
@@ -263,6 +327,7 @@ export let users = [
 				id: '0',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -271,6 +336,7 @@ export let users = [
 				id: '1',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'pdf',
 				size: '68.5 Кбайт',
 			},
@@ -279,10 +345,22 @@ export let users = [
 				id: '2',
 				title:
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
+				link: '#',
 				type: 'doc',
 				size: '68.5 Кбайт',
 			},
 		],
+		groups: [
+			{
+				id: '3',
+				regionCode: '90',
+				level: '1',
+				title: 'Московская область',
+				role: 'Участник',
+				entryDate: '2019.08.28',
+				status: 'Третий статус'
+			},
+		]
 	},
 
 ]

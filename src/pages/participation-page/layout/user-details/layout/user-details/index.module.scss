@@ -10,12 +10,21 @@
   ul {
     display: flex;
     gap: 25px;
+    flex-wrap: wrap;
+    @media (max-width: 1024px) {
+      gap: 10px;
+    }
+
     li {
       color: #015DB9;
       max-width: 170px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      @media (max-width: 768px) {
+        max-width: 100%;
+        white-space: initial;
+      }
     }
   }
 }

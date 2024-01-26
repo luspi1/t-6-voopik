@@ -24,6 +24,15 @@ export const getUsers= (req, res) => {
 
 	res.status(200).json(filteredUsers)
 }
+export const getUsersGroup = (req, res) => {
+	const {q} = req.query
+	const userId = req.params.id
+
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredGroups = searchedUser.groups.filter(group => group.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredGroups)
+}
 
 export const getUserById = (req, res) => {
 	const userId = req.params.id
