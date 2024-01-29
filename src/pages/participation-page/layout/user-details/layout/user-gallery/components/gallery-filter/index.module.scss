@@ -1,0 +1,48 @@
+@import "src/assets/styles/vars";
+
+.galleryFilterForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.searchInput {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  svg {
+    position: absolute;
+    left: 10px;
+  }
+
+  input {
+    padding: 5px 15px 5px 30px;
+    width: 100%;
+    line-height: 1;
+    @include ptsans-regular;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #B8B8B8;
+    background: #FFF;
+    color: #000000;
+
+    &::placeholder {
+      color: #848484;
+    }
+  }
+}
+
+select {
+  min-width: 140px;
+}
+
+.filterBtn {
+  background: #015DB9;
+  padding: 7px 13px;
+  line-height: 1;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+}

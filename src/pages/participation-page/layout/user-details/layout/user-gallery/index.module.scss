@@ -1,0 +1,18 @@
+.userGallery {
+
+}
+
+.galleryHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  .galleryLengthInfo {
+    font-size: 16px;
+    margin: 0;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
