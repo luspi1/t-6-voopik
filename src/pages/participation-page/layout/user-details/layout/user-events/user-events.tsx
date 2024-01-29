@@ -65,7 +65,7 @@ export const UserEvents: FC = () => {
 
 	return (
 		<section className={styles.userEventsSection}>
-			<p className={styles.groupLengthInfo}>
+			<p className={styles.eventLengthInfo}>
 				Всего событий: <span>{eventList?.length}</span>
 			</p>
 			<CustomTable

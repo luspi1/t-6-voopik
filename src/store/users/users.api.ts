@@ -1,6 +1,7 @@
 import { type UserItem } from 'src/types/users'
 import { type GroupItem } from 'src/types/groups'
 import { type EventsItem } from 'src/types/events'
+import { type ProjectItem } from 'src/types/projects'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -42,6 +43,14 @@ export const usersApi = createApi({
 				},
 			}),
 		}),
+		getUserProject: build.query<ProjectItem[], [string, string]>({
+			query: ([search, userId]) => ({
+				url: `users/${userId}/project`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
 	}),
 })
 
@@ -50,4 +59,5 @@ export const {
 	useGetUserByIdQuery,
 	useGetUserGroupQuery,
 	useGetUserEventQuery,
+	useGetUserProjectQuery,
 } = usersApi

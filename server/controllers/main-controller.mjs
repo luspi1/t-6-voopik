@@ -48,4 +48,13 @@ export const getUsersEvent = (req, res) => {
 
 	res.status(200).json(filteredEvents)
 }
+export const getUsersProject = (req, res) => {
+	const {q} = req.query
+	const userId = req.params.id
+
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredProjects = searchedUser.projects.filter(project => project.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredProjects)
+}
 

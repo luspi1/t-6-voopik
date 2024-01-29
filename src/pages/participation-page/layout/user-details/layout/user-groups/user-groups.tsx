@@ -28,7 +28,7 @@ export const UserGroups: FC = () => {
 		'№',
 		'Регион',
 		<MainSelect
-			key={5}
+			key={2}
 			items={[
 				{ label: 'Уровень', value: '0' },
 				{ label: 'Уровень 1', value: '1' },
@@ -38,14 +38,14 @@ export const UserGroups: FC = () => {
 		/>,
 		<TableSearch
 			wrapperClassName={styles.usersGroupsSearchWrapper}
-			key={1}
+			key={3}
 			handleSearch={searchGroupsHandler}
 			placeholder='Поиск по названию группы'
 		/>,
 		'Роль',
 		'Дата вступления',
 		<MainSelect
-			key={5}
+			key={6}
 			items={[
 				{ label: 'Статус группы', value: '0' },
 				{ label: 'Первый статус', value: '1' },

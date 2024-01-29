@@ -1,0 +1,32 @@
+
+section.userProjectsSection {
+  padding: 15px 0 10px;
+  border-bottom: 7px solid #F2F5F8;
+  .projectLengthInfo {
+    margin-bottom: 15px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.usersProjectsTable {
+  grid-template-columns: minmax(40px, 0.2fr) minmax(110px, 0.8fr) minmax(480px, 2.4fr) minmax(130px, 0.8fr) minmax(120px, 0.8fr);
+
+  td {
+    min-height: 100px;
+  }
+
+}
+
+.usersProjectsSearchWrapper {
+  svg {
+    left: 140px;
+  }
+
+  input {
+    padding: 6px 20px 6px 145px;
+  }
+}
+
+
