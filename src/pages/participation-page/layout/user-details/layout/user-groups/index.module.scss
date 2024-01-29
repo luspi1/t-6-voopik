@@ -1,6 +1,17 @@
+
+section.userGroupsSection {
+  padding: 15px 0 10px;
+  border-bottom: 7px solid #F2F5F8;
+  .groupLengthInfo {
+    margin-bottom: 15px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
 .usersGroupsTable {
   grid-template-columns: minmax(40px, 0.2fr) minmax(60px, 0.5fr) minmax(100px, 0.8fr) minmax(340px, 2fr) minmax(90px, 1.1fr) minmax(100px, 1.3fr) minmax(130px, 1.1fr);
-  margin-bottom: 10px;
 
   td {
     min-height: 100px;
@@ -21,13 +32,4 @@
   }
 }
 
-.userGroupsSection {
-  border-bottom: 7px solid #F2F5F8;
-  .groupLengthInfo {
-    margin-bottom: 10px;
-    span {
-      font-weight: 700;
-    }
-  }
-}
 

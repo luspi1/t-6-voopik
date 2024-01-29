@@ -18,30 +18,30 @@ export let users = [
 		relatedObjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Объект Inventore, repellat.',
-			},
+				title: 'Один какой-то Объект Inventore, repellat.'
+			}
 		],
 		relatedProjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Проект Inventore, repellat.',
-			},
+				title: 'Один какой-то Проект Inventore, repellat.'
+			}
 		],
 		relatedLinks: [
 			{
@@ -50,7 +50,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'журнал «Прораб Перестройки», стр. 21-24',
+				source: 'журнал «Прораб Перестройки», стр. 21-24'
 			},
 
 			{
@@ -59,7 +59,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
+				source: 'Интернет-портал «Наш Край Тамбов»'
 			},
 
 			{
@@ -68,8 +68,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
-			},
+				source: 'Интернет-портал «Наш Край Тамбов»'
+			}
 		],
 		documents: [
 			{
@@ -78,7 +78,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -87,7 +87,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -96,8 +96,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'doc',
-				size: '68.5 Кбайт',
-			},
+				size: '68.5 Кбайт'
+			}
 		],
 		groups: [
 			{
@@ -126,7 +126,33 @@ export let users = [
 				role: 'Участник',
 				entryDate: '2019.08.28',
 				status: 'Третий статус'
+			}
+		],
+		events: [
+			{
+				id: '1',
+				title: 'Фестиваль объектов военной истории',
+				partGroup: 'Клуб «Археоптерикс»',
+				location: 'Армейский полигон в/ч 02590-342',
+				dates: ['2022.03.24', '2022.03.26'],
+				type: 'Посетитель'
 			},
+			{
+				id: '2',
+				title: 'Старая татарская усадьба',
+				partGroup: 'нет',
+				location: 'с. Куркачи Высокогорского р-на',
+				dates: ['2022.05.11', '2022.05.20'],
+				type: 'Участник'
+			},
+			{
+				id: '3',
+				title: 'Замок Винтерфелл',
+				partGroup: 'ВФК «Третья стража»',
+				location: 'пгт Винтерфелльск-Заволжскокамский',
+				dates: ['2022.02.11', '2022.02.13'],
+				type: 'Организатор'
+			}
 		]
 	},
 	{
@@ -148,30 +174,30 @@ export let users = [
 		relatedObjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Объект Inventore, repellat.',
-			},
+				title: 'Один какой-то Объект Inventore, repellat.'
+			}
 		],
 		relatedProjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Проект Inventore, repellat.',
-			},
+				title: 'Один какой-то Проект Inventore, repellat.'
+			}
 		],
 		relatedLinks: [
 			{
@@ -180,7 +206,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'журнал «Прораб Перестройки», стр. 21-24',
+				source: 'журнал «Прораб Перестройки», стр. 21-24'
 			},
 
 			{
@@ -189,7 +215,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
+				source: 'Интернет-портал «Наш Край Тамбов»'
 			},
 
 			{
@@ -198,8 +224,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
-			},
+				source: 'Интернет-портал «Наш Край Тамбов»'
+			}
 		],
 		documents: [
 			{
@@ -208,7 +234,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -217,7 +243,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -226,8 +252,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'doc',
-				size: '68.5 Кбайт',
-			},
+				size: '68.5 Кбайт'
+			}
 		],
 		groups: [
 			{
@@ -247,7 +273,25 @@ export let users = [
 				role: 'Участник',
 				entryDate: '2019.08.28',
 				status: 'Третий статус'
+			}
+		],
+		events: [
+			{
+				id: '2',
+				title: 'Старая татарская усадьба',
+				partGroup: 'нет',
+				location: 'с. Куркачи Высокогорского р-на',
+				dates: ['2022.05.11', '2022.05.20'],
+				type: 'Участник'
 			},
+			{
+				id: '3',
+				title: 'Замок Винтерфелл',
+				partGroup: 'ВФК «Третья стража»',
+				location: 'пгт Винтерфелльск-Заволжскокамский',
+				dates: ['2022.02.11', '2022.02.13'],
+				type: 'Организатор'
+			}
 		]
 	},
 	{
@@ -269,30 +313,30 @@ export let users = [
 		relatedObjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Объект Inventore, repellat.',
-			},
+				title: 'Один какой-то Объект Inventore, repellat.'
+			}
 		],
 		relatedProjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.'
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Проект Inventore, repellat.',
-			},
+				title: 'Один какой-то Проект Inventore, repellat.'
+			}
 		],
 		relatedLinks: [
 			{
@@ -301,7 +345,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'журнал «Прораб Перестройки», стр. 21-24',
+				source: 'журнал «Прораб Перестройки», стр. 21-24'
 			},
 
 			{
@@ -310,7 +354,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
+				source: 'Интернет-портал «Наш Край Тамбов»'
 			},
 
 			{
@@ -319,8 +363,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				date: '26 марта 2023 года',
-				source: 'Интернет-портал «Наш Край Тамбов»',
-			},
+				source: 'Интернет-портал «Наш Край Тамбов»'
+			}
 		],
 		documents: [
 			{
@@ -329,7 +373,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -338,7 +382,7 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'pdf',
-				size: '68.5 Кбайт',
+				size: '68.5 Кбайт'
 			},
 
 			{
@@ -347,8 +391,8 @@ export let users = [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.',
 				link: '#',
 				type: 'doc',
-				size: '68.5 Кбайт',
-			},
+				size: '68.5 Кбайт'
+			}
 		],
 		groups: [
 			{
@@ -359,8 +403,18 @@ export let users = [
 				role: 'Участник',
 				entryDate: '2019.08.28',
 				status: 'Третий статус'
-			},
+			}
+		],
+		events: [
+			{
+				id: '3',
+				title: 'Замок Винтерфелл',
+				partGroup: 'ВФК «Третья стража»',
+				location: 'пгт Винтерфелльск-Заволжскокамский',
+				dates: ['2022.02.11', '2022.02.13'],
+				type: 'Организатор'
+			}
 		]
-	},
+	}
 
 ]

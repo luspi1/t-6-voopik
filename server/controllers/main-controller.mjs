@@ -24,6 +24,12 @@ export const getUsers= (req, res) => {
 
 	res.status(200).json(filteredUsers)
 }
+export const getUserById = (req, res) => {
+	const userId = req.params.id
+	const foundUser = users.find((user) => user.id === userId )
+
+	res.status(200).json(foundUser)
+}
 export const getUsersGroup = (req, res) => {
 	const {q} = req.query
 	const userId = req.params.id
@@ -33,10 +39,13 @@ export const getUsersGroup = (req, res) => {
 
 	res.status(200).json(filteredGroups)
 }
-
-export const getUserById = (req, res) => {
+export const getUsersEvent = (req, res) => {
+	const {q} = req.query
 	const userId = req.params.id
-	const foundUser = users.find((user) => user.id === userId )
 
-	res.status(200).json(foundUser)
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredEvents = searchedUser.events.filter(event => event.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredEvents)
 }
+

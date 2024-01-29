@@ -1,0 +1,40 @@
+
+section.userEventsSection {
+  padding: 15px 0 10px;
+  border-bottom: 7px solid #F2F5F8;
+  .groupLengthInfo {
+    margin-bottom: 15px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.usersEventsTable {
+  grid-template-columns: minmax(40px, 0.2fr) minmax(330px, 2fr) minmax(110px, 0.95fr) minmax(150px, 0.95fr) minmax(110px, 0.95fr) minmax(105px, 0.95fr);
+
+  td {
+    min-height: 100px;
+    padding: 0 3px;
+    &:nth-child(5) {
+      p {
+        text-align: center;
+        max-width: 70px;
+        margin: 0;
+      }
+    }
+  }
+
+}
+
+.usersEventsSearchWrapper {
+  svg {
+    left: 78px;
+  }
+
+  input {
+    padding: 6px 20px 6px 83px;
+  }
+}
+
+

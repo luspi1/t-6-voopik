@@ -1,17 +1,18 @@
 import { type FC, useState } from 'react'
 import { type GroupItem } from 'src/types/groups'
+
+import { Link, useParams } from 'react-router-dom'
+
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetUserGroupQuery } from 'src/store/users/users.api'
 import { TableSearch } from 'src/modules/table-search/table-search'
-
 import { MainSelect } from 'src/UI/MainSelect/MainSelect'
-import { Link, useParams } from 'react-router-dom'
 import { formatDate1 } from 'src/helpers/utils'
 import { Loader } from 'src/components/loader/loader'
 import { CustomTable } from 'src/components/custom-table/custom-table'
+import { Pagination } from 'src/components/pagination/pagination'
 
 import styles from './index.module.scss'
-import { Pagination } from 'src/components/pagination/pagination'
 export const UserGroups: FC = () => {
 	const [searchGroups, setSearchGroups] = useState<string>('')
 	const debouncedSearch = useDebounce(searchGroups)
