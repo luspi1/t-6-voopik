@@ -57,4 +57,13 @@ export const getUsersProject = (req, res) => {
 
 	res.status(200).json(filteredProjects)
 }
+export const getUsersObject = (req, res) => {
+	const {q} = req.query
+	const userId = req.params.id
+
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredObjects = searchedUser.objects.filter(object => object.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredObjects)
+}
 

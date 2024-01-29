@@ -176,6 +176,32 @@ export let users = [
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
 			}
+		],
+		objects: [
+			{
+				id: '1',
+				title: 'Официальное наименование Объекта с сокращениями',
+				type: 'Первый тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Закрыт',
+				region: 'Санкт-Петербург'
+			},
+			{
+				id: '2',
+				title: 'Объект 2',
+				type: 'Первый тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Открыт',
+				region: 'Ростовская обл.'
+			},
+			{
+				id: '3',
+				title: 'Объект 3',
+				type: 'Второй тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Перекрыт',
+				region: 'Респ. Татарстан'
+			},
 		]
 	},
 	{
@@ -331,6 +357,24 @@ export let users = [
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
 			}
+		],
+		objects: [
+			{
+				id: '2',
+				title: 'Объект 2',
+				type: 'Первый тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Открыт',
+				region: 'Ростовская обл.'
+			},
+			{
+				id: '3',
+				title: 'Объект 3',
+				type: 'Второй тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Перекрыт',
+				region: 'Респ. Татарстан'
+			},
 		]
 	},
 	{
@@ -462,6 +506,16 @@ export let users = [
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
 			}
+		],
+		objects: [
+			{
+				id: '3',
+				title: 'Объект 3',
+				type: 'Второй тип',
+				registryNumber: '342 : 0099 : 4432 : А2',
+				status: 'Перекрыт',
+				region: 'Респ. Татарстан'
+			},
 		]
 	}
 
