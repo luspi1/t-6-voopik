@@ -4,7 +4,7 @@ import {
 	getUserById,
 	getUsers,
 	getUsersEvent,
-	getUsersGroup, getUsersObject, getUsersProject
+	getUsersGroup, getUsersObject, getUsersPhotos, getUsersProject, getUsersVideos
 } from '../controllers/main-controller.mjs'
 import { Router } from 'express'
 
@@ -18,4 +18,6 @@ router.get('/users/:id/group', getUsersGroup)
 router.get('/users/:id/event', getUsersEvent)
 router.get('/users/:id/project', getUsersProject)
 router.get('/users/:id/object', getUsersObject)
+router.get('/users/:id/photo', getUsersPhotos)
+router.get('/users/:id/video', getUsersVideos)
 

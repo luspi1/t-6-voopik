@@ -1,5 +1,9 @@
-.userGallery {
-
+section.userGallery {
+  padding: 15px 0 15px;
+  border-bottom: 7px solid #F2F5F8;
+  h4 {
+    font-size: 16px;
+  }
 }
 
 .galleryHeader {
@@ -7,12 +11,14 @@
   align-items: center;
   width: 100%;
   gap: 30px;
+  margin-bottom: 20px;
   .galleryLengthInfo {
     font-size: 16px;
     margin: 0;
-    span {
-      font-weight: 700;
-    }
   }
 }
 
+.allAlbumsLink {
+  color: #015DB9;
+  font-size: 16px;
+}

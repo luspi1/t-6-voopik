@@ -3,6 +3,8 @@ import { type GroupItem } from 'src/types/groups'
 import { type EventsItem } from 'src/types/events'
 import { type ProjectItem } from 'src/types/projects'
 import { type ObjectItem } from 'src/types/objects'
+import { type PhotoItem } from 'src/types/photos'
+import { type VideoItem } from 'src/types/videos'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -60,6 +62,22 @@ export const usersApi = createApi({
 				},
 			}),
 		}),
+		getUserPhoto: build.query<PhotoItem[], [string, string]>({
+			query: ([search, userId]) => ({
+				url: `users/${userId}/photo`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
+		getUserVideo: build.query<VideoItem[], [string, string]>({
+			query: ([search, userId]) => ({
+				url: `users/${userId}/video`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
 	}),
 })
 
@@ -70,4 +88,6 @@ export const {
 	useGetUserEventQuery,
 	useGetUserProjectQuery,
 	useGetUserObjectQuery,
+	useGetUserPhotoQuery,
+	useGetUserVideoQuery,
 } = usersApi

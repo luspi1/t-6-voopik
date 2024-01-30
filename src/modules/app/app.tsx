@@ -8,7 +8,7 @@ import { Layout } from 'src/modules/layout/layout'
 import { HomePage } from 'src/pages/home-page/home-page'
 import { NotFound } from 'src/pages/not-found/not-found'
 
-import { ObjectsPage } from 'src/pages/objects-page/objects-page'
+import { ObjectsLayout } from 'src/pages/objects-page/layout/objects-layout'
 import { ProjectsPage } from 'src/pages/projects-page/projects-page'
 import { LibraryPage } from 'src/pages/library-page/library-page'
 import { EventsPage } from 'src/pages/events-page/events-page'
@@ -87,7 +87,7 @@ export const App: FC = () => {
 					</Route>
 				</Route>
 
-				<Route path={AppRoute.Objects} element={<ObjectsPage />} />
+				<Route path={AppRoute.Objects} element={<ObjectsLayout />} />
 				<Route path={AppRoute.Projects} element={<ProjectsPage />} />
 				<Route path={AppRoute.Library} element={<LibraryPage />} />
 				<Route path={AppRoute.Events} element={<EventsPage />} />

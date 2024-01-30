@@ -66,4 +66,22 @@ export const getUsersObject = (req, res) => {
 
 	res.status(200).json(filteredObjects)
 }
+export const getUsersPhotos = (req, res) => {
+	const {q} = req.query
+	const userId = req.params.id
+
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredPhotos = searchedUser.photos.filter(photo => photo.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredPhotos)
+}
+export const getUsersVideos = (req, res) => {
+	const {q} = req.query
+	const userId = req.params.id
+
+	const searchedUser = users.find(user => user.id === userId)
+	const filteredVideos = searchedUser.videos.filter(video => video.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredVideos)
+}
 

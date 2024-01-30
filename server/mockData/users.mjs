@@ -202,6 +202,70 @@ export let users = [
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
 			},
+		],
+		photos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+			},
+		],
+		videos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+			},
 		]
 	},
 	{
@@ -375,6 +439,70 @@ export let users = [
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
 			},
+		],
+		photos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+			},
+		],
+		videos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+			},
 		]
 	},
 	{
@@ -515,6 +643,70 @@ export let users = [
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан'
+			},
+		],
+		photos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+			},
+		],
+		videos: [
+			{
+				id: '1',
+				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
+				date: '2022.12.23',
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+			},
+			{
+				id: '2',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+			},
+			{
+				id: '3',
+				title: 'Спасо-Бородинский монастырь. Часть 2',
+				date: '2021.11.13',
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+			},
+			{
+				id: '4',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2018.05.01',
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+			},
+			{
+				id: '5',
+				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
+				date: '2011.01.05',
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
 			},
 		]
 	}
