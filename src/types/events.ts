@@ -1,7 +1,8 @@
 export type EventsItem = {
 	id: string
 	title: string
-	partGroup: string
+	contactPerson?: string
+	partGroup?: string
 	location: string
 	dates: [string, string]
 	type: string

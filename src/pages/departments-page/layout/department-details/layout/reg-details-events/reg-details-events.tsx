@@ -1,5 +1,21 @@
 import { type FC } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { DepartmentEventsTable } from './components/events-table/events-table'
+import { useGetRegionEventsQuery } from 'src/store/regions/regions.api'
+import styles from './index.module.scss'
 
 export const RegDetailsEvents: FC = () => {
-	return <div>Раздел рег отделения - Информация</div>
+	const { id } = useParams()
+	const { data: events } = useGetRegionEventsQuery(['', id ?? ''])
+
+	return (
+		events && (
+			<div className={styles.eventsTablePage}>
+				<h2 className={styles.title}>События</h2>
+				<p className={styles.eventsCount}>Всего событий: {events.length}</p>
+				<DepartmentEventsTable />
+			</div>
+		)
+	)
 }

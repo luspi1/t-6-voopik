@@ -1,4 +1,6 @@
 import { type RegionItem } from 'src/types/regions'
+import { type ShortUserItemType } from 'src/types/users'
+import { type EventsItem } from 'src/types/events'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -25,8 +27,29 @@ export const regionsApi = createApi({
 			}),
 		}),
 
-		
+		getRegionParticipants: build.query<ShortUserItemType[], [string, string]>({
+			query: ([search, regCode]) => ({
+				url: `regions/${regCode}/participants`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
+
+		getRegionEvents: build.query<EventsItem[], [string, string]>({
+			query: ([search, regCode]) => ({
+				url: `regions/${regCode}/events`,
+				params: {
+					q: search,
+				},
+			}),
+		}),
 	}),
 })
 
-export const { useGetAllRegionsQuery, useGetRegionByCodeQuery } = regionsApi
+export const {
+	useGetAllRegionsQuery,
+	useGetRegionByCodeQuery,
+	useGetRegionParticipantsQuery,
+	useGetRegionEventsQuery,
+} = regionsApi
