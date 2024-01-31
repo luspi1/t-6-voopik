@@ -1,5 +1,4 @@
 import { type FC } from 'react'
-import { type ShortDocument } from 'src/types/document'
 import { type LinkItem } from 'src/types/global'
 import { type UserLink } from 'src/types/users'
 
@@ -7,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 import { InfoRow } from 'src/UI/InfoRow/InfoRow'
 import { useGetUserByIdQuery } from 'src/store/users/users.api'
-import { formatRelatedLinks } from 'src/helpers/utils'
+import { formatDocumentLinks, formatRelatedLinks } from 'src/helpers/utils'
 import { LinksList } from 'src/components/links-list/links-list'
 
 import styles from './index.module.scss'
@@ -16,17 +15,6 @@ export const UserDetails: FC = () => {
 	const { id } = useParams()
 
 	const { data: userInfo } = useGetUserByIdQuery(id ?? '')
-	const formatDocumentLinks = (data: ShortDocument[] | undefined): LinkItem[] | undefined => {
-		if (!data) return undefined
-		return data.map((docItem) => ({
-			id: docItem.id,
-			link: docItem.link,
-			titleLink: docItem.title,
-			type: docItem.type,
-			label: [`${docItem.type}-файл`, docItem.size],
-		}))
-	}
-
 	const formatUserLinks = (data: UserLink[] | undefined): LinkItem[] | undefined => {
 		if (!data) return undefined
 		return data.map((regItem) => ({

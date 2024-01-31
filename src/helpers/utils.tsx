@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react'
-import { type RelatedLink } from 'src/types/global'
+import { type LinkItem, type RelatedLink } from 'src/types/global'
+import { type ShortDocument } from 'src/types/document'
 
 import { Link } from 'react-router-dom'
 
@@ -58,4 +59,16 @@ export const formatRelatedLinks = (data: RelatedLink[] | undefined, link: string
 			{linkEl.title}
 		</Link>
 	))
+}
+
+// Форматирование ссылок на документы
+export const formatDocumentLinks = (data: ShortDocument[] | undefined): LinkItem[] | undefined => {
+	if (!data) return undefined
+	return data.map((docItem) => ({
+		id: docItem.id,
+		link: docItem.link,
+		titleLink: docItem.title,
+		type: docItem.type,
+		label: [`${docItem.type}-файл`, docItem.size],
+	}))
 }

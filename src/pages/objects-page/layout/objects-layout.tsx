@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 
-import { Outlet, useParams } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import { Container } from 'src/UI/Container/Container'
 import { BreadCrumbs } from 'src/modules/bread-crumbs/bread-crumbs'
@@ -11,7 +11,6 @@ import { ObjectsMenuItems } from 'src/pages/objects-page/layout/consts'
 import styles from './index.module.scss'
 
 export const ObjectsLayout: FC = () => {
-	const { id } = useParams()
 	return (
 		<div>
 			<Container>
@@ -19,7 +18,7 @@ export const ObjectsLayout: FC = () => {
 					crumbsLinksMap={[
 						{
 							title: 'Объекты',
-							link: 'objects-list',
+							link: 'objects',
 						},
 						{
 							title: 'Об объектах',
@@ -29,8 +28,7 @@ export const ObjectsLayout: FC = () => {
 				/>
 				<div className={styles.objectsContentWrapper}>
 					<Outlet />
-
-					{!id && <SideMenu className={styles.objectsSideMenu} sideItems={ObjectsMenuItems} />}
+					<SideMenu className={styles.objectsSideMenu} sideItems={ObjectsMenuItems} />
 				</div>
 			</Container>
 		</div>

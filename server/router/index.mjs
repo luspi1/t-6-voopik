@@ -1,4 +1,6 @@
 import {
+	getObjectById,
+	getObjects,
 	getRegionByCode,
 	getRegions,
 	getUserById,
@@ -20,4 +22,6 @@ router.get('/users/:id/project', getUsersProject)
 router.get('/users/:id/object', getUsersObject)
 router.get('/users/:id/photo', getUsersPhotos)
 router.get('/users/:id/video', getUsersVideos)
+router.get('/objects', getObjects)
+router.get('/objects/:id', getObjectById)
 

@@ -13,7 +13,7 @@ export const FeedbackAddress: FC = () => {
 	return (
 		<div className={styles.feedbackAddress}>
 			<RegionSelection className={styles.feedbackSelectRegion} />
-			<ContactsMap points={[55.745032, 37.599139]} zoom={17} />
+			<ContactsMap points={[55.745032, 37.599139]} />
 			<ul className={styles.contactsList}>
 				<li>
 					<AddressIconSvg />

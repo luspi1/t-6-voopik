@@ -23,6 +23,7 @@ export enum AppRoute {
 	UserObjects = 'user-objects',
 	UserGallery = 'user-gallery',
 	Objects = 'objects',
+	ObjectsAbout = 'objects-about',
 	Projects = 'projects',
 	Library = 'library',
 	Events = 'events',
@@ -31,6 +32,7 @@ export enum AppRoute {
 export enum ReducerPath {
 	Regions = 'regions/api',
 	Users = 'users/api',
+	Objects = 'objects/api',
 }
 
 export enum NameSpace {

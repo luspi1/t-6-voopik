@@ -1,25 +1,29 @@
 import { type FC } from 'react'
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps'
 import styles from './index.module.scss'
 import cn from 'classnames'
 
 export type ContactsMapProps = {
-	points: number[]
-	zoom: number
+	points?: [number, number]
+	zoom?: number
 	className?: string
 }
 
-export const ContactsMap: FC<ContactsMapProps> = ({ points, zoom, className }) => (
-	<div className={cn(styles.contactMap, className)}>
-		<YMaps>
-			<Map
-				defaultState={{ center: points, controls: [], zoom }}
-				options={{ suppressMapOpenBlock: true }}
-				width='100%'
-				height='100%'
-			>
-				<Placemark geometry={points} />
-			</Map>
-		</YMaps>
-	</div>
-)
+export const ContactsMap: FC<ContactsMapProps> = ({ points, zoom, className }) => {
+	if (!points) return null
+
+	return (
+		<div className={cn(styles.contactMap, className)}>
+			<YMaps>
+				<Map
+					defaultState={{ center: points, controls: [], zoom: zoom ?? 17 }}
+					options={{ suppressMapOpenBlock: true }}
+					width='100%'
+					height='100%'
+				>
+					<Placemark geometry={points} />
+				</Map>
+			</YMaps>
+		</div>
+	)
+}
