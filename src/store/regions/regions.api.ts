@@ -24,6 +24,8 @@ export const regionsApi = createApi({
 				url: `regions/${regCode}`,
 			}),
 		}),
+
+		
 	}),
 })
 

@@ -48,7 +48,6 @@ export let regions = [
 				title: 'Один какой-то Проект Inventore, repellat.',
 			},
 		],
-
 		relatedLinks: [
 			{
 				id: '0',
@@ -77,7 +76,6 @@ export let regions = [
 				source: 'Интернет-портал «Наш Край Тамбов»',
 			},
 		],
-
 		documents: [
 			{
 				id: '0',
@@ -104,6 +102,36 @@ export let regions = [
 				link: '#',
 				type: 'doc',
 				size: '68.5 Кбайт',
+			},
+		],
+		participants: [
+			{
+				id: '1',				
+				fullname: 'Ахмадиев Фаризулла Мухаммадиевич',
+				position: 'Руководитель Отделения',
+				group: 'Правление',
+				regDate: '24.03.1999',				
+				mainStatus: 'Первый статус',	
+			},
+
+
+			{
+				id: '2',				
+				fullname: 'Кленовичичевский Богдан Архедупсович',
+				position: 'Секретарь Отделения',
+				group: 'Правление',
+				regDate: '30.02.2005',				
+				mainStatus: 'Второй статус',	
+			},
+
+
+			{
+				id: '3',				
+				fullname: 'Нифаригуллина Мавлюда Талгатовна',
+				position: 'Участник',
+				group: 'Участники',
+				regDate: '28.08.2019',				
+				mainStatus: 'Третий статус',	
 			},
 		],
 		mainInfoLogo: 'https://sun1-25.userapi.com/s/v1/ig2/jfvffEYPp17VjblK1pvKlNPDtf5GtwgPc2TUfsPdm7wQAkKLdTX5joed9-pIG9EMDpLuEQmdGk3NaLnzkZ1Je26f.jpg?size=1783x1920&quality=96&crop=63,0,1783,1920&ava=1',

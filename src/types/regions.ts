@@ -1,5 +1,6 @@
 import { type ShortDocument } from './document'
 import { type RelatedLink } from 'src/types/global'
+import { type ShortUserItemType } from './users'
 
 export type RegionLink = {
 	id: string
@@ -31,4 +32,5 @@ export type RegionItem = {
 	relatedProjects: RelatedLink[]
 	relatedLinks: RegionLink[]
 	documents: ShortDocument[]
+	participants: ShortUserItemType[]
 }

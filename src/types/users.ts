@@ -9,6 +9,15 @@ export type UserLink = {
 	source: string
 }
 
+export type ShortUserItemType = {
+	id: string
+	fullname: string
+	position: string
+	group: string
+	regDate: string
+	mainStatus: string
+}
+
 export type UserItem = {
 	id: string
 	avatar: string

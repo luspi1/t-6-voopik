@@ -1,0 +1,26 @@
+// .usersTable {
+//     grid-template-columns: minmax(40px, 0.2fr) minmax(320px, 2.8fr) minmax(100px, 1.4fr) minmax(70px, 0.8fr) minmax(80px, 1.1fr) minmax(130px, 1.2fr);
+//     margin-bottom: 10px;
+
+//     td {
+//         min-height: 100px;
+//     }
+// }
+
+// .usersSearchWrapper {
+//     svg {
+//         left: 78px;
+//     }
+
+//     input {
+//         padding: 6px 20px 6px 83px;
+//     }
+// }
+
+.departmentTable {
+    grid-template-columns: minmax(40px, 0.5fr) minmax(96px, 1.5fr) minmax(96px, 1.5fr) minmax(390px, 5fr) minmax(130px, 2fr) minmax(130px, 2fr);
+    margin-bottom: 20px;
+    td:nth-child(2) {
+      font-weight: 700;
+    }
+  }
