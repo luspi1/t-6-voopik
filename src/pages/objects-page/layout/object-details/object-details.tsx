@@ -96,7 +96,7 @@ export const ObjectDetails: FC = () => {
 			<section>
 				<LinksList dataList={formatObjectsLinks(objectData?.relatedLinks)} title='Массив ссылок ' />
 			</section>
-			<Link className={styles.objectListLinks} to={`/${AppRoute.Objects}`}>
+			<Link className={styles.objectListLink} to={`/${AppRoute.Objects}`}>
 				На страницу списка Объектов
 			</Link>
 		</PageContent>

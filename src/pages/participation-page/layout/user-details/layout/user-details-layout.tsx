@@ -10,12 +10,16 @@ import { useLocationMatch } from 'src/hooks/location-match'
 import { AppRoute } from 'src/helpers/consts'
 
 import styles from './index.module.scss'
+import { Helmet } from 'react-helmet-async'
 export const UserDetailsLayout: FC = () => {
 	const [matchesLocation] = useLocationMatch<ContentNav>([`${AppRoute.Users}/:id`])
 
 	if (matchesLocation) return <Navigate to={AppRoute.UserInfo} replace />
 	return (
 		<PageContent className={styles.userDetailsContent} $padding='30px 30px 40px 30px'>
+			<Helmet>
+				<title>Информация о пользователе</title>
+			</Helmet>
 			<UserInfo />
 			<h3>Информация</h3>
 			<NavUserInfo />

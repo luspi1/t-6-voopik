@@ -1,12 +1,18 @@
 import {
 	getObjectById,
 	getObjects,
+	getProjectById,
+	getProjects,
 	getRegionByCode,
 	getRegions,
 	getUserById,
 	getUsers,
 	getUsersEvent,
-	getUsersGroup, getUsersObject, getUsersPhotos, getUsersProject, getUsersVideos
+	getUsersGroup,
+	getUsersObject,
+	getUsersPhotos,
+	getUsersProject,
+	getUsersVideos
 } from '../controllers/main-controller.mjs'
 import { Router } from 'express'
 
@@ -24,4 +30,6 @@ router.get('/users/:id/photo', getUsersPhotos)
 router.get('/users/:id/video', getUsersVideos)
 router.get('/objects', getObjects)
 router.get('/objects/:id', getObjectById)
+router.get('/projects', getProjects)
+router.get('/projects/:id', getProjectById)
 

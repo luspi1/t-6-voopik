@@ -1,0 +1,18 @@
+.projectsContentWrapper {
+  display: flex;
+  gap: 35px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.projectsSideMenu {
+  padding-top: 30px;
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    padding-top: 30px;
+    margin-bottom: 15px;
+  }
+}

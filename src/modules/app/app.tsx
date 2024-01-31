@@ -8,7 +8,6 @@ import { Layout } from 'src/modules/layout/layout'
 import { HomePage } from 'src/pages/home-page/home-page'
 import { NotFound } from 'src/pages/not-found/not-found'
 
-import { ProjectsPage } from 'src/pages/projects-page/projects-page'
 import { LibraryPage } from 'src/pages/library-page/library-page'
 import { EventsPage } from 'src/pages/events-page/events-page'
 import { ShopPage } from 'src/pages/shop-page/shop-page'
@@ -47,6 +46,11 @@ import { ObjectsLayout } from 'src/pages/objects-page/layout/objects-layout'
 import { ObjectsList } from 'src/pages/objects-page/layout/objects-list/objects-list'
 import { ObjectsAbout } from 'src/pages/objects-page/layout/objects-about/objects-about'
 import { ObjectDetails } from 'src/pages/objects-page/layout/object-details/object-details'
+
+import { ProjectsLayout } from 'src/pages/projects-page/layout/projects-layout'
+import { ProjectsList } from 'src/pages/projects-page/layout/projects-list/projects-list'
+import { ProjectsAbout } from 'src/pages/projects-page/layout/projects-about/projects-about'
+import { ProjectDetails } from 'src/pages/projects-page/layout/project-details/project-details'
 
 export const App: FC = () => {
 	return (
@@ -96,7 +100,11 @@ export const App: FC = () => {
 					<Route path={AppRoute.ObjectsAbout} element={<ObjectsAbout />} />
 					<Route path=':id' element={<ObjectDetails />} />
 				</Route>
-				<Route path={AppRoute.Projects} element={<ProjectsPage />} />
+				<Route path={AppRoute.Projects} element={<ProjectsLayout />}>
+					<Route index element={<ProjectsList />} />
+					<Route path={AppRoute.ProjectsAbout} element={<ProjectsAbout />} />
+					<Route path=':id' element={<ProjectDetails />} />
+				</Route>
 				<Route path={AppRoute.Library} element={<LibraryPage />} />
 				<Route path={AppRoute.Events} element={<EventsPage />} />
 				<Route path={AppRoute.Shop} element={<ShopPage />} />

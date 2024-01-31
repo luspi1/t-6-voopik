@@ -1,6 +1,7 @@
 import { regions } from '../mockData/regions.mjs'
 import { users } from '../mockData/users.mjs'
 import { objects } from '../mockData/objects.mjs'
+import { projects } from '../mockData/projects.mjs'
 
 export const getRegions = (req, res) => {
 	const {q} = req.query
@@ -99,4 +100,18 @@ export const getObjectById = (req, res) => {
 	const foundObject = objects.find((object) => object.id === objectId )
 
 	res.status(200).json(foundObject)
+}
+export const getProjects = (req, res) => {
+	const {q} = req.query
+
+	const filteredProjects = projects.filter(el => el.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredProjects)
+}
+
+export const getProjectById = (req, res) => {
+	const projectId = req.params.id
+	const foundProject = projects.find((project) => project.id === projectId )
+
+	res.status(200).json(foundProject)
 }

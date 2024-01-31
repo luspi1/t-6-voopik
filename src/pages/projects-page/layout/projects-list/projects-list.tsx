@@ -1,16 +1,22 @@
 import { type FC } from 'react'
 
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 
 import { PageContent } from 'src/components/page-content/page-content'
+import { ProjectsTable } from 'src/pages/projects-page/layout/projects-list/projects-table/projects-table'
 
-export const ObjectsAbout: FC = () => {
+import { AppRoute } from 'src/helpers/consts'
+
+import styles from './index.module.scss'
+
+export const ProjectsList: FC = () => {
 	return (
-		<PageContent>
+		<PageContent $padding='30px 35px 45px 30px'>
 			<Helmet>
-				<title>Об объектах ВООПИК</title>
+				<title>Проекты</title>
 			</Helmet>
-			<h2>Об объектах ВООПИК</h2>
+			<h2>Проекты</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
 				Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar
@@ -18,6 +24,11 @@ export const ObjectsAbout: FC = () => {
 				mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus
 				pronin sapien nunc accuan eget.
 			</p>
+			<Link className={styles.projectLink} to={AppRoute.ProjectsAbout}>
+				Подробнее о проектах
+			</Link>
+
+			<ProjectsTable />
 		</PageContent>
 	)
 }

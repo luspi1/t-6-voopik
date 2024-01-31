@@ -1,12 +1,15 @@
 import { type FC } from 'react'
 
+import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
+
 import { PageContent } from 'src/components/page-content/page-content'
 import { ObjectsTable } from 'src/pages/objects-page/layout/objects-list/objects-table/objects-table'
 
-import styles from './index.module.scss'
-import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
 import { AppRoute } from 'src/helpers/consts'
+
+import styles from './index.module.scss'
+
 export const ObjectsList: FC = () => {
 	return (
 		<PageContent $padding='30px 35px 45px 30px'>

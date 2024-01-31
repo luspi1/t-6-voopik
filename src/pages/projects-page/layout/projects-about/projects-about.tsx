@@ -4,13 +4,13 @@ import { Helmet } from 'react-helmet-async'
 
 import { PageContent } from 'src/components/page-content/page-content'
 
-export const ObjectsAbout: FC = () => {
+export const ProjectsAbout: FC = () => {
 	return (
 		<PageContent>
 			<Helmet>
-				<title>Об объектах ВООПИК</title>
+				<title>О проектах ВООПИК</title>
 			</Helmet>
-			<h2>Об объектах ВООПИК</h2>
+			<h2>О проектах ВООПИК</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
 				Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar
