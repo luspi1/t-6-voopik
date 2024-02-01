@@ -8,7 +8,7 @@ import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetRegionParticipantsQuery } from 'src/store/regions/regions.api'
-import { type ShortUserItemType } from 'src/types/users'
+import { type UserItem } from 'src/types/users'
 import styles from './index.module.scss'
 import { formatDate1 } from 'src/helpers/utils'
 
@@ -40,7 +40,7 @@ export const DepartmentParticipantsTable = () => {
 		<MainSelect key={5} items={[{ label: 'Статус Персоны', value: '0' }]} />,
 	]
 
-	const formatUsersTableData = (usersData: ShortUserItemType[]) => {
+	const formatUsersTableData = (usersData: UserItem[]) => {
 		return usersData.map((userEl, idx) => {
 			return [
 				String(idx + 1),

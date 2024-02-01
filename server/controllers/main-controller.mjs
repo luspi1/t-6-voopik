@@ -12,17 +12,26 @@ export const getRegions = (req, res) => {
 }
 
 export const getRegionParticipants = (req, res) => {
+	const { q } = req.query
 	const regionCode = req.params.code
+
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
-	const regionParticipants = foundRegion.participants
-	res.status(200).json(regionParticipants)
+	const filteredRegionParticipants = foundRegion.participants.filter((item) =>
+		item.fullname.toLowerCase().includes(q),
+	)
+	res.status(200).json(filteredRegionParticipants)
 }
 
 export const getRegionEvents = (req, res) => {
+	const { q } = req.query
 	const regionCode = req.params.code
+
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
-	const regionEvents = foundRegion.events
-	res.status(200).json(regionEvents)
+	const filteredRegionEvents = foundRegion.events.filter((item) =>
+		item.title.toLowerCase().includes(q),
+	)
+
+	res.status(200).json(filteredRegionEvents)
 }
 
 export const getRegionByCode = (req, res) => {
@@ -112,30 +121,30 @@ export const getUsersVideos = (req, res) => {
 	res.status(200).json(filteredVideos)
 }
 export const getObjects = (req, res) => {
-	const {q} = req.query
+	const { q } = req.query
 
-	const filteredObjects = objects.filter(el => el.title.toLowerCase().includes(q))
+	const filteredObjects = objects.filter((el) => el.title.toLowerCase().includes(q))
 
 	res.status(200).json(filteredObjects)
 }
 
 export const getObjectById = (req, res) => {
 	const objectId = req.params.id
-	const foundObject = objects.find((object) => object.id === objectId )
+	const foundObject = objects.find((object) => object.id === objectId)
 
 	res.status(200).json(foundObject)
 }
 export const getProjects = (req, res) => {
-	const {q} = req.query
+	const { q } = req.query
 
-	const filteredProjects = projects.filter(el => el.title.toLowerCase().includes(q))
+	const filteredProjects = projects.filter((el) => el.title.toLowerCase().includes(q))
 
 	res.status(200).json(filteredProjects)
 }
 
 export const getProjectById = (req, res) => {
 	const projectId = req.params.id
-	const foundProject = projects.find((project) => project.id === projectId )
+	const foundProject = projects.find((project) => project.id === projectId)
 
 	res.status(200).json(foundProject)
 }
