@@ -23,15 +23,28 @@ export let regions = [
 		relatedObjects: [
 			{
 				id: '1',
-				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+				title: 'Официальное наименование Объекта с сокращениями',
+				type: 'Первый тип',
+				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				status: 'Закрыт',
+				region: 'Санкт-Петербург'
+
 			},
 			{
 				id: '2',
-				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+				title: 'Официальное наименование Объекта с сокращениями',
+				type: 'Первый тип',
+				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				status: 'Открыт',
+				region: 'Ростовская обл.'
 			},
 			{
 				id: '3',
-				title: 'Один какой-то Объект Inventore, repellat.',
+				title: 'Официальное наименование Объекта с сокращениями',
+				type: 'Второй тип',
+				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				status: 'Перекрыт',
+				region: 'Респ. Татарстан'
 			},
 		],
 		relatedProjects: [

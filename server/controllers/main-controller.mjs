@@ -12,6 +12,20 @@ export const getRegions = (req, res) => {
 }
 
 
+
+export const getRegionObjects = (req, res) => {
+	const { q } = req.query
+	const regionCode = req.params.code
+
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	const filteredRegionObjects = foundRegion.events.filter((item) =>
+		item.title.toLowerCase().includes(q),
+	)
+
+	res.status(200).json(filteredRegionObjects)
+}
+
+
 export const getRegionByCode = (req, res) => {
 	const regionCode = req.params.code
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)

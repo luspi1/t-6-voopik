@@ -4,6 +4,12 @@ import {
 	getProjectById,
 	getProjects,
 	getRegionByCode,
+<<<<<<< Updated upstream
+=======
+	getRegionParticipants,
+	getRegionEvents,
+	getRegionObjects,
+>>>>>>> Stashed changes
 	getRegions,
 	getUserById,
 	getUsers,
@@ -20,6 +26,12 @@ export const router = new Router()
 
 router.get('/regions', getRegions)
 router.get('/regions/:code', getRegionByCode)
+<<<<<<< Updated upstream
+=======
+router.get('/regions/:code/participants', getRegionParticipants)
+router.get('/regions/:code/events', getRegionEvents) 
+router.get('/regions/:code/objects', getRegionObjects) 
+>>>>>>> Stashed changes
 router.get('/users', getUsers)
 router.get('/users/:id', getUserById)
 router.get('/users/:id/group', getUsersGroup)
