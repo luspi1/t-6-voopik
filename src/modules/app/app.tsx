@@ -35,7 +35,6 @@ import { DepartmentsList } from 'src/pages/departments-page/layout/departments-l
 import { DepartmentsAbout } from 'src/pages/departments-page/layout/departments-about/departments-about'
 import { DepartmentDetailsLayout } from 'src/pages/departments-page/layout/department-details/layout/department-details-layout'
 import { RegDetailsInfo } from 'src/pages/departments-page/layout/department-details/layout/reg-details-info/reg-details-info'
-import { RegDetailsGroups } from 'src/pages/departments-page/layout/department-details/layout/reg-details-groups/reg-details-groups'
 import { RegDetailsParticipants } from 'src/pages/departments-page/layout/department-details/layout/reg-details-participants/reg-details-participants'
 import { RegDetailsEvents } from 'src/pages/departments-page/layout/department-details/layout/reg-details-events/reg-details-events'
 import { RegDetailsObjects } from 'src/pages/departments-page/layout/department-details/layout/reg-details-objects/reg-details-objects'
@@ -71,7 +70,6 @@ export const App: FC = () => {
 					<Route path={AppRoute.DepartmentsAbout} element={<DepartmentsAbout />} />
 					<Route path=':id' element={<DepartmentDetailsLayout />}>
 						<Route path={AppRoute.DepartmentsDetailsInfo} element={<RegDetailsInfo />} />
-						<Route path={AppRoute.DepartmentsDetailsGroups} element={<RegDetailsGroups />} />
 						<Route
 							path={AppRoute.DepartmentsDetailsParticipant}
 							element={<RegDetailsParticipants />}

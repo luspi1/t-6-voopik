@@ -4,6 +4,8 @@ import {
 	getProjectById,
 	getProjects,
 	getRegionByCode,
+	getRegionParticipants,
+	getRegionEvents,
 	getRegions,
 	getUserById,
 	getUsers,
@@ -20,6 +22,8 @@ export const router = new Router()
 
 router.get('/regions', getRegions)
 router.get('/regions/:code', getRegionByCode)
+router.get('/regions/:code/participants', getRegionParticipants)
+router.get('/regions/:code/events', getRegionEvents) 
 router.get('/users', getUsers)
 router.get('/users/:id', getUserById)
 router.get('/users/:id/group', getUsersGroup)

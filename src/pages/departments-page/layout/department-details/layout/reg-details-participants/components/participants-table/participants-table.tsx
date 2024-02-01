@@ -1,31 +1,37 @@
-import { type UserItem } from 'src/types/users'
-
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { TableSearch } from 'src/modules/table-search/table-search'
-import { useDebounce } from 'src/hooks/debounce/debounce'
 import { MainSelect } from 'src/UI/MainSelect/MainSelect'
 import { Loader } from 'src/components/loader/loader'
-import { useGetAllUsersQuery } from 'src/store/users/users.api'
 
+import { useDebounce } from 'src/hooks/debounce/debounce'
+import { useGetRegionParticipantsQuery } from 'src/store/regions/regions.api'
+import { type UserItem } from 'src/types/users'
 import styles from './index.module.scss'
 import { formatDate1 } from 'src/helpers/utils'
-export const UsersTable = () => {
-	const [searchUser, setSearchUser] = useState<string>('')
-	const debouncedSearch = useDebounce(searchUser)
-	const { data: usersList, isLoading } = useGetAllUsersQuery(debouncedSearch)
 
-	const searchUsers = (value: string) => {
-		setSearchUser(value)
+export const DepartmentParticipantsTable = () => {
+	const { id } = useParams()
+
+	const [searchRegionParticipants, setSearchRegionParticipants] = useState<string>('')
+	const debouncedSearch = useDebounce(searchRegionParticipants)
+	const { data: participants, isLoading } = useGetRegionParticipantsQuery([
+		debouncedSearch,
+		id ?? '',
+	])
+
+	const searchDepartments = (value: string) => {
+		setSearchRegionParticipants(value)
 	}
+
 	const tableTitles = [
 		'№',
 		<TableSearch
 			wrapperClassName={styles.usersSearchWrapper}
 			key={1}
-			handleSearch={searchUsers}
+			handleSearch={searchDepartments}
 			placeholder='Поиск по фамилии Персоны'
 		/>,
 		'Должность',
@@ -49,13 +55,13 @@ export const UsersTable = () => {
 		})
 	}
 
-	if (isLoading || !usersList) return <Loader />
+	if (isLoading || !participants) return <Loader />
 
 	return (
 		<CustomTable
-			className={styles.usersTable}
-			cellsData={formatUsersTableData(usersList)}
-			colTitles={tableTitles}  
+			className={styles.departmentTable}
+			cellsData={formatUsersTableData(participants)}
+			colTitles={tableTitles}
 		/>
 	)
 }
