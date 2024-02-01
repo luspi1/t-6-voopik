@@ -11,8 +11,6 @@ export const getRegions = (req, res) => {
 	res.status(200).json(filteredRegions)
 }
 
-
-
 export const getRegionObjects = (req, res) => {
 	const { q } = req.query
 	const regionCode = req.params.code
@@ -24,7 +22,6 @@ export const getRegionObjects = (req, res) => {
 
 	res.status(200).json(filteredRegionObjects)
 }
-
 
 export const getRegionByCode = (req, res) => {
 	const regionCode = req.params.code

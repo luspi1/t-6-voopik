@@ -1,10 +1,7 @@
 import { type RegionItem } from 'src/types/regions'
-<<<<<<< Updated upstream
-=======
 import { type UserItem } from 'src/types/users'
 import { type EventsItem } from 'src/types/events'
 import { type RelatedLink } from 'src/types/global'
->>>>>>> Stashed changes
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -30,12 +27,6 @@ export const regionsApi = createApi({
 				url: `regions/${regCode}`,
 			}),
 		}),
-<<<<<<< Updated upstream
-	}),
-})
-
-export const { useGetAllRegionsQuery, useGetRegionByCodeQuery } = regionsApi
-=======
 
 		getRegionParticipants: build.query<UserItem[], [string, string]>({
 			query: ([search, regCode]) => ({
@@ -73,4 +64,3 @@ export const {
 	useGetRegionEventsQuery,
 	useGetRegionObjectsQuery,
 } = regionsApi
->>>>>>> Stashed changes

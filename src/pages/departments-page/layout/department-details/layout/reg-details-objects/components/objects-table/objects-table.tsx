@@ -7,56 +7,57 @@ import { MainSelect } from 'src/UI/MainSelect/MainSelect'
 import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
-import { useGetRegionEventsQuery } from 'src/store/regions/regions.api'
-import { type EventsItem } from 'src/types/events'
+import { useGetRegionObjectsQuery } from 'src/store/regions/regions.api'
+import { type RelatedLink } from 'src/types/global'
 import styles from './index.module.scss'
 
-export const DepartmentEventsTable = () => {
+export const DepartmentObjectsTable = () => {
 	const { id } = useParams()
 
-	const [searchRegionEvents, setSearchRegionEvents] = useState<string>('')
-	const debouncedSearch = useDebounce(searchRegionEvents)
-	const { data: events, isLoading } = useGetRegionEventsQuery([debouncedSearch, id ?? ''])
+	const [searchRegionObjects, setSearchRegionObjects] = useState<string>('')
+	const debouncedSearch = useDebounce(searchRegionObjects)
+	const { data: objects, isLoading } = useGetRegionObjectsQuery([debouncedSearch, id ?? ''])
 
-	const searchEvents = (value: string) => {
-		setSearchRegionEvents(value)
+	const searchObjects = (value: string) => {
+		setSearchRegionObjects(value)
 	}
 
 	const tableTitles = [
 		'№',
+		<MainSelect key={5} items={[{ label: 'Тип Объекта', value: '0' }]} />,
+		'Номер в госреестре',
+
 		<TableSearch
-			wrapperClassName={styles.eventsSearchWrapper}
+			wrapperClassName={styles.objectsSearchWrapper}
 			key={1}
-			handleSearch={searchEvents}
-			placeholder='Поиск по названию события'
+			handleSearch={searchObjects}
+			placeholder='Поиск по названию Объекта'
 		/>,
-		'Контактное лицо',
-		'Место проведения',
-		'Даты проведения',
-		<MainSelect key={5} items={[{ label: 'Тип участия', value: '0' }]} />,
+		<MainSelect key={5} items={[{ label: 'Тип Объекта', value: '0' }]} />,
+		'Регион',
 	]
 
-	const formatEventsTableData = (eventsData: EventsItem[]) => {
-		return eventsData.map((eventEl, idx) => {
+	const formatEventsTableData = (objectsData: RelatedLink[]) => {
+		return objectsData.map((objectEl, idx) => {
 			return [
 				String(idx + 1),
-				<Link to={eventEl.id} key={eventEl.id}>
-					{eventEl.title}
+				objectEl.type,
+
+				<Link to={objectEl.id} key={objectEl.id}>
+					{objectEl.title}
 				</Link>,
-				eventEl.contactPerson,
-				eventEl.location,
-				eventEl.dates.join(' - '),
-				eventEl.type,
+				objectEl.status,
+				objectEl.region,
 			]
 		})
 	}
 
-	if (isLoading || !events) return <Loader />
+	if (isLoading || !objects) return <Loader />
 
 	return (
 		<CustomTable
 			className={styles.eventsTable}
-			cellsData={formatEventsTableData(events)}
+			cellsData={formatEventsTableData(objects)}
 			colTitles={tableTitles}
 		/>
 	)
