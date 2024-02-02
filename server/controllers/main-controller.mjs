@@ -34,6 +34,41 @@ export const getRegionEvents = (req, res) => {
 	res.status(200).json(filteredRegionEvents)
 }
 
+export const getRegionObjects = (req, res) => {
+	const { q } = req.query
+	const regionCode = req.params.code
+
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	const filteredRegionObjects = foundRegion.objects.filter((item) =>
+		item.title.toLowerCase().includes(q),
+	)
+	res.status(200).json(filteredRegionObjects)
+}
+
+export const getRegionProjects = (req, res) => {
+	const { q } = req.query
+	const regionCode = req.params.code
+
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	const filteredRegionProjects = foundRegion.projects.filter((item) =>
+		item.title.toLowerCase().includes(q),
+	)
+	res.status(200).json(filteredRegionProjects)
+}
+
+export const getRegionPhotos = (req, res) => {
+	const regionCode = req.params.code
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	const regionPhotos = foundRegion.photos
+	res.status(200).json(regionPhotos)
+}
+
+export const getRegionVideos = (req, res) => {
+	const regionCode = req.params.code
+	const foundRegion = regions.find((region) => region.regionCode === regionCode)
+	res.status(200).json(foundRegion.videos)
+}
+
 export const getRegionByCode = (req, res) => {
 	const regionCode = req.params.code
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
