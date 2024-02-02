@@ -31,6 +31,7 @@ export const aboutPageDocuments: ShortDocument[] = [
 			'Пенза. Памятник деревянной архитектуры, в котором располагается областное отделение ВООПИиК',
 		type: 'doc',
 		size: '68.5',
+		link: '#',
 	},
 
 	{
@@ -38,6 +39,7 @@ export const aboutPageDocuments: ShortDocument[] = [
 		title: 'Архангельский музей деревянного зодчества «Малые Корелы»',
 		type: 'doc',
 		size: '68.5',
+		link: '#',
 	},
 
 	{
@@ -46,6 +48,7 @@ export const aboutPageDocuments: ShortDocument[] = [
 			'Государственный Бородинский военно-исторический музей-заповедник. Спасо-Бородинский монастырь',
 		type: 'doc',
 		size: '68.5',
+		link: '#',
 	},
 
 	{
@@ -54,5 +57,6 @@ export const aboutPageDocuments: ShortDocument[] = [
 			'Ансамбль Крутицкого подворья XY-XYII веков. Реставрационные работы проводились под руководством П.Д.Барановского. В Успенском Соборе находились реставрационные мастерские ВООПИиК',
 		type: 'doc',
 		size: '68.5',
+		link: '#',
 	},
 ]

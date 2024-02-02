@@ -55,7 +55,7 @@ export const UsersTable = () => {
 		<CustomTable
 			className={styles.usersTable}
 			cellsData={formatUsersTableData(usersList)}
-			colTitles={tableTitles}  
+			colTitles={tableTitles}
 		/>
 	)
 }
