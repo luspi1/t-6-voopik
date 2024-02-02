@@ -23,9 +23,23 @@ export let regions = [
 		relatedObjects: [
 			{
 				id: '1',
+				title: 'Один какой-то Объект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Объект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Объект Inventore, repellat.',
+			},
+		],
+		objects: [
+			{
+				id: '1',
 				title: 'Официальное наименование Объекта с сокращениями',
 				type: 'Первый тип',
-				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Закрыт',
 				region: 'Санкт-Петербург',
 			},
@@ -33,7 +47,7 @@ export let regions = [
 				id: '2',
 				title: 'Официальное наименование Объекта с сокращениями',
 				type: 'Первый тип',
-				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Открыт',
 				region: 'Ростовская обл.',
 			},
@@ -41,12 +55,26 @@ export let regions = [
 				id: '3',
 				title: 'Официальное наименование Объекта с сокращениями',
 				type: 'Второй тип',
-				stateRegisterNumber: '342 : 0099 : 4432 : А2',
+				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Перекрыт',
 				region: 'Респ. Татарстан',
 			},
 		],
 		relatedProjects: [
+			{
+				id: '1',
+				title: 'Один какой-то Проект Lorem ipsum dolor sit amet, elit. Inventore, repellat.',
+			},
+			{
+				id: '2',
+				title: 'Один какой-то Проект adipisicing elit. Inventore, repellat.',
+			},
+			{
+				id: '3',
+				title: 'Один какой-то Проект Inventore, repellat.',
+			},
+		],
+		projects: [
 			{
 				id: '1',
 				type: 'Первый тип',
@@ -55,14 +83,14 @@ export let regions = [
 				region: 'Санкт-Петербург',
 			},
 			{
-				id: '2',				
+				id: '2',
 				type: 'Первый тип',
 				title: 'Официальное наименование Проекта',
 				status: 'Открыт',
 				region: 'Ростовская обл.',
 			},
 			{
-				id: '3',				
+				id: '3',
 				type: 'Второй тип',
 				title: 'Официальное наименование Проекта',
 				status: 'Перекрыт',
@@ -185,31 +213,31 @@ export let regions = [
 				id: '1',
 				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
 				date: '2022.12.23',
-				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg',
 			},
 			{
 				id: '2',
 				title: 'Спасо-Бородинский монастырь. Часть 2',
 				date: '2021.11.13',
-				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg',
 			},
 			{
 				id: '3',
 				title: 'Спасо-Бородинский монастырь. Часть 2',
 				date: '2021.11.13',
-				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg',
 			},
 			{
 				id: '4',
 				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
 				date: '2018.05.01',
-				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg',
 			},
 			{
 				id: '5',
 				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
 				date: '2011.01.05',
-				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg',
 			},
 		],
 		videos: [
@@ -217,34 +245,33 @@ export let regions = [
 				id: '1',
 				title: 'Малые Корелы. Экскурсия по Двинскому enean euismod b',
 				date: '2022.12.23',
-				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg'
+				url: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Wooden_church_and_house_01.jpg',
 			},
 			{
 				id: '2',
 				title: 'Спасо-Бородинский монастырь. Часть 2',
 				date: '2021.11.13',
-				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg'
+				url: 'https://www.borodino.ru/wp-content/uploads/2017/08/DSC01241-1-1024x689.jpg',
 			},
 			{
 				id: '3',
 				title: 'Спасо-Бородинский монастырь. Часть 2',
 				date: '2021.11.13',
-				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg'
+				url: 'https://www.borodino.ru/wp-content/uploads/2020/09/IMG_20200914_122627_287.jpg',
 			},
 			{
 				id: '4',
 				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
 				date: '2018.05.01',
-				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg'
+				url: 'https://voopik.ru/upload/iblock/e9b/otdel_voopig_b.jpg',
 			},
 			{
 				id: '5',
 				title: 'Пензенское отделение ВООПИК созывает деле enean euismod b',
 				date: '2011.01.05',
-				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg'
+				url: 'https://voopik.ru/upload/iblock/614/3110-1.jpg',
 			},
 		],
-
 
 		mainInfoLogo:
 			'https://sun1-25.userapi.com/s/v1/ig2/jfvffEYPp17VjblK1pvKlNPDtf5GtwgPc2TUfsPdm7wQAkKLdTX5joed9-pIG9EMDpLuEQmdGk3NaLnzkZ1Je26f.jpg?size=1783x1920&quality=96&crop=63,0,1783,1920&ava=1',

@@ -39,7 +39,7 @@ export const getRegionObjects = (req, res) => {
 	const regionCode = req.params.code
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
-	const filteredRegionObjects = foundRegion.relatedObjects.filter((item) =>
+	const filteredRegionObjects = foundRegion.objects.filter((item) =>
 		item.title.toLowerCase().includes(q),
 	)
 	res.status(200).json(filteredRegionObjects)
@@ -50,7 +50,7 @@ export const getRegionProjects = (req, res) => {
 	const regionCode = req.params.code
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
-	const filteredRegionProjects = foundRegion.relatedProjects.filter((item) =>
+	const filteredRegionProjects = foundRegion.projects.filter((item) =>
 		item.title.toLowerCase().includes(q),
 	)
 	res.status(200).json(filteredRegionProjects)
