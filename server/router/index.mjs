@@ -6,6 +6,10 @@ import {
 	getRegionByCode,
 	getRegionParticipants,
 	getRegionEvents,
+	getRegionObjects,
+	getRegionProjects,
+	getRegionFotos,
+	getRegionVideos,
 	getRegions,
 	getUserById,
 	getUsers,
@@ -14,7 +18,7 @@ import {
 	getUsersObject,
 	getUsersPhotos,
 	getUsersProject,
-	getUsersVideos
+	getUsersVideos,
 } from '../controllers/main-controller.mjs'
 import { Router } from 'express'
 
@@ -23,7 +27,11 @@ export const router = new Router()
 router.get('/regions', getRegions)
 router.get('/regions/:code', getRegionByCode)
 router.get('/regions/:code/participants', getRegionParticipants)
-router.get('/regions/:code/events', getRegionEvents) 
+router.get('/regions/:code/events', getRegionEvents)
+router.get('/regions/:code/objects', getRegionObjects)
+router.get('/regions/:code/projects', getRegionProjects)
+router.get('/regions/:code/fotos', getRegionFotos)
+router.get('/regions/:code/videos', getRegionVideos)
 router.get('/users', getUsers)
 router.get('/users/:id', getUserById)
 router.get('/users/:id/group', getUsersGroup)
@@ -36,4 +44,3 @@ router.get('/objects', getObjects)
 router.get('/objects/:id', getObjectById)
 router.get('/projects', getProjects)
 router.get('/projects/:id', getProjectById)
-

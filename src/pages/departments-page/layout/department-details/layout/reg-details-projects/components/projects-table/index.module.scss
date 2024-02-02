@@ -1,0 +1,24 @@
+.projectsTable {
+    grid-template-columns: minmax(35px, 0.18fr) minmax(120px, 0.9fr) minmax(480px, 3.5fr) minmax(130px, 0.9fr) minmax(130px, 0.9fr);
+    margin-bottom: 10px;
+
+    td {
+        min-height: 100px;
+    }
+
+    td:nth-child(4),
+    td:nth-child(5) {
+        padding: 0 10px;
+        white-space: pre-wrap;
+    }
+}
+
+.projectsSearchWrapper {
+    svg {
+        left: 78px;
+    }
+
+    input {
+        padding: 6px 20px 6px 83px;
+    }
+}
