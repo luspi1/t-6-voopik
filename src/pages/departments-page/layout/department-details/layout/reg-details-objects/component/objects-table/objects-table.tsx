@@ -8,7 +8,7 @@ import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetRegionObjectsQuery } from 'src/store/regions/regions.api'
-import { type RelatedLink } from 'src/types/global'
+import { type ObjectItem } from 'src/types/objects'
 import styles from './index.module.scss'
 
 export const DepartmentObjectsTable = () => {
@@ -37,12 +37,12 @@ export const DepartmentObjectsTable = () => {
 		'Регион',
 	]
 
-	const formatEventsTableData = (objectsData: RelatedLink[]) => {
+	const formatEventsTableData = (objectsData: ObjectItem[]) => {
 		return objectsData.map((objectEl, idx) => {
 			return [
 				String(idx + 1),
 				objectEl.type,
-				objectEl.stateRegisterNumber,
+				objectEl.registryNumber,
 				<Link to={objectEl.id} key={objectEl.id}>
 					{objectEl.title}
 				</Link>,

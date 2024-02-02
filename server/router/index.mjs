@@ -8,7 +8,7 @@ import {
 	getRegionEvents,
 	getRegionObjects,
 	getRegionProjects,
-	getRegionFotos,
+	getRegionPhotos,
 	getRegionVideos,
 	getRegions,
 	getUserById,
@@ -30,7 +30,7 @@ router.get('/regions/:code/participants', getRegionParticipants)
 router.get('/regions/:code/events', getRegionEvents)
 router.get('/regions/:code/objects', getRegionObjects)
 router.get('/regions/:code/projects', getRegionProjects)
-router.get('/regions/:code/fotos', getRegionFotos)
+router.get('/regions/:code/photos', getRegionPhotos)
 router.get('/regions/:code/videos', getRegionVideos)
 router.get('/users', getUsers)
 router.get('/users/:id', getUserById)

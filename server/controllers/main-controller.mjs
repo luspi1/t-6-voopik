@@ -56,11 +56,11 @@ export const getRegionProjects = (req, res) => {
 	res.status(200).json(filteredRegionProjects)
 }
 
-export const getRegionFotos = (req, res) => {
+export const getRegionPhotos = (req, res) => {
 	const regionCode = req.params.code
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
-	const regionFotos = foundRegion.photos
-	res.status(200).json(regionFotos)
+	const regionPhotos = foundRegion.photos
+	res.status(200).json(regionPhotos)
 }
 
 export const getRegionVideos = (req, res) => {

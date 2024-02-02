@@ -8,7 +8,7 @@ import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetRegionProjectsQuery } from 'src/store/regions/regions.api'
-import { type RelatedLink } from 'src/types/global'
+import { type ProjectItem } from 'src/types/projects'
 import styles from './index.module.scss'
 
 export const DepartmentProjectsTable = () => {
@@ -35,7 +35,7 @@ export const DepartmentProjectsTable = () => {
 		'Регион',
 	]
 
-	const formatEventsTableData = (projectsData: RelatedLink[]) => {
+	const formatEventsTableData = (projectsData: ProjectItem[]) => {
 		return projectsData.map((projectEl, idx) => {
 			return [
 				String(idx + 1),
