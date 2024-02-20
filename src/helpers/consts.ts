@@ -49,4 +49,4 @@ export enum DisplayBreakpoints {
 	Xxl = 1440,
 }
 
-export const BASE_URL = 'http://37.235.172.205:40011/api/v1'
+export const BASE_URL = 'https://37.235.172.205:40011/api/v1'
