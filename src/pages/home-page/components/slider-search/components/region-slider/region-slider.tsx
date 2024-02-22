@@ -1,6 +1,7 @@
 import { type FC, type RefObject, useRef } from 'react'
 import { type SwiperRef } from 'swiper/react/swiper-react'
 
+import { generatePath, Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { SliderBtns } from 'src/components/slider-btns/slider-btns'
@@ -18,12 +19,17 @@ export const RegionSlider: FC = () => {
 			<Swiper className={styles.regionSlider} {...regionSliderOptions} ref={swiperRef}>
 				{RegionSliderItems?.map((slideItem, idx) => (
 					<SwiperSlide key={idx}>
-						<div className={styles.slideItem}>
+						<Link
+							to={generatePath('departments-list/:id/departments-details-info', {
+								id: slideItem.regionCode,
+							})}
+							className={styles.slideItem}
+						>
 							<div className={styles.slideImgWrapper}>
 								<img src={slideItem.img} alt={slideItem.title} />
 							</div>
 							<span>{slideItem.title}</span>
-						</div>
+						</Link>
 					</SwiperSlide>
 				))}
 			</Swiper>

@@ -50,12 +50,14 @@ import { ProjectsLayout } from 'src/pages/projects-page/layout/projects-layout'
 import { ProjectsList } from 'src/pages/projects-page/layout/projects-list/projects-list'
 import { ProjectsAbout } from 'src/pages/projects-page/layout/projects-about/projects-about'
 import { ProjectDetails } from 'src/pages/projects-page/layout/project-details/project-details'
+import { AdminLayout } from 'src/pages/admin-page/layout/admin-layout'
 
 export const App: FC = () => {
 	return (
 		<Routes>
 			<Route path={AppRoute.Home} element={<Layout />}>
 				<Route path={AppRoute.Home} element={<HomePage />} />
+
 				<Route path={AppRoute.About} element={<AboutLayout />}>
 					<Route index element={<AboutGeneral />} />
 					<Route path={AppRoute.AboutHistory} element={<AboutHistory />} />
@@ -107,6 +109,8 @@ export const App: FC = () => {
 				<Route path={AppRoute.Events} element={<EventsPage />} />
 				<Route path={AppRoute.Shop} element={<ShopPage />} />
 			</Route>
+			<Route path={AppRoute.Admin} element={<AdminLayout />} />
+
 			<Route path='*' element={<NotFound />} />
 		</Routes>
 	)

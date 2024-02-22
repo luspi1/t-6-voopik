@@ -37,121 +37,151 @@ export const RegionSliderItems = [
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 	{
 		title: 'Мурманская область',
 		img: slide4,
+		regionCode: '16',
 	},
 	{
 		title: 'Оренбургская область',
 		img: slide5,
+		regionCode: '16',
 	},
 	{
 		title: 'Санкт- Петербург',
 		img: slide6,
+		regionCode: '16',
 	},
 	{
 		title: 'Тамбовская область',
 		img: slide7,
+		regionCode: '16',
 	},
 	{
 		title: 'Ярославская область',
 		img: slide8,
+		regionCode: '16',
 	},
 	{
 		title: 'Пермь',
 		img: slide9,
+		regionCode: '16',
 	},
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 	{
 		title: 'Мурманская область',
 		img: slide4,
+		regionCode: '16',
 	},
 	{
 		title: 'Оренбургская область',
 		img: slide5,
+		regionCode: '16',
 	},
 	{
 		title: 'Санкт- Петербург',
 		img: slide6,
+		regionCode: '16',
 	},
 	{
 		title: 'Тамбовская область',
 		img: slide7,
+		regionCode: '16',
 	},
 	{
 		title: 'Ярославская область',
 		img: slide8,
+		regionCode: '16',
 	},
 	{
 		title: 'Пермь',
 		img: slide9,
+		regionCode: '16',
 	},
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 	{
 		title: 'Татарстан',
 		img: slide1,
+		regionCode: '16',
 	},
 	{
 		title: 'Московская область',
 		img: slide2,
+		regionCode: '16',
 	},
 	{
 		title: 'Ростов',
 		img: slide3,
+		regionCode: '16',
 	},
 ]

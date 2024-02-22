@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { router } from './router/index.mjs'
 
-const PORT = 4001
+const PORT = 4020
 const app = express()
 const corsOptions = {
 	origin: '*',

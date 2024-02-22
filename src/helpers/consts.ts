@@ -1,5 +1,6 @@
 export enum AppRoute {
 	Home = '/',
+	Admin = 'admin',
 	About = 'about',
 	AboutHistory = 'about-history',
 	AboutDirection = 'about-direction',
@@ -49,4 +50,6 @@ export enum DisplayBreakpoints {
 	Xxl = 1440,
 }
 
-export const BASE_URL = 'https://37.235.172.205:40011/api/v1'
+export const BASE_URL = 'http://localhost:4020/api/v1'
+
+// export const BASE_URL = 'http://37.235.172.205:4001/api/v1'
