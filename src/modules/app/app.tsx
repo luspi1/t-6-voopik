@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 
 import { Route, Routes } from 'react-router-dom'
-import { AppRoute } from 'src/helpers/consts'
+import { AdminRoute, AppRoute } from 'src/helpers/consts'
 
 import { Layout } from 'src/modules/layout/layout'
 
@@ -50,7 +50,11 @@ import { ProjectsLayout } from 'src/pages/projects-page/layout/projects-layout'
 import { ProjectsList } from 'src/pages/projects-page/layout/projects-list/projects-list'
 import { ProjectsAbout } from 'src/pages/projects-page/layout/projects-about/projects-about'
 import { ProjectDetails } from 'src/pages/projects-page/layout/project-details/project-details'
+
 import { AdminLayout } from 'src/pages/admin-page/layout/admin-layout'
+import { AdminNewsList } from 'src/pages/admin-page/layout/admin-news-list/admin-news-list'
+import { AdminAddNews } from 'src/pages/admin-page/layout/admin-add-news/admin-add-news'
+import { AdminCommunityAbout } from 'src/pages/admin-page/layout/admin-community-about/admin-community-about'
 
 export const App: FC = () => {
 	return (
@@ -109,7 +113,11 @@ export const App: FC = () => {
 				<Route path={AppRoute.Events} element={<EventsPage />} />
 				<Route path={AppRoute.Shop} element={<ShopPage />} />
 			</Route>
-			<Route path={AppRoute.Admin} element={<AdminLayout />} />
+			<Route path={AdminRoute.AdminHome} element={<AdminLayout />}>
+				<Route path={AdminRoute.AdminNewsList} element={<AdminNewsList />} />
+				<Route path={AdminRoute.AdminAddNews} element={<AdminAddNews />} />
+				<Route path={AdminRoute.AdminCommunityAbout} element={<AdminCommunityAbout />} />
+			</Route>
 
 			<Route path='*' element={<NotFound />} />
 		</Routes>

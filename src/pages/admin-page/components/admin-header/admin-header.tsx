@@ -10,7 +10,7 @@ import styles from './index.module.scss'
 export const AdminHeader: FC = () => {
 	return (
 		<header className={styles.adminHeader}>
-			<Container className={styles.adminHeaderContainer} width='1870px'>
+			<Container className={styles.adminHeaderContainer} $width='1870px'>
 				<h3>Т-6 ВООПИК</h3>
 				<MainInput
 					className={styles.adminSearchInput}

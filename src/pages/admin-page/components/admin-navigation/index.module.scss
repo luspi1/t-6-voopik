@@ -1,0 +1,33 @@
+@import "src/assets/styles/vars";
+
+.adminNavigation {
+  width: 185px;
+  max-width: 185px;
+
+  a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    @include opensans-semi;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  .adminNavigationList {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+
+
+
