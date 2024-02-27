@@ -1,0 +1,15 @@
+export enum AdminRoute {
+	AdminHome = 'admin',
+	AdminNewsList = 'news-list',
+	AdminAddNews = 'add-news',
+	AdminCommunityAbout = 'community-about',
+	AdminCommunityHistory = 'community-history',
+	AdminCommunityComposition = 'community-composition',
+	AdminCommunityContacts = 'community-contacts',
+	AdminCommunityDocuments = 'community-documents',
+	AdminCommunityMediakit = 'community-mediakit',
+	AdminCommunityPhotos = 'community-photos',
+	AdminDepartmentsList = 'departments-list',
+	AdminAddDepartments = 'add-departments',
+	AdminSupport = 'support',
+}

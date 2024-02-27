@@ -1,0 +1,61 @@
+@import "src/assets/styles/vars";
+aside {
+  .navBtn {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    @include opensans-semi;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+
+    svg {
+      width: 20px;
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  .navArrow {
+    margin-left: auto;
+    transform: rotate(-90deg);
+  }
+
+  ._activeBtn {
+    svg {
+      opacity: 1;
+    }
+
+    .navArrow {
+      transform: rotate(0);
+    }
+  }
+
+  .navSubmenu {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 23px;
+
+    a {
+      color: #8EFFF8;
+      text-decoration: underline;
+    }
+
+    ._activeSubLink {
+      color: #ffffff;
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+}
+
+

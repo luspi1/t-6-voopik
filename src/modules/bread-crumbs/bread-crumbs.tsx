@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useAppSelector } from 'src/hooks/store'
 import { getAdditionalCrumbs } from 'src/modules/bread-crumbs/store/bread-crumbs.selectors'
 
-import { AppRoute } from 'src/helpers/consts'
+import { AppRoute } from 'src/routes/main-routes/consts'
 
 import styles from './index.module.scss'
 

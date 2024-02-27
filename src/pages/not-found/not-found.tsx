@@ -1,8 +1,10 @@
 import { type FC } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './index.module.scss'
 import { Helmet } from 'react-helmet-async'
-import { AppRoute } from 'src/helpers/consts'
+
+import { AppRoute } from 'src/routes/main-routes/consts'
+
+import styles from './index.module.scss'
 
 export const NotFound: FC = () => (
 	<main className={styles.notFound}>

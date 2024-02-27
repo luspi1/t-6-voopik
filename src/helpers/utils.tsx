@@ -72,3 +72,7 @@ export const formatDocumentLinks = (data: ShortDocument[] | undefined): LinkItem
 		label: [`${docItem.type}-файл`, docItem.size],
 	}))
 }
+
+// Функция передачи кастомного класса для NavLink
+
+export const setActive = (isActive: boolean, styles: string) => (isActive ? styles : '')

@@ -1,17 +1,19 @@
 import React, { type FC, type ReactNode } from 'react'
+import { Link, type LinkProps } from 'react-router-dom'
 import cnBind from 'classnames/bind'
+
 import styles from './index.module.scss'
 
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 type ButtonComponentProps = {
-	as: 'link' | 'button'
+	as: 'link' | 'button' | 'route'
 	children?: ReactNode
 	svgNode?: ReactNode
 }
 
-export const MainButton: FC<ButtonComponentProps & (ButtonProps | AnchorProps)> = ({
+export const MainButton: FC<ButtonComponentProps & (ButtonProps | AnchorProps | LinkProps)> = ({
 	children,
 	svgNode,
 	as,
@@ -38,6 +40,16 @@ export const MainButton: FC<ButtonComponentProps & (ButtonProps | AnchorProps)> 
 				{svgNode}
 				{children}
 			</button>
+		)
+	if (as === 'route')
+		return (
+			<Link
+				{...(props as LinkProps)}
+				className={cx(styles.routeLink, props.className, { _iconInput: svgNode })}
+			>
+				{svgNode}
+				{children}
+			</Link>
 		)
 	return null
 }

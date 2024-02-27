@@ -1,0 +1,32 @@
+@import "src/assets/styles/vars";
+
+.adminInner {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+
+
+  @media(max-width: 550px) {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 25px;
+    color: #ffffff;
+    line-height: 1.2;
+    @include opensans-semi;
+    margin-bottom: 25px;
+  }
+}
+
+.contentWrapper {
+  flex-grow: 1;
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.adminMain {
+  background: linear-gradient(270deg, rgba(0, 166, 156, 0.50) 4.78%, #286A91 39.47%);
+
+}

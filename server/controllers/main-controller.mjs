@@ -2,6 +2,7 @@ import { regions } from '../mockData/regions.mjs'
 import { users } from '../mockData/users.mjs'
 import { objects } from '../mockData/objects.mjs'
 import { projects } from '../mockData/projects.mjs'
+import { news } from '../mockData/news.mjs'
 
 export const getRegions = (req, res) => {
 	const { q } = req.query
@@ -10,7 +11,6 @@ export const getRegions = (req, res) => {
 
 	res.status(200).json(filteredRegions)
 }
-
 export const getRegionParticipants = (req, res) => {
 	const { q } = req.query
 	const regionCode = req.params.code
@@ -182,4 +182,12 @@ export const getProjectById = (req, res) => {
 	const foundProject = projects.find((project) => project.id === projectId)
 
 	res.status(200).json(foundProject)
+}
+
+export const getNews= (req, res) => {
+	const { q } = req.query
+
+	const filteredNews = news.filter((el) => el.title.toLowerCase().includes(q))
+
+	res.status(200).json(filteredNews)
 }
