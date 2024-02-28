@@ -15,6 +15,10 @@ const StyledAdminContent = styled.div<AdminContentProps>`
 	padding: ${({ $padding }) => $padding ?? '20px 20px 20px 20px'};
 	min-height: ${({ $height }) => $height ?? '500px'};
 `
-export const AdminContent: FC<AdminContentProps> = ({ children, className }) => {
-	return <StyledAdminContent className={className}>{children}</StyledAdminContent>
+export const AdminContent: FC<AdminContentProps> = ({ children, className, ...props }) => {
+	return (
+		<StyledAdminContent className={className} {...props}>
+			{children}
+		</StyledAdminContent>
+	)
 }

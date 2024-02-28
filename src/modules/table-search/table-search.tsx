@@ -8,11 +8,13 @@ import cn from 'classnames'
 type TableSearchProps = {
 	handleSearch: (e: string) => void
 	wrapperClassName?: string
+	icon?: React.ReactNode
 }
 
 export const TableSearch: FC<React.InputHTMLAttributes<HTMLInputElement> & TableSearchProps> = ({
 	handleSearch,
 	wrapperClassName,
+	icon,
 	...props
 }) => {
 	const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +23,7 @@ export const TableSearch: FC<React.InputHTMLAttributes<HTMLInputElement> & Table
 
 	return (
 		<div className={cn(styles.searchWrapper, wrapperClassName)}>
-			<SearchIconSvg />
+			{icon ?? <SearchIconSvg />}
 			<input {...props} type='text' onInput={onChangeSearchInput} />
 		</div>
 	)

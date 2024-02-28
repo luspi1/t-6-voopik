@@ -191,3 +191,16 @@ export const getNews= (req, res) => {
 
 	res.status(200).json(filteredNews)
 }
+
+export const deleteNews= (req, res) => {
+	const newsId = req.params.id;
+	let deleteIdx
+	news.forEach((el, idx) => {
+		if (el.id === newsId) {
+			deleteIdx = idx
+		}
+	})
+	news.splice(deleteIdx, 1, )
+
+	res.status(200).json(deleteIdx)
+}

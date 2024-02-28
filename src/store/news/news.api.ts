@@ -18,8 +18,16 @@ export const newsApi = createApi({
 					q: search,
 				},
 			}),
+			providesTags: ['News'],
+		}),
+		deleteNewsById: build.mutation<null, string>({
+			query: (newsId) => ({
+				url: `newsDelete/${newsId}`,
+				method: 'DELETE',
+			}),
+			invalidatesTags: ['News'],
 		}),
 	}),
 })
 
-export const { useGetAllNewsQuery } = newsApi
+export const { useGetAllNewsQuery, useDeleteNewsByIdMutation } = newsApi

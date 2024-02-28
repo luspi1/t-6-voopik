@@ -1,35 +1,41 @@
 import { type FC, useState } from 'react'
+import cn from 'classnames'
 
 import styles from './index.module.scss'
-import cnBind from 'classnames/bind'
 
 type PaginationProps = {
 	pagesCount: number
 	activePage: number
+	className?: string
+	activeCountClass?: string
 }
 
-export const Pagination: FC<PaginationProps> = ({ pagesCount, activePage }) => {
-	const cx = cnBind.bind(styles)
-
+export const Pagination: FC<PaginationProps> = ({
+	pagesCount,
+	activePage,
+	className,
+	activeCountClass,
+}) => {
 	const [pageNumber, setPageNumber] = useState<number>(activePage)
 	return (
 		<>
-			<ul className={styles.pagination}>
+			<ul className={cn(styles.pagination, className)}>
 				<li
 					onClick={() => {
-						if (pageNumber === pagesCount) return
 						setPageNumber(0)
 					}}
 				>
 					в начало
 				</li>
-				{Array(5)
+				{Array(pagesCount)
 					.fill(null)
 					.map((count, idx) => (
 						<li
-							className={cx({ activeCount: pageNumber === idx + activePage - 2 })}
+							className={cn({
+								[activeCountClass ?? styles.activeCount]: pageNumber === idx,
+							})}
 							key={idx}
-							onClick={() => setPageNumber(idx + activePage - 2)}
+							onClick={() => setPageNumber(idx)}
 						>
 							{idx + 1}
 						</li>
@@ -37,7 +43,7 @@ export const Pagination: FC<PaginationProps> = ({ pagesCount, activePage }) => {
 
 				<li
 					onClick={() => {
-						if (pageNumber === pagesCount) return
+						if (pageNumber === pagesCount - 1) return
 						setPageNumber(pageNumber + 1)
 					}}
 				>
