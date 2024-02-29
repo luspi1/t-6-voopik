@@ -1,0 +1,16 @@
+.newsForm {
+  width: 1030px;
+}
+
+.newsFormWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+.newsFormFields {
+  flex-grow: 1;
+  max-width: 720px;
+}
