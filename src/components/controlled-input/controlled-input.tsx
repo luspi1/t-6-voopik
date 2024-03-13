@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import React, { type FC, type ReactNode } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
 import cn from 'classnames'
@@ -8,9 +8,10 @@ import InputMask from 'react-input-mask'
 type ControlledInputProps = {
 	mask?: string
 	className?: string
-	label?: string
+	label?: string | ReactNode
 	isTextarea?: boolean
 	name: string
+	margin?: string
 } & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>
 
 export const ControlledInput: FC<ControlledInputProps> = ({
@@ -19,6 +20,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 	mask,
 	label,
 	isTextarea,
+	margin,
 	...props
 }) => {
 	const {
@@ -28,7 +30,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 
 	if (isTextarea) {
 		return (
-			<div className={cn(styles.inputEl, styles.textareaEl, className)}>
+			<div className={cn(styles.inputEl, styles.textareaEl, className)} style={{ margin }}>
 				<label className={cn(styles.inputWrapper, styles.textareaWrapper)}>
 					{label && <p>{label}</p>}
 					<textarea

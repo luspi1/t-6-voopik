@@ -3,6 +3,10 @@ import cors from 'cors'
 import { router } from './router/index.mjs'
 
 const PORT = 4020
+
+
+// для виртуальной машины
+// const PORT = 40011
 const app = express()
 const corsOptions = {
 	origin: '*',

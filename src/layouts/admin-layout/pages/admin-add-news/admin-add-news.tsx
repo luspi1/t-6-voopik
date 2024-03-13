@@ -11,10 +11,18 @@ import {
 
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
+import { AdminButton } from 'src/UI/AdminButton/AdminButton'
+import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
+import { AdminRoute } from 'src/routes/admin-routes/consts'
+
 import styles from './index.module.scss'
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+
 export const AdminAddNews: FC = () => {
-	const methods = useForm<AddNewsInputs>({ mode: 'onBlur', resolver: yupResolver(addNewsSchema) })
+	const methods = useForm<AddNewsInputs>({
+		mode: 'onBlur',
+		resolver: yupResolver(addNewsSchema),
+	})
 
 	const onSubmit: SubmitHandler<AddNewsInputs> = (data) => {
 		console.log(data)
@@ -26,7 +34,7 @@ export const AdminAddNews: FC = () => {
 				<title>Новости</title>
 			</Helmet>
 			<h1>Добавить новость</h1>
-			<AdminContent>
+			<AdminContent $padding='20px 30px 35px'>
 				<FormProvider {...methods}>
 					<form className={styles.newsForm} onSubmit={methods.handleSubmit(onSubmit)} noValidate>
 						<div className={styles.newsFormWrapper}>
@@ -37,37 +45,45 @@ export const AdminAddNews: FC = () => {
 									placeholder='Наименование'
 									label='Краткое наименование'
 								/>
-								<ControlledInput
-									className={adminStyles.adminMainInput}
-									name='date'
-									type='date'
-									placeholder='дд.мм.гггг'
+								<ControlledDateInput
+									className={adminStyles.adminDateInput}
+									name='datePublic'
 									label='Дата публикации'
+									dateFormat='dd.MM.yyyy'
+									placeholder='дд.мм.гггг'
 								/>
+
 								<ControlledInput
 									className={adminStyles.adminMainInput}
 									name='tags'
 									label='Введите теги через запятую. Не более 5 тегов на 1 новость'
 								/>
 								<ControlledSelect
-									options={[
+									className={adminStyles.adminSelect}
+									label='Галерея'
+									selectOptions={[
 										{ label: 'Не выбрано', value: '0' },
 										{ label: 'Галерея 1', value: '1' },
 										{ label: 'Галерея 2', value: '2' },
 										{ label: 'Галерея 3', value: '3' },
 									]}
-									name='main'
+									name='gallery'
 								/>
 								<ControlledInput
 									className={adminStyles.adminMainInput}
 									name='shortDesc'
 									label='Введите краткое описание'
+									margin='0'
 									isTextarea
 								/>
 								<ControlledInput
 									className={adminStyles.adminMainInput}
 									name='pageText'
-									label='Введите текст для страницы'
+									label={
+										<span>
+											<b>Введите текст для страницы</b> (перейти в текстовый режим)
+										</span>
+									}
 									isTextarea
 								/>
 								<h3>SEO (продвижение сайта)</h3>
@@ -83,26 +99,40 @@ export const AdminAddNews: FC = () => {
 									placeholder='Ключевые слова'
 									label='Введите ключевые слова (keywords)'
 								/>
+								<div className={adminStyles.adminBtns}>
+									<AdminButton as='button' type='submit'>
+										Сохранить
+									</AdminButton>
+									<AdminButton
+										to={`/${AdminRoute.AdminHome}/${AdminRoute.AdminNewsList}`}
+										as='link'
+										danger
+									>
+										Отменить
+									</AdminButton>
+								</div>
 							</div>
 							<div>
 								<ControlledSelect
-									options={[
+									className={styles.asideSelect}
+									label='Ключевая новость?'
+									selectOptions={[
 										{ label: 'Нет', value: '0' },
 										{ label: 'Да', value: '1' },
 									]}
-									name='main'
+									name='isMain'
 								/>
 								<ControlledSelect
-									options={[
+									className={styles.asideSelect}
+									label='Спрятать новость?'
+									selectOptions={[
 										{ label: 'Нет', value: '0' },
 										{ label: 'Да', value: '1' },
 									]}
-									name='hidden'
+									name='isHidden'
 								/>
 							</div>
 						</div>
-
-						<button>Отправить</button>
 					</form>
 				</FormProvider>
 			</AdminContent>

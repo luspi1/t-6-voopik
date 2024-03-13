@@ -84,8 +84,6 @@ export const NewsTable = () => {
 
 	if (isLoading || !newsList) return <Loader />
 
-	if (!newsList.length) return <h2>Новостей нет</h2>
-
 	return (
 		<>
 			<CustomTable

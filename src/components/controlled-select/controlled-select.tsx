@@ -1,36 +1,54 @@
-import React, { type FC, useState } from 'react'
-
-import Select from 'react-select'
+import React, { type FC } from 'react'
 import { type SelOption } from 'src/types/select'
-
-import cn from 'classnames'
+import Select from 'react-dropdown-select'
+import { useController, useFormContext } from 'react-hook-form'
 
 import styles from './index.module.scss'
 
-type SelectProps = {
-	options: SelOption[]
+import { ErrorMessage } from '@hookform/error-message'
+import cn from 'classnames'
+
+type ControlledSelectProps = {
+	selectOptions: SelOption[]
 	name: string
-	onChange?: (selectedOption: SelOption | SelOption[] | null) => void
-	className?: string
 	label?: string
+	className?: string
 }
+export const ControlledSelect: FC<ControlledSelectProps> = ({
+	selectOptions,
+	name,
+	label,
+	className,
+	...props
+}) => {
+	const {
+		register,
+		control,
+		formState: { errors },
+	} = useFormContext()
 
-export const ControlledSelect: FC<SelectProps> = ({ options, name, label, className }) => {
-	const [selectValue, setSelectValue] = useState<SelOption | null>(options?.[0] ?? null)
-
+	const {
+		field: { onChange },
+	} = useController({
+		name,
+		control,
+		defaultValue: selectOptions[0].value,
+	})
 	return (
-		<div className={styles.selectWrapper}>
+		<div className={cn(styles.selectWrapper, className)}>
 			{label && <label>{label}</label>}
 			<Select
-				unstyled
-				className={cn(styles.reactSelectContainer, className)}
-				classNamePrefix='react-select'
-				value={selectValue}
-				onChange={setSelectValue}
-				options={options}
-				defaultValue={options[0]}
-				name={name}
+				{...register(name)}
+				{...props}
+				options={selectOptions}
+				values={[selectOptions[0]]}
+				onChange={(values) => onChange(values[0]?.value)}
 			/>
+			{errors[name] && (
+				<p className={styles.warningMessage}>
+					<ErrorMessage errors={errors} name={name} />
+				</p>
+			)}
 		</div>
 	)
 }

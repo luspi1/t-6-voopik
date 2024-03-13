@@ -1,8 +1,14 @@
 import { type ReactNode } from 'react'
 import { type LinkItem, type RelatedLink } from 'src/types/global'
 import { type ShortDocument } from 'src/types/document'
+import { type SelOption } from 'src/types/select'
 
 import { Link } from 'react-router-dom'
+
+// утилитарная функция для кастомного селекта
+export const getValue = (value: string, options: SelOption[]) => {
+	return value ? options.find((option) => option.value === value) : ''
+}
 
 // форматирует дату к формату - 24.03.1999
 

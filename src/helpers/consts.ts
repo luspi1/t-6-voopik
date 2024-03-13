@@ -20,4 +20,5 @@ export enum DisplayBreakpoints {
 
 export const BASE_URL = 'http://localhost:4020/api/v1'
 
+// для виртуальной машины
 // export const BASE_URL = 'http://37.235.172.205:40011/api/v1'

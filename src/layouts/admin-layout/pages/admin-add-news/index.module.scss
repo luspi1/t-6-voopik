@@ -1,5 +1,14 @@
+@import "src/assets/styles/vars";
+
+
 .newsForm {
-  width: 1030px;
+  max-width: 1030px;
+
+  h3 {
+    @include opensans-bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .newsFormWrapper {
@@ -13,4 +22,13 @@
 .newsFormFields {
   flex-grow: 1;
   max-width: 720px;
+}
+
+.asideSelect {
+  margin-bottom: 37px;
+  :global {
+    .react-dropdown-select {
+      max-width: 100px;
+    }
+  }
 }
