@@ -11,6 +11,7 @@ export type AddNewsInputs = {
 	gallery?: string
 	isHidden?: string
 	isMain?: string
+	newsImage?: File[]
 }
 
 export const addNewsSchema = yup.object({

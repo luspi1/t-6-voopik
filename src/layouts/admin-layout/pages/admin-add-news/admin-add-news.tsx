@@ -17,11 +17,15 @@ import { AdminRoute } from 'src/routes/admin-routes/consts'
 
 import styles from './index.module.scss'
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
 
 export const AdminAddNews: FC = () => {
 	const methods = useForm<AddNewsInputs>({
 		mode: 'onBlur',
 		resolver: yupResolver(addNewsSchema),
+		defaultValues: {
+			newsImage: [],
+		},
 	})
 
 	const onSubmit: SubmitHandler<AddNewsInputs> = (data) => {
@@ -86,6 +90,15 @@ export const AdminAddNews: FC = () => {
 									}
 									isTextarea
 								/>
+
+								<ReactDropzone
+									className={styles.newsDropzone}
+									label='Основная картинка'
+									name='newsImage'
+									prompt='Перетащите изображение на это поле'
+									accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpeg'] }}
+								/>
+
 								<h3>SEO (продвижение сайта)</h3>
 								<ControlledInput
 									className={adminStyles.adminMainInput}
@@ -106,7 +119,7 @@ export const AdminAddNews: FC = () => {
 									<AdminButton
 										to={`/${AdminRoute.AdminHome}/${AdminRoute.AdminNewsList}`}
 										as='link'
-										danger
+										$danger
 									>
 										Отменить
 									</AdminButton>

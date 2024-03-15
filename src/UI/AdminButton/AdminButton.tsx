@@ -6,8 +6,8 @@ import styled from 'styled-components'
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 type AdminButtonProps = {
-	outlined?: boolean
-	danger?: boolean
+	$outlined?: boolean
+	$danger?: boolean
 	as: 'link' | 'button'
 }
 
@@ -24,16 +24,16 @@ const AdminButtonStyled = styled.button<AdminButtonProps>`
 	color: #ffffff;
 	border: 1px solid transparent;
 
-	${({ outlined }) =>
-		outlined &&
+	${({ $outlined }) =>
+		$outlined &&
 		`
     background-color: transparent;
     color: #113770;
     border: 1px solid #113770;
   `}
 
-	${({ danger }) =>
-		danger &&
+	${({ $danger }) =>
+		$danger &&
 		`
     background-color: transparent;
     color: #FF0000;
