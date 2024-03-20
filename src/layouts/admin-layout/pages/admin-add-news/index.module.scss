@@ -17,6 +17,10 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .newsFormFields {
@@ -26,6 +30,9 @@
 
 .asideSelect {
   margin-bottom: 37px;
+  @media (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
   :global {
     .react-dropdown-select {
       max-width: 100px;

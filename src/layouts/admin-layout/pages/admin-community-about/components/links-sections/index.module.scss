@@ -1,0 +1,23 @@
+.linksList {
+  li {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E3DDDD;
+
+
+    button {
+      font-size: 14px;
+      color: #FF0000;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -8,11 +8,14 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 type AdminButtonProps = {
 	$outlined?: boolean
 	$danger?: boolean
+	$margin?: string
+	$padding?: string
 	as: 'link' | 'button'
 }
 
 const AdminButtonStyled = styled.button<AdminButtonProps>`
-	padding: 9.5px 56px;
+	padding: ${({ $padding }) => $padding ?? '9.5px 56px'};
+	margin: ${({ $margin }) => $margin ?? '0'};
 	display: inline-block;
 	line-height: 1;
 	border-radius: 3px;
@@ -27,7 +30,7 @@ const AdminButtonStyled = styled.button<AdminButtonProps>`
 	${({ $outlined }) =>
 		$outlined &&
 		`
-    background-color: transparent;
+    background-color: #ffffff;
     color: #113770;
     border: 1px solid #113770;
   `}
@@ -35,7 +38,7 @@ const AdminButtonStyled = styled.button<AdminButtonProps>`
 	${({ $danger }) =>
 		$danger &&
 		`
-    background-color: transparent;
+    background-color: #ffffff;
     color: #FF0000;
     border: 1px solid #FF0000;
   `}

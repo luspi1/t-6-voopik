@@ -51,7 +51,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 	}
 
 	return (
-		<div className={cn(styles.inputEl, className)}>
+		<div className={cn(styles.inputEl, className)} style={{ margin }}>
 			<label className={styles.inputWrapper}>
 				{label && <p>{label}</p>}
 				<InputMask
