@@ -13,12 +13,12 @@ export type CommunityInputs = {
 	nameBlockLinks: string
 }
 
-export const communitySchema = yup.object({
+export const communitySchema = yup.object().shape({
 	epigraphText: yup.string().required('Введите текст'),
 	epigraphSign: yup.string().required('Введите подпись'),
 	nameBlockLinks: yup.string().required('Введите название блока'),
 	importantLinks: yup.array().of(
-		yup.object({
+		yup.object().shape({
 			textLink: yup.string().required('Введите текст ссылки'),
 			urlAddress: yup.string().required('Введите URL'),
 		}),

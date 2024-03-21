@@ -11,7 +11,10 @@ import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import styles from './index.module.scss'
 
 export const LinksSection: FC = () => {
-	const { control } = useFormContext()
+	const {
+		control,
+		formState: { errors },
+	} = useFormContext()
 
 	const { fields, append, remove } = useFieldArray({
 		control,
@@ -19,7 +22,7 @@ export const LinksSection: FC = () => {
 	})
 
 	useEffect(() => {
-		append({ textLink: '', urlAddress: '' })
+		append({ textLink: '', urlAddress: '' }, { shouldFocus: false })
 	}, [])
 
 	return (
@@ -41,12 +44,14 @@ export const LinksSection: FC = () => {
 							<ControlledInput
 								className={cn(adminStyles.adminMainInput)}
 								name={`importantLinks.${idx}.textLink`}
+								dynamicError={errors.importantLinks?.[idx]?.textLink?.message}
 								label='Название блока ссылок'
 								placeholder='События'
 							/>
 							<ControlledInput
 								className={cn(adminStyles.adminMainInput)}
 								name={`importantLinks.${idx}.urlAddress`}
+								dynamicError={errors.importantLinks?.[idx]?.urlAddress?.message}
 								label='Адрес URL'
 								placeholder='Например, www.site.ru'
 							/>
@@ -62,7 +67,7 @@ export const LinksSection: FC = () => {
 					as='button'
 					type='button'
 					$outlined
-					onClick={() => append({ textLink: '', urlAddress: '' })}
+					onClick={() => append({ textLink: '', urlAddress: '' }, { shouldFocus: false })}
 				>
 					Добавить еще одну ссылку
 				</AdminButton>
