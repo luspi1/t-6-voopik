@@ -1,5 +1,5 @@
 import React, { type FC, type ReactNode } from 'react'
-import { useFormContext } from 'react-hook-form'
+import { type FieldError, useFormContext } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
 import cn from 'classnames'
 import styles from './index.module.scss'
@@ -10,7 +10,7 @@ type ControlledInputProps = {
 	className?: string
 	label?: string | ReactNode
 	isTextarea?: boolean
-	dynamicError?: string | undefined
+	dynamicError?: FieldError | undefined
 	name: string
 	margin?: string
 } & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>
@@ -66,7 +66,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 				/>
 			</label>
 
-			{dynamicError && <p className={styles.warningMessage}>{dynamicError}</p>}
+			{dynamicError && <p className={styles.warningMessage}>{dynamicError.message}</p>}
 			{errors[name] && (
 				<p className={styles.warningMessage}>
 					<ErrorMessage errors={errors} name={name} />

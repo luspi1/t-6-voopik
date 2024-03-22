@@ -1,11 +1,12 @@
 import { type FC, useEffect } from 'react'
+import { type CommunityInputs } from 'src/layouts/admin-layout/pages/admin-community-about/schema'
+
 import cn from 'classnames'
-
-import { AdminSectionContent } from 'src/layouts/admin-layout/components/admin-section-content/admin-section-content'
-import { ControlledInput } from 'src/components/controlled-input/controlled-input'
-
 import { useFieldArray, useFormContext } from 'react-hook-form'
+
+import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 import { AdminButton } from 'src/UI/AdminButton/AdminButton'
+import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import styles from './index.module.scss'
@@ -14,7 +15,7 @@ export const LinksSection: FC = () => {
 	const {
 		control,
 		formState: { errors },
-	} = useFormContext()
+	} = useFormContext<CommunityInputs>()
 
 	const { fields, append, remove } = useFieldArray({
 		control,
@@ -26,52 +27,60 @@ export const LinksSection: FC = () => {
 	}, [])
 
 	return (
-		<section className={adminStyles.adminSection}>
-			<div className={adminStyles.adminSectionHead}>
-				<h2>Важные ссылки</h2>
-			</div>
-			<AdminSectionContent>
-				<ControlledInput
-					className={cn(adminStyles.adminMainInput)}
-					name='nameBlockLinks'
-					label='Название блока ссылок'
-					placeholder='События'
-				/>
-				<ul className={styles.linksList}>
-					{fields?.map((field, idx) => (
-						<li key={field.id}>
-							<h4>Ссылка {idx + 1}</h4>
-							<ControlledInput
-								className={cn(adminStyles.adminMainInput)}
-								name={`importantLinks.${idx}.textLink`}
-								dynamicError={errors.importantLinks?.[idx]?.textLink?.message}
-								label='Название блока ссылок'
-								placeholder='События'
-							/>
-							<ControlledInput
-								className={cn(adminStyles.adminMainInput)}
-								name={`importantLinks.${idx}.urlAddress`}
-								dynamicError={errors.importantLinks?.[idx]?.urlAddress?.message}
-								label='Адрес URL'
-								placeholder='Например, www.site.ru'
-							/>
-							{idx !== 0 && (
-								<button type='button' onClick={() => remove(idx)}>
-									Удалить ссылку
-								</button>
-							)}
-						</li>
-					))}
-				</ul>
-				<AdminButton
-					as='button'
-					type='button'
-					$outlined
-					onClick={() => append({ textLink: '', urlAddress: '' }, { shouldFocus: false })}
-				>
-					Добавить еще одну ссылку
-				</AdminButton>
-			</AdminSectionContent>
-		</section>
+		<AdminSection titleText='Важные ссылки' sectionName='linksSection'>
+			<ControlledInput
+				className={cn(adminStyles.adminMainInput)}
+				name='nameBlockLinks'
+				label='Название блока ссылок'
+				placeholder='События'
+				margin='0 0 24px 0'
+			/>
+			<ul className={styles.linksList}>
+				{fields?.map((field, idx) => (
+					<li key={field.id}>
+						<h4>Ссылка {idx + 1}</h4>
+						<ControlledInput
+							className={cn(adminStyles.adminMainInput)}
+							name={`importantLinks.${idx}.textLink` as const}
+							dynamicError={errors?.importantLinks?.[idx]?.textLink}
+							label='Текст'
+							placeholder='Текст ссылки'
+							margin='0 0 10px 0'
+						/>
+						<ControlledInput
+							className={cn(adminStyles.adminMainInput)}
+							name={`importantLinks.${idx}.urlAddress`}
+							dynamicError={errors.importantLinks?.[idx]?.urlAddress}
+							label='Адрес URL'
+							placeholder='Например, www.site.ru'
+							margin='0'
+						/>
+						{idx !== 0 && (
+							<button type='button' onClick={() => remove(idx)}>
+								Удалить ссылку
+							</button>
+						)}
+					</li>
+				))}
+			</ul>
+			<AdminButton
+				className={styles.addLinkBtn}
+				as='button'
+				type='button'
+				$outlined
+				$padding='10px 14px'
+				onClick={() =>
+					append(
+						{
+							textLink: '',
+							urlAddress: '',
+						},
+						{ shouldFocus: false },
+					)
+				}
+			>
+				Добавить еще одну ссылку
+			</AdminButton>
+		</AdminSection>
 	)
 }

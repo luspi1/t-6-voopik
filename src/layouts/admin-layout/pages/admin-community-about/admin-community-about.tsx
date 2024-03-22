@@ -27,6 +27,7 @@ export const AdminCommunityAbout: FC = () => {
 		resolver: yupResolver(communitySchema),
 		defaultValues: {
 			aboutTitleImage: [],
+			linksSection: true,
 		},
 	})
 
@@ -54,7 +55,7 @@ export const AdminCommunityAbout: FC = () => {
 					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
 						<TitleSection />
 						<LinksSection />
-						<section className={cn(adminStyles.adminBtns, adminStyles.adminSection)}>
+						<section className={cn(adminStyles.adminBtns)}>
 							<AdminButton as='button' $padding='9.5px 22px' type='submit'>
 								Применить и продолжить
 							</AdminButton>
