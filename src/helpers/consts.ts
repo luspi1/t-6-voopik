@@ -6,6 +6,7 @@ export enum ReducerPath {
 	News = 'news/api',
 }
 
+export const ImagesFormat = ['png', 'jpeg', 'jpg', 'webp', 'gif']
 export enum NameSpace {
 	BreadCrumbs = 'BREAD_CRUMBS',
 }

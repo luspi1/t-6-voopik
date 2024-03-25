@@ -12,6 +12,13 @@ export type CommunityInputs = {
 	nameBlockLinks?: string
 	epigraphText: string
 	epigraphSign: string
+	gallerySection?: boolean
+	galleryImages?: File[]
+	articleSection?: boolean
+	articleName?: string
+	articleText?: string
+	docSection?: boolean
+	docFiles?: File[]
 }
 
 export const communitySchema = yup.object().shape({
@@ -34,4 +41,17 @@ export const communitySchema = yup.object().shape({
 				)
 			: yup.array().notRequired()
 	}),
+	gallerySection: yup.boolean(),
+	articleSection: yup.boolean(),
+	articleName: yup.string().when('articleSection', ([articleSection]) => {
+		return articleSection
+			? yup.string().required('Введите название статьи')
+			: yup.string().notRequired()
+	}),
+	articleText: yup.string().when('articleSection', ([articleSection]) => {
+		return articleSection
+			? yup.string().required('Введите название статьи')
+			: yup.string().notRequired()
+	}),
+	docSection: yup.boolean(),
 })

@@ -8,6 +8,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 type AdminButtonProps = {
 	$outlined?: boolean
 	$danger?: boolean
+	$common?: boolean
 	$margin?: string
 	$padding?: string
 	as: 'link' | 'button'
@@ -41,6 +42,15 @@ const AdminButtonStyled = styled.button<AdminButtonProps>`
     background-color: #ffffff;
     color: #FF0000;
     border: 1px solid #FF0000;
+  `}
+
+	${({ $common }) =>
+		$common &&
+		`
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #868585;
+    font-weight: 400;
   `}
 `
 

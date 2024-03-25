@@ -7,11 +7,13 @@ type AdminSectionContentProps = {
 	className?: string
 	$padding?: string
 	$maxWidth?: string
+	$background?: string
+	$border?: string
 }
 
 const StyledAdminSectionContent = styled.div<AdminSectionContentProps>`
-	background-color: #f4f7fa;
-	border: 1px dashed #98a5a3;
+	background: ${({ $background }) => $background ?? '#f4f7fa'};
+	border: ${({ $border }) => $border ?? '1px dashed #98a5a3'};
 	border-radius: 5px;
 	padding: ${({ $padding }) => $padding ?? '20px 24px 20px 24px'};
 	max-width: ${({ $maxWidth }) => $maxWidth ?? '100%'};

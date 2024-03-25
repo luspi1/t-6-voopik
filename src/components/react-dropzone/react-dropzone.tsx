@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from 'react'
+import React, { type FC, type ReactNode, useEffect, useState } from 'react'
 import { type Accept, useDropzone } from 'react-dropzone'
 import { type FileWithPreview } from 'src/types/files'
 
@@ -19,14 +19,20 @@ type ReactDropzoneProps = {
 	maxFiles?: number
 	prompt?: string
 	className?: string
+	dzAreaClassName?: string
 	label?: string
+	removeIcon?: ReactNode
+	customUploadBtn?: ReactNode
 }
 export const ReactDropzone: FC<ReactDropzoneProps> = ({
 	className,
+	dzAreaClassName,
+	removeIcon,
 	name,
 	accept,
 	multiple = false,
 	maxFiles = 1,
+	customUploadBtn,
 	prompt,
 	label,
 }) => {
@@ -42,15 +48,15 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 		})
 		setCurrentFiles(() => {
 			setValue(name, newFiles)
-			return [...newFiles]
+			return newFiles
 		})
 	}
 
 	const removeFile = (index: number) => {
 		setCurrentFiles((prevState) => {
-			const newFiles = [...prevState.toSpliced(index, 1)]
+			const newFiles = prevState.toSpliced(index, 1)
 			setValue(name, newFiles)
-			return [...newFiles.toSpliced(index, 1)]
+			return newFiles
 		})
 	}
 
@@ -69,17 +75,18 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 
 	return (
 		<div className={cn(styles.reactDropzone, className)}>
-			<label>{label}</label>
-			{currentFiles.length ? (
-				<FilePreviews
-					files={currentFiles}
-					removeBtn={<RemovePhotoSvg />}
-					removeHandler={removeFile}
-				/>
-			) : (
+			{label && <label>{label}</label>}
+			<FilePreviews
+				files={currentFiles}
+				removeBtn={removeIcon ?? <RemovePhotoSvg />}
+				removeHandler={removeFile}
+			/>
+			{currentFiles.length < maxFiles && (
 				<div className={styles.dropzoneWrapper}>
 					<div
-						className={cn(styles.dropzoneArea, { [styles.activeArea]: isDragActive })}
+						className={cn(styles.dropzoneArea, dzAreaClassName, {
+							[styles.activeArea]: isDragActive,
+						})}
 						{...getRootProps()}
 					>
 						<input {...register(name)} {...getInputProps()} />
@@ -87,11 +94,15 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 						<p>{prompt ?? 'Перетащите файл на это поле'}</p>
 					</div>
 
-					<div className={styles.dropzoneController}>
-						<p>Файл еще не загружен Перетащите его на поле слева или нажмите на ссылку</p>
-						<AdminButton as='button' type='button' $outlined onClick={open}>
-							Загрузить
-						</AdminButton>
+					<div className={styles.dropzoneController} onClick={open}>
+						{customUploadBtn ?? (
+							<>
+								<p>Файл еще не загружен Перетащите его на поле слева или нажмите на ссылку</p>
+								<AdminButton as='button' type='button' $padding='9.5px 0' $outlined>
+									Загрузить
+								</AdminButton>
+							</>
+						)}
 					</div>
 				</div>
 			)}

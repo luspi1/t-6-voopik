@@ -1,14 +1,39 @@
 .filesList {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   li {
-    width: 175px;
-    height: 130px;
     position: relative;
     img {
-      width: 100%;
-      height: 100%;
+      width: 175px;
+      height: 130px;
+    }
+  }
+  .textFile {
+    width: 175px;
+    height: 210px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 10px 10px;
+    span {
+      width: 100px;
+      height: 135px;
+      border-radius: 3px;
+      border: 1px solid #C2CAC9;
+      background-color: #F4F7FA;
+    }
+    a {
+      color: #015DB9;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 14px;
+      text-align: center;
+      margin-top: auto;
+      max-width: 160px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
@@ -18,3 +43,4 @@
   right: 8px;
   top: 8px;
 }
+

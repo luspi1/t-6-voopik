@@ -20,6 +20,9 @@ import { AdminRoute } from 'src/routes/admin-routes/consts'
 import { LinksSection } from 'src/layouts/admin-layout/pages/admin-community-about/components/links-sections/links-section'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { GallerySection } from 'src/layouts/admin-layout/pages/admin-community-about/components/gallery-section/gallery-section'
+import { ArticleSection } from 'src/layouts/admin-layout/pages/admin-community-about/components/article-section/article-section'
+import { DocumentsSection } from 'src/layouts/admin-layout/pages/admin-community-about/components/documents-section/documents-section'
 
 export const AdminCommunityAbout: FC = () => {
 	const methods = useForm<CommunityInputs>({
@@ -28,6 +31,11 @@ export const AdminCommunityAbout: FC = () => {
 		defaultValues: {
 			aboutTitleImage: [],
 			linksSection: true,
+			gallerySection: true,
+			galleryImages: [],
+			articleSection: true,
+			docSection: true,
+			docFiles: [],
 		},
 	})
 
@@ -55,6 +63,9 @@ export const AdminCommunityAbout: FC = () => {
 					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
 						<TitleSection />
 						<LinksSection />
+						<GallerySection />
+						<ArticleSection />
+						<DocumentsSection />
 						<section className={cn(adminStyles.adminBtns)}>
 							<AdminButton as='button' $padding='9.5px 22px' type='submit'>
 								Применить и продолжить

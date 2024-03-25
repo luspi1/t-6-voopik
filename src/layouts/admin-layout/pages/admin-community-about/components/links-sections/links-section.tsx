@@ -27,7 +27,11 @@ export const LinksSection: FC = () => {
 	}, [])
 
 	return (
-		<AdminSection titleText='Важные ссылки' sectionName='linksSection'>
+		<AdminSection
+			titleText='Важные ссылки'
+			sectionName='linksSection'
+			switcherText='Включить блок ссылок'
+		>
 			<ControlledInput
 				className={cn(adminStyles.adminMainInput)}
 				name='nameBlockLinks'

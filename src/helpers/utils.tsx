@@ -82,3 +82,11 @@ export const formatDocumentLinks = (data: ShortDocument[] | undefined): LinkItem
 // Функция передачи кастомного класса для NavLink
 
 export const setActive = (isActive: boolean, styles: string) => (isActive ? styles : '')
+
+// Функция определения формата файла, принимает имя файла
+
+export const defineFileFormat = (fileName: string) => {
+	const formatFileArr = fileName.split('.')
+	if (formatFileArr.length < 2) return ''
+	return formatFileArr[formatFileArr.length - 1]
+}
