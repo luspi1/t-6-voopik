@@ -45,7 +45,7 @@ export const LinksSection: FC = () => {
 						<h4>Ссылка {idx + 1}</h4>
 						<ControlledInput
 							className={cn(adminStyles.adminMainInput)}
-							name={`importantLinks.${idx}.textLink` as const}
+							name={`importantLinks.${idx}.textLink`}
 							dynamicError={errors?.importantLinks?.[idx]?.textLink}
 							label='Текст'
 							placeholder='Текст ссылки'

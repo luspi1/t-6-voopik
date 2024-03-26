@@ -1,4 +1,5 @@
 import * as yup from 'yup'
+import { type FileWithPreview } from 'src/types/files'
 
 export type AddNewsInputs = {
 	shortTitle: string
@@ -11,7 +12,7 @@ export type AddNewsInputs = {
 	gallery?: string
 	isHidden?: string
 	isMain?: string
-	newsImage?: File[]
+	newsImage?: FileWithPreview[]
 }
 
 export const addNewsSchema = yup.object({

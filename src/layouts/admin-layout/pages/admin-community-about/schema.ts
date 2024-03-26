@@ -1,4 +1,5 @@
 import * as yup from 'yup'
+import { type FileWithPreview } from 'src/types/files'
 
 type ImportantBlockLinks = {
 	textLink: string
@@ -6,19 +7,19 @@ type ImportantBlockLinks = {
 }
 
 export type CommunityInputs = {
-	aboutTitleImage?: File[]
+	aboutTitleImage?: FileWithPreview[]
 	importantLinks?: ImportantBlockLinks[]
 	linksSection?: boolean
 	nameBlockLinks?: string
 	epigraphText: string
 	epigraphSign: string
 	gallerySection?: boolean
-	galleryImages?: File[]
+	galleryImages?: FileWithPreview[]
 	articleSection?: boolean
 	articleName?: string
 	articleText?: string
 	docSection?: boolean
-	docFiles?: File[]
+	docFiles?: FileWithPreview[]
 }
 
 export const communitySchema = yup.object().shape({
