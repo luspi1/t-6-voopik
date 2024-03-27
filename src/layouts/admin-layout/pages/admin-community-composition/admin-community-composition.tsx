@@ -7,11 +7,11 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { AdminContent } from 'src/components/admin-content/admin-content'
 import { AdminButton } from 'src/UI/AdminButton/AdminButton'
 import { AdminControllers } from 'src/layouts/admin-layout/components/admin-controllers/admin-controllers'
+import { CompositionSection } from 'src/layouts/admin-layout/pages/admin-community-composition/components/composition-section/composition-section'
 
 import { AppRoute } from 'src/routes/main-routes/consts'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 
-import { CompositionSection } from 'src/layouts/admin-layout/pages/admin-community-composition/components/composition-section/composition-section'
 import {
 	type CompositionInputs,
 	compositionSchema,

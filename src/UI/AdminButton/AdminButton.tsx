@@ -47,7 +47,7 @@ const AdminButtonStyled = styled.button<AdminButtonProps>`
 	${({ $common }) =>
 		$common &&
 		`
-    background-color: #ffffff;
+    background-color: transparent;
     color: #000000;
     border: 1px solid #868585;
     font-weight: 400;

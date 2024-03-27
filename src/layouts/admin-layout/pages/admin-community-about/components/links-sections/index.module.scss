@@ -1,33 +1,5 @@
 .linksList {
   padding-top: 20px;
   border-top: 1px solid #E3DDDD;
-  li {
-    padding-bottom: 23px;
-    border-bottom: 1px solid #E3DDDD;
-    margin-bottom: 20px;
-
-    button {
-      margin-top: 18px;
-      font-size: 14px;
-      color: #FF0000;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-
-    h4 {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-  }
 }
 
-button.addLinkBtn {
-  border: 1px solid #868585;
-  color: #000000;
-  background-color: transparent;
-  font-weight: 400;
-}

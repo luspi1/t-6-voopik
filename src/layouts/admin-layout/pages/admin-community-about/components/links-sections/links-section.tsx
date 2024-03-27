@@ -39,7 +39,7 @@ export const LinksSection: FC = () => {
 				placeholder='События'
 				margin='0 0 24px 0'
 			/>
-			<ul className={styles.linksList}>
+			<ul className={cn(styles.linksList, adminStyles.adminDynamicList)}>
 				{fields?.map((field, idx) => (
 					<li key={field.id}>
 						<h4>Ссылка {idx + 1}</h4>
@@ -71,7 +71,7 @@ export const LinksSection: FC = () => {
 				className={styles.addLinkBtn}
 				as='button'
 				type='button'
-				$outlined
+				$common
 				$padding='10px 14px'
 				onClick={() =>
 					append(
