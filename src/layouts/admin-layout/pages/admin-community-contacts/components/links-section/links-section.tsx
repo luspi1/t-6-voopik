@@ -9,7 +9,7 @@ import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
-export const PhoneSection: FC = () => {
+export const LinksSection: FC = () => {
 	const {
 		control,
 		formState: { errors },
@@ -17,51 +17,39 @@ export const PhoneSection: FC = () => {
 
 	const { fields, append, remove } = useFieldArray({
 		control,
-		name: 'phoneNumbers',
+		name: 'links',
 	})
 
 	useEffect(() => {
-		append({ phoneOwner: '', phoneAddress: '', phoneNumber: '' }, { shouldFocus: false })
+		append({ linkText: '', linkAddress: '' }, { shouldFocus: false })
 	}, [])
 
 	return (
-		<AdminSection
-			titleText='Телефоны'
-			sectionName='phonesSection'
-			switcherText='Включить блок телефонов'
-		>
+		<AdminSection titleText='Ссылки' sectionName='linksSection' switcherText='Включить блок ссылок'>
 			<ul className={adminStyles.adminDynamicList}>
 				{fields?.map((field, idx) => (
 					<li key={field.id}>
-						<h4>Телефон {idx + 1}</h4>
+						<h4>Ссылка {idx + 1}</h4>
 						<ControlledInput
 							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneOwner`}
-							dynamicError={errors?.phoneNumbers?.[idx]?.phoneOwner}
-							label='Чей номер'
-							placeholder='Например, приемная'
+							name={`links.${idx}.linkText`}
+							dynamicError={errors?.links?.[idx]?.linkText}
+							label='Текст'
+							placeholder='Текст ссылки'
 							margin='0 0 10px 0'
 						/>
 						<ControlledInput
 							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneAddress`}
-							dynamicError={errors?.phoneNumbers?.[idx]?.phoneAddress}
-							label='Адрес'
-							placeholder='Адрес'
-							margin='0 0 10px 0'
-						/>
-						<ControlledInput
-							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneNumber`}
-							dynamicError={errors.phoneNumbers?.[idx]?.phoneNumber}
-							label='Номер телефона'
-							mask='9 (999) 999-99-99'
-							placeholder='_ (___) ___-__-__'
+							name={`links.${idx}.linkAddress`}
+							dynamicError={errors?.links?.[idx]?.linkAddress}
+							label='Адрес URL'
+							placeholder='Например, www.site.ru/'
 							margin='0'
 						/>
+
 						{idx !== 0 && (
 							<button type='button' onClick={() => remove(idx)}>
-								Удалить номер
+								Удалить ссылку
 							</button>
 						)}
 					</li>
@@ -75,15 +63,14 @@ export const PhoneSection: FC = () => {
 				onClick={() =>
 					append(
 						{
-							phoneOwner: '',
-							phoneAddress: '',
-							phoneNumber: '',
+							linkText: '',
+							linkAddress: '',
 						},
 						{ shouldFocus: false },
 					)
 				}
 			>
-				Добавить еще один номер
+				Добавить еще одну ссылку
 			</AdminButton>
 		</AdminSection>
 	)

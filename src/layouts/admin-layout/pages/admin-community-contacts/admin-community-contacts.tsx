@@ -13,11 +13,13 @@ import { AdminButton } from 'src/UI/AdminButton/AdminButton'
 import { AdminControllers } from 'src/layouts/admin-layout/components/admin-controllers/admin-controllers'
 import { AppRoute } from 'src/routes/main-routes/consts'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
+
 import { MapSection } from 'src/layouts/admin-layout/pages/admin-community-contacts/components/map-section/map-section'
 import { MailSection } from 'src/layouts/admin-layout/pages/admin-community-contacts/components/mail-section/mail-section'
-
-import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { PhoneSection } from 'src/layouts/admin-layout/pages/admin-community-contacts/components/phones-section/phone-section'
+import { EmailsSection } from 'src/layouts/admin-layout/pages/admin-community-contacts/components/emails-section/emails-section'
+import { LinksSection } from 'src/layouts/admin-layout/pages/admin-community-contacts/components/links-section/links-section'
+import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
 export const AdminCommunityContacts: FC = () => {
 	const methods = useForm<ContactsInputs>({
@@ -26,6 +28,8 @@ export const AdminCommunityContacts: FC = () => {
 		defaultValues: {
 			mailSection: true,
 			phonesSection: true,
+			emailsSection: true,
+			linksSection: true,
 		},
 	})
 
@@ -53,6 +57,8 @@ export const AdminCommunityContacts: FC = () => {
 						<MapSection />
 						<MailSection />
 						<PhoneSection />
+						<EmailsSection />
+						<LinksSection />
 						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} />
 					</form>
 				</FormProvider>

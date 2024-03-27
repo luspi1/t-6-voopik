@@ -9,7 +9,7 @@ import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
-export const PhoneSection: FC = () => {
+export const EmailsSection: FC = () => {
 	const {
 		control,
 		formState: { errors },
@@ -17,51 +17,43 @@ export const PhoneSection: FC = () => {
 
 	const { fields, append, remove } = useFieldArray({
 		control,
-		name: 'phoneNumbers',
+		name: 'emails',
 	})
 
 	useEffect(() => {
-		append({ phoneOwner: '', phoneAddress: '', phoneNumber: '' }, { shouldFocus: false })
+		append({ emailOwner: '', emailAddress: '' }, { shouldFocus: false })
 	}, [])
 
 	return (
 		<AdminSection
-			titleText='Телефоны'
-			sectionName='phonesSection'
-			switcherText='Включить блок телефонов'
+			titleText='Электронная почта (e-mail)'
+			sectionName='emailsSection'
+			switcherText='Включить блок e-mail'
 		>
 			<ul className={adminStyles.adminDynamicList}>
 				{fields?.map((field, idx) => (
 					<li key={field.id}>
-						<h4>Телефон {idx + 1}</h4>
+						<h4>{idx + 1} адрес</h4>
 						<ControlledInput
 							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneOwner`}
-							dynamicError={errors?.phoneNumbers?.[idx]?.phoneOwner}
-							label='Чей номер'
-							placeholder='Например, приемная'
+							name={`emails.${idx}.emailOwner`}
+							dynamicError={errors?.emails?.[idx]?.emailOwner}
+							label='Чей адрес'
+							placeholder='Например, ....'
 							margin='0 0 10px 0'
 						/>
 						<ControlledInput
 							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneAddress`}
-							dynamicError={errors?.phoneNumbers?.[idx]?.phoneAddress}
-							label='Адрес'
-							placeholder='Адрес'
-							margin='0 0 10px 0'
-						/>
-						<ControlledInput
-							className={adminStyles.adminMainInput}
-							name={`phoneNumbers.${idx}.phoneNumber`}
-							dynamicError={errors.phoneNumbers?.[idx]?.phoneNumber}
-							label='Номер телефона'
-							mask='9 (999) 999-99-99'
-							placeholder='_ (___) ___-__-__'
+							name={`emails.${idx}.emailAddress`}
+							dynamicError={errors?.emails?.[idx]?.emailAddress}
+							label='Адрес e-mail'
+							placeholder='Адрес e-mail'
 							margin='0'
 						/>
+
 						{idx !== 0 && (
 							<button type='button' onClick={() => remove(idx)}>
-								Удалить номер
+								Удалить e-mail
 							</button>
 						)}
 					</li>
@@ -75,15 +67,14 @@ export const PhoneSection: FC = () => {
 				onClick={() =>
 					append(
 						{
-							phoneOwner: '',
-							phoneAddress: '',
-							phoneNumber: '',
+							emailOwner: '',
+							emailAddress: '',
 						},
 						{ shouldFocus: false },
 					)
 				}
 			>
-				Добавить еще один номер
+				Добавить еще один адрес
 			</AdminButton>
 		</AdminSection>
 	)
