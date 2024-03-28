@@ -2,16 +2,50 @@ import { type FC, type ReactNode } from 'react'
 import { type FileWithPreview } from 'src/types/files'
 
 import { ImagesFormat } from 'src/helpers/consts'
-import { defineFileFormat } from 'src/helpers/utils'
+import { convertBytesToKilobytes, defineFileFormat } from 'src/helpers/utils'
 import styles from './index.module.scss'
 
 type FilePreviewsProps = {
 	files: FileWithPreview[]
 	removeBtn?: ReactNode
 	removeHandler?: (idx: number) => void
+	variant?: 'main' | 'text'
 }
-export const FilePreviews: FC<FilePreviewsProps> = ({ files, removeBtn, removeHandler }) => {
+export const FilePreviews: FC<FilePreviewsProps> = ({
+	files,
+	removeBtn,
+	removeHandler,
+	variant = 'main',
+}) => {
 	if (!files.length) return null
+
+	if (variant === 'text') {
+		return (
+			<ul className={styles.textFilesList}>
+				{files.map((file, idx) => (
+					<li key={file.preview}>
+						<a href={file.path} download>
+							{file.name}
+						</a>
+						<p>
+							{defineFileFormat(file.name)}-файл, {convertBytesToKilobytes(file.size)} Кбайт
+						</p>
+
+						{removeBtn && (
+							<button
+								className={styles.removeTextBtn}
+								type='button'
+								onClick={() => removeHandler?.(idx)}
+							>
+								{removeBtn}
+							</button>
+						)}
+					</li>
+				))}
+			</ul>
+		)
+	}
+
 	return (
 		<ul className={styles.filesList}>
 			{files.map((file, idx) => (

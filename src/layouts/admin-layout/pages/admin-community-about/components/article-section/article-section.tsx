@@ -2,7 +2,6 @@ import { type FC } from 'react'
 import cn from 'classnames'
 
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
-
 import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'

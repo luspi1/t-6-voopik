@@ -91,6 +91,12 @@ export const defineFileFormat = (fileName: string) => {
 	return formatFileArr[formatFileArr.length - 1]
 }
 
+// перевод байт в килобайты
+
+export const convertBytesToKilobytes = (bytes: number) => {
+	return (bytes / 1024).toFixed(1)
+}
+
 // перевод численных значений в буквенные
 
 export const numberToWord = (num: number) => {

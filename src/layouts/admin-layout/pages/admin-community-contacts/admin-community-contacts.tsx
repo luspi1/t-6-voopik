@@ -28,8 +28,17 @@ export const AdminCommunityContacts: FC = () => {
 		defaultValues: {
 			mailSection: true,
 			phonesSection: true,
+			phoneNumbers: [
+				{
+					phoneOwner: '',
+					phoneAddress: '',
+					phoneNumber: '',
+				},
+			],
 			emailsSection: true,
+			emails: [{ emailOwner: '', emailAddress: '' }],
 			linksSection: true,
+			links: [{ linkText: '', linkAddress: '' }],
 		},
 	})
 

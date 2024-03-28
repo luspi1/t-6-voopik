@@ -14,14 +14,32 @@ import {
 	communityDocumentsSchema,
 } from 'src/layouts/admin-layout/pages/admin-community-documents/schema'
 
-import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { TitleSection } from 'src/layouts/admin-layout/pages/admin-community-documents/components/title-section/title-section'
 import { CharterSection } from 'src/layouts/admin-layout/pages/admin-community-documents/components/charter-section/charter-section'
+import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { RulesSection } from 'src/layouts/admin-layout/pages/admin-community-documents/components/rules-section/rules-section'
+import { LawsSection } from 'src/layouts/admin-layout/pages/admin-community-documents/components/laws-section/laws-section'
 
 export const AdminCommunityDocuments: FC = () => {
 	const methods = useForm<CommunityDocumentsInputs>({
 		mode: 'onBlur',
 		resolver: yupResolver(communityDocumentsSchema),
+		defaultValues: {
+			charterPdf: [],
+			charterDocx: [],
+			rulesSection: true,
+			rulesDocs: [{ ruleTitle: '', ruleVersion: '', rulePdf: [], ruleDocx: [] }],
+			lawsSection: true,
+			lawsDocs: [
+				{
+					lawTitle: '',
+					lawVersion: '',
+					lawDocLink: '',
+					lawDocSource: '',
+					lawDocFile: [],
+				},
+			],
+		},
 	})
 
 	const onSubmit: SubmitHandler<CommunityDocumentsInputs> = (data) => {
@@ -47,6 +65,8 @@ export const AdminCommunityDocuments: FC = () => {
 					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
 						<TitleSection />
 						<CharterSection />
+						<RulesSection />
+						<LawsSection />
 						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} />
 					</form>
 				</FormProvider>

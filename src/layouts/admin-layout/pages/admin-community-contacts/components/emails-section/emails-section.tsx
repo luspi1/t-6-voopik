@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react'
+import { type FC } from 'react'
 import { type ContactsInputs } from 'src/layouts/admin-layout/pages/admin-community-contacts/schema'
 
 import { useFieldArray, useFormContext } from 'react-hook-form'
@@ -19,10 +19,6 @@ export const EmailsSection: FC = () => {
 		control,
 		name: 'emails',
 	})
-
-	useEffect(() => {
-		append({ emailOwner: '', emailAddress: '' }, { shouldFocus: false })
-	}, [])
 
 	return (
 		<AdminSection

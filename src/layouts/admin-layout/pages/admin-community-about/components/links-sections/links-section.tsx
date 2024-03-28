@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react'
+import { type FC } from 'react'
 import { type CommunityInputs } from 'src/layouts/admin-layout/pages/admin-community-about/schema'
 
 import cn from 'classnames'
@@ -21,10 +21,6 @@ export const LinksSection: FC = () => {
 		control,
 		name: 'importantLinks',
 	})
-
-	useEffect(() => {
-		append({ textLink: '', urlAddress: '' }, { shouldFocus: false })
-	}, [])
 
 	return (
 		<AdminSection

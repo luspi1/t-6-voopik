@@ -3,9 +3,9 @@ import { type FC } from 'react'
 import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
 import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
 import { AdminButton } from 'src/UI/AdminButton/AdminButton'
+import { RemoveFileSvg } from 'src/UI/icons/removeFileSVG'
 
 import styles from './index.module.scss'
-import { RemoveFileSvg } from 'src/UI/icons/removeFileSVG'
 export const DocumentsSection: FC = () => {
 	return (
 		<AdminSection

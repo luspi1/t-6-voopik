@@ -51,7 +51,30 @@
   }
 }
 
-
 .activeArea {
   box-shadow: 0 0 20px 10px rgba(17, 55, 112, 0.25) inset;
+}
+
+// стили текстового варианта загрузки файлов
+
+.textFileUpload {
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+}
+
+.textFileController {
+  button {
+    min-width: 282px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 768px) {
+      min-width: auto;
+      padding: 9.5px 10px;
+    }
+  }
 }

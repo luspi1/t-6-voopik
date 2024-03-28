@@ -11,30 +11,37 @@ import { AdminButton } from 'src/UI/AdminButton/AdminButton'
 import styles from './index.module.scss'
 import cn from 'classnames'
 import { RemovePhotoSvg } from 'src/UI/icons/removePhotoSVG'
+import { RemoveTextFileSvg } from 'src/UI/icons/removeTextFileSVG'
 
 type ReactDropzoneProps = {
 	name: string
 	accept?: Accept
 	multiple?: boolean
 	maxFiles?: number
+	margin?: string
 	prompt?: string
 	className?: string
 	dzAreaClassName?: string
 	label?: string
 	removeIcon?: ReactNode
 	customUploadBtn?: ReactNode
+	uploadBtnText?: string
+	variant?: 'main' | 'text'
 }
 export const ReactDropzone: FC<ReactDropzoneProps> = ({
 	className,
 	dzAreaClassName,
 	removeIcon,
+	variant = 'main',
 	name,
 	accept,
 	multiple = false,
 	maxFiles = 1,
 	customUploadBtn,
+	uploadBtnText = 'Загрузить',
 	prompt,
 	label,
+	margin,
 }) => {
 	const [currentFiles, setCurrentFiles] = useState<FileWithPreview[]>([])
 
@@ -73,6 +80,30 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 		}
 	}, [])
 
+	if (variant === 'text') {
+		return (
+			<div className={cn(styles.textFileUpload, className)} style={{ margin: margin ?? '' }}>
+				{label && <label>{label}</label>}
+				<input {...register(name)} {...getInputProps()} />
+				<FilePreviews
+					variant='text'
+					files={currentFiles}
+					removeBtn={removeIcon ?? <RemoveTextFileSvg />}
+					removeHandler={removeFile}
+				/>
+				{currentFiles.length < maxFiles && (
+					<div className={styles.textFileController} onClick={open}>
+						{customUploadBtn ?? (
+							<AdminButton as='button' type='button' $padding='9.5px 0' $common>
+								{uploadBtnText}
+							</AdminButton>
+						)}
+					</div>
+				)}
+			</div>
+		)
+	}
+
 	return (
 		<div className={cn(styles.reactDropzone, className)}>
 			{label && <label>{label}</label>}
@@ -99,7 +130,7 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 							<>
 								<p>Файл еще не загружен Перетащите его на поле слева или нажмите на ссылку</p>
 								<AdminButton as='button' type='button' $padding='9.5px 0' $outlined>
-									Загрузить
+									{uploadBtnText}
 								</AdminButton>
 							</>
 						)}

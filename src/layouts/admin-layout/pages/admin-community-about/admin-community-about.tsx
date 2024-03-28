@@ -29,6 +29,7 @@ export const AdminCommunityAbout: FC = () => {
 		defaultValues: {
 			aboutTitleImage: [],
 			linksSection: true,
+			importantLinks: [{ textLink: '', urlAddress: '' }],
 			gallerySection: true,
 			galleryImages: [],
 			articleSection: true,

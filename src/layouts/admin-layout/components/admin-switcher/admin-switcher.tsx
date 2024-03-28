@@ -25,7 +25,7 @@ export const AdminSwitcher: FC<AdminSwitcherProps> = ({ label, name, className, 
 		const sectionInputs = switcherRef.current
 			?.closest('section')
 			?.querySelectorAll('input, textarea') as NodeListOf<HTMLInputElement | HTMLTextAreaElement>
-		if (sectionInputs && !getValues(name)) {
+		if (sectionInputs) {
 			sectionInputs.forEach((inputEl) => {
 				if (inputEl.name === name) return
 				resetField(inputEl.name)
