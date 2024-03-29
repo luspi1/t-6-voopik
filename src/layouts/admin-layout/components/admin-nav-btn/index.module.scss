@@ -6,11 +6,10 @@ aside {
     font-weight: 600;
     @include opensans-semi;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 17px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
 
     svg {
       width: 20px;
@@ -39,10 +38,10 @@ aside {
   }
 
   .navSubmenu {
-    padding-left: 30px;
+    padding-left: 37px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
     margin-bottom: 23px;
 
     a {

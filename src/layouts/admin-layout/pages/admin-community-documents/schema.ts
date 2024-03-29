@@ -44,4 +44,20 @@ export const communityDocumentsSchema = yup.object().shape({
 				)
 			: yup.array().notRequired()
 	}),
+	lawsSection: yup.boolean(),
+	lawsDocs: yup.array().when('lawsSection', ([lawsSection]) => {
+		return lawsSection
+			? yup.array().of(
+					yup.object().shape({
+						lawTitle: yup.string().required('Введите название документа'),
+						lawVersion: yup.string().required('Введите номер версии'),
+						lawDocLink: yup
+							.string()
+							.url('Неверный формат ссылки')
+							.required('Укажите ссылку на документ'),
+						lawDocSource: yup.string().required('Укажите источник'),
+					}),
+				)
+			: yup.array().notRequired()
+	}),
 })
