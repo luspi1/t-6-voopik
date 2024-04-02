@@ -1,16 +1,16 @@
+import { type UserItem } from 'src/types/users'
+
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { TableSearch } from 'src/modules/table-search/table-search'
-import { MainSelect } from 'src/UI/MainSelect/MainSelect'
 import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetRegionParticipantsQuery } from 'src/store/regions/regions.api'
-import { type UserItem } from 'src/types/users'
+
 import styles from './index.module.scss'
-import { formatDate1 } from 'src/helpers/utils'
 
 export const DepartmentParticipantsTable = () => {
 	const { id } = useParams()
@@ -35,9 +35,6 @@ export const DepartmentParticipantsTable = () => {
 			placeholder='Поиск по фамилии Персоны'
 		/>,
 		'Должность',
-		'Группа',
-		'Дата регистрации',
-		<MainSelect key={5} items={[{ label: 'Статус Персоны', value: '0' }]} />,
 	]
 
 	const formatUsersTableData = (usersData: UserItem[]) => {
@@ -48,9 +45,6 @@ export const DepartmentParticipantsTable = () => {
 					{userEl.fullname}
 				</Link>,
 				userEl.position,
-				userEl.group,
-				formatDate1(userEl.regDate),
-				userEl.mainStatus,
 			]
 		})
 	}

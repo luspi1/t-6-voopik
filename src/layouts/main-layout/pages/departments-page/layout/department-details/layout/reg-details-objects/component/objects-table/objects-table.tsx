@@ -24,7 +24,7 @@ export const DepartmentObjectsTable = () => {
 
 	const tableTitles = [
 		'№',
-		<MainSelect key={5} items={[{ label: 'Тип Объекта', value: '0' }]} />,
+		<MainSelect key={5} items={[{ label: 'Категория ИКЗ', value: '0' }]} />,
 		'Номер в госреестре',
 
 		<TableSearch
@@ -33,7 +33,7 @@ export const DepartmentObjectsTable = () => {
 			handleSearch={searchObjects}
 			placeholder='Поиск по названию Объекта'
 		/>,
-		<MainSelect key={5} items={[{ label: 'Статус Объекта', value: '0' }]} />,
+		<MainSelect key={5} items={[{ label: 'Вид Объекта', value: '0' }]} />,
 		'Регион',
 	]
 
@@ -41,12 +41,12 @@ export const DepartmentObjectsTable = () => {
 		return objectsData.map((objectEl, idx) => {
 			return [
 				String(idx + 1),
-				objectEl.type,
+				objectEl.category,
 				objectEl.registryNumber,
 				<Link to={objectEl.id} key={objectEl.id}>
 					{objectEl.title}
 				</Link>,
-				objectEl.status,
+				objectEl.kind,
 				objectEl.region,
 			]
 		})

@@ -1,14 +1,15 @@
+import { type EventsItem } from 'src/types/events'
+
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { TableSearch } from 'src/modules/table-search/table-search'
-import { MainSelect } from 'src/UI/MainSelect/MainSelect'
 import { Loader } from 'src/components/loader/loader'
 
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetRegionEventsQuery } from 'src/store/regions/regions.api'
-import { type EventsItem } from 'src/types/events'
+
 import styles from './index.module.scss'
 
 export const DepartmentEventsTable = () => {
@@ -33,7 +34,6 @@ export const DepartmentEventsTable = () => {
 		'Контактное лицо',
 		'Место проведения',
 		'Даты проведения',
-		<MainSelect key={5} items={[{ label: 'Тип участия', value: '0' }]} />,
 	]
 
 	const formatEventsTableData = (eventsData: EventsItem[]) => {
@@ -46,7 +46,6 @@ export const DepartmentEventsTable = () => {
 				eventEl.contactPerson,
 				eventEl.location,
 				eventEl.dates.join(' - '),
-				eventEl.type,
 			]
 		})
 	}

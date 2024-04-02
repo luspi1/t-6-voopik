@@ -7,7 +7,7 @@ import slide2 from 'src/assets/img/obj-slide-2.jpg'
 import slide3 from 'src/assets/img/obj-slide-3.jpg'
 import slide4 from 'src/assets/img/obj-slide-4.jpg'
 
-export const objectsSliderOptions: SwiperProps = {
+export const projectsSliderOptions: SwiperProps = {
 	slidesPerView: 1,
 	spaceBetween: 12,
 	grabCursor: true,
@@ -26,7 +26,7 @@ export const objectsSliderOptions: SwiperProps = {
 	},
 }
 
-export const ObjectsSliderItems = [
+export const ProjectsSliderItems = [
 	{
 		title: 'Успенский храм в селе Лыхны, Абхазия',
 		img: slide1,

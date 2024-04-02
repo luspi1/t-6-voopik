@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import { type ContentNav } from 'src/types/navigation'
-import { Link, Navigate, Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
 import { PageContent } from 'src/components/page-content/page-content'
 import { DepartmentHeader } from 'src/layouts/main-layout/pages/departments-page/layout/department-details/components/department-header/department-header'
@@ -22,9 +22,6 @@ export const DepartmentDetailsLayout: FC = () => {
 			<PageContent $padding='30px 35px 30px 30px'>
 				<DepartmentHeader />
 				<Outlet />
-				<Link className={styles.pageMainLink} to={`/${AppRoute.Departments}`}>
-					На страницу списка отделений
-				</Link>
 			</PageContent>
 			<SideMenu className={styles.departmentDetailsSideMenu} sideItems={OneDepartmentMenu} />
 		</div>

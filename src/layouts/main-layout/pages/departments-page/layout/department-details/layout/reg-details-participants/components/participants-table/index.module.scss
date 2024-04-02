@@ -1,5 +1,7 @@
   .departmentTable {
-    grid-template-columns: minmax(35px, 0.18fr) minmax(338px, 3fr) minmax(100px, 1.6fr) minmax(70px, 0.8fr) minmax(80px, 1.1fr) minmax(130px, 1.2fr);
+    max-width: 660px;
+    min-width: auto;
+    grid-template-columns: minmax(35px, 0.18fr) minmax(338px, 2fr) minmax(100px, 0.82fr);
     margin-bottom: 10px;
   
     td {
@@ -9,9 +11,15 @@
   
   .usersSearchWrapper {
     svg {
-      left: 78px;
+      left: 120px;
+      @media (max-width: 768px) {
+        left: 20px;
+      }
     }
     input {
-      padding: 6px 20px 6px 83px;
+      padding: 6px 20px 6px 125px;
+      @media (max-width: 768px) {
+        padding: 6px 20px 6px 25px;
+      }
     }
   }

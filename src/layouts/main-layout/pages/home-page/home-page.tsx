@@ -3,11 +3,11 @@ import { type FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import { SliderSearch } from 'src/layouts/main-layout/pages/home-page/components/slider-search/slider-search'
-
-import styles from './index.module.scss'
-import { ObjectsSection } from 'src/layouts/main-layout/pages/home-page/components/objects-section/objects-section'
+import { ProjectsSection } from 'src/layouts/main-layout/pages/home-page/components/projects-section/projects-section'
 import { NewsSection } from 'src/layouts/main-layout/pages/home-page/components/news-section/news-section'
 import { FeedbackSection } from 'src/layouts/main-layout/pages/home-page/components/feedback-section/feedback-section'
+
+import styles from './index.module.scss'
 
 export const HomePage: FC = () => {
 	return (
@@ -17,7 +17,7 @@ export const HomePage: FC = () => {
 			</Helmet>
 			<div className={styles.headerImgWrapper}></div>
 			<SliderSearch />
-			<ObjectsSection />
+			<ProjectsSection />
 			<NewsSection />
 			<FeedbackSection />
 		</div>

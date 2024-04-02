@@ -1,24 +1,29 @@
 .eventsTable {
-    grid-template-columns: minmax(35px, 0.18fr) minmax(310px, 2fr) minmax(135px, 1.2fr) minmax(180px, 1fr) minmax(130px, 1fr) minmax(115px, 1fr);
+    grid-template-columns: minmax(35px, 0.1fr) minmax(310px, 2.6fr) minmax(135px, 0.7fr) minmax(180px, 0.8fr) minmax(130px, 0.8fr);
     margin-bottom: 10px;
 
     td {
         min-height: 100px;
     }
 
-    td:nth-child(4),
-    td:nth-child(5) {
-        padding: 0 10px;
+    td:nth-child(3),
+    td:nth-child(4) {
+        padding: 0 9px;
         white-space: pre-wrap;
     }
 }
 
 .eventsSearchWrapper {
     svg {
-        left: 78px;
+        left: 120px;
+        @media (max-width: 768px) {
+            left: 20px;
+        }
     }
-
     input {
-        padding: 6px 20px 6px 83px;
+        padding: 6px 20px 6px 125px;
+        @media (max-width: 768px) {
+            padding: 6px 20px 6px 25px;
+        }
     }
 }

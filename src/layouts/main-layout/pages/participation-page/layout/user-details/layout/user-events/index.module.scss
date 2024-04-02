@@ -11,7 +11,7 @@ section.userEventsSection {
 }
 
 .usersEventsTable {
-  grid-template-columns: minmax(40px, 0.2fr) minmax(330px, 2fr) minmax(110px, 0.95fr) minmax(150px, 0.95fr) minmax(110px, 0.95fr) minmax(105px, 0.95fr);
+  grid-template-columns: minmax(40px, 0.1fr) minmax(330px, 2.4fr) minmax(105px, 0.75fr) minmax(115px, 1fr) minmax(110px, 0.75fr);
 
   td {
     min-height: 100px;
@@ -29,11 +29,16 @@ section.userEventsSection {
 
 .usersEventsSearchWrapper {
   svg {
-    left: 78px;
+    left: 120px;
+    @media (max-width: 768px) {
+      left: 20px;
+    }
   }
-
   input {
-    padding: 6px 20px 6px 83px;
+    padding: 6px 20px 6px 125px;
+    @media (max-width: 768px) {
+      padding: 6px 20px 6px 25px;
+    }
   }
 }
 

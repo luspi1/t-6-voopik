@@ -6,7 +6,6 @@ import { Link, useParams } from 'react-router-dom'
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetUserEventQuery } from 'src/store/users/users.api'
 import { TableSearch } from 'src/modules/table-search/table-search'
-import { MainSelect } from 'src/UI/MainSelect/MainSelect'
 import { formatDate1 } from 'src/helpers/utils'
 import { Loader } from 'src/components/loader/loader'
 import { CustomTable } from 'src/components/custom-table/custom-table'
@@ -32,18 +31,9 @@ export const UserEvents: FC = () => {
 			handleSearch={searchEventsHandler}
 			placeholder='Поиск по названию события'
 		/>,
-		'В составе группы',
+		'Контактное лицо',
 		'Место проведения',
 		'Даты проведения',
-		<MainSelect
-			key={5}
-			items={[
-				{ label: 'Тип участия', value: '0' },
-				{ label: 'Первый тип', value: '1' },
-				{ label: 'Второй тип', value: '2' },
-				{ label: 'Третий тип', value: '3' },
-			]}
-		/>,
 	]
 
 	const formatEventsTableData = (eventsData: EventsItem[]) => {
@@ -53,10 +43,9 @@ export const UserEvents: FC = () => {
 				<Link to={eventEl.id} key={eventEl.id}>
 					{eventEl.title}
 				</Link>,
-				eventEl.partGroup,
+				eventEl.contactPerson,
 				eventEl.location,
 				<p key={4}>{`${formatDate1(eventEl.dates[0])} — ${formatDate1(eventEl.dates[1])}`}</p>,
-				eventEl.type,
 			]
 		})
 	}

@@ -24,7 +24,6 @@ export const DepartmentProjectsTable = () => {
 
 	const tableTitles = [
 		'№',
-		<MainSelect key={5} items={[{ label: 'Тип Проекта', value: '0' }]} />,
 		<TableSearch
 			wrapperClassName={styles.projectsSearchWrapper}
 			key={1}
@@ -39,7 +38,6 @@ export const DepartmentProjectsTable = () => {
 		return projectsData.map((projectEl, idx) => {
 			return [
 				String(idx + 1),
-				projectEl.type,
 				<Link to={projectEl.id} key={projectEl.id}>
 					{projectEl.title}
 				</Link>,

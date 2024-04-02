@@ -17,6 +17,8 @@ export type ObjectItem = {
 	registryNumber: string
 	status: string
 	region: string
+	kind: string
+	category: string
 	address: string
 	relatedObjects: RelatedLink[]
 	relatedProjects: RelatedLink[]
