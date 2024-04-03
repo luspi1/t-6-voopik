@@ -1,18 +1,29 @@
 .objectsTable {
-  grid-template-columns: minmax(40px, 0.2fr) minmax(110px, 0.95fr) minmax(140px, 1.05fr) minmax(330px, 0.9fr) minmax(125px, 0.95fr) minmax(110px, 0.95fr);
+  grid-template-columns: minmax(35px, 0.18fr) minmax(115px, 0.8fr) minmax(160px, 0.9fr) minmax(330px, 2fr) minmax(130px, 0.7fr) minmax(115px, 0.7fr);
 
   td {
     min-height: 100px;
+  }
+
+  td:nth-child(5) {
+    padding: 12px 10px;
+    word-break: break-all;
   }
 }
 
 .objectsSearchWrapper {
   svg {
     left: 78px;
+    @media (max-width: 768px) {
+      left: 20px;
+    }
   }
 
   input {
     padding: 6px 20px 6px 83px;
+    @media (max-width: 768px) {
+      padding: 6px 20px 6px 25px;
+    }
   }
 }
 

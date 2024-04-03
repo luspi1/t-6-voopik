@@ -7,7 +7,7 @@ import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetUserGroupQuery } from 'src/store/users/users.api'
 import { TableSearch } from 'src/modules/table-search/table-search'
 import { MainSelect } from 'src/UI/MainSelect/MainSelect'
-import { formatDate1 } from 'src/helpers/utils'
+import { customFormatDate } from 'src/helpers/utils'
 import { Loader } from 'src/components/loader/loader'
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { Pagination } from 'src/components/pagination/pagination'
@@ -65,7 +65,7 @@ export const UserGroups: FC = () => {
 					{groupEl.title}
 				</Link>,
 				groupEl.role,
-				formatDate1(groupEl.entryDate),
+				customFormatDate(groupEl.entryDate),
 				groupEl.status,
 			]
 		})

@@ -11,7 +11,7 @@ import { Loader } from 'src/components/loader/loader'
 import { useGetAllUsersQuery } from 'src/store/users/users.api'
 
 import styles from './index.module.scss'
-import { formatDate1 } from 'src/helpers/utils'
+import { customFormatDate } from 'src/helpers/utils'
 export const UsersTable = () => {
 	const [searchUser, setSearchUser] = useState<string>('')
 	const debouncedSearch = useDebounce(searchUser)
@@ -43,7 +43,7 @@ export const UsersTable = () => {
 				</Link>,
 				userEl.position,
 				userEl.group,
-				formatDate1(userEl.regDate),
+				customFormatDate(userEl.regDate),
 				userEl.mainStatus,
 			]
 		})

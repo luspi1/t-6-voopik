@@ -25,15 +25,7 @@ export const UserObjects: FC = () => {
 	}
 	const tableTitles = [
 		'№',
-		<MainSelect
-			key={1}
-			items={[
-				{ label: 'Тип Объекта', value: '0' },
-				{ label: 'Тип 1', value: '1' },
-				{ label: 'Тип 2', value: '2' },
-				{ label: 'Тип 3', value: '3' },
-			]}
-		/>,
+		<MainSelect key={1} items={[{ label: 'Категория ИКЗ', value: '0' }]} />,
 		'Номер в госреестре',
 		<TableSearch
 			wrapperClassName={styles.usersObjectsSearchWrapper}
@@ -41,15 +33,7 @@ export const UserObjects: FC = () => {
 			handleSearch={searchObjectsHandler}
 			placeholder='Поиск по названию Объекта'
 		/>,
-		<MainSelect
-			key={4}
-			items={[
-				{ label: 'Статус объекта', value: '0' },
-				{ label: 'Первый статус', value: '1' },
-				{ label: 'Второй статус', value: '2' },
-				{ label: 'Третий статус', value: '3' },
-			]}
-		/>,
+		<MainSelect key={4} items={[{ label: 'Вид Объекта', value: '0' }]} />,
 		'Регион',
 	]
 
@@ -57,12 +41,12 @@ export const UserObjects: FC = () => {
 		return objectsData.map((objectEl, idx) => {
 			return [
 				String(idx + 1),
-				objectEl.type,
+				objectEl.category,
 				objectEl.registryNumber,
 				<Link to={objectEl.id} key={objectEl.id}>
 					{objectEl.title}
 				</Link>,
-				objectEl.status,
+				objectEl.kind,
 				objectEl.region,
 			]
 		})

@@ -184,6 +184,8 @@ export let users = [
 			{
 				id: '1',
 				title: 'Официальное наименование Объекта с сокращениями',
+				kind: 'Памятник',
+				category: 'Федеральный',
 				type: 'Первый тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Закрыт',
@@ -192,6 +194,8 @@ export let users = [
 			{
 				id: '2',
 				title: 'Объект 2',
+				kind: 'Ансамбль',
+				category: 'Региональный',
 				type: 'Первый тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Открыт',
@@ -200,6 +204,8 @@ export let users = [
 			{
 				id: '3',
 				title: 'Объект 3',
+				kind: 'Достопримечательное место',
+				category: 'Вновь выявленный',
 				type: 'Второй тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Перекрыт',
@@ -431,6 +437,8 @@ export let users = [
 			{
 				id: '2',
 				title: 'Объект 2',
+				kind: 'Достопримечательное место',
+				category: 'Вновь выявленный',
 				type: 'Первый тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Открыт',
@@ -439,6 +447,8 @@ export let users = [
 			{
 				id: '3',
 				title: 'Объект 3',
+				kind: 'Ансамбль',
+				category: 'Региональный',
 				type: 'Второй тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Перекрыт',
@@ -645,6 +655,8 @@ export let users = [
 			{
 				id: '3',
 				title: 'Объект 3',
+				kind: 'Памятник',
+				category: 'Федеральный',
 				type: 'Второй тип',
 				registryNumber: '342 : 0099 : 4432 : А2',
 				status: 'Перекрыт',

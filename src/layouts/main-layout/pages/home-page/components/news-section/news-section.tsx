@@ -17,7 +17,7 @@ export const NewsSection: FC = () => {
 			<Container>
 				<h4>Новости</h4>
 				<NewsList newsItems={NewsItems} />
-				<Link className={styles.allNewsLink} to={AppRoute.Events}>
+				<Link className={styles.allNewsLink} to={AppRoute.News}>
 					Все новости
 				</Link>
 			</Container>

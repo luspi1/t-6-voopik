@@ -24,16 +24,15 @@ export const DepartmentObjectsTable = () => {
 
 	const tableTitles = [
 		'№',
-		<MainSelect key={5} items={[{ label: 'Категория ИКЗ', value: '0' }]} />,
+		<MainSelect key={1} items={[{ label: 'Категория ИКЗ', value: '0' }]} />,
 		'Номер в госреестре',
-
 		<TableSearch
 			wrapperClassName={styles.objectsSearchWrapper}
-			key={1}
+			key={3}
 			handleSearch={searchObjects}
 			placeholder='Поиск по названию Объекта'
 		/>,
-		<MainSelect key={5} items={[{ label: 'Вид Объекта', value: '0' }]} />,
+		<MainSelect key={4} items={[{ label: 'Вид Объекта', value: '0' }]} />,
 		'Регион',
 	]
 

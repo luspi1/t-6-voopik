@@ -40,14 +40,14 @@ export const ObjectDetails: FC = () => {
 			</Helmet>
 			<section>
 				<h2>{objectData?.title}</h2>
-				<span className={styles.objectStatus}>{objectData?.type}</span>
+				<span className={styles.objectCategory}>{objectData?.category}</span>
 			</section>
 			<section>
 				<div className={styles.objectInfoBlock}>
 					<div className={styles.objectInfoRows}>
 						<InfoRow title='Полный адрес Объекта:' label={objectData?.address} />
 						<InfoRow title='Номер в Госреестре:' label={objectData?.registryNumber} />
-						<InfoRow title='Статус Проекта:' label={objectData?.status} />
+						<InfoRow title='Вид Объекта:' label={objectData?.kind} />
 					</div>
 					<div className={styles.objectInfoLinks}>
 						<a href='#'>

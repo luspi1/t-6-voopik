@@ -25,14 +25,6 @@ export const UserProjects: FC = () => {
 	}
 	const tableTitles = [
 		'№',
-		<MainSelect
-			key={1}
-			items={[
-				{ label: 'Тип Проекта', value: '0' },
-				{ label: 'Первый тип', value: '1' },
-				{ label: 'Второй тип', value: '2' },
-			]}
-		/>,
 		<TableSearch
 			wrapperClassName={styles.usersProjectsSearchWrapper}
 			key={2}
@@ -55,7 +47,6 @@ export const UserProjects: FC = () => {
 		return projectsData.map((projectEl, idx) => {
 			return [
 				String(idx + 1),
-				projectEl.type,
 				<Link to={projectEl.id} key={projectEl.id}>
 					{projectEl.title}
 				</Link>,

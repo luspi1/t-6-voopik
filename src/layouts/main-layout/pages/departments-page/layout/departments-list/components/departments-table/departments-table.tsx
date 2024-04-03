@@ -7,7 +7,7 @@ import { useGetAllRegionsQuery } from 'src/store/regions/regions.api'
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { TableSearch } from 'src/modules/table-search/table-search'
 import { Loader } from 'src/components/loader/loader'
-import { formatDate2 } from 'src/helpers/utils'
+import { customFormatDate } from 'src/helpers/utils'
 import { useDebounce } from 'src/hooks/debounce/debounce'
 
 import styles from './index.module.scss'
@@ -42,7 +42,7 @@ export const DepartmentsTable = () => {
 				<Link to={regionEl.regionCode} key={regionEl.regionCode}>
 					{regionEl.title}
 				</Link>,
-				formatDate2(regionEl.openDate),
+				customFormatDate(regionEl.openDate),
 				regionEl.status,
 			]
 		})

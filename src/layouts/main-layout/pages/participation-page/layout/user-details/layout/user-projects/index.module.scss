@@ -11,7 +11,7 @@ section.userProjectsSection {
 }
 
 .usersProjectsTable {
-  grid-template-columns: minmax(40px, 0.2fr) minmax(110px, 0.8fr) minmax(480px, 2.4fr) minmax(130px, 0.8fr) minmax(120px, 0.8fr);
+  grid-template-columns: minmax(40px, 0.2fr) minmax(380px, 2.4fr) minmax(130px, 0.7fr) minmax(120px, 0.7fr);
 
   td {
     min-height: 100px;
@@ -21,11 +21,17 @@ section.userProjectsSection {
 
 .usersProjectsSearchWrapper {
   svg {
-    left: 140px;
+    left: 187px;
+    @media (max-width: 1024px) {
+      left: 25px;
+    }
   }
 
   input {
-    padding: 6px 20px 6px 145px;
+    padding: 6px 20px 6px 190px;
+    @media (max-width: 1024px) {
+      padding: 6px 20px 6px 30px;
+    }
   }
 }
 

@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDebounce } from 'src/hooks/debounce/debounce'
 import { useGetUserEventQuery } from 'src/store/users/users.api'
 import { TableSearch } from 'src/modules/table-search/table-search'
-import { formatDate1 } from 'src/helpers/utils'
+import { customFormatDate } from 'src/helpers/utils'
 import { Loader } from 'src/components/loader/loader'
 import { CustomTable } from 'src/components/custom-table/custom-table'
 import { Pagination } from 'src/components/pagination/pagination'
@@ -45,7 +45,9 @@ export const UserEvents: FC = () => {
 				</Link>,
 				eventEl.contactPerson,
 				eventEl.location,
-				<p key={4}>{`${formatDate1(eventEl.dates[0])} — ${formatDate1(eventEl.dates[1])}`}</p>,
+				<p
+					key={4}
+				>{`${customFormatDate(eventEl.dates[0])} — ${customFormatDate(eventEl.dates[1])}`}</p>,
 			]
 		})
 	}

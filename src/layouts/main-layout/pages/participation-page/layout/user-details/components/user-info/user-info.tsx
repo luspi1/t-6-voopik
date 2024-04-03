@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 
 import { useGetUserByIdQuery } from 'src/store/users/users.api'
-import { formatDate3 } from 'src/helpers/utils'
+import { calculateAge, customFormatDate } from 'src/helpers/utils'
 import { InfoRow } from 'src/UI/InfoRow/InfoRow'
 import { useAdditionalCrumbs } from 'src/hooks/additional-crumbs/additional-crumbs'
 
@@ -27,7 +27,19 @@ export const UserInfo = () => {
 				</div>
 				<div className={styles.infoBlock}>
 					<p>{userData?.mainDesc}</p>
-					<InfoRow title='Дата рождения и возраст:' label={formatDate3(userData?.birthday)} />
+					<InfoRow
+						title='Дата рождения и возраст:'
+						label={
+							<p className={styles.userBirthday}>
+								{customFormatDate(userData?.birthday, {
+									day: 'numeric',
+									month: 'long',
+									year: 'numeric',
+								})}{' '}
+								<span>({calculateAge(userData?.birthday)})</span>
+							</p>
+						}
+					/>
 					<InfoRow title='Населенный пункт:' label={userData?.locality} />
 					<InfoRow title='Пол:' label={userData?.gender} margin='0 0 25px 0' />
 					<InfoRow

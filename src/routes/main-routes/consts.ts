@@ -26,6 +26,7 @@ export enum AppRoute {
 	ObjectsAbout = 'objects-about',
 	Projects = 'projects',
 	ProjectsAbout = 'projects-about',
+	News = 'news',
 	Library = 'library',
 	Events = 'events',
 	Shop = 'shop',

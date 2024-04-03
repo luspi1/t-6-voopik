@@ -40,6 +40,9 @@ import { LibraryPage } from 'src/layouts/main-layout/pages/library-page/library-
 import { EventsPage } from 'src/layouts/main-layout/pages/events-page/events-page'
 import { ShopPage } from 'src/layouts/main-layout/pages/shop-page/shop-page'
 import { AppRoute } from 'src/routes/main-routes/consts'
+import { NewsLayout } from 'src/layouts/main-layout/pages/news-page/layout/news-layout'
+import { NewsList } from 'src/layouts/main-layout/pages/news-page/layout/news-list/news-list'
+import { NewsDetails } from 'src/layouts/main-layout/pages/news-page/layout/news-details/news-details'
 
 export const MainRoutes = () => {
 	return (
@@ -93,6 +96,10 @@ export const MainRoutes = () => {
 					<Route index element={<ProjectsList />} />
 					<Route path={AppRoute.ProjectsAbout} element={<ProjectsAbout />} />
 					<Route path=':id' element={<ProjectDetails />} />
+				</Route>
+				<Route path={AppRoute.News} element={<NewsLayout />}>
+					<Route index element={<NewsList />} />
+					<Route path=':id' element={<NewsDetails />} />
 				</Route>
 				<Route path={AppRoute.Library} element={<LibraryPage />} />
 				<Route path={AppRoute.Events} element={<EventsPage />} />

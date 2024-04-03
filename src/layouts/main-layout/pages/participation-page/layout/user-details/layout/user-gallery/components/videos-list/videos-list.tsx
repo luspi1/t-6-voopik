@@ -4,7 +4,7 @@ import { type VideoItem } from 'src/types/videos'
 import cn from 'classnames'
 
 import { Link } from 'react-router-dom'
-import { formatDate2 } from 'src/helpers/utils'
+import { customFormatDate } from 'src/helpers/utils'
 
 import styles from './index.module.scss'
 
@@ -22,7 +22,7 @@ export const VideosList: FC<VideosListProps> = ({ videos, className }) => {
 						<img src={video.url} alt={video.title} />
 					</div>
 					<Link to={video.id}>{video.title}</Link>
-					<span>{formatDate2(video.date)}</span>
+					<span>{customFormatDate(video.date)}</span>
 				</li>
 			))}
 		</ul>

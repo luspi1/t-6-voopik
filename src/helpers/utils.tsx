@@ -2,6 +2,7 @@ import { type ReactNode } from 'react'
 import { type LinkItem, type RelatedLink } from 'src/types/global'
 import { type ShortDocument } from 'src/types/document'
 import { type SelOption } from 'src/types/select'
+import { type DateTimeFormatOptions } from 'src/types/date'
 
 import { Link } from 'react-router-dom'
 
@@ -12,33 +13,56 @@ export const getValue = (value: string, options: SelOption[]) => {
 
 // форматирует дату к формату - 24.03.1999
 
-export const formatDate1 = (date?: string) => {
-	if (!date) return
-
-	const formatDate = new Date(date)
-	return new Intl.DateTimeFormat('ru-RU', {
-		dateStyle: 'short',
-	}).format(formatDate)
-}
-
-// форматирует дату к формату - 24 марта 1999 г.
-export const formatDate2 = (date: string) => {
-	const formatDate = new Date(date)
-	return new Intl.DateTimeFormat('ru-RU', {
-		year: 'numeric',
-		month: 'long',
+export const customFormatDate = (
+	date?: string | Date,
+	options: DateTimeFormatOptions = {
 		day: 'numeric',
-	}).format(formatDate)
-}
-
-// форматирует дату к формату - 17 октября 1981 г.
-export const formatDate3 = (date?: string) => {
+		month: 'numeric',
+		year: 'numeric',
+		formatMatcher: 'best fit',
+	},
+	delimiter: '.' | '-' = '.',
+) => {
 	if (!date) return
 
-	const formatDate = new Date(date)
-	return new Intl.DateTimeFormat('ru-RU', {
-		dateStyle: 'long',
-	}).format(formatDate)
+	let formatDate: string | Date
+
+	if (typeof date === 'string') {
+		formatDate = new Date(date)
+	} else {
+		formatDate = date
+	}
+
+	return new Intl.DateTimeFormat('ru-RU', options).format(formatDate).replace(/\./g, delimiter)
+}
+
+// функция определения возраста по дате рождения
+
+export const calculateAge = (birthDate?: Date | string) => {
+	if (!birthDate) return null
+	const now: Date = new Date()
+	let parsedBirthDate: Date
+
+	if (typeof birthDate === 'string') {
+		parsedBirthDate = new Date(birthDate)
+	} else {
+		parsedBirthDate = birthDate
+	}
+
+	const diff: number = now.getTime() - parsedBirthDate.getTime()
+
+	const ageDate: Date = new Date(diff)
+	const age = Math.abs(ageDate.getUTCFullYear() - 1970)
+	let ageString: string
+	if (age % 10 === 1 && age !== 11) {
+		ageString = age.toString() + ' год'
+	} else if (age % 10 >= 2 && age % 10 <= 4 && (age < 10 || age > 20)) {
+		ageString = age.toString() + ' года'
+	} else {
+		ageString = age.toString() + ' лет'
+	}
+
+	return ageString
 }
 
 // форматирование номера телефона
