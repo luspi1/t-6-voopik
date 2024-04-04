@@ -11,12 +11,19 @@ export const newsApi = createApi({
 		baseUrl: BASE_URL,
 	}),
 	endpoints: (build) => ({
-		getAllNews: build.query<NewsItem[], string>({
-			query: (search) => ({
+		getAllNews: build.query<NewsItem[], { search?: string; year?: string }>({
+			query: ({ search = '', year = '' }) => ({
 				url: `news`,
 				params: {
 					q: search,
+					y: year,
 				},
+			}),
+			providesTags: ['News'],
+		}),
+		getNewsById: build.query<NewsItem, string>({
+			query: (newsId) => ({
+				url: `news/${newsId}`,
 			}),
 			providesTags: ['News'],
 		}),
@@ -30,4 +37,4 @@ export const newsApi = createApi({
 	}),
 })
 
-export const { useGetAllNewsQuery, useDeleteNewsByIdMutation } = newsApi
+export const { useGetAllNewsQuery, useGetNewsByIdQuery, useDeleteNewsByIdMutation } = newsApi

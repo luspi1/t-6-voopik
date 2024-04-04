@@ -25,7 +25,7 @@ export const NewsTable = () => {
 	const [deleteNewsById] = useDeleteNewsByIdMutation()
 	const debouncedSearch = useDebounce(searchNews)
 
-	const { data: newsList, isLoading } = useGetAllNewsQuery(debouncedSearch)
+	const { data: newsList, isLoading } = useGetAllNewsQuery({ search: debouncedSearch })
 
 	const searchNewsHandler = (value: string) => {
 		setSearchNews(value)

@@ -1,0 +1,29 @@
+.asideNews {
+  min-width: 203px;
+  width: 203px;
+
+  h6 {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 17px;
+  }
+
+  li {
+    line-height: 1.1;
+
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+    span {
+      font-size: 14px;
+      color: #9D9D9D;
+      display: block;
+    }
+    a {
+      font-size: 14px;
+      color: #015DB9;
+    }
+  }
+
+}

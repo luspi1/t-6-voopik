@@ -1,0 +1,25 @@
+.newsItemPage {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.newsItemPageContent {
+  h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.newsItemDate {
+  color: #B7212E;
+  display: block;
+  margin-bottom: 30px;
+}
+.newsItemMainImg {
+  width: 100%;
+  height: 492px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

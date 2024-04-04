@@ -17,7 +17,7 @@ export const getRegionParticipants = (req, res) => {
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
 	const filteredRegionParticipants = foundRegion.participants.filter((item) =>
-		item.fullname.toLowerCase().includes(q),
+		item.fullname.toLowerCase().includes(q)
 	)
 	res.status(200).json(filteredRegionParticipants)
 }
@@ -28,7 +28,7 @@ export const getRegionEvents = (req, res) => {
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
 	const filteredRegionEvents = foundRegion.events.filter((item) =>
-		item.title.toLowerCase().includes(q),
+		item.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredRegionEvents)
@@ -40,7 +40,7 @@ export const getRegionObjects = (req, res) => {
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
 	const filteredRegionObjects = foundRegion.objects.filter((item) =>
-		item.title.toLowerCase().includes(q),
+		item.title.toLowerCase().includes(q)
 	)
 	res.status(200).json(filteredRegionObjects)
 }
@@ -51,7 +51,7 @@ export const getRegionProjects = (req, res) => {
 
 	const foundRegion = regions.find((region) => region.regionCode === regionCode)
 	const filteredRegionProjects = foundRegion.projects.filter((item) =>
-		item.title.toLowerCase().includes(q),
+		item.title.toLowerCase().includes(q)
 	)
 	res.status(200).json(filteredRegionProjects)
 }
@@ -95,7 +95,7 @@ export const getUsersGroup = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredGroups = searchedUser.groups.filter((group) =>
-		group.title.toLowerCase().includes(q),
+		group.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredGroups)
@@ -106,7 +106,7 @@ export const getUsersEvent = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredEvents = searchedUser.events.filter((event) =>
-		event.title.toLowerCase().includes(q),
+		event.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredEvents)
@@ -117,7 +117,7 @@ export const getUsersProject = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredProjects = searchedUser.projects.filter((project) =>
-		project.title.toLowerCase().includes(q),
+		project.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredProjects)
@@ -128,7 +128,7 @@ export const getUsersObject = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredObjects = searchedUser.objects.filter((object) =>
-		object.title.toLowerCase().includes(q),
+		object.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredObjects)
@@ -139,7 +139,7 @@ export const getUsersPhotos = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredPhotos = searchedUser.photos.filter((photo) =>
-		photo.title.toLowerCase().includes(q),
+		photo.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredPhotos)
@@ -150,7 +150,7 @@ export const getUsersVideos = (req, res) => {
 
 	const searchedUser = users.find((user) => user.id === userId)
 	const filteredVideos = searchedUser.videos.filter((video) =>
-		video.title.toLowerCase().includes(q),
+		video.title.toLowerCase().includes(q)
 	)
 
 	res.status(200).json(filteredVideos)
@@ -184,23 +184,38 @@ export const getProjectById = (req, res) => {
 	res.status(200).json(foundProject)
 }
 
-export const getNews= (req, res) => {
-	const { q } = req.query
+export const getNews = (req, res) => {
+	const { q, y } = req.query
 
-	const filteredNews = news.filter((el) => el.title.toLowerCase().includes(q))
+	const filteredNews = news
+		.filter((el) => {
+			if (y) {
+				return (String(new Date(el.date).getFullYear()) === y && el.title.toLowerCase().includes(q))
+			}
+			return el.title.toLowerCase().includes(q)
+		})
+
 
 	res.status(200).json(filteredNews)
 }
 
-export const deleteNews= (req, res) => {
-	const newsId = req.params.id;
+
+export const getNewsById = (req, res) => {
+	const newsId = req.params.id
+	const foundNews = news.find((newsItem) => newsItem.id === newsId)
+
+	res.status(200).json(foundNews)
+}
+
+export const deleteNews = (req, res) => {
+	const newsId = req.params.id
 	let deleteIdx
 	news.forEach((el, idx) => {
 		if (el.id === newsId) {
 			deleteIdx = idx
 		}
 	})
-	news.splice(deleteIdx, 1, )
+	news.splice(deleteIdx, 1)
 
 	res.status(200).json(deleteIdx)
 }
