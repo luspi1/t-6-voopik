@@ -7,6 +7,7 @@ import { regionsApi } from 'src/store/regions/regions.api'
 import { objectsApi } from 'src/store/objects/objects.api'
 import { projectsApi } from 'src/store/projects/projects.api'
 import { newsApi } from 'src/store/news/news.api'
+import { eventsApi } from 'src/store/events/events.api'
 
 import { NameSpace } from 'src/helpers/consts'
 
@@ -18,6 +19,7 @@ export const store = configureStore({
 		[objectsApi.reducerPath]: objectsApi.reducer,
 		[projectsApi.reducerPath]: projectsApi.reducer,
 		[newsApi.reducerPath]: newsApi.reducer,
+		[eventsApi.reducerPath]: eventsApi.reducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({ serializableCheck: false }).concat(
@@ -26,6 +28,7 @@ export const store = configureStore({
 			objectsApi.middleware,
 			projectsApi.middleware,
 			newsApi.middleware,
+			eventsApi.middleware,
 		),
 })
 

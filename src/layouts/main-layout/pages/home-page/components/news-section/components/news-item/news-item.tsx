@@ -4,20 +4,21 @@ import { Link } from 'react-router-dom'
 import cnBind from 'classnames/bind'
 
 import styles from './index.module.scss'
+import { AppRoute } from 'src/routes/main-routes/consts'
 
 type NewsItemProps = {
+	id: string
 	title: string
-	link: string
 	date: string
 	desc?: string
 	isMain?: boolean
 }
-export const NewsItem: FC<NewsItemProps> = ({ link, title, date, desc, isMain }) => {
+export const NewsItem: FC<NewsItemProps> = ({ title, date, desc, isMain, id }) => {
 	const cx = cnBind.bind(styles)
 
 	return (
 		<li className={cx(styles.newsItem, { _main: isMain })}>
-			<Link to={link}>
+			<Link to={`/${AppRoute.News}/${id}`}>
 				<h4>{title}</h4>
 				<span>{date}</span>
 				{desc && <p>{desc}</p>}

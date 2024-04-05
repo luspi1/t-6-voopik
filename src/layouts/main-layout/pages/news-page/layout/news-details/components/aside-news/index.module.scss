@@ -1,6 +1,13 @@
 .asideNews {
   min-width: 203px;
   width: 203px;
+  @media (max-width: 768px) {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 50px;
+
+  }
+
 
   h6 {
     font-size: 16px;
@@ -15,11 +22,13 @@
     &:not(:last-child) {
       margin-bottom: 22px;
     }
+
     span {
       font-size: 14px;
       color: #9D9D9D;
       display: block;
     }
+
     a {
       font-size: 14px;
       color: #015DB9;

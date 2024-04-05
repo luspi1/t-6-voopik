@@ -1,14 +1,15 @@
 import { PageContent } from 'src/components/page-content/page-content'
 import { Helmet } from 'react-helmet-async'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { useGetNewsByIdQuery } from 'src/store/news/news.api'
 import { useAdditionalCrumbs } from 'src/hooks/additional-crumbs/additional-crumbs'
-
-import styles from './index.module.scss'
 import { customFormatDate } from 'src/helpers/utils'
 import { AsideNews } from 'src/layouts/main-layout/pages/news-page/layout/news-details/components/aside-news/aside-news'
 import { Loader } from 'src/components/loader/loader'
+import { AppRoute } from 'src/routes/main-routes/consts'
+
+import styles from './index.module.scss'
 export const NewsDetails = () => {
 	const { id } = useParams()
 	const { data: newsItemData, isLoading } = useGetNewsByIdQuery(id ?? '')
@@ -29,6 +30,21 @@ export const NewsDetails = () => {
 				</span>
 				<div className={styles.newsItemMainImg}>
 					<img src={newsItemData?.preview} alt={newsItemData?.title} />
+				</div>
+				{newsItemData?.textNews?.map((textEl, idx) => (
+					<p className={styles.newsText} key={idx}>
+						{textEl}
+					</p>
+				))}
+				<ul className={styles.newsGallery}>
+					{newsItemData?.imgGallery?.map((imgEl, idx) => (
+						<li className={styles.galleryImg} key={idx}>
+							<img src={imgEl} alt='gallery image' />
+						</li>
+					))}
+				</ul>
+				<div className={styles.allNewsBlock}>
+					<Link to={`/${AppRoute.News}`}>Все новости</Link>
 				</div>
 			</PageContent>
 			<AsideNews currentNewsId={id ?? ''} />

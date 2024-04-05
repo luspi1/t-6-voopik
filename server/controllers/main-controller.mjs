@@ -3,6 +3,7 @@ import { users } from '../mockData/users.mjs'
 import { objects } from '../mockData/objects.mjs'
 import { projects } from '../mockData/projects.mjs'
 import { news } from '../mockData/news.mjs'
+import { events } from '../mockData/events.mjs'
 
 export const getRegions = (req, res) => {
 	const { q } = req.query
@@ -218,4 +219,27 @@ export const deleteNews = (req, res) => {
 	news.splice(deleteIdx, 1)
 
 	res.status(200).json(deleteIdx)
+}
+
+export const getEvents = (req, res) => {
+	const { q, y } = req.query
+
+	const filteredEvents = events
+		.filter((el) => {
+			if (y) {
+				return (String(new Date(el.dates[0]).getFullYear()) === y && el.title.toLowerCase().includes(q))
+			}
+			return el.title.toLowerCase().includes(q)
+		})
+
+
+	res.status(200).json(filteredEvents)
+}
+
+
+export const getEventById = (req, res) => {
+	const eventId = req.params.id
+	const foundEvent = events.find((eventItem) => eventItem.id === eventId)
+
+	res.status(200).json(foundEvent)
 }

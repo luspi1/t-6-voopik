@@ -9,5 +9,7 @@ export type NewsItem = {
 	hidden: boolean
 	main: boolean
 	preview: string
+	imgGallery: string[]
+	textNews: string[]
 	desc: string
 }

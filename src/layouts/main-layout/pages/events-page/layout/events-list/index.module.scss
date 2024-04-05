@@ -1,0 +1,19 @@
+.eventsList {
+  margin-bottom: 20px;
+}
+
+.eventsTitleBlock {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  h2 {
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+}
+
+select.eventsYearsSelect {
+  padding: 6px 46px 6px 7px;
+}

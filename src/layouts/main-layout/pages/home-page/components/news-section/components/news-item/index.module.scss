@@ -1,7 +1,6 @@
 @import "src/assets/styles/vars";
 
 .newsItem {
-  padding: 23px;
   background-color: #ffffff;
   border: 2px solid #E1E0E8;
   transition: all .3s;
@@ -18,6 +17,10 @@
   }
 
   a {
+    display: block;
+    height: 100%;
+    padding: 23px;
+
     h4 {
       color: #000;
       @include ptsans-bold;

@@ -37,12 +37,14 @@ import { ProjectsList } from 'src/layouts/main-layout/pages/projects-page/layout
 import { ProjectsAbout } from 'src/layouts/main-layout/pages/projects-page/layout/projects-about/projects-about'
 import { ProjectDetails } from 'src/layouts/main-layout/pages/projects-page/layout/project-details/project-details'
 import { LibraryPage } from 'src/layouts/main-layout/pages/library-page/library-page'
-import { EventsPage } from 'src/layouts/main-layout/pages/events-page/events-page'
+import { EventsLayout } from 'src/layouts/main-layout/pages/events-page/events-layout'
 import { ShopPage } from 'src/layouts/main-layout/pages/shop-page/shop-page'
 import { AppRoute } from 'src/routes/main-routes/consts'
 import { NewsLayout } from 'src/layouts/main-layout/pages/news-page/layout/news-layout'
 import { NewsList } from 'src/layouts/main-layout/pages/news-page/layout/news-list/news-list'
 import { NewsDetails } from 'src/layouts/main-layout/pages/news-page/layout/news-details/news-details'
+import { EventsList } from 'src/layouts/main-layout/pages/events-page/layout/events-list/events-list'
+import { EventDetails } from 'src/layouts/main-layout/pages/events-page/layout/events-details/event-details'
 
 export const MainRoutes = () => {
 	return (
@@ -101,8 +103,11 @@ export const MainRoutes = () => {
 					<Route index element={<NewsList />} />
 					<Route path=':id' element={<NewsDetails />} />
 				</Route>
+				<Route path={AppRoute.Events} element={<EventsLayout />}>
+					<Route index element={<EventsList />} />
+					<Route path=':id' element={<EventDetails />} />
+				</Route>
 				<Route path={AppRoute.Library} element={<LibraryPage />} />
-				<Route path={AppRoute.Events} element={<EventsPage />} />
 				<Route path={AppRoute.Shop} element={<ShopPage />} />
 			</Route>
 		</Routes>

@@ -30,6 +30,10 @@ aside {
   ._activeBtn {
     svg {
       opacity: 1;
+      fill: #ffffff;
+      path {
+        fill: #ffffff;
+      }
     }
 
     .navArrow {

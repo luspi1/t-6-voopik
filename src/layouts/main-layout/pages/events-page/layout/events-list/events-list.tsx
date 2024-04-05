@@ -1,37 +1,36 @@
 import { type FC, useEffect, useRef, useState } from 'react'
 import { type SelOption } from 'src/types/select'
-
 import { Helmet } from 'react-helmet-async'
 
 import { PageContent } from 'src/components/page-content/page-content'
-import { useGetAllNewsQuery } from 'src/store/news/news.api'
 import { Loader } from 'src/components/loader/loader'
 import { DatedItem } from 'src/components/dated-item/dated-item'
 import { Pagination } from 'src/components/pagination/pagination'
 import { MainSelect } from 'src/UI/MainSelect/MainSelect'
+import { useGetAllEventsQuery } from 'src/store/events/events.api'
 
 import styles from './index.module.scss'
 
-export const NewsList: FC = () => {
+export const EventsList: FC = () => {
 	const [yearsSelectValue, setYearsSelectValue] = useState<string>('')
 	const [yearsOptions, setYearsOptions] = useState<SelOption[]>([])
-	const { data: newsList, isLoading } = useGetAllNewsQuery({ year: yearsSelectValue })
+	const { data: eventsList, isLoading } = useGetAllEventsQuery({ year: yearsSelectValue })
 
 	const isFetchedRef = useRef<boolean>(false)
-	if (newsList) {
+	if (eventsList) {
 		isFetchedRef.current = true
 	}
 
 	useEffect(() => {
 		if (isFetchedRef.current) {
-			const uniqYears = [...new Set(newsList?.map((el) => new Date(el.date).getFullYear()))].map(
-				(el) => {
-					return {
-						label: String(el),
-						value: String(el),
-					}
-				},
-			)
+			const uniqYears = [
+				...new Set(eventsList?.map((el) => new Date(el.dates[0]).getFullYear())),
+			].map((el) => {
+				return {
+					label: String(el),
+					value: String(el),
+				}
+			})
 			setYearsOptions(uniqYears)
 		}
 	}, [isFetchedRef.current])
@@ -39,32 +38,32 @@ export const NewsList: FC = () => {
 	return (
 		<PageContent $padding='30px 40px 55px 30px' $maxWidth='100%'>
 			<Helmet>
-				<title>Все новости</title>
+				<title>Все события</title>
 			</Helmet>
-			<div className={styles.newsTitleBlock}>
-				<h2>Все новости</h2>
+			<div className={styles.eventsTitleBlock}>
+				<h2>Все события</h2>
 				<MainSelect
 					onChange={(e) => setYearsSelectValue(e.target.value)}
 					value={yearsSelectValue}
-					className={styles.newsYearsSelect}
+					className={styles.eventsYearsSelect}
 					items={[{ label: 'Все годы', value: '' }, ...yearsOptions]}
 				/>
 			</div>
-			{isLoading || !newsList ? (
+			{isLoading || !eventsList ? (
 				<Loader />
 			) : (
-				<ul className={styles.newsList}>
-					{[...newsList]
+				<ul className={styles.eventsList}>
+					{[...eventsList]
 						?.reverse()
-						.map((newsItem, idx, array) => (
+						.map((eventsItem, idx, array) => (
 							<DatedItem
-								key={newsItem.id}
-								id={newsItem.id}
-								date={newsItem.date}
-								prevDate={array[idx - 1]?.date}
-								previewImage={newsItem.preview}
-								title={newsItem.title}
-								desc={newsItem.desc}
+								key={eventsItem.id}
+								id={eventsItem.id}
+								date={eventsItem.dates}
+								prevDate={array[idx - 1]?.dates[0]}
+								previewImage={eventsItem.preview}
+								title={eventsItem.title}
+								desc={eventsItem.desc}
 							/>
 						))}
 				</ul>

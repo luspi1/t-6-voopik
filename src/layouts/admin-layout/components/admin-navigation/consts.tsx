@@ -128,12 +128,32 @@ export const adminMenuItems: NavigationItem[] = [
 		link: 'admin-events',
 		childItems: [
 			{
-				title: 'Список Событий',
-				link: 'events-list',
+				title: 'Профиль события',
+				link: 'event-profile',
 			},
 			{
-				title: 'Создать Событие',
-				link: 'add-event',
+				title: 'Регистрация',
+				link: 'event-reg',
+			},
+			{
+				title: 'Билеты и допуски',
+				link: 'event-tickets',
+			},
+			{
+				title: 'Контент',
+				link: 'event-content',
+			},
+			{
+				title: 'Локации',
+				link: 'event-locations',
+			},
+			{
+				title: 'Расписание',
+				link: 'event-timetable',
+			},
+			{
+				title: 'Списки',
+				link: 'event-lists',
 			},
 		],
 	},

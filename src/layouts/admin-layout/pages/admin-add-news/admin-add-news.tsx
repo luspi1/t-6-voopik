@@ -14,10 +14,10 @@ import { ControlledSelect } from 'src/components/controlled-select/controlled-se
 import { AdminButton } from 'src/UI/AdminButton/AdminButton'
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
+import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
 
 import styles from './index.module.scss'
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
-import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
 
 export const AdminAddNews: FC = () => {
 	const methods = useForm<AddNewsInputs>({
@@ -40,7 +40,12 @@ export const AdminAddNews: FC = () => {
 			<h1>Добавить новость</h1>
 			<AdminContent $padding='20px 30px 35px'>
 				<FormProvider {...methods}>
-					<form className={styles.newsForm} onSubmit={methods.handleSubmit(onSubmit)} noValidate>
+					<form
+						className={styles.newsForm}
+						onSubmit={methods.handleSubmit(onSubmit)}
+						noValidate
+						autoComplete='off'
+					>
 						<div className={styles.newsFormWrapper}>
 							<div className={styles.newsFormFields}>
 								<ControlledInput

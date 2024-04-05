@@ -21,8 +21,6 @@ import { AdminObjectsList } from 'src/layouts/admin-layout/pages/admin-objects-l
 import { AdminAddObject } from 'src/layouts/admin-layout/pages/admin-add-object/admin-add-object'
 import { AdminProjectsList } from 'src/layouts/admin-layout/pages/admin-projects-list/admin-projects-list'
 import { AdminAddProject } from 'src/layouts/admin-layout/pages/admin-add-project/admin-add-project'
-import { AdminEventsList } from 'src/layouts/admin-layout/pages/admin-events-list/admin-events-list'
-import { AdminAddEvent } from 'src/layouts/admin-layout/pages/admin-add-event/admin-add-event'
 import { AdminMaterialsList } from 'src/layouts/admin-layout/pages/admin-materials-list/admin-materials-list'
 import { AdminAddMaterial } from 'src/layouts/admin-layout/pages/admin-add-material/admin-add-material'
 import { AdminProductList } from 'src/layouts/admin-layout/pages/admin-product-list/admin-product-list'
@@ -33,6 +31,13 @@ import { AdminSettingsFeedback } from 'src/layouts/admin-layout/pages/admin-sett
 import { AdminSettingsUsers } from 'src/layouts/admin-layout/pages/admin-settings-users/admin-settings-users'
 import { AdminSettingsStructure } from 'src/layouts/admin-layout/pages/admin-settings-structure/admin-settings-structure'
 import { AdminSettingsBlocks } from 'src/layouts/admin-layout/pages/admin-settings-blocks/admin-settings-blocks'
+import { AdminEventProfile } from 'src/layouts/admin-layout/pages/admin-event-profile/admin-event-profile'
+import { AdminEventReg } from 'src/layouts/admin-layout/pages/admin-event-reg/admin-event-reg'
+import { AdminEventTickets } from 'src/layouts/admin-layout/pages/admin-event-tickets/admin-event-tickets'
+import { AdminEventContent } from 'src/layouts/admin-layout/pages/admin-event-content/admin-event-content'
+import { AdminEventLocations } from 'src/layouts/admin-layout/pages/admin-event-locations/admin-event-locations'
+import { AdminEventTimetable } from 'src/layouts/admin-layout/pages/admin-event-timetable/admin-event-timetable'
+import { AdminEventLists } from 'src/layouts/admin-layout/pages/admin-event-lists/admin-event-lists'
 
 export const AdminRoutes: FC = () => {
 	return (
@@ -40,6 +45,7 @@ export const AdminRoutes: FC = () => {
 			<Route path='/' element={<AdminLayout />}>
 				<Route path={AdminRoute.AdminNewsList} element={<AdminNewsList />} />
 				<Route path={AdminRoute.AdminAddNews} element={<AdminAddNews />} />
+
 				<Route path={AdminRoute.AdminCommunityAbout} element={<AdminCommunityAbout />} />
 				<Route path={AdminRoute.AdminCommunityHistory} element={<AdminCommunityHistory />} />
 				<Route
@@ -50,21 +56,35 @@ export const AdminRoutes: FC = () => {
 				<Route path={AdminRoute.AdminCommunityDocuments} element={<AdminCommunityDocuments />} />
 				<Route path={AdminRoute.AdminCommunityMediakit} element={<AdminCommunityMediakit />} />
 				<Route path={AdminRoute.AdminCommunityPhotos} element={<AdminCommunityPhotos />} />
+
 				<Route path={AdminRoute.AdminDepartmentsList} element={<AdminDepartmentsList />} />
 				<Route path={AdminRoute.AdminAddDepartments} element={<AdminAddDepartments />} />
+
 				<Route path={AdminRoute.AdminParticipantsList} element={<AdminParticipantsList />} />
 				<Route path={AdminRoute.AdminAddParticipant} element={<AdminAddParticipant />} />
+
 				<Route path={AdminRoute.AdminObjectsList} element={<AdminObjectsList />} />
 				<Route path={AdminRoute.AdminAddObject} element={<AdminAddObject />} />
+
 				<Route path={AdminRoute.AdminProjectsList} element={<AdminProjectsList />} />
 				<Route path={AdminRoute.AdminAddProject} element={<AdminAddProject />} />
-				<Route path={AdminRoute.AdminEventsList} element={<AdminEventsList />} />
-				<Route path={AdminRoute.AdminAddEvent} element={<AdminAddEvent />} />
+
+				<Route path={AdminRoute.AdminEventProfile} element={<AdminEventProfile />} />
+				<Route path={AdminRoute.AdminEventReg} element={<AdminEventReg />} />
+				<Route path={AdminRoute.AdminEventTickets} element={<AdminEventTickets />} />
+				<Route path={AdminRoute.AdminEventContent} element={<AdminEventContent />} />
+				<Route path={AdminRoute.AdminEventLocations} element={<AdminEventLocations />} />
+				<Route path={AdminRoute.AdminEventTimetable} element={<AdminEventTimetable />} />
+				<Route path={AdminRoute.AdminEventLists} element={<AdminEventLists />} />
+
 				<Route path={AdminRoute.AdminMaterialsList} element={<AdminMaterialsList />} />
 				<Route path={AdminRoute.AdminAddMaterial} element={<AdminAddMaterial />} />
+
 				<Route path={AdminRoute.AdminProductList} element={<AdminProductList />} />
 				<Route path={AdminRoute.AdminSales} element={<AdminSales />} />
+
 				<Route path={AdminRoute.AdminSupport} element={<AdminSupport />} />
+
 				<Route path={AdminRoute.AdminSettingsHome} element={<AdminSettingsHome />} />
 				<Route path={AdminRoute.AdminSettingsFeedback} element={<AdminSettingsFeedback />} />
 				<Route path={AdminRoute.AdminSettingsUsers} element={<AdminSettingsUsers />} />

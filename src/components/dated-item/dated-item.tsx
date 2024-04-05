@@ -8,7 +8,7 @@ import styles from './index.module.scss'
 
 type DatedItemProps = {
 	id: string
-	date: string
+	date: string | [string, string]
 	prevDate: string
 	previewImage: string
 	title: string
@@ -22,22 +22,35 @@ export const DatedItem: FC<DatedItemProps> = ({
 	title,
 	desc,
 }) => {
-	const currentMonth = new Date(date).getMonth()
+	const currentDate = Array.isArray(date) ? new Date(date[0]) : new Date(date)
+
+	const currentMonth = currentDate.getMonth()
 	const prevMonth = new Date(prevDate).getMonth()
-	const currentYear = new Date(date).getFullYear()
+	const currentYear = currentDate.getFullYear()
+
+	const renderDateInfo = () => {
+		if (Array.isArray(date)) {
+			return (
+				<>
+					{customFormatDate(date[0], { day: 'numeric', month: 'long' })} - <br />
+					{customFormatDate(date[1], { day: 'numeric', month: 'long' })}{' '}
+					{new Date(date[1]).getFullYear()}
+				</>
+			)
+		}
+		return <>{customFormatDate(date, { day: 'numeric', month: 'long' })}</>
+	}
 
 	return (
 		<>
 			{currentMonth !== prevMonth && (
 				<li className={styles.titleMonth}>
-					<span>{customFormatDate(date, { month: 'long' })},</span> {currentYear}
+					<span>{customFormatDate(currentDate, { month: 'long' })},</span> {currentYear}
 				</li>
 			)}
 			<li className={styles.datedItem} key={id}>
 				<Link className={styles.datedItemInner} to={id}>
-					<span className={styles.dateInfo}>
-						{customFormatDate(date, { day: 'numeric', month: 'long' })}
-					</span>
+					<span className={styles.dateInfo}>{renderDateInfo()}</span>
 					<div className={styles.datedItemContent}>
 						<h5>{title}</h5>
 						<p>{desc}</p>
