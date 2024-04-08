@@ -13,6 +13,9 @@ import { AdminControllers } from 'src/layouts/admin-layout/components/admin-cont
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 import { TitleSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/title-section/title-section'
 
+import { DateSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/date-section/date-section'
+import { DescSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/desc-section/desc-section'
+
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 export const AdminEventProfile: FC = () => {
 	const methods = useForm<EventProfileInputs>({
@@ -29,13 +32,19 @@ export const AdminEventProfile: FC = () => {
 				<title>Профиль события</title>
 			</Helmet>
 			<h1>Профиль события</h1>
-			<AdminContent $padding='30px 30px 35px'>
+			<AdminContent $padding='25px 30px 35px'>
 				<p className={adminStyles.adminPrompt}>
 					поля, отмеченные символом *, обязательны для заполнения
 				</p>
 				<FormProvider {...methods}>
-					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
+					<form
+						className={adminStyles.adminPromptsForm}
+						onSubmit={methods.handleSubmit(onSubmit)}
+						noValidate
+					>
 						<TitleSection />
+						<DateSection />
+						<DescSection />
 						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} />
 					</form>
 				</FormProvider>

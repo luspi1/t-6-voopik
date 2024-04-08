@@ -15,6 +15,7 @@ type ControlledInputProps = {
 	dynamicError?: FieldError | undefined
 	name: string
 	margin?: string
+	width?: string
 } & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>
 
 export const ControlledInput: FC<ControlledInputProps> = ({
@@ -26,6 +27,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 	dynamicError,
 	isTextarea,
 	margin,
+	width,
 	...props
 }) => {
 	const {
@@ -35,7 +37,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 
 	if (isTextarea) {
 		return (
-			<div className={cn(styles.inputEl, styles.textareaEl, className)} style={{ margin }}>
+			<div className={cn(styles.inputEl, styles.textareaEl, className)} style={{ margin, width }}>
 				<label className={cn(styles.inputWrapper, styles.textareaWrapper)}>
 					{label && <p>{label}</p>}
 					<textarea
@@ -56,7 +58,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 	}
 
 	return (
-		<div className={cn(styles.inputEl, className)} style={{ margin }}>
+		<div className={cn(styles.inputEl, className)} style={{ margin, width }}>
 			<label className={styles.inputWrapper}>
 				{label && <p>{label}</p>}
 				<InputMask

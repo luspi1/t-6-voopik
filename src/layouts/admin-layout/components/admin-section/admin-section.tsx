@@ -37,10 +37,12 @@ export const AdminSection: FC<AdminSectionProps> = ({
 
 	return (
 		<section className={cn(styles.adminSection, { [styles._disable]: !isChecked }, className)}>
-			<div className={styles.adminSectionHead}>
-				<h2>{titleText}</h2>
-				{sectionName && <AdminSwitcher name={sectionName} label={switcherText} />}
-			</div>
+			{(titleText ?? sectionName) && (
+				<div className={styles.adminSectionHead}>
+					<h2>{titleText}</h2>
+					{sectionName && <AdminSwitcher name={sectionName} label={switcherText} />}
+				</div>
+			)}
 			{isChecked && (
 				<AdminSectionContent
 					$maxWidth={contentMaxWidth}

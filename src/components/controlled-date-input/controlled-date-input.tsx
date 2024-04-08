@@ -16,8 +16,10 @@ type ControlledDateInputProps = {
 	name: string
 	dateFormat?: string
 	showTimeSelect?: boolean
+	showTimeSelectOnly?: boolean
 	timeFormat?: string
 	placeholder?: string
+	margin?: string
 }
 export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 	name,
@@ -25,8 +27,10 @@ export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 	label,
 	dateFormat,
 	showTimeSelect,
+	showTimeSelectOnly,
 	timeFormat,
 	placeholder,
+	margin,
 }) => {
 	const {
 		control,
@@ -34,7 +38,7 @@ export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 	} = useFormContext()
 
 	return (
-		<div className={cn(styles.dateInputWrapper, className)}>
+		<div className={cn(styles.dateInputWrapper, className)} style={{ margin }}>
 			<label>
 				{label && <p>{label}</p>}
 				<Controller
@@ -52,6 +56,7 @@ export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 							timeCaption='Время'
 							placeholderText={placeholder}
 							showTimeSelect={showTimeSelect ?? false}
+							showTimeSelectOnly={showTimeSelectOnly}
 						/>
 					)}
 				/>

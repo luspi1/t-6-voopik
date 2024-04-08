@@ -13,12 +13,14 @@ type ControlledSelectProps = {
 	name: string
 	label?: string
 	className?: string
+	margin?: string
 }
 export const ControlledSelect: FC<ControlledSelectProps> = ({
 	selectOptions,
 	name,
 	label,
 	className,
+	margin,
 	...props
 }) => {
 	const {
@@ -35,7 +37,7 @@ export const ControlledSelect: FC<ControlledSelectProps> = ({
 		defaultValue: selectOptions[0].value,
 	})
 	return (
-		<div className={cn(styles.selectWrapper, className)}>
+		<div className={cn(styles.selectWrapper, className)} style={{ margin }}>
 			{label && <label>{label}</label>}
 			<Select
 				{...register(name)}
