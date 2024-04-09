@@ -68,6 +68,34 @@ ul.adminTablePagination {
   margin-bottom: 20px;
 }
 
+div.adminCheckbox {
+  & > div {
+    align-items: center;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+  }
+
+  label {
+    margin-right: 5px;
+    min-width: 15px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #868585;
+  }
+}
+
+.adminSelect {
+  :global {
+    .react-dropdown-select {
+      background: #FFFFFF;
+    }
+  }
+}
+
 .adminDateInput {
   max-width: 204px;
 
@@ -136,6 +164,7 @@ ul.adminTablePagination {
 
 .adminTimeInput {
   max-width: 204px;
+
   :global {
     .react-datepicker {
       border: 1px solid #113770;
@@ -155,6 +184,7 @@ ul.adminTablePagination {
     .react-datepicker__triangle {
       display: none;
     }
+
     .react-datepicker__input-container {
       &::after {
         content: '';

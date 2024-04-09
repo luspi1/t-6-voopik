@@ -16,11 +16,16 @@ import { TitleSection } from 'src/layouts/admin-layout/pages/admin-event-profile
 import { DateSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/date-section/date-section'
 import { DescSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/desc-section/desc-section'
 
+import { AreaSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/area-section/area-section'
+import { NewAreaSection } from 'src/layouts/admin-layout/pages/admin-event-profile/components/new-area-section/new-area-section'
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 export const AdminEventProfile: FC = () => {
 	const methods = useForm<EventProfileInputs>({
 		mode: 'onBlur',
 		resolver: yupResolver(eventProfileSchema),
+		defaultValues: {
+			newAreaSection: false,
+		},
 	})
 
 	const onSubmit: SubmitHandler<EventProfileInputs> = (data) => {
@@ -45,7 +50,9 @@ export const AdminEventProfile: FC = () => {
 						<TitleSection />
 						<DateSection />
 						<DescSection />
-						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} />
+						<AreaSection />
+						<NewAreaSection />
+						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} variant='2' />
 					</form>
 				</FormProvider>
 			</AdminContent>

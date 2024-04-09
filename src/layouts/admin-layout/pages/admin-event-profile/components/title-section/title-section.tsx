@@ -9,7 +9,7 @@ import { GridRow } from 'src/components/grid-row/grid-row'
 export const TitleSection = () => {
 	return (
 		<AdminSection contentBg='none' contentPadding='0' contentBorder='none'>
-			<PromptInput promptText='Не указывайте в названии события дату проведения или описание: для этого есть отдельные поля'>
+			<PromptInput promptContent='Не указывайте в названии события дату проведения или описание: для этого есть отдельные поля'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
 					name='eventName'
@@ -18,7 +18,7 @@ export const TitleSection = () => {
 					margin='0'
 				/>
 			</PromptInput>
-			<PromptInput promptText='Эти данные нужны для того, чтобы событие нормально искалось в списках'>
+			<PromptInput promptContent='Эти данные нужны для того, чтобы событие нормально искалось в списках'>
 				<div className={adminStyles.adminInputsRowWrapper}>
 					<h6>Тип и уровень события *</h6>
 					<GridRow>
@@ -45,7 +45,7 @@ export const TitleSection = () => {
 					</GridRow>
 				</div>
 			</PromptInput>
-			<PromptInput promptText='Адрес интернет-сайта или страницы в социальной сети'>
+			<PromptInput promptContent='Адрес интернет-сайта или страницы в социальной сети'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
 					name='eventSite'
@@ -55,7 +55,7 @@ export const TitleSection = () => {
 				/>
 			</PromptInput>
 			<PromptInput
-				promptText='Вводите теги через запятую. Тег может состоять из нескольких слов, разделенных пробелами'
+				promptContent='Вводите теги через запятую. Тег может состоять из нескольких слов, разделенных пробелами'
 				$margin='0'
 			>
 				<ControlledInput

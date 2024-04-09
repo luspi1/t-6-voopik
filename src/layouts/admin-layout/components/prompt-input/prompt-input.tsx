@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 type PromptInputProps = PropsWithChildren<{
 	children: ReactNode
-	promptText?: string
+	promptContent?: string | ReactNode
 	$margin?: string
 }>
 
@@ -20,13 +20,17 @@ const StyledPromptText = styled.p`
 	line-height: 1.3;
 	color: #2d3231;
 	padding: 25px 0 0 0;
+	a {
+		color: #113770;
+		font-weight: 600;
+	}
 `
 
-export const PromptInput: FC<PromptInputProps> = ({ children, promptText, ...props }) => {
+export const PromptInput: FC<PromptInputProps> = ({ children, promptContent, ...props }) => {
 	return (
 		<StyledPromptInput {...props}>
 			{children}
-			<StyledPromptText>{promptText}</StyledPromptText>
+			<StyledPromptText>{promptContent}</StyledPromptText>
 		</StyledPromptInput>
 	)
 }

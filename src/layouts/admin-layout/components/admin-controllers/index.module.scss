@@ -2,4 +2,12 @@
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+
+  .cancelBtn {
+    margin-left: auto;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
+  }
 }
+

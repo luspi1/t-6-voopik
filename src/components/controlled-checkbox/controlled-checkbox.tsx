@@ -14,6 +14,7 @@ type ControlledCheckboxProps = {
 	required?: boolean
 	label?: string
 	className?: string
+	margin?: string
 }
 
 export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
@@ -22,6 +23,7 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 	label,
 	className,
 	required,
+	margin,
 }) => {
 	const [isChecked, setIsChecked] = useState<boolean>(false)
 
@@ -39,7 +41,7 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 	}
 
 	return (
-		<div className={cn(styles.checkboxEl, className)}>
+		<div className={cn(styles.checkboxEl, className)} style={{ margin }}>
 			<div className={styles.inputWrapper} onClick={handleCheckboxChange}>
 				<label>{isChecked && <CheckMarkSvg />}</label>
 				<input

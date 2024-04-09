@@ -12,8 +12,9 @@ type AdminSectionProps = {
 	children: ReactNode
 	sectionName?: string
 	className?: string
+	switcherClassName?: string
 	titleText?: string
-	switcherText?: string
+	switcherText?: string | ReactNode
 	contentPadding?: string
 	contentMaxWidth?: string
 	contentBorder?: string
@@ -24,6 +25,7 @@ export const AdminSection: FC<AdminSectionProps> = ({
 	children,
 	sectionName,
 	className,
+	switcherClassName,
 	titleText,
 	switcherText,
 	contentPadding,
@@ -39,8 +41,10 @@ export const AdminSection: FC<AdminSectionProps> = ({
 		<section className={cn(styles.adminSection, { [styles._disable]: !isChecked }, className)}>
 			{(titleText ?? sectionName) && (
 				<div className={styles.adminSectionHead}>
-					<h2>{titleText}</h2>
-					{sectionName && <AdminSwitcher name={sectionName} label={switcherText} />}
+					{titleText && <h2>{titleText}</h2>}
+					{sectionName && (
+						<AdminSwitcher className={switcherClassName} name={sectionName} label={switcherText} />
+					)}
 				</div>
 			)}
 			{isChecked && (

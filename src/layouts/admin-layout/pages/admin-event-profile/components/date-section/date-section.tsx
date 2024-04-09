@@ -4,12 +4,19 @@ import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/pr
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { GridRow } from 'src/components/grid-row/grid-row'
+import { Link } from 'react-router-dom'
+import { AdminRoute } from 'src/routes/admin-routes/consts'
 
 export const DateSection = () => {
 	return (
 		<AdminSection contentBg='none' contentPadding='0' contentBorder='none'>
 			<PromptInput
-				promptText='Укажите дату и время начала и окончания события. Рекомендуем также использовать раздел настроек «Расписание»'
+				promptContent={
+					<span>
+						Укажите дату и время начала и окончания события. Рекомендуем также использовать{' '}
+						<Link to={`/${AdminRoute.AdminHome}`}>раздел настроек «Расписание»</Link>
+					</span>
+				}
 				$margin='0'
 			>
 				<div className={adminStyles.adminInputsRowWrapper}>
