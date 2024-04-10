@@ -1,4 +1,4 @@
-import React, { type FC, useState } from 'react'
+import React, { type FC, useEffect, useState } from 'react'
 
 import { useFormContext } from 'react-hook-form'
 import cn from 'classnames'
@@ -31,6 +31,7 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 		register,
 		setValue,
 		formState: { errors },
+		getValues,
 	} = useFormContext()
 
 	const handleCheckboxChange = () => {
@@ -39,6 +40,10 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 			return !prev
 		})
 	}
+
+	useEffect(() => {
+		setIsChecked(!!getValues(name))
+	}, [])
 
 	return (
 		<div className={cn(styles.checkboxEl, className)} style={{ margin }}>

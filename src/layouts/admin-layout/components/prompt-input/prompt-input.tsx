@@ -13,6 +13,9 @@ const StyledPromptInput = styled.div<PromptInputProps>`
 	display: grid;
 	column-gap: 20px;
 	grid-template-columns: minmax(405px, 1.1fr) 0.9fr;
+	@media (max-width: 1024px) {
+		grid-template: 1fr 1fr / 1fr;
+	}
 `
 const StyledPromptText = styled.p`
 	font-size: 14px;
@@ -20,6 +23,9 @@ const StyledPromptText = styled.p`
 	line-height: 1.3;
 	color: #2d3231;
 	padding: 25px 0 0 0;
+	@media (max-width: 1024px) {
+		padding: 10px 0 0 0;
+	}
 	a {
 		color: #113770;
 		font-weight: 600;

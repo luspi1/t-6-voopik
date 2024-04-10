@@ -2,10 +2,12 @@ import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/
 import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/prompt-input'
 
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
-import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { GridRow } from 'src/components/grid-row/grid-row'
 import { Link } from 'react-router-dom'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
+import { CustomText } from 'src/components/custom-text/custom-text'
+
+import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
 export const DateSection = () => {
 	return (
@@ -19,8 +21,10 @@ export const DateSection = () => {
 				}
 				$margin='0'
 			>
-				<div className={adminStyles.adminInputsRowWrapper}>
-					<h6>Начало события *</h6>
+				<div>
+					<CustomText $margin='0 0 5px 0' $fontWeight='600'>
+						Начало события *
+					</CustomText>
 					<GridRow $template='auto/204px 204px'>
 						<ControlledDateInput
 							className={adminStyles.adminDateInput}
@@ -39,8 +43,10 @@ export const DateSection = () => {
 					</GridRow>
 				</div>
 			</PromptInput>
-			<div className={adminStyles.adminInputsRowWrapper}>
-				<h6>Окончание события *</h6>
+			<div>
+				<CustomText $margin='0 0 5px 0' $fontWeight='600'>
+					Окончание события *
+				</CustomText>
 				<GridRow $template='auto/204px 204px'>
 					<ControlledDateInput
 						className={adminStyles.adminDateInput}

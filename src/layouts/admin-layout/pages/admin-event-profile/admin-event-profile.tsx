@@ -25,6 +25,7 @@ export const AdminEventProfile: FC = () => {
 		resolver: yupResolver(eventProfileSchema),
 		defaultValues: {
 			newAreaSection: false,
+			saveNewArea: true,
 		},
 	})
 
@@ -42,11 +43,7 @@ export const AdminEventProfile: FC = () => {
 					поля, отмеченные символом *, обязательны для заполнения
 				</p>
 				<FormProvider {...methods}>
-					<form
-						className={adminStyles.adminPromptsForm}
-						onSubmit={methods.handleSubmit(onSubmit)}
-						noValidate
-					>
+					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate autoComplete='off'>
 						<TitleSection />
 						<DateSection />
 						<DescSection />

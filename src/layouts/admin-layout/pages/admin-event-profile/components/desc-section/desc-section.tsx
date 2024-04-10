@@ -5,9 +5,11 @@ import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/pr
 
 import cnBind from 'classnames/bind'
 
-import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { GridRow } from 'src/components/grid-row/grid-row'
 import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
+
+import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { CustomText } from 'src/components/custom-text/custom-text'
 
 export const DescSection = () => {
 	const cx = cnBind.bind(adminStyles)
@@ -47,8 +49,10 @@ export const DescSection = () => {
 				promptContent='Мы специально разделили возрастной рейтинг. На странице события будет указан первый из них.'
 				$margin='0'
 			>
-				<div className={adminStyles.adminInputsRowWrapper}>
-					<h6>Возрастной рейтинг *</h6>
+				<div>
+					<CustomText $margin='0 0 5px 0' $fontWeight='600'>
+						Возрастной рейтинг *
+					</CustomText>
 					<GridRow>
 						<ControlledSelect
 							className={adminStyles.adminSelect}

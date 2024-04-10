@@ -1,6 +1,6 @@
 import React, { type FC } from 'react'
 
-import { useFormContext, Controller } from 'react-hook-form'
+import { useFormContext, useController } from 'react-hook-form'
 import DatePicker, { registerLocale } from 'react-datepicker'
 import { ErrorMessage } from '@hookform/error-message'
 import ru from 'date-fns/locale/ru'
@@ -31,34 +31,36 @@ export const ControlledDateInput: FC<ControlledDateInputProps> = ({
 	timeFormat,
 	placeholder,
 	margin,
+	...props
 }) => {
 	const {
 		control,
 		formState: { errors },
 	} = useFormContext()
+	const {
+		field: { ref, ...inputProps },
+	} = useController({
+		name,
+		control,
+	})
 
 	return (
 		<div className={cn(styles.dateInputWrapper, className)} style={{ margin }}>
 			<label>
 				{label && <p>{label}</p>}
-				<Controller
-					control={control}
-					name={name}
-					render={({ field }) => (
-						<DatePicker
-							{...field}
-							locale='ru'
-							selected={field.value ? new Date(field.value as string) : null}
-							onChange={(date) => field.onChange(date)}
-							dateFormat={dateFormat ?? 'dd-MM-yyyy'}
-							timeFormat={timeFormat ?? 'HH:mm'}
-							timeIntervals={15}
-							timeCaption='Время'
-							placeholderText={placeholder}
-							showTimeSelect={showTimeSelect ?? false}
-							showTimeSelectOnly={showTimeSelectOnly}
-						/>
-					)}
+				<DatePicker
+					{...inputProps}
+					{...props}
+					locale='ru'
+					selected={inputProps.value}
+					onChange={(date) => inputProps.onChange(date)}
+					dateFormat={dateFormat ?? 'dd-MM-yyyy'}
+					timeFormat={timeFormat ?? 'HH:mm'}
+					timeIntervals={15}
+					timeCaption='Время'
+					placeholderText={placeholder}
+					showTimeSelect={showTimeSelect ?? false}
+					showTimeSelectOnly={showTimeSelectOnly}
 				/>
 			</label>
 

@@ -1,10 +1,12 @@
 import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 
-import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/prompt-input'
 import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
 import { GridRow } from 'src/components/grid-row/grid-row'
+import { CustomText } from 'src/components/custom-text/custom-text'
+
+import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
 export const TitleSection = () => {
 	return (
@@ -19,8 +21,10 @@ export const TitleSection = () => {
 				/>
 			</PromptInput>
 			<PromptInput promptContent='Эти данные нужны для того, чтобы событие нормально искалось в списках'>
-				<div className={adminStyles.adminInputsRowWrapper}>
-					<h6>Тип и уровень события *</h6>
+				<div>
+					<CustomText $margin='0 0 5px 0' $fontWeight='600'>
+						Тип и уровень события *
+					</CustomText>
 					<GridRow>
 						<ControlledSelect
 							className={adminStyles.adminSelect}

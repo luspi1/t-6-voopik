@@ -2,7 +2,7 @@ import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/pr
 import { GridRow } from 'src/components/grid-row/grid-row'
 import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
 import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
-
+import { CustomText } from 'src/components/custom-text/custom-text'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
@@ -19,8 +19,10 @@ export const AreaSection = () => {
 				promptContent='Дворец спорта, концертный зал, открытая площадка — место, на или в котором будет проводиться событие.'
 				$margin='0'
 			>
-				<div className={adminStyles.adminInputsRowWrapper}>
-					<h6>Площадка *</h6>
+				<div>
+					<CustomText $margin='0 0 5px 0' $fontWeight='600'>
+						Площадка *
+					</CustomText>
 					<GridRow>
 						<ControlledSelect
 							className={adminStyles.adminSelect}
