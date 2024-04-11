@@ -24,10 +24,14 @@
   }
   p {
     color: #9D9D9D;
+    user-select: none;
   }
 }
 
-
+._disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 .warningMessage {
   color: #F00000;

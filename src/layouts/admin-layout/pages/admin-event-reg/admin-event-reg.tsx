@@ -16,6 +16,7 @@ import { AdminRoute } from 'src/routes/admin-routes/consts'
 import { AdminControllers } from 'src/layouts/admin-layout/components/admin-controllers/admin-controllers'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { RegParticipant } from 'src/layouts/admin-layout/pages/admin-event-reg/components/reg-participant/reg-participant'
 
 export const AdminEventReg: FC = () => {
 	const methods = useForm<EventRegInputs>({
@@ -23,6 +24,17 @@ export const AdminEventReg: FC = () => {
 		resolver: yupResolver(eventRegSchema),
 		defaultValues: {
 			regVisitorSection: true,
+			regParticipantSection: true,
+			participantSides: [
+				{
+					sideName: '',
+					sideColor: '0',
+				},
+				{
+					sideName: '',
+					sideColor: '0',
+				},
+			],
 		},
 	})
 
@@ -47,6 +59,7 @@ export const AdminEventReg: FC = () => {
 				<FormProvider {...methods}>
 					<form onSubmit={methods.handleSubmit(onSubmit)} noValidate autoComplete='off'>
 						<RegVisitor />
+						<RegParticipant />
 						<AdminControllers outLink={`/${AdminRoute.AdminHome}`} variant='2' />
 					</form>
 				</FormProvider>

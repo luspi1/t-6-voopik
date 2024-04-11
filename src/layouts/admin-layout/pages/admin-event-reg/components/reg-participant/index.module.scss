@@ -1,0 +1,24 @@
+.participantSides {
+  padding: 24px 0 22px;
+  border-top: 1px solid #E3DDDD;
+}
+
+div.participantSidesCheckbox {
+  margin-bottom: 24px;
+  p {
+    font-weight: 700;
+  }
+}
+
+.participantDynamicList {
+  margin-bottom: 20px;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.removeSideBtn {
+  color: #FF0000;
+}

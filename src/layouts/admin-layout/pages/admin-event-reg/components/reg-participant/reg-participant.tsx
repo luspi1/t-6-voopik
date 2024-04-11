@@ -1,4 +1,7 @@
-import { useFormContext } from 'react-hook-form'
+import { type EventRegInputs } from 'src/layouts/admin-layout/pages/admin-event-reg/schema'
+
+import { useFieldArray, useFormContext } from 'react-hook-form'
+import cn from 'classnames'
 
 import { GridRow } from 'src/components/grid-row/grid-row'
 import { ControlledDateInput } from 'src/components/controlled-date-input/controlled-date-input'
@@ -8,15 +11,25 @@ import { ControlledCheckbox } from 'src/components/controlled-checkbox/controlle
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 import regStyles from 'src/layouts/admin-layout/pages/admin-event-reg/index.module.scss'
-
-export const RegVisitor = () => {
-	const { watch } = useFormContext()
-
+import styles from './index.module.scss'
+import { ControlledInput } from 'src/components/controlled-input/controlled-input'
+import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
+import { AdminButton } from 'src/UI/AdminButton/AdminButton'
+export const RegParticipant = () => {
+	const {
+		watch,
+		control,
+		formState: { errors },
+	} = useFormContext<EventRegInputs>()
+	const { fields, append, remove } = useFieldArray({
+		control,
+		name: 'participantSides',
+	})
 	return (
 		<AdminSection
-			titleText='Регистрация посетителей'
-			sectionName='regVisitorSection'
-			switcherText='Открыть регистрацию посетителей'
+			titleText='Регистрация участников'
+			sectionName='regParticipantSection'
+			switcherText='Открыть регистрацию участников'
 		>
 			<GridRow $template='1fr/1fr 1fr' $margin='0 0 24px 0'>
 				<div>
@@ -27,14 +40,14 @@ export const RegVisitor = () => {
 						<GridRow $template='auto/204px 204px' $margin='0 0 10px 0'>
 							<ControlledDateInput
 								className={adminStyles.adminDateInput}
-								name='regVisitorDateOpen'
+								name='regParticipantDateOpen'
 								dateFormat='dd.MM.yyyy'
 								placeholder='дд.мм.гггг'
 								margin='0'
 							/>
 							<ControlledDateInput
 								className={adminStyles.adminTimeInput}
-								name='regVisitorTimeOpen'
+								name='regParticipantTimeOpen'
 								placeholder='чч.мм'
 								dateFormat='HH:mm'
 								showTimeSelectOnly
@@ -50,14 +63,14 @@ export const RegVisitor = () => {
 						<GridRow $template='auto/204px 204px'>
 							<ControlledDateInput
 								className={adminStyles.adminDateInput}
-								name='regVisitorDateClose'
+								name='regParticipantDateClose'
 								dateFormat='dd.MM.yyyy'
 								placeholder='дд.мм.гггг'
 								margin='0'
 							/>
 							<ControlledDateInput
 								className={adminStyles.adminTimeInput}
-								name='regVisitorTimeClose'
+								name='regParticipantTimeClose'
 								placeholder='чч.мм'
 								dateFormat='HH:mm'
 								showTimeSelectOnly
@@ -70,22 +83,86 @@ export const RegVisitor = () => {
 				<div>
 					<ControlledCheckbox
 						className={adminStyles.adminCheckbox}
-						name='autoAdmitVisitors'
-						label='Автоматически допускать посетителей'
+						name='autoAdmitParticipants'
+						label='Автоматически допускать участников'
 						margin='23px 0 10px 0'
 						type='checkbox'
 					/>
 					<ControlledCheckbox
 						className={adminStyles.adminCheckbox}
-						name='publicVisitorsList'
-						label='Публичный список посетителей'
+						name='publicParticipantsList'
+						label='Публичный список участников'
 						type='checkbox'
 					/>
 				</div>
 			</GridRow>
+			<div className={styles.participantSides}>
+				<ControlledCheckbox
+					className={cn(adminStyles.adminCheckbox, styles.participantSidesCheckbox)}
+					name='isParticipantSides'
+					type='checkbox'
+					label='Несколько сторон участников'
+				/>
 
+				<ul className={styles.participantDynamicList}>
+					{fields?.map((field, idx) => (
+						<li key={field.id}>
+							<CustomText $margin='0 0 5px 0'>Название стороны</CustomText>
+							<GridRow $template='1fr/0.4fr 0.3fr 0.2fr'>
+								<ControlledInput
+									className={adminStyles.adminMainInput}
+									name={`participantSides.${idx}.sideName`}
+									dynamicError={errors?.participantSides?.[idx]?.sideName}
+									placeholder='ввести название'
+									margin='0'
+								/>
+								<ControlledSelect
+									className={adminStyles.adminSelect}
+									name={`participantSides.${idx}.sideColor`}
+									selectOptions={[
+										{ label: 'выбрать цвет', value: '0' },
+										{ label: 'Розово-эбонитовый', value: '1' },
+										{ label: 'Умеренный серо-коричневый', value: '2' },
+										{ label: 'Сигнальный фиолетовый', value: '3' },
+										{ label: 'Темно-серая мальва', value: '4' },
+										{ label: 'Бобровый', value: '5' },
+										{ label: 'Галечный серый', value: '6' },
+									]}
+									margin='0'
+								/>
+								{idx > 1 && (
+									<button
+										className={styles.removeSideBtn}
+										type='button'
+										onClick={() => remove(idx)}
+									>
+										Удалить
+									</button>
+								)}
+							</GridRow>
+						</li>
+					))}
+				</ul>
+				<AdminButton
+					as='button'
+					type='button'
+					$common
+					$padding='10px 14px'
+					onClick={() =>
+						append(
+							{
+								sideName: '',
+								sideColor: '0',
+							},
+							{ shouldFocus: false },
+						)
+					}
+				>
+					Добавить еще одну сторону
+				</AdminButton>
+			</div>
 			<div className={regStyles.regSettings}>
-				<h5>Настройки формы регистрации посетителей</h5>
+				<h5>Настройки формы регистрации участников</h5>
 				<div className={regStyles.settingsLists}>
 					<ul>
 						<li>
@@ -93,16 +170,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldSurname'
+									name='regParticipantFieldSurname'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredSurnameField'
+									name='isRequiredSurnameFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldSurname')}
+									disabled={!watch('regParticipantFieldSurname')}
 								/>
 							</div>
 						</li>
@@ -111,16 +188,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldName'
+									name='regParticipantFieldName'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredNameField'
+									name='isRequiredNameFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldName')}
+									disabled={!watch('regParticipantFieldName')}
 								/>
 							</div>
 						</li>
@@ -129,16 +206,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldPatronymic'
+									name='regParticipantFieldPatronymic'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredPatronymicField'
+									name='isRequiredPatronymicFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldPatronymic')}
+									disabled={!watch('regParticipantFieldPatronymic')}
 								/>
 							</div>
 						</li>
@@ -147,16 +224,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldAlias'
+									name='regParticipantFieldAlias'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredAliasField'
+									name='isRequiredAliasFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldAlias')}
+									disabled={!watch('regParticipantFieldAlias')}
 								/>
 							</div>
 						</li>
@@ -165,16 +242,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldPlace'
+									name='regParticipantFieldPlace'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredPlaceField'
+									name='isRequiredPlaceFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldPlace')}
+									disabled={!watch('regParticipantFieldPlace')}
 								/>
 							</div>
 						</li>
@@ -185,16 +262,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldPhone'
+									name='regParticipantFieldPhone'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredPhoneField'
+									name='isRequiredPhoneFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldPhone')}
+									disabled={!watch('regParticipantFieldPhone')}
 								/>
 							</div>
 						</li>
@@ -203,16 +280,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldEmail'
+									name='regParticipantFieldEmail'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredEmailField'
+									name='isRequiredEmailFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldEmail')}
+									disabled={!watch('regParticipantFieldEmail')}
 								/>
 							</div>
 						</li>
@@ -221,16 +298,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldTicket'
+									name='regParticipantFieldTicket'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredTicketField'
+									name='isRequiredTicketFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldTicket')}
+									disabled={!watch('regParticipantFieldTicket')}
 								/>
 							</div>
 						</li>
@@ -239,16 +316,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldType'
+									name='regParticipantFieldType'
 									label='Активное поле'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredTypeField'
+									name='isRequiredTypeFieldParticipant'
 									label='Обязательное поле'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldType')}
+									disabled={!watch('regParticipantFieldType')}
 								/>
 							</div>
 						</li>
@@ -259,16 +336,16 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldGroup'
+									name='regParticipantFieldGroup'
 									label='Разрешить'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredGroupField'
+									name='isRequiredGroupFieldParticipant'
 									label='Обязательно'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldGroup')}
+									disabled={!watch('regParticipantFieldGroup')}
 								/>
 							</div>
 						</li>
@@ -277,56 +354,56 @@ export const RegVisitor = () => {
 							<div className={regStyles.settingsFieldsRow}>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='regVisitorFieldTransport'
+									name='regParticipantFieldTransport'
 									label='Разрешить'
 									type='checkbox'
 								/>
 								<ControlledCheckbox
 									className={adminStyles.adminCheckbox}
-									name='isRequiredTransportField'
+									name='isRequiredTransportFieldParticipant'
 									label='Обязательно'
 									type='checkbox'
-									disabled={!watch('regVisitorFieldTransport')}
+									disabled={!watch('regParticipantFieldTransport')}
 								/>
 							</div>
 							<ControlledCheckbox
 								className={adminStyles.adminCheckbox}
-								name='brandTransportField'
+								name='brandTransportFieldParticipant'
 								label='Марка (ВАЗ, Skoda, KIA...)'
 								type='checkbox'
-								disabled={!watch('regVisitorFieldTransport')}
+								disabled={!watch('regParticipantFieldTransport')}
 								margin='10px 0 12px 0'
 							/>
 							<ControlledCheckbox
 								className={adminStyles.adminCheckbox}
-								name='modelTransportField'
+								name='modelTransportFieldParticipant'
 								label='Модель (21083, Rapid, K5...)'
 								type='checkbox'
-								disabled={!watch('regVisitorFieldTransport')}
+								disabled={!watch('regParticipantFieldTransport')}
 								margin='0 0 12px 0'
 							/>
 							<ControlledCheckbox
 								className={adminStyles.adminCheckbox}
-								name='numberTransportField'
+								name='numberTransportFieldParticipant'
 								label='Госномер (вместе с регионом)'
 								type='checkbox'
-								disabled={!watch('regVisitorFieldTransport')}
+								disabled={!watch('regParticipantFieldTransport')}
 								margin='0 0 12px 0'
 							/>
 							<ControlledCheckbox
 								className={adminStyles.adminCheckbox}
-								name='colorTransportField'
+								name='colorTransportFieldParticipant'
 								label='Цвет автомобиля'
 								type='checkbox'
-								disabled={!watch('regVisitorFieldTransport')}
+								disabled={!watch('regParticipantFieldTransport')}
 								margin='0 0 12px 0'
 							/>
 							<ControlledCheckbox
 								className={adminStyles.adminCheckbox}
-								name='typeTransportField'
+								name='typeTransportFieldParticipant'
 								label='Тип Т/С (легковая, автобус...)'
 								type='checkbox'
-								disabled={!watch('regVisitorFieldTransport')}
+								disabled={!watch('regParticipantFieldTransport')}
 								margin='0'
 							/>
 						</li>

@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from 'react'
+import React, { type FC, useEffect } from 'react'
 
 import { useFormContext } from 'react-hook-form'
 import cn from 'classnames'
@@ -15,6 +15,7 @@ type ControlledCheckboxProps = {
 	label?: string
 	className?: string
 	margin?: string
+	disabled?: boolean
 }
 
 export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
@@ -24,35 +25,36 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 	className,
 	required,
 	margin,
+	disabled,
 }) => {
-	const [isChecked, setIsChecked] = useState<boolean>(false)
-
 	const {
 		register,
 		setValue,
+		watch,
 		formState: { errors },
-		getValues,
 	} = useFormContext()
 
 	const handleCheckboxChange = () => {
-		setIsChecked((prev) => {
-			setValue(name, !prev)
-			return !prev
-		})
+		setValue(name, !watch(name))
 	}
 
 	useEffect(() => {
-		setIsChecked(!!getValues(name))
-	}, [])
+		if (disabled) {
+			setValue(name, false)
+		}
+	}, [disabled])
 
 	return (
 		<div className={cn(styles.checkboxEl, className)} style={{ margin }}>
-			<div className={styles.inputWrapper} onClick={handleCheckboxChange}>
-				<label>{isChecked && <CheckMarkSvg />}</label>
+			<div
+				className={cn(styles.inputWrapper, { [styles._disabled]: disabled })}
+				onClick={handleCheckboxChange}
+			>
+				<label>{watch(name) && <CheckMarkSvg />}</label>
 				<input
 					{...register(name)}
-					type={type}
 					className={styles.checkboxInput}
+					type={type}
 					required={required}
 				/>
 				{label && <p>{label}</p>}
