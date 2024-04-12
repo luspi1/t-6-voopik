@@ -1,6 +1,5 @@
 import { AdminSection } from 'src/layouts/admin-layout/components/admin-section/admin-section'
 import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
-import styles from 'src/layouts/admin-layout/pages/admin-community-about/components/title-section/index.module.scss'
 import { CustomText } from 'src/components/custom-text/custom-text'
 
 export const AvatarSection = () => {
@@ -11,7 +10,6 @@ export const AvatarSection = () => {
 			</CustomText>
 			<CustomText $margin='0 0 12px 0'>соотношение сторон 1:1 или 3:4, JPEG, PNG</CustomText>
 			<ReactDropzone
-				className={styles.titleDropzone}
 				name='orgAvatar'
 				prompt='Перетащите изображение на это поле'
 				accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpeg'] }}

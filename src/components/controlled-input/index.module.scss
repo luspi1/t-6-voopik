@@ -62,3 +62,43 @@
 .noValid {
   outline: 1px solid #F00000;
 }
+
+.passwordInputWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.passEyeBtn {
+  position: absolute;
+  width: 25px;
+  height: 18px;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  svg {
+    height: 25px;
+  }
+
+  &:hover {
+    svg path {
+      fill: #868585;
+    }
+    &::after {
+      background-color: #868585;
+    }
+  }
+}
+
+._crossOut {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 26px;
+    height: 1px;
+    background-color: #D9D9D9;
+    z-index: 10;
+    transform: rotate(45deg);
+  }
+}

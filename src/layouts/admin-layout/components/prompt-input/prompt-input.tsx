@@ -6,6 +6,7 @@ type PromptInputProps = PropsWithChildren<{
 	children: ReactNode
 	promptContent?: string | ReactNode
 	$margin?: string
+	$promptPadding?: string
 }>
 
 const StyledPromptInput = styled.div<PromptInputProps>`
@@ -17,12 +18,12 @@ const StyledPromptInput = styled.div<PromptInputProps>`
 		grid-template: 1fr 1fr / 1fr;
 	}
 `
-const StyledPromptText = styled.p`
+const StyledPromptText = styled.p<PromptInputProps>`
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 1.3;
 	color: #2d3231;
-	padding: 25px 0 0 0;
+	padding: ${({ $promptPadding }) => $promptPadding ?? '25px 0 0 0'};
 	@media (max-width: 1024px) {
 		padding: 10px 0 0 0;
 	}
@@ -32,11 +33,16 @@ const StyledPromptText = styled.p`
 	}
 `
 
-export const PromptInput: FC<PromptInputProps> = ({ children, promptContent, ...props }) => {
+export const PromptInput: FC<PromptInputProps> = ({
+	children,
+	promptContent,
+	$promptPadding,
+	...props
+}) => {
 	return (
 		<StyledPromptInput {...props}>
 			{children}
-			<StyledPromptText>{promptContent}</StyledPromptText>
+			<StyledPromptText $promptPadding={$promptPadding}>{promptContent}</StyledPromptText>
 		</StyledPromptInput>
 	)
 }
