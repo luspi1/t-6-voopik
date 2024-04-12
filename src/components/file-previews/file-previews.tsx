@@ -9,7 +9,7 @@ type FilePreviewsProps = {
 	files: FileWithPreview[]
 	removeBtn?: ReactNode
 	removeHandler?: (idx: number) => void
-	variant?: 'main' | 'text'
+	variant?: 'main' | 'text' | 'sm-img'
 }
 export const FilePreviews: FC<FilePreviewsProps> = ({
 	files,
@@ -40,6 +40,26 @@ export const FilePreviews: FC<FilePreviewsProps> = ({
 								{removeBtn}
 							</button>
 						)}
+					</li>
+				))}
+			</ul>
+		)
+	}
+	if (variant === 'sm-img') {
+		return (
+			<ul className={styles.smImgFilesList}>
+				{files.map((file) => (
+					<li key={file.preview}>
+						<div className={styles.smImgWrapper}>
+							<img
+								src={file.preview}
+								alt={file.name}
+								onLoad={() => {
+									URL.revokeObjectURL(file.preview)
+								}}
+							/>
+						</div>
+						<p>{file.name}</p>
 					</li>
 				))}
 			</ul>

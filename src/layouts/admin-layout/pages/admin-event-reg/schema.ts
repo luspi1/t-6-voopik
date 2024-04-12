@@ -1,8 +1,10 @@
 import * as yup from 'yup'
+import { type FileWithPreview } from 'src/types/files'
 
 type ParticipantSidesBlock = {
 	sideName: string
 	sideColor: string
+	sidePictogram: FileWithPreview[]
 }
 
 export type EventRegInputs = {
@@ -74,6 +76,7 @@ export type EventRegInputs = {
 	numberTransportFieldParticipant?: boolean
 	colorTransportFieldParticipant?: boolean
 	typeTransportFieldParticipant?: boolean
+	isParticipantSides?: boolean
 	participantSides?: ParticipantSidesBlock[]
 }
 

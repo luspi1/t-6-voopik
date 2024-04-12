@@ -12,6 +12,7 @@ import styles from './index.module.scss'
 import cn from 'classnames'
 import { RemovePhotoSvg } from 'src/UI/icons/removePhotoSVG'
 import { RemoveTextFileSvg } from 'src/UI/icons/removeTextFileSVG'
+import { ErrorMessage } from '@hookform/error-message'
 
 type ReactDropzoneProps = {
 	name: string
@@ -27,12 +28,14 @@ type ReactDropzoneProps = {
 	customUploadBtn?: ReactNode
 	uploadBtnText?: string
 	variant?: 'main' | 'text'
+	previewVariant?: 'main' | 'text' | 'sm-img'
 }
 export const ReactDropzone: FC<ReactDropzoneProps> = ({
 	className,
 	dzAreaClassName,
 	removeIcon,
 	variant = 'main',
+	previewVariant,
 	name,
 	accept,
 	multiple = false,
@@ -45,7 +48,11 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 }) => {
 	const [currentFiles, setCurrentFiles] = useState<FileWithPreview[]>([])
 
-	const { register, setValue } = useFormContext()
+	const {
+		register,
+		setValue,
+		formState: { errors },
+	} = useFormContext()
 
 	const onDrop = (acceptedFiles: File[]) => {
 		const newFiles = [...currentFiles, ...acceptedFiles].map((file: File) => {
@@ -86,7 +93,7 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 				{label && <label>{label}</label>}
 				<input {...register(name)} {...getInputProps()} />
 				<FilePreviews
-					variant='text'
+					variant={previewVariant ?? 'text'}
 					files={currentFiles}
 					removeBtn={removeIcon ?? <RemoveTextFileSvg />}
 					removeHandler={removeFile}
@@ -100,6 +107,11 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 						)}
 					</div>
 				)}
+				{errors[name] && (
+					<p className={styles.warningMessage}>
+						<ErrorMessage errors={errors} name={name} />
+					</p>
+				)}
 			</div>
 		)
 	}
@@ -108,6 +120,7 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 		<div className={cn(styles.reactDropzone, className)}>
 			{label && <label>{label}</label>}
 			<FilePreviews
+				variant={previewVariant ?? 'main'}
 				files={currentFiles}
 				removeBtn={removeIcon ?? <RemovePhotoSvg />}
 				removeHandler={removeFile}
@@ -136,6 +149,11 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 						)}
 					</div>
 				</div>
+			)}
+			{errors[name] && (
+				<p className={styles.warningMessage}>
+					<ErrorMessage errors={errors} name={name} />
+				</p>
 			)}
 		</div>
 	)

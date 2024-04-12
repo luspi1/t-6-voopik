@@ -18,7 +18,7 @@ export const RegVisitor = () => {
 			sectionName='regVisitorSection'
 			switcherText='Открыть регистрацию посетителей'
 		>
-			<GridRow $template='1fr/1fr 1fr' $margin='0 0 24px 0'>
+			<GridRow $template='auto/repeat(auto-fit, minmax(420px, 1fr))' $margin='0 0 24px 0'>
 				<div>
 					<div>
 						<CustomText $margin='0 0 5px 0' $fontWeight='600'>

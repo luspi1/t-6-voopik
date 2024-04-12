@@ -73,6 +73,7 @@
       font-weight: 600;
       color: #113770;
     }
+
     p {
       font-size: 14px;
       color: #91969A;
@@ -84,4 +85,29 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+// стили для варианта превью c миниатюрой картинки
+
+.smImgFilesList {
+  li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #113770;
+    }
+  }
+
+  .smImgWrapper {
+    width: 15px;
+    height: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

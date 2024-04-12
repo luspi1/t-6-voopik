@@ -11,12 +11,11 @@ import {
 import { AdminContent } from 'src/components/admin-content/admin-content'
 import { EventTitle } from 'src/layouts/admin-layout/components/event-title/event-title'
 import { RegVisitor } from 'src/layouts/admin-layout/pages/admin-event-reg/components/reg-visitor/reg-visitor'
-
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 import { AdminControllers } from 'src/layouts/admin-layout/components/admin-controllers/admin-controllers'
+import { RegParticipant } from 'src/layouts/admin-layout/pages/admin-event-reg/components/reg-participant/reg-participant'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
-import { RegParticipant } from 'src/layouts/admin-layout/pages/admin-event-reg/components/reg-participant/reg-participant'
 
 export const AdminEventReg: FC = () => {
 	const methods = useForm<EventRegInputs>({
@@ -25,14 +24,17 @@ export const AdminEventReg: FC = () => {
 		defaultValues: {
 			regVisitorSection: true,
 			regParticipantSection: true,
+			isParticipantSides: false,
 			participantSides: [
 				{
 					sideName: '',
 					sideColor: '0',
+					sidePictogram: [],
 				},
 				{
 					sideName: '',
 					sideColor: '0',
+					sidePictogram: [],
 				},
 			],
 		},

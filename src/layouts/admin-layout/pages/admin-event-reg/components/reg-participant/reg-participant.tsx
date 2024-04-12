@@ -15,23 +15,33 @@ import styles from './index.module.scss'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
 import { ControlledSelect } from 'src/components/controlled-select/controlled-select'
 import { AdminButton } from 'src/UI/AdminButton/AdminButton'
+import { ReactDropzone } from 'src/components/react-dropzone/react-dropzone'
+import { useEffect } from 'react'
 export const RegParticipant = () => {
 	const {
 		watch,
 		control,
+		resetField,
 		formState: { errors },
 	} = useFormContext<EventRegInputs>()
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: 'participantSides',
 	})
+
+	useEffect(() => {
+		if (!watch('isParticipantSides')) {
+			resetField('participantSides')
+		}
+	}, [watch('isParticipantSides')])
+
 	return (
 		<AdminSection
 			titleText='Регистрация участников'
 			sectionName='regParticipantSection'
 			switcherText='Открыть регистрацию участников'
 		>
-			<GridRow $template='1fr/1fr 1fr' $margin='0 0 24px 0'>
+			<GridRow $template='auto/repeat(auto-fit, minmax(420px, 1fr))' $margin='0 0 24px 0'>
 				<div>
 					<div>
 						<CustomText $margin='0 0 5px 0' $fontWeight='600'>
@@ -98,68 +108,87 @@ export const RegParticipant = () => {
 			</GridRow>
 			<div className={styles.participantSides}>
 				<ControlledCheckbox
-					className={cn(adminStyles.adminCheckbox, styles.participantSidesCheckbox)}
+					className={cn(adminStyles.adminCheckbox, styles.participantSidesCheckbox, {
+						[styles._activeSides]: watch('isParticipantSides'),
+					})}
 					name='isParticipantSides'
 					type='checkbox'
 					label='Несколько сторон участников'
 				/>
 
-				<ul className={styles.participantDynamicList}>
-					{fields?.map((field, idx) => (
-						<li key={field.id}>
-							<CustomText $margin='0 0 5px 0'>Название стороны</CustomText>
-							<GridRow $template='1fr/0.4fr 0.3fr 0.2fr'>
-								<ControlledInput
-									className={adminStyles.adminMainInput}
-									name={`participantSides.${idx}.sideName`}
-									dynamicError={errors?.participantSides?.[idx]?.sideName}
-									placeholder='ввести название'
-									margin='0'
-								/>
-								<ControlledSelect
-									className={adminStyles.adminSelect}
-									name={`participantSides.${idx}.sideColor`}
-									selectOptions={[
-										{ label: 'выбрать цвет', value: '0' },
-										{ label: 'Розово-эбонитовый', value: '1' },
-										{ label: 'Умеренный серо-коричневый', value: '2' },
-										{ label: 'Сигнальный фиолетовый', value: '3' },
-										{ label: 'Темно-серая мальва', value: '4' },
-										{ label: 'Бобровый', value: '5' },
-										{ label: 'Галечный серый', value: '6' },
-									]}
-									margin='0'
-								/>
-								{idx > 1 && (
-									<button
-										className={styles.removeSideBtn}
-										type='button'
-										onClick={() => remove(idx)}
-									>
-										Удалить
-									</button>
-								)}
-							</GridRow>
-						</li>
-					))}
-				</ul>
-				<AdminButton
-					as='button'
-					type='button'
-					$common
-					$padding='10px 14px'
-					onClick={() =>
-						append(
-							{
-								sideName: '',
-								sideColor: '0',
-							},
-							{ shouldFocus: false },
-						)
-					}
-				>
-					Добавить еще одну сторону
-				</AdminButton>
+				{watch('isParticipantSides') && (
+					<>
+						<ul className={styles.participantDynamicList}>
+							{fields?.map((field, idx) => (
+								<li key={field.id}>
+									<CustomText $margin='0 0 5px 0'>Название стороны</CustomText>
+									<GridRow $template='1fr/1.7fr 1.2fr 1fr 60px' $alignItems='center'>
+										<ControlledInput
+											className={adminStyles.adminMainInput}
+											name={`participantSides.${idx}.sideName`}
+											dynamicError={errors?.participantSides?.[idx]?.sideName}
+											placeholder='ввести название'
+											margin='0'
+										/>
+										<ControlledSelect
+											className={adminStyles.adminSelect}
+											name={`participantSides.${idx}.sideColor`}
+											selectOptions={[
+												{ label: 'выбрать цвет', value: '0' },
+												{ label: 'Розово-эбонитовый', value: '1' },
+												{ label: 'Умеренный серо-коричневый', value: '2' },
+												{ label: 'Сигнальный фиолетовый', value: '3' },
+												{ label: 'Темно-серая мальва', value: '4' },
+												{ label: 'Бобровый', value: '5' },
+												{ label: 'Галечный серый', value: '6' },
+											]}
+											margin='0'
+										/>
+										<ReactDropzone
+											name={`participantSides.${idx}.sidePictogram`}
+											variant='text'
+											previewVariant='sm-img'
+											customUploadBtn={
+												<p className={styles.uploadPictogramBtn}>
+													или <span>загрузить пиктограмму</span>
+												</p>
+											}
+											margin='0'
+											accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpeg'] }}
+										/>
+										{idx > 1 && (
+											<button
+												className={styles.removeSideBtn}
+												type='button'
+												onClick={() => remove(idx)}
+											>
+												Удалить
+											</button>
+										)}
+									</GridRow>
+								</li>
+							))}
+						</ul>
+						<AdminButton
+							as='button'
+							type='button'
+							$common
+							$padding='10px 14px'
+							onClick={() =>
+								append(
+									{
+										sideName: '',
+										sideColor: '0',
+										sidePictogram: [],
+									},
+									{ shouldFocus: false },
+								)
+							}
+						>
+							Добавить еще одну сторону
+						</AdminButton>
+					</>
+				)}
 			</div>
 			<div className={regStyles.regSettings}>
 				<h5>Настройки формы регистрации участников</h5>

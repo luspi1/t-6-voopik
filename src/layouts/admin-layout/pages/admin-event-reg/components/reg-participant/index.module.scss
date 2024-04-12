@@ -4,14 +4,19 @@
 }
 
 div.participantSidesCheckbox {
-  margin-bottom: 24px;
   p {
     font-weight: 700;
   }
 }
 
+
+._activeSides {
+  margin-bottom: 24px;
+}
+
 .participantDynamicList {
   margin-bottom: 20px;
+
   li {
     &:not(:last-child) {
       margin-bottom: 10px;
@@ -21,4 +26,17 @@ div.participantSidesCheckbox {
 
 .removeSideBtn {
   color: #FF0000;
+}
+
+.uploadPictogramBtn {
+  pointer-events: none;
+  color: #000000;
+  font-weight: 400;
+
+  span {
+    font-weight: 600;
+    color: #113770;
+    cursor: pointer;
+    pointer-events: auto;
+  }
 }
