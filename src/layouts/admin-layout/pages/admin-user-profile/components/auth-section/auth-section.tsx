@@ -4,6 +4,7 @@ import { PromptInput } from 'src/layouts/admin-layout/components/prompt-input/pr
 import { Link } from 'react-router-dom'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 import { ControlledInput } from 'src/components/controlled-input/controlled-input'
+
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
 
 export const AuthSection = () => {
@@ -12,12 +13,12 @@ export const AuthSection = () => {
 			<PromptInput
 				$promptPadding='0'
 				promptContent={
-					<>
+					<span>
 						Логин нельзя изменить вручную. <br />
 						<Link to={`/${AdminRoute.AdminHome}`}>
 							Обратиться к администратору для смены логина
 						</Link>
-					</>
+					</span>
 				}
 			>
 				<div>
@@ -30,7 +31,7 @@ export const AuthSection = () => {
 			<PromptInput promptContent='Укажите новый пароль только в том случае, если хотите сменить существующий.'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
-					name='userPassword'
+					name='orgPassword'
 					label='Пароль *'
 					placeholder='*************'
 					type='password'
@@ -40,7 +41,7 @@ export const AuthSection = () => {
 			<PromptInput promptContent='Повторите пароль, если решили его сменить.' $margin='0'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
-					name='userPasswordConfirm'
+					name='orgPasswordConfirm'
 					label='Повторите пароль *'
 					placeholder='*************'
 					type='password'

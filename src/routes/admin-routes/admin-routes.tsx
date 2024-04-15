@@ -39,6 +39,7 @@ import { AdminEventLocations } from 'src/layouts/admin-layout/pages/admin-event-
 import { AdminEventTimetable } from 'src/layouts/admin-layout/pages/admin-event-timetable/admin-event-timetable'
 import { AdminEventLists } from 'src/layouts/admin-layout/pages/admin-event-lists/admin-event-lists'
 import { AdminOrganizerProfile } from 'src/layouts/admin-layout/pages/admin-organizer-profile/admin-organizer-profile'
+import { AdminUserProfile } from 'src/layouts/admin-layout/pages/admin-user-profile/admin-user-profile'
 
 export const AdminRoutes: FC = () => {
 	return (
@@ -93,6 +94,8 @@ export const AdminRoutes: FC = () => {
 				<Route path={AdminRoute.AdminSettingsBlocks} element={<AdminSettingsBlocks />} />
 
 				<Route path={AdminRoute.AdminOrganizerProfile} element={<AdminOrganizerProfile />} />
+
+				<Route path={AdminRoute.AdminUserProfile} element={<AdminUserProfile />} />
 			</Route>
 		</Routes>
 	)

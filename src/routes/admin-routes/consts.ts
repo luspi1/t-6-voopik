@@ -35,4 +35,5 @@ export enum AdminRoute {
 	AdminSettingsStructure = 'settings-structure',
 	AdminSettingsBlocks = 'settings-blocks',
 	AdminOrganizerProfile = 'organizer-profile',
+	AdminUserProfile = 'user-profile',
 }
