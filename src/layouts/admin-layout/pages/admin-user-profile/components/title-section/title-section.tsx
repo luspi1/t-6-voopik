@@ -71,7 +71,7 @@ export const TitleSection = () => {
 				<CustomText $margin='0 0 5px 0' $fontWeight='600'>
 					Дата рождения *
 				</CustomText>
-				<GridRow $template='auto/204px 320px' $margin='0 0 10px 0' $alignItems='center'>
+				<GridRow $template='auto/204px 320px' $margin='0 0 0 0' $alignItems='center'>
 					<ControlledDateInput
 						className={adminStyles.adminDateInput}
 						name='userBirthday'

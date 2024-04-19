@@ -31,7 +31,7 @@ export const AuthSection = () => {
 			<PromptInput promptContent='Укажите новый пароль только в том случае, если хотите сменить существующий.'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
-					name='orgPassword'
+					name='userPassword'
 					label='Пароль *'
 					placeholder='*************'
 					type='password'
@@ -41,7 +41,7 @@ export const AuthSection = () => {
 			<PromptInput promptContent='Повторите пароль, если решили его сменить.' $margin='0'>
 				<ControlledInput
 					className={adminStyles.adminMainInput}
-					name='orgPasswordConfirm'
+					name='userPasswordConfirm'
 					label='Повторите пароль *'
 					placeholder='*************'
 					type='password'

@@ -31,7 +31,7 @@ export const ContactsSection = () => {
 			</PromptInput>
 			<div>
 				<CustomText $margin='0 0 5px 0' $fontWeight='600'>
-					Контактный телефон
+					Номер телефона
 				</CustomText>
 				<GridRow $template='auto/204px 320px' $margin='0' $alignItems='center'>
 					<ControlledInput

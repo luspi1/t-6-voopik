@@ -15,10 +15,7 @@ export const DescSection = () => {
 
 	return (
 		<AdminSection contentBg='none' contentPadding='0' contentBorder='none'>
-			<PromptInput
-				promptContent='Эти данные нужны для того, чтобы событие нормально искалось в списках'
-				$margin='0'
-			>
+			<PromptInput promptContent='Эти данные нужны для того, чтобы событие нормально искалось в списках'>
 				<div>
 					<CustomText $margin='0 0 5px 0' $fontWeight='600'>
 						Регион и город *
@@ -43,7 +40,7 @@ export const DescSection = () => {
 					</GridRow>
 				</div>
 			</PromptInput>
-			<PromptInput promptContent='Пожалуйста, не используйте ненормативную лексику.'>
+			<PromptInput promptContent='Пожалуйста, не используйте ненормативную лексику.' $margin='0'>
 				<ControlledInput
 					className={cx(adminStyles.adminMainInput, '_sm-textarea')}
 					name='userDesc'
