@@ -3,6 +3,11 @@ import * as yup from 'yup'
 type TicketItem = {
 	title: string
 	quantity: string
+	isPaidTicket: boolean
+	isQuickReg: boolean
+	isHimselfBuy: boolean
+	isReturnTicket: boolean
+	priceTicket: string
 }
 
 export type EventTicketsInputs = {
@@ -17,6 +22,7 @@ export const eventTicketsSchema = yup.object().shape({
 			? schema.of(
 					yup.object().shape({
 						title: yup.string().required('Введите название билета'),
+						priceTicket: yup.string().required('Введите стоимость билета'),
 					}),
 				)
 			: schema.notRequired()

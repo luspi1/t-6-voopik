@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { type FC, type ReactNode } from 'react'
+import React, { type FC, type ReactNode } from 'react'
 
 type StyledGridRowProps = {
 	$margin?: string
@@ -8,7 +8,7 @@ type StyledGridRowProps = {
 	$template?: string
 	$maxWidth?: string
 	children: ReactNode
-}
+} & React.CSSProperties
 
 const StyledGridRow = styled.div<StyledGridRowProps>`
 	margin: ${({ $margin }) => $margin ?? '0'};

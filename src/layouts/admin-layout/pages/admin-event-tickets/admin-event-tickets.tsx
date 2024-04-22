@@ -26,6 +26,11 @@ export const AdminEventTickets: FC = () => {
 				{
 					title: '',
 					quantity: '',
+					isPaidTicket: false,
+					isQuickReg: false,
+					isHimselfBuy: false,
+					isReturnTicket: false,
+					priceTicket: '',
 				},
 			],
 		},
