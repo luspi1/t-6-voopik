@@ -8,6 +8,20 @@ type TicketItem = {
 	isHimselfBuy: boolean
 	isReturnTicket: boolean
 	priceTicket: string
+	isAllLocationsVisitors: boolean
+	isLargeField: boolean
+	isStandsField: boolean
+	isCafe: boolean
+	isHonoraryBox: boolean
+	isAllLocationsParticipants: boolean
+	isDressingRoom: boolean
+	isCanteenSportsmen: boolean
+	isCoaching: boolean
+	isAllLocationsOrganizers: boolean
+	isJudicial: boolean
+	isOfficeArea: boolean
+	isUnderTribune: boolean
+	isMultipleEntry: boolean
 }
 
 export type EventTicketsInputs = {

@@ -16,6 +16,8 @@ type ControlledCheckboxProps = {
 	className?: string
 	margin?: string
 	disabled?: boolean
+	checked?: boolean
+	value?: string
 }
 
 export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
@@ -26,6 +28,8 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 	required,
 	margin,
 	disabled,
+	checked,
+	value,
 }) => {
 	const {
 		register,
@@ -56,6 +60,8 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 					className={styles.checkboxInput}
 					type={type}
 					required={required}
+					checked={checked}
+					value={value}
 				/>
 				{label && <p>{label}</p>}
 			</div>

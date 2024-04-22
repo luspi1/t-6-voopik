@@ -6,6 +6,7 @@ type StyledFlexRowProps = {
 	$gap?: string
 	$alignItems?: string
 	$maxWidth?: string
+	$direction?: string
 	$wrap?: string
 	$justifyContent?: string
 	children: ReactNode
@@ -17,6 +18,7 @@ const StyledFlexRow = styled.div<StyledFlexRowProps>`
 	gap: ${({ $gap }) => $gap ?? '20px'};
 	max-width: ${({ $maxWidth }) => $maxWidth ?? '100%'};
 	flex-wrap: ${({ $wrap }) => $wrap ?? 'wrap'};
+	flex-direction: ${({ $direction }) => $direction ?? 'row'};
 	align-items: ${({ $alignItems }) => $alignItems ?? 'start'};
 	justify-content: ${({ $justifyContent }) => $justifyContent ?? 'start'};
 `

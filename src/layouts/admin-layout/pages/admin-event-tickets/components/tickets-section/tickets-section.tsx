@@ -113,9 +113,133 @@ export const TicketsSection: FC = () => {
 							</FlexRow>
 						</div>
 						<div className={adminStyles.adminBlockSection}>
-							<CustomText $fontSize='14px' $fontWeight='700' $margin='0 0 20px 0'>
+							<CustomText $fontSize='14px' $fontWeight='700' $margin='0 0 14px 0'>
 								Доступные локации *
 							</CustomText>
+							<FlexRow $gap='42px'>
+								<FlexRow $direction='column' $gap='11px'>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isAllLocationsVisitors`}
+										label='Все локации для посетителей'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isLargeField`}
+										label='Большое поле'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isStandsField`}
+										label='Трибуны'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isCafe`}
+										label='Кафе'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isHonoraryBox`}
+										label='Ложа для почетных гостей'
+										type='checkbox'
+									/>
+								</FlexRow>
+								<FlexRow $direction='column' $gap='11px'>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isAllLocationsParticipants`}
+										label='Все локации для участников'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isDressingRoom`}
+										label='Раздевалка спортсменов'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isCanteenSportsmen`}
+										label='Столовая для спортсменов'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isCoaching`}
+										label='Тренерская'
+										type='checkbox'
+									/>
+								</FlexRow>
+								<FlexRow $direction='column' $gap='11px'>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isAllLocationsOrganizers`}
+										label='Все локации для организаторов'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isJudicial`}
+										label='Судейская'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isOfficeArea`}
+										label='Офис площадки'
+										type='checkbox'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isUnderTribune`}
+										label='Подтрибунное помещение'
+										type='checkbox'
+									/>
+								</FlexRow>
+							</FlexRow>
+						</div>
+						<div className={adminStyles.adminBlockSection}>
+							<CustomText $fontSize='14px' $fontWeight='700' $margin='0 0 14px 0'>
+								Количество входов *
+							</CustomText>
+							<ControlledCheckbox
+								className={adminStyles.adminCheckbox}
+								name={`tickets.${idx}.isMultipleEntry`}
+								label='Многоразовый вход'
+								type='checkbox'
+								margin='0 0 15px 0'
+							/>
+							<FlexRow>
+								<FlexRow $direction='column' $gap='11px'>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isMultiple`}
+										label='Многоразовый безлимитный'
+										type='radio'
+										value='unlimited'
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isMultiple`}
+										label='Многоразовый лимитированный, входов, не более'
+										type='radio'
+										value='limited'
+										checked
+									/>
+									<ControlledCheckbox
+										className={adminStyles.adminCheckbox}
+										name={`tickets.${idx}.isMultiple`}
+										label='Многоразовый по расписанию (разные локации)'
+										type='radio'
+										value='limitedTiming'
+									/>
+								</FlexRow>
+							</FlexRow>
 						</div>
 					</li>
 				))}
@@ -135,6 +259,20 @@ export const TicketsSection: FC = () => {
 							isHimselfBuy: false,
 							isReturnTicket: false,
 							priceTicket: '',
+							isAllLocationsVisitors: false,
+							isLargeField: false,
+							isStandsField: false,
+							isCafe: false,
+							isHonoraryBox: false,
+							isAllLocationsParticipants: false,
+							isDressingRoom: false,
+							isCanteenSportsmen: false,
+							isCoaching: false,
+							isAllLocationsOrganizers: false,
+							isJudicial: false,
+							isOfficeArea: false,
+							isUnderTribune: false,
+							isMultipleEntry: false,
 						},
 						{ shouldFocus: false },
 					)
