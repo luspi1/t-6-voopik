@@ -7,13 +7,14 @@ type PromptInputProps = PropsWithChildren<{
 	promptContent?: string | ReactNode
 	$margin?: string
 	$promptPadding?: string
+	$template?: string
 }>
 
 const StyledPromptInput = styled.div<PromptInputProps>`
 	margin: ${({ $margin }) => $margin ?? '0 0 17px 0'};
+	grid-template: ${({ $template }) => $template ?? 'auto/minmax(405px, 1.1fr) 0.9fr'};
 	display: grid;
 	column-gap: 20px;
-	grid-template-columns: minmax(405px, 1.1fr) 0.9fr;
 	@media (max-width: 1024px) {
 		grid-template: 1fr 1fr / 1fr;
 	}

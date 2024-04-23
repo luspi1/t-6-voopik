@@ -9,6 +9,7 @@ type StyledFlexRowProps = {
 	$direction?: string
 	$wrap?: string
 	$justifyContent?: string
+	className?: string
 	children: ReactNode
 } & React.CSSProperties
 

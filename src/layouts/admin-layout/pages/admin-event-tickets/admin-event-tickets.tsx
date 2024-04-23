@@ -9,12 +9,13 @@ import { EventTitle } from 'src/layouts/admin-layout/components/event-title/even
 import { AdminControllers } from 'src/layouts/admin-layout/components/admin-controllers/admin-controllers'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 import {
+	defaultTicketValues,
 	type EventTicketsInputs,
 	eventTicketsSchema,
 } from 'src/layouts/admin-layout/pages/admin-event-tickets/schema'
+import { TicketsSection } from 'src/layouts/admin-layout/pages/admin-event-tickets/components/tickets-section/tickets-section'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
-import { TicketsSection } from 'src/layouts/admin-layout/pages/admin-event-tickets/components/tickets-section/tickets-section'
 
 export const AdminEventTickets: FC = () => {
 	const methods = useForm<EventTicketsInputs>({
@@ -22,31 +23,7 @@ export const AdminEventTickets: FC = () => {
 		resolver: yupResolver(eventTicketsSchema),
 		defaultValues: {
 			ticketsSection: true,
-			tickets: [
-				{
-					title: '',
-					quantity: '',
-					isPaidTicket: false,
-					isQuickReg: false,
-					isHimselfBuy: false,
-					isReturnTicket: false,
-					priceTicket: '',
-					isAllLocationsVisitors: false,
-					isLargeField: false,
-					isStandsField: false,
-					isCafe: false,
-					isHonoraryBox: false,
-					isAllLocationsParticipants: false,
-					isDressingRoom: false,
-					isCanteenSportsmen: false,
-					isCoaching: false,
-					isAllLocationsOrganizers: false,
-					isJudicial: false,
-					isOfficeArea: false,
-					isUnderTribune: false,
-					isMultipleEntry: false,
-				},
-			],
+			tickets: [defaultTicketValues],
 		},
 	})
 

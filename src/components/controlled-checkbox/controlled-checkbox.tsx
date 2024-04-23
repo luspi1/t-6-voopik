@@ -1,6 +1,6 @@
 import React, { type FC, useEffect } from 'react'
 
-import { useFormContext } from 'react-hook-form'
+import { useController, useFormContext } from 'react-hook-form'
 import cn from 'classnames'
 import { ErrorMessage } from '@hookform/error-message'
 
@@ -8,9 +8,15 @@ import { CheckMarkSvg } from 'src/UI/icons/checkMarkSVG'
 
 import styles from './index.module.scss'
 
+type RadioOption = {
+	label: string
+	value: string
+}
+
 type ControlledCheckboxProps = {
 	name: string
 	type: 'checkbox' | 'radio'
+	options?: RadioOption[]
 	required?: boolean
 	label?: string
 	className?: string
@@ -26,17 +32,19 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 	label,
 	className,
 	required,
+	options,
 	margin,
 	disabled,
-	checked,
-	value,
 }) => {
 	const {
 		register,
 		setValue,
 		watch,
+		control,
 		formState: { errors },
 	} = useFormContext()
+
+	const { field } = useController({ name, control })
 
 	const handleCheckboxChange = () => {
 		setValue(name, !watch(name))
@@ -48,20 +56,39 @@ export const ControlledCheckbox: FC<ControlledCheckboxProps> = ({
 		}
 	}, [disabled])
 
+	if (type === 'radio') {
+		return (
+			<div className={cn(styles.radioInputs, className)}>
+				{options?.map((option) => (
+					<label key={option.value}>
+						<input
+							type='radio'
+							{...field}
+							value={option.value}
+							checked={field.value === option.value}
+							onChange={() => field.onChange(option.value)}
+						/>
+						{option.label}
+					</label>
+				))}
+			</div>
+		)
+	}
+
 	return (
 		<div className={cn(styles.checkboxEl, className)} style={{ margin }}>
 			<div
 				className={cn(styles.inputWrapper, { [styles._disabled]: disabled })}
 				onClick={handleCheckboxChange}
 			>
-				<label>{watch(name) && <CheckMarkSvg />}</label>
+				<label className={cn({ [styles._active]: watch(name) })}>
+					{watch(name) && <CheckMarkSvg />}
+				</label>
 				<input
+					type='checkbox'
 					{...register(name)}
 					className={styles.checkboxInput}
-					type={type}
 					required={required}
-					checked={checked}
-					value={value}
 				/>
 				{label && <p>{label}</p>}
 			</div>

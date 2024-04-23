@@ -17,6 +17,7 @@ type ControlledInputProps = {
 	name: string
 	margin?: string
 	width?: string
+	height?: string
 	type?: string
 } & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>
 
@@ -30,6 +31,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 	isTextarea,
 	margin,
 	width,
+	height,
 	type,
 	...props
 }) => {
@@ -51,8 +53,10 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 						className={cn(styles.controlledInput, {
 							[styles.noValid]: errors[name],
 						})}
+						style={{ height }}
 					/>
 				</label>
+				{dynamicError && <p className={styles.warningMessage}>{dynamicError.message}</p>}
 				{errors[name] && (
 					<p className={styles.warningMessage}>
 						<ErrorMessage errors={errors} name={name} />
