@@ -1,5 +1,6 @@
 export let regions = [
 	{
+		id: '0',
 		title: 'Татарстан, республика',
 		fullTitle: 'Региональное отделение по Республике Татарстан',
 		mainDesc:

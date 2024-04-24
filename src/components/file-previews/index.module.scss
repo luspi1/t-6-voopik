@@ -69,9 +69,14 @@
     }
 
     a {
+      display: inline-block;
       font-size: 14px;
       font-weight: 600;
       color: #113770;
+      max-width: 160px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     p {

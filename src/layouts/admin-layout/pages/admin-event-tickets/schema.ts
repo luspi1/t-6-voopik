@@ -46,7 +46,7 @@ export type EventTicketsInputs = {
 }
 
 export const eventTicketsSchema = yup.object().shape({
-	ticketsSection: yup.boolean().required(''),
+	ticketsSection: yup.boolean().required(),
 	tickets: yup.array().when('ticketsSection', ([ticketsSection], schema) => {
 		return ticketsSection
 			? schema.of(

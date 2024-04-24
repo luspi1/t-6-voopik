@@ -1,7 +1,8 @@
 import React, { type FC } from 'react'
 import { type SelOption } from 'src/types/select'
+import { type FieldError, useController, useFormContext } from 'react-hook-form'
+
 import Select from 'react-dropdown-select'
-import { useController, useFormContext } from 'react-hook-form'
 
 import styles from './index.module.scss'
 
@@ -14,6 +15,7 @@ type ControlledSelectProps = {
 	label?: string
 	className?: string
 	margin?: string
+	dynamicError?: FieldError | undefined
 }
 export const ControlledSelect: FC<ControlledSelectProps> = ({
 	selectOptions,
@@ -21,6 +23,7 @@ export const ControlledSelect: FC<ControlledSelectProps> = ({
 	label,
 	className,
 	margin,
+	dynamicError,
 	...props
 }) => {
 	const {
@@ -46,6 +49,7 @@ export const ControlledSelect: FC<ControlledSelectProps> = ({
 				values={[selectOptions[0]]}
 				onChange={(values) => onChange(values[0]?.value)}
 			/>
+			{dynamicError && <p className={styles.warningMessage}>{dynamicError.message}</p>}
 			{errors[name] && (
 				<p className={styles.warningMessage}>
 					<ErrorMessage errors={errors} name={name} />

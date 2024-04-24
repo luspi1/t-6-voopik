@@ -60,18 +60,15 @@ export const ReactDropzone: FC<ReactDropzoneProps> = ({
 				preview: URL.createObjectURL(file),
 			})
 		})
-		setCurrentFiles(() => {
-			setValue(name, newFiles)
-			return newFiles
-		})
+
+		setCurrentFiles(newFiles)
+		setValue(name, newFiles)
 	}
 
 	const removeFile = (index: number) => {
-		setCurrentFiles((prevState) => {
-			const newFiles = prevState.toSpliced(index, 1)
-			setValue(name, newFiles)
-			return newFiles
-		})
+		const newFiles = currentFiles.toSpliced(index, 1)
+		setCurrentFiles(newFiles)
+		setValue(name, newFiles)
 	}
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
