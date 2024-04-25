@@ -1,0 +1,38 @@
+
+.tabNavList {
+  display: flex;
+
+  li {
+    &:first-child {
+      a {
+        border-radius: 5px 0 0 5px;
+      }
+    }
+    &:last-child {
+      a {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+
+    &:not(:last-child) {
+      a {
+        border-right: 1px solid #E3DDDD;
+      }
+    }
+
+    a {
+      background: #ffffff;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #000000;
+      font-size: 14px;
+    }
+  }
+  .activeLink {
+    background-color: #113770;
+    color: #ffffff;
+  }
+}
+
+

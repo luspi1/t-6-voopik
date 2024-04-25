@@ -11,3 +11,8 @@ export type NavigationItem = {
 export type ContentNav = {
 	linkIdx: number
 }
+
+export type TabNavigationItem = {
+	title: string
+	link: string
+}

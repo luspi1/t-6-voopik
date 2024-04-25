@@ -31,15 +31,17 @@ import { AdminSettingsFeedback } from 'src/layouts/admin-layout/pages/admin-sett
 import { AdminSettingsUsers } from 'src/layouts/admin-layout/pages/admin-settings-users/admin-settings-users'
 import { AdminSettingsStructure } from 'src/layouts/admin-layout/pages/admin-settings-structure/admin-settings-structure'
 import { AdminSettingsBlocks } from 'src/layouts/admin-layout/pages/admin-settings-blocks/admin-settings-blocks'
-import { AdminEventProfile } from 'src/layouts/admin-layout/pages/admin-event-profile/admin-event-profile'
-import { AdminEventReg } from 'src/layouts/admin-layout/pages/admin-event-reg/admin-event-reg'
-import { AdminEventTickets } from 'src/layouts/admin-layout/pages/admin-event-tickets/admin-event-tickets'
-import { AdminEventContent } from 'src/layouts/admin-layout/pages/admin-event-content/admin-event-content'
-import { AdminEventLocations } from 'src/layouts/admin-layout/pages/admin-event-locations/admin-event-locations'
-import { AdminEventTimetable } from 'src/layouts/admin-layout/pages/admin-event-timetable/admin-event-timetable'
-import { AdminEventLists } from 'src/layouts/admin-layout/pages/admin-event-lists/admin-event-lists'
-import { AdminOrganizerProfile } from 'src/layouts/admin-layout/pages/admin-organizer-profile/admin-organizer-profile'
 import { AdminUserProfile } from 'src/layouts/admin-layout/pages/admin-user-profile/admin-user-profile'
+import { AdminOrganizerProfile } from 'src/layouts/admin-layout/pages/admin-organizer-profile/admin-organizer-profile'
+import { OneEventLayout } from 'src/layouts/admin-layout/pages/one-event-layout/one-event-layout'
+import { AdminEventsList } from 'src/layouts/admin-layout/pages/admin-events-list/admin-events-list'
+import { AdminEventProfile } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-profile/admin-event-profile'
+import { AdminEventReg } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-reg/admin-event-reg'
+import { AdminEventTickets } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-tickets/admin-event-tickets'
+import { AdminEventContent } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-content/admin-event-content'
+import { AdminEventLocations } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-locations/admin-event-locations'
+import { AdminEventTimetable } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-timetable/admin-event-timetable'
+import { AdminEventRosters } from 'src/layouts/admin-layout/pages/one-event-layout/pages/admin-event-rosters/admin-event-rosters'
 
 export const AdminRoutes: FC = () => {
 	return (
@@ -71,13 +73,17 @@ export const AdminRoutes: FC = () => {
 				<Route path={AdminRoute.AdminProjectsList} element={<AdminProjectsList />} />
 				<Route path={AdminRoute.AdminAddProject} element={<AdminAddProject />} />
 
-				<Route path={AdminRoute.AdminEventProfile} element={<AdminEventProfile />} />
-				<Route path={AdminRoute.AdminEventReg} element={<AdminEventReg />} />
-				<Route path={AdminRoute.AdminEventTickets} element={<AdminEventTickets />} />
-				<Route path={AdminRoute.AdminEventContent} element={<AdminEventContent />} />
-				<Route path={AdminRoute.AdminEventLocations} element={<AdminEventLocations />} />
-				<Route path={AdminRoute.AdminEventTimetable} element={<AdminEventTimetable />} />
-				<Route path={AdminRoute.AdminEventLists} element={<AdminEventLists />} />
+				<Route path={AdminRoute.AdminEventNew} element={<OneEventLayout />}>
+					<Route index path={AdminRoute.AdminEventProfile} element={<AdminEventProfile />} />
+					<Route path={AdminRoute.AdminEventReg} element={<AdminEventReg />} />
+					<Route path={AdminRoute.AdminEventTickets} element={<AdminEventTickets />} />
+					<Route path={AdminRoute.AdminEventContent} element={<AdminEventContent />} />
+					<Route path={AdminRoute.AdminEventLocations} element={<AdminEventLocations />} />
+					<Route path={AdminRoute.AdminEventTimetable} element={<AdminEventTimetable />} />
+					<Route path={AdminRoute.AdminEventRosters} element={<AdminEventRosters />} />
+				</Route>
+				<Route path={AdminRoute.AdminEventNew} element={<OneEventLayout />} />
+				<Route path={AdminRoute.AdminEventsList} element={<AdminEventsList />} />
 
 				<Route path={AdminRoute.AdminMaterialsList} element={<AdminMaterialsList />} />
 				<Route path={AdminRoute.AdminAddMaterial} element={<AdminAddMaterial />} />
