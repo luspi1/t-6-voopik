@@ -9,10 +9,14 @@ import { useLocationMatch } from 'src/hooks/location-match'
 import { AdminRoute } from 'src/routes/admin-routes/consts'
 
 import adminStyles from 'src/layouts/admin-layout/index.module.scss'
+import { useState } from 'react'
 export const OneEventLayout = () => {
 	const [matchesLocation] = useLocationMatch<ContentNav>([
 		`${AdminRoute.AdminHome}/${AdminRoute.AdminEventNew}`,
 	])
+
+	const [activeTab, setActiveTab] = useState(0)
+
 	if (matchesLocation) return <Navigate to={AdminRoute.AdminEventProfile} replace />
 	return (
 		<>
@@ -20,8 +24,8 @@ export const OneEventLayout = () => {
 				<title>Профиль события</title>
 			</Helmet>
 			<div className={adminStyles.adminTitleTab}>
-				<h1>Профиль события</h1>
-				<TabNavigation navItems={oneEventTabs} />
+				<h1>{oneEventTabs[activeTab].title}</h1>
+				<TabNavigation handleActiveTab={(idx) => setActiveTab(idx)} navItems={oneEventTabs} />
 			</div>
 
 			<Outlet />

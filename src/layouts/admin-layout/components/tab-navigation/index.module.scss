@@ -5,12 +5,12 @@
   li {
     &:first-child {
       a {
-        border-radius: 5px 0 0 5px;
+        border-radius: 3px 0 0 3px;
       }
     }
     &:last-child {
       a {
-        border-radius: 0 5px 5px 0;
+        border-radius: 0 3px 3px 0;
       }
     }
 
@@ -24,7 +24,7 @@
     a {
       background: #ffffff;
       display: inline-block;
-      padding: 10px 20px;
+      padding: 8px 20px;
       color: #000000;
       font-size: 14px;
     }
@@ -32,6 +32,7 @@
   .activeLink {
     background-color: #113770;
     color: #ffffff;
+    pointer-events: none;
   }
 }
 
